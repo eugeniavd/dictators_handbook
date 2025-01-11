@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MMMM: Mixing Maps, Magazines and Metadata</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .map-container {
+            position: fixed;
+            top: 56px; /* Height of the navbar */
+            left: 0;
+            right: 0;
+            height: 400px;
+            z-index: 100;
+            background-color: white;
+        }
+        .placeholder-map {
+            background-color: #e9ecef;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .content-wrapper {
+            margin-top: 456px; /* navbar height (56px) + map height (400px) */
+        }
+        .intro-section {
+            padding: 3rem 0;
+            background-color: #f8f9fa;
+            margin-bottom: 2rem;
+        }
+        .dropdown-menu .submenu {
+            display: none;
+            position: absolute;
+            left: 100%;
+            top: 0;
+        }
+        .dropdown-item:hover > .submenu {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">MMMM Project</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="issuesDropdown" role="button" data-bs-toggle="dropdown">
+                            Issues
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="#">Stalin</a>
+                                <ul class="dropdown-menu submenu">
+                                    <li><a class="dropdown-item" href="Issues/1/the-last-days-of-the-soviet-dictator.html">The last days of the Soviet dictator</a></li>
+                                    <li><a class="dropdown-item" href="#">Joseph Stalin's Paranoid Purge</a></li>
+                                    <li><a class="dropdown-item" href="#">The World That Made Stalin — and the World That Stalin Made</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="#">Mao</a>
+                                <ul class="dropdown-menu submenu">
+                                    <li><a class="dropdown-item" href="Issues/2/house-of-mao.html">House of Mao: How Consumerism and Patriotism Collide in the Chairman's Hometown</a></li>
+                                    <li><a class="dropdown-item" href="#">New Bio Offers Sinister View of Chairman Mao</a></li>
+                                    <li><a class="dropdown-item" href="#">Chinese celebrity chef vows to never cook egg fried rice again after nationalist backlash</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Fixed Map Section -->
+    <div class="map-container">
+        <div class="container h-100">
+            <div class="placeholder-map">
+                <h2 class="text-muted">Interactive Map Coming Soon</h2>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content-wrapper">
+        <div class="container">
+            <!-- Introduction Section -->
+        <div class="intro-section rounded">
+            <div class="container">
+                <h1 class="display-4">Welcome to MMMM</h1>
+                <p class="lead">Mixing Maps, Magazines and Metadata - A new way to experience georeferenced publications.</p>
+                <hr class="my-4">
+                <p>MMMM is an innovative framework that combines the traditional appeal of magazines with modern interactive mapping and rich metadata. Our platform allows readers to explore content through geographic locations, discovering how stories connect across space and time.</p>
+                <p>Each issue focuses on specific themes, presenting carefully curated articles that are enhanced with geographic references and interconnected through a sophisticated metadata layer. Navigate through our collections using interactive maps, explore relationships between articles, and discover new perspectives on fascinating topics.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light mt-5">
+        <div class="container py-3">
+            <p class="text-center mb-0">© 2025 MMMM Project. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JavaScript for nested dropdowns -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add hover functionality for dropdowns
+            const dropdownSubmenus = document.querySelectorAll('.dropdown-submenu');
+            dropdownSubmenus.forEach(function(submenu) {
+                submenu.addEventListener('mouseover', function() {
+                    const submenuDropdown = this.querySelector('.submenu');
+                    if (submenuDropdown) {
+                        submenuDropdown.style.display = 'block';
+                    }
+                });
+                submenu.addEventListener('mouseout', function() {
+                    const submenuDropdown = this.querySelector('.submenu');
+                    if (submenuDropdown) {
+                        submenuDropdown.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

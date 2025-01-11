@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House of Mao</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" />
+    <style>
+        .map-container {
+            position: fixed;
+            top: 56px;
+            left: 0;
+            right: 0;
+            height: 400px;
+            z-index: 100;
+            background-color: white;
+        }
+        #map {
+            height: 100%;
+            width: 100%;
+        }
+        .content-wrapper {
+            margin-top: 456px;
+            padding: 2rem 0;
+        }
+        .float-menu {
+            position: fixed;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+            display: flex;
+        }
+        .sidebar {
+            width: 0;
+            height: 80vh;
+            background: #f8f9fa;
+            padding: 0;
+            overflow-y: auto;
+            border-left: 1px solid #dee2e6;
+            transition: all 0.3s ease;
+            opacity: 0;
+            box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+        }
+        .sidebar.active {
+            width: 300px;
+            padding: 1rem;
+            opacity: 1;
+        }
+        .toggle-button {
+            width: 40px;
+            height: 40px;
+            background: #343a40;
+            border: none;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border-radius: 4px 0 0 4px;
+            box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+        }
+        .toggle-button:hover {
+            background: #1a1e21;
+        }
+        .toggle-icon {
+            transition: transform 0.3s ease;
+        }
+        .toggle-icon.active {
+            transform: rotate(180deg);
+        }
+        .tag {
+            display: inline;
+            padding: 0.2em 0.4em;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+        .tag.place {
+            background-color: #e3f2fd;
+            color: #1565c0;
+        }
+        .tag.person {
+            background-color: #fce4ec;
+            color: #c2185b;
+        }
+        .tag.event {
+            background-color: #f3e5f5;
+            color: #7b1fa2;
+        }
+        .tag.organization {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+        }
+        .tag.date {
+            background-color: #fff3e0;
+            color: #ef6c00;
+        }
+        .cultural-reference {
+            background-color: #fff8e1;
+            color: #ff6f00;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">MMMM Project</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Articles</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Map Container -->
+    <div class="map-container">
+        <div id="map"></div>
+    </div>
+
+    <!-- Content wrapper -->
+    <div class="content-wrapper">
+        <!-- Floating Menu -->
+        <div class="float-menu">
+            <button class="toggle-button" id="toggleSidebar">
+                <span class="toggle-icon">⮜</span>
+            </button>
+            <!-- Metadata Sidebar -->
+            <div class="sidebar">
+                <h3>Metadata Index</h3>
+                
+                <div class="sidebar-section">
+                    <h4>Places</h4>
+                    <ul class="sidebar-list" id="places-list">
+                        <li>Shaoshan (韶山)</li>
+                        <li>Hunan Province</li>
+                        <li>Changsha</li>
+                        <li>Zhuzhou (株洲)</li>
+                        <li>Xiangtan (湘潭)</li>
+                        <li>Yangtze River</li>
+                    </ul>
+                </div>
+                
+                <div class="sidebar-section">
+                    <h4>People</h4>
+                    <ul class="sidebar-list" id="people-list">
+                        <li>Mao Zedong</li>
+                        <li>Tan Chao</li>
+                        <li>Yang Kaihui</li>
+                        <li>Huang Xing</li>
+                        <li>Liu Shaoqi</li>
+                        <li>Hu Yaobang</li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-section">
+                    <h4>Cultural References</h4>
+                    <ul class="sidebar-list" id="cultural-list">
+                        <li>Hongshaorou (红烧肉)</li>
+                        <li>Little Red Book</li>
+                        <li>Cultural Revolution</li>
+                        <li>Red Tourism</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container main-content">
+            <div class="article-header">
+                <h1>House of Mao: How Consumerism and Patriotism Collide in the Chairman's Hometown</h1>
+                <div class="article-metadata">
+                    <p><strong>Author:</strong> Mitchell Blatt</p>
+                    <p><strong>Published:</strong> <span class="tag date">December 26, 2022</span></p>
+                </div>
+            </div>
+
+            <div class="article-content">
+                <p>Vendors shout the names and prices of trinkets they are selling, tour guides take bourgeois families enjoying unproductive leisure time through attractions, and vendors charge upwards of 5 yuan for a bottle of water in the scorching mid-July heat of <span class="tag place">Hunan</span>.</p>
+
+                <p>It's not exactly what one might expect from the home of the Communist Party icon who wanted to wipe capitalism from the face of the earth, but then again, <span class="tag place">China</span> today isn't exactly what it looked like in <span class="tag person">Chairman Mao</span>'s day. <span class="tag place">Shaoshan</span> (韶山), the hometown of the founder of the <span class="tag organization">People's Republic</span>, is an apt metaphor for modern-day <span class="tag place">China</span>: Merchants shouting unrestrained sales pitches laud the quality of overpriced communist-themed memorabilia, and business people make offerings to the god of the red sun.</p>
+
+                <p>Like many other international visitors to <span class="tag place">Shaoshan</span>, I declined my first opportunity to visit because I didn't really want to see a patriotic tourism destination brimming, I imagined, with extreme ardor and zealotry. A classmate of mine, <span class="tag person">Tan Chao</span>, recommended <span class="tag place">Shaoshan</span> to me as well as another city, <span class="tag place">Zhuzhou</span> (株洲). Her family owns and operates about a dozen hotels in the area south of <span class="tag place">Changsha</span>, and this year Chao was in charge of launching the Love Hotel, with themed rooms based on love stories.</p>
+
+                <p>While in <span class="tag place">Zhuzhou</span> with <span class="tag person">Chao</span>, boredom got the better of us, so we decided to go off to <span class="tag place">Shaoshan</span> about two hours to the west. By the time we got there, <span class="tag person">Mao</span>'s ancestral home and museum were closed, but there were still a lot of people in <span class="tag place">Mao Zedong Bronze Statue Square</span> admiring the statue of the nation's founder, taking photos, and praying.</p>
+
+                <p>When I asked what she was praying for, she replied that she prayed for the financial success of the Love Hotel.</p>
+
+                <p>This quasi-religious scene repeats itself every day. As the flowers gifted by private companies at the base of the statue can attest: everybody loves <span class="tag person">Mao</span>, even capitalists.</p>
+
+                <p><span class="tag person">Mao</span>'s legacy has indeed been good for the local businesses of <span class="tag place">Shaoshan</span>. The Chairman was born there, about 120 kilometers southwest of the provincial capital <span class="tag place">Changsha</span>, in <span class="tag date">1893</span>. At age 33, he led the <span class="tag event">Autumn Harvest Uprising</span> in <span class="tag place">Hunan</span>. While his life took him away from his hometown, his legacy remains stronger there than almost anywhere else.</p>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+    <script>
+        // Sidebar toggle functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const sidebar = document.querySelector('.sidebar');
+            const toggleButton = document.getElementById('toggleSidebar');
+            const toggleIcon = toggleButton.querySelector('.toggle-icon');
+            const mainContent = document.querySelector('.main-content');
+
+            toggleButton.addEventListener('click', function() {
+                sidebar.classList.toggle('active');
+                toggleIcon.classList.toggle('active');
+                if (sidebar.classList.contains('active')) {
+                    toggleIcon.textContent = '⮜';
+                    mainContent.style.marginRight = '300px';
+                } else {
+                    toggleIcon.textContent = '⮞';
+                    mainContent.style.marginRight = '0';
+                }
+            });
+
+            // Close sidebar when clicking outside
+            document.addEventListener('click', function(event) {
+                const isClickInside = sidebar.contains(event.target) || toggleButton.contains(event.target);
+                if (!isClickInside && sidebar.classList.contains('active')) {
+                    sidebar.classList.remove('active');
+                    toggleIcon.classList.remove('active');
+                    toggleIcon.textContent = '⮞';
+                    mainContent.style.marginRight = '0';
+                }
+            });
+        });
+
+        // Initialize map
+        const map = L.map('map').setView([27.8266, 112.5273], 7); // Center on Shaoshan
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        // Add markers for locations mentioned in the article
+        const locations = [
+            { name: "Shaoshan", coords: [27.8266, 112.5273] },
+            { name: "Changsha", coords: [28.2280, 112.9388] },
+            { name: "Zhuzhou", coords: [27.8273, 113.1339] },
+            { name: "Xiangtan", coords: [27.8431, 112.9447] },
+            { name: "Yangtze River", coords: [30.8262, 112.2390] }
+        ];
+
+        locations.forEach(location => {
+            L.marker(location.coords)
+             .bindPopup(location.name)
+             .addTo(map);
+        });
+    </script>
+</body>
+</html>

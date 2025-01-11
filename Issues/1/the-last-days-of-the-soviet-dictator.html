@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Last Days of the Soviet Dictator</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" />
+    <style>
+        .sidebar {
+            position: fixed;
+            right: 0;
+            top: 456px; /* below map */
+            width: 300px;
+            height: calc(100vh - 456px);
+            background: #f8f9fa;
+            padding: 1rem;
+            overflow-y: auto;
+            border-left: 1px solid #dee2e6;
+        }
+        .sidebar h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        .sidebar-section {
+            margin-bottom: 1.5rem;
+        }
+        .sidebar-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .sidebar-list li {
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+        .main-content {
+            margin-right: 300px;
+        }
+        .map-container {
+            position: fixed;
+            top: 56px;
+            left: 0;
+            right: 0;
+            height: 400px;
+            z-index: 100;
+            background-color: white;
+        }
+        #map {
+            height: 100%;
+            width: 100%;
+        }
+        .content-wrapper {
+            margin-top: 456px;
+            padding: 2rem 0;
+        }
+        .tag {
+            display: inline;
+            padding: 0.2em 0.4em;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+        .tag.place {
+            background-color: #e3f2fd;
+            color: #1565c0;
+        }
+        .tag.person {
+            background-color: #fce4ec;
+            color: #c2185b;
+        }
+        .tag.event {
+            background-color: #f3e5f5;
+            color: #7b1fa2;
+        }
+        .tag.organization {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+        }
+        .tag.date {
+            background-color: #fff3e0;
+            color: #ef6c00;
+        }
+        .info-reference {
+            background-color: #f5f5f5;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-left: 4px solid #9e9e9e;
+            font-style: italic;
+        }
+        .article-header {
+            margin-bottom: 2rem;
+        }
+        .article-metadata {
+            color: #666;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">MMMM Project</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Articles</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Map Container -->
+    <div class="map-container">
+        <div id="map"></div>
+    </div>
+
+    <!-- Article Content -->
+    <div class="content-wrapper">
+        <!-- Metadata Sidebar -->
+        <div class="sidebar">
+            <h3>Metadata Index</h3>
+            
+            <div class="sidebar-section">
+                <h4>People</h4>
+                <ul class="sidebar-list" id="people-list">
+                    <li>Joseph Stalin</li>
+                    <li>Lavrentiy Beria</li>
+                    <li>Georgy Malenkov</li>
+                    <li>Nikita Khrushchev</li>
+                    <li>Vladimir Bekhterev</li>
+                    <li>Vladimir Vinogradov</li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-section">
+                <h4>Places</h4>
+                <ul class="sidebar-list" id="places-list">
+                    <li>Moscow</li>
+                    <li>Kuntsevo</li>
+                    <li>Abkhazia</li>
+                    <li>Red Square</li>
+                    <li>Georgia</li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-section">
+                <h4>Organizations</h4>
+                <ul class="sidebar-list" id="organizations-list">
+                    <li>USSR</li>
+                    <li>FSB</li>
+                    <li>Communist Party</li>
+                    <li>NKVD</li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-section">
+                <h4>Events</h4>
+                <ul class="sidebar-list" id="events-list">
+                    <li>Stalin's Death (March 5, 1953)</li>
+                    <li>Doctors' Affair (1952-1953)</li>
+                    <li>Megreli case</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="container main-content">
+            <figure class="img-box">
+                <picture class="img-embed">
+                    <img
+                    src="issues/1/img/art_1_1.webp"
+                    srcset="
+                    issues/1/img/art_1_1.webp 1x,
+                    issues/1/img/art_1_1.webp 2x
+                    "
+                    class="c-entry-img"
+                    alt="In the photo next to Stalinʼs coffin are his closest associates (from right to left): Nikita Khrushchev, Lavrentiy Beria, Georgy Malenkov and Nikolai Bulganin, March 1953."/>
+                </picture>
+                <figcaption class="img-description">
+                    <p>In the photo next to 
+                        <span class="tag person" data-wiki="https://en.wikipedia.org/wiki/Joseph_Stalin">
+                            Stalinʼs</span> coffin are his closest associates (from right to left): 
+                        <span class="tag person" 
+                              data-wiki="https://en.wikipedia.org/wiki/Nikita_Khrushchev">
+                              Nikita Khrushchev</span>,
+                        <span class="tag person" 
+                              data-wiki="https://en.wikipedia.org/wiki/Lavrentiy_Beria">
+                              Lavrentiy Beria</span>,
+                        <span class="tag person" 
+                              id="georgy_malenkov" 
+                              data-name="Georgy Malenkov" 
+                              data-wiki="https://en.wikipedia.org/wiki/Georgy_Malenkov">
+                              Georgy Malenkov</span>, and 
+                        <span class="tag person" 
+                              data-wiki="https://en.wikipedia.org/wiki/Nikolai_Bulganin">
+                              Nikolai Bulganin</span>,
+                        <span class="tag date" 
+                              id="march_1953">
+                            March 1953</span>.
+                    </p>
+                    <p class="img-attribution">
+                        Getty Images /
+                        <span class="tag organization" 
+                              data-wiki="https://babel.ua/en/team">
+                              «Babel»
+                        </span>
+                    </p>
+                </figcaption>
+            </figure>
+            <div class="article-header">
+                <h1>71 years after Stalin's death, Russian communists suspected that he was killed by "Western special services." In fact, they should look for the culprits right under their noses.</h1>
+                <h2>The Last Days of the Soviet Dictator</h2>
+                <div class="article-metadata">
+                    <p><strong>Authors:</strong> Serhii Pyvovarov, Dmytro Rayevskyi, Kateryna Kobernyk</p>
+                    <p><strong>Published:</strong> <span class="tag date">March 8, 2024</span> at 13:13</p>
+                </div>
+            </div>
+
+            <div class="article-content">
+                <p>Dictator <span class="tag person" data-wiki="https://en.wikipedia.org/wiki/Joseph_Stalin">Joseph Stalin</span>, who ruled the <span class="tag organization">USSR</span> for more than thirty years, died on <span class="tag date">March 5, 1953</span>. According to the official version, it was caused by a brain hemorrhage enhanced by hypertensive crisis. But there are numerous conspiracy theories about the assassination of Stalin. This year, the <span class="tag organization">Communists of Russia</span> party asked the <span class="tag organization">FSB</span> to investigate the involvement of "Western special services" in the dictator's death. There are indeed many white spots in the history of Stalin's death. However, as the researchers testify, if there is anyone to suspect, it is the immediate circle of the Kremlin leader. And especially his closest associate <span class="tag person">Lavrentiy Beria</span>.</p>
+
+                <h3>Stalin had poor health and did not trust doctors</h3>
+                <p>The state of health of Kremlin leaders is still one of the most important state secrets. During Stalin's time, this secret was guarded especially strictly, and propaganda spread the myth of a "strong Caucasian body." So the researchers had to collect real facts piecemeal — in fragments of documents, letters, and memories.</p>
+
+                <p>Stalin's first serious health problems began around <span class="tag date">1926</span>, when he was 48 years old. He complained of severe pain in the muscles of his arms and legs. On the recommendation of doctors, Stalin underwent a course of hydrogen sulfide baths in <span class="tag place">Abkhazia</span>.</p>
+
+                <div class="info-reference">
+                    Georgian province, now an effectively Russia-occupied quasi-state.
+                </div>
+
+                <p>By <span class="tag date">1946</span>, Stalin suffered a severe stroke. During these periods, even his daughter <span class="tag person">Svetlana</span> was forbidden not only to visit her father but also to call him.</p>
+
+                <p>He spent more time at his suburban dacha in <span class="tag place">Kuntsevo</span>.</p>
+
+                <div class="info-reference">
+                    Now Kuntsevo is part of one of the districts of Moscow, the dacha is under state guard.
+                </div>
+
+                <p>In <span class="tag date">1927</span>, rumors spread in <span class="tag place">Moscow</span> medical circles about the sudden death of the well-known neuropathologist and psychiatrist <span class="tag person">Vladimir Bekhterev</span>. According to legend, he was called to examine Stalin, and he unexpectedly diagnosed the Soviet dictator with a severe form of paranoia.</p>
+
+                <p><span class="tag person">Vladimir Vinogradov</span> was Stalin's personal physician from the mid-1940s. In <span class="tag date">1952</span>, he strongly advised the dictator to work less and rest more. Stalin suspected a conspiracy, thinking that his enemies allegedly tried to remove him from the leadership of the state in this way. In <span class="tag date">November 1952</span>, Vinogradov ended up in prison as part of the <span class="tag event">Doctors' Affair</span>.</p>
+
+                <!-- Continue with more paragraphs... -->
+
+                <h3>The main suspect is Beria</h3>
+                <p>In the story of Stalin's death, <span class="tag person">Lavrentiy Beria</span> deserves the most suspicion. According to researchers, he had a strong motive to get rid of the leader. After all, it was Beria who was to become the main figure in the <span class="tag event">Megreli case</span>.</p>
+
+                <div class="info-reference">
+                    The campaign against high-ranking officials and prosecutors of the Georgian SSR, who were from Megrelia, a historical region in western Georgia. They were accused of a "nationalist conspiracy" with the aim of separating Georgia from the USSR. The first arrests began in November 1951. And in April 1953, a high-profile public trial was to take place, at which the accused were supposed to name Beria as the main organizer.
+                </div>, who ruled the <span class="tag organization" data-wiki="https://en.wikipedia.org/wiki/Soviet_Union">USSR</span> for more than thirty years, died on <span class="tag date">March 5, 1953</span>. According to the official version, it was caused by a brain hemorrhage enhanced by hypertensive crisis. But there are numerous conspiracy theories about the assassination of Stalin. This year, the <span class="tag organization">"Communists of Russia"</span> party asked the <span class="tag organization">FSB</span> to investigate the involvement of "Western special services" in the dictator's death.</p>
+
+                <!-- Rest of the article content with tags... -->
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <!-- Leaflet JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+    <script>
+        // Initialize map
+        const map = L.map('map').setView([55.7558, 37.6173], 5);
+        
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        // Add markers for locations mentioned in the article
+        const locations = [
+            { name: "Moscow", coords: [55.7558, 37.6173] },
+            { name: "Kuntsevo", coords: [55.7262, 37.4062] },
+            { name: "Abkhazia", coords: [43.0016, 41.0234] },
+            { name: "Red Square", coords: [55.7539, 37.6208] }
+        ];
+
+        locations.forEach(location => {
+            L.marker(location.coords)
+             .bindPopup(location.name)
+             .addTo(map);
+        });
+    </script>
+</body>
+</html>
