@@ -152,7 +152,6 @@
                 <ul class="sidebar-list" id="places-list">
                   <li>USSR</li>
                   <li>Russia</li>
-                  <li>Russian Empire</li>
                   <li>Georgia</li>
                   <li>Gori</li>
                   <li>Saint Petersburg</li>
@@ -290,5 +289,37 @@
         </p>
           
         </div>
+
+                <!-- Bootstrap JS Bundle -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <!-- Leaflet JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+    <script>
+        // Initialize map
+        const map = L.map('map').setView([55.7558, 37.6173], 5);
+        
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        // Add markers for locations mentioned in the article
+        const locations = [
+            { name: "USSR", coords: [55.747570216100165, 37.635310612724105] },
+            { name: "Russia", coords: [62.524124153040454, 92.10156237991846] },
+            { name: "Georgia", coords: [42.17672580678014, 43.211670588964004] },
+            { name: "Gori", coords: [41.98420201009441, 44.11571832111576] },
+            { name: "Saint Petersburg", coords: [59.92802981267338, 30.505285577997853] },
+            { name: "Kremlin", coords: [55.75109928706953, 37.61863765190776] }
+            
+        ];
+
+        locations.forEach(location => {
+            L.marker(location.coords)
+             .bindPopup(location.name)
+             .addTo(map);
+        });
+    </script>
+</body>
+</html>
 
 
