@@ -7,10 +7,11 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
     <!-- Design theme 1: Old Russian Gzhel -->
-    <link rel="stylesheet" href="css/gzhel.css">
+    <link id="themeStylesheet" rel="stylesheet" href="css/gzhel.css">
+    <!-- Design theme 1: Suprematism -->
+    <link id="themeStylesheet" rel="stylesheet" href="css/suprematism.css"> 
     
     <!-- New styles -->
-    <!-- <link rel="stylesheet" href="css/style2.css"> -->
     <!-- <link rel="stylesheet" href="css/style3.css"> -->
     <!-- <link rel="stylesheet" href="css/style4.css"> -->
     <style>
@@ -48,8 +49,11 @@
             display: block;
         }
     </style>
+    <!-- Addidg JavaScript fail with additional functions -->
+    <script src="utilities/functions.js" defer></script>
 </head>
 <body>
+
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
@@ -88,6 +92,32 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">About</a>
                     </li>
+                    <!-- Кнопка выбора дизайна -->
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="styleDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Change Design
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="styleDropdown">
+              <li>
+                <a class="dropdown-item" href="#" onclick="switchStyle('css/gzhel.css'); return false;">
+                  Old Russian Gzhel
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#" onclick="switchStyle('css/suprematism.css'); return false;">
+                  Suprematism
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#" onclick="switchStyle('#'); return false;">
+                  Design 3
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#" onclick="switchStyle('#'); return false;">
+                  Design 4
+                </a>
+              </li>
                 </ul>
             </div>
         </div>

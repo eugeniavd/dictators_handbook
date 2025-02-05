@@ -1,7 +1,5 @@
 /* gzhel.css */
 
-/* gzhel.css */
-
 /* Title font Balkara Condensed */
 @font-face {
     font-family: 'Balkara Condensed';
@@ -10,7 +8,7 @@
     font-style: normal;
   }
   
-  /* Applying font for titles */
+  /* Applying font for the titles */
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Balkara Condensed', serif;
   }
