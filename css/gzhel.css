@@ -1,0 +1,17 @@
+/* gzhel.css */
+
+/* gzhel.css */
+
+/* Title font Balkara Condensed */
+@font-face {
+    font-family: 'Balkara Condensed';
+    src: url('fonts/ofont.ru_Balkara Condensed.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  /* Applying font for titles */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Balkara Condensed', serif;
+  }
+  
