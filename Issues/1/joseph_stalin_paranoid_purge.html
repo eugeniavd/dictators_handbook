@@ -4,10 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Joseph Stalin’s Paranoid Purge</title>
+    
     <!-- Bootstrap CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" />
+    
+    <!-- Design theme 1: Old Russian Gzhel -->
+    <link id="themeStylesheet" rel="stylesheet" href="/css/gzhel.css">
+    
+    <!-- Design theme 1: Suprematism -->
+    <link id="themeStylesheet" rel="stylesheet" href="/css/suprematism.css"> 
+    
+    <!-- New styles -->
+    <!-- <link rel="stylesheet" href="css/style3.css"> -->
+    <!-- <link rel="stylesheet" href="css/style4.css"> -->
+    
     <style>
         .sidebar {
             position: fixed;
@@ -97,6 +110,9 @@
             font-size: 0.9rem;
         }
     </style>
+
+    <!-- Addidg JavaScript fail with additional functions -->
+    <script src="utilities/functions.js" defer></script>
 </head>
 <body>
     <!-- Navigation -->
@@ -109,18 +125,63 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
+                        <a class="nav-link active" href="#">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#">Articles</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="issuesDropdown" role="button" data-bs-toggle="dropdown">
+                            Issues
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="#">Stalin</a>
+                                <ul class="dropdown-menu submenu">
+                                    <li><a class="dropdown-item" href="Issues/1/last_days_of_soviet_dictator.html">The last days of the Soviet dictator</a></li>
+                                    <li><a class="dropdown-item" href="Issues/1/joseph_stalin_paranoid_purge.html">Joseph Stalin's Paranoid Purge</a></li>
+                                    <li><a class="dropdown-item" href="Issues/1/world_that_made_stalin.html">The World That Made Stalin — and the World That Stalin Made</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="#">Mao</a>
+                                <ul class="dropdown-menu submenu">
+                                    <li><a class="dropdown-item" href="Issues/2/house-of-mao.html">House of Mao: How Consumerism and Patriotism Collide in the Chairman's Hometown</a></li>
+                                    <li><a class="dropdown-item" href="#">New Bio Offers Sinister View of Chairman Mao</a></li>
+                                    <li><a class="dropdown-item" href="#">Chinese celebrity chef vows to never cook egg fried rice again after nationalist backlash</a></li>
+                                </ul>
+                            </li>
+                        </ul>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">About</a>
                     </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="styleDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Change Design
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="styleDropdown">
+                            <li>
+                                <a class="dropdown-item" href="#" onclick="switchStyle('css/gzhel.css'); return false;">
+                                Old Russian gzhel
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#" onclick="switchStyle('css/suprematism.css'); return false;">
+                                Suprematism
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#" onclick="switchStyle('#'); return false;">
+                                Design 3
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#" onclick="switchStyle('#'); return false;">
+                                Design 4
+                                </a>
+                            </li>
+                          </ul>
+                        </div>
+                    </div>
+              </nav>
 
     <!-- Map Container -->
     <div class="map-container">
