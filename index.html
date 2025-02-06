@@ -9,10 +9,10 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
     
     <!-- Design theme 1: Old Russian Gzhel -->
-    <link id="themeStylesheet" rel="stylesheet" href="/css/gzhel.css">
+    <link id="themeStylesheet" rel="stylesheet" href="css/gzhel.css">
     
-    <!-- Design theme 1: Suprematism -->
-    <link id="themeStylesheet" rel="stylesheet" href="/css/suprematism.css"> 
+    <!-- Design theme 2: Suprematism -->
+    <link id="themeStylesheet" rel="stylesheet" href="css/suprematism.css"> 
     
     <!-- New styles -->
     <!-- <link rel="stylesheet" href="css/style3.css"> -->
@@ -103,7 +103,7 @@
                         <ul class="dropdown-menu" aria-labelledby="styleDropdown">
                             <li>
                                 <a class="dropdown-item" href="#" onclick="switchStyle('css/gzhel.css'); return false;">
-                                Old Russian gzhel
+                                Old Russian Gzhel
                                 </a>
                             </li>
                             <li>
@@ -159,27 +159,5 @@
 
     <!-- Bootstrap JS Bundle -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
-    
-    <!-- Custom JavaScript for nested dropdowns -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Add hover functionality for dropdowns
-            const dropdownSubmenus = document.querySelectorAll('.dropdown-submenu');
-            dropdownSubmenus.forEach(function(submenu) {
-                submenu.addEventListener('mouseover', function() {
-                    const submenuDropdown = this.querySelector('.submenu');
-                    if (submenuDropdown) {
-                        submenuDropdown.style.display = 'block';
-                    }
-                });
-                submenu.addEventListener('mouseout', function() {
-                    const submenuDropdown = this.querySelector('.submenu');
-                    if (submenuDropdown) {
-                        submenuDropdown.style.display = 'none';
-                    }
-                });
-            });
-        });
-    </script>
 </body>
 </html>
