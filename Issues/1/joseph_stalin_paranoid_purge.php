@@ -1,6 +1,6 @@
 <?php
 $pageTitle = "Joseph Stalin’s Paranoid Purge";
-include('header.php');
+include('../../header.php');
 ?>
 
     <!-- Map Container -->
