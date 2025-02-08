@@ -83,4 +83,17 @@ document.addEventListener('mouseout', function(event) {
   }
 });
 
+// Delegated click event for design switching
+document.addEventListener('click', function(event) {
+  // Checking click for .dropdown-item
+  const target = event.target;
+  if (target.matches('.dropdown-item') && target.hasAttribute('data-style')) {
+    event.preventDefault(); // Prevent href
+    const stylePath = target.getAttribute('data-style');
+    if (stylePath) {
+      switchStyle(stylePath);
+    }
+  }
+});
+
 
