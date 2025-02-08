@@ -54,3 +54,31 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+  // Adding the header.html
+  fetch('/components/header.html')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('You have the error with header.html');
+      }
+      return response.text();
+    })
+    .then(html => {
+      document.getElementById('header-placeholder').innerHTML = html;
+    })
+    .catch(error => console.error('Error:', error));
+  
+  // Adding footer.html
+  fetch('/components/footer.html')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('You have the error with footer.html');
+      }
+      return response.text();
+    })
+    .then(html => {
+      document.getElementById('footer-placeholder').innerHTML = html;
+    })
+    .catch(error => console.error('Error:', error));
+});
