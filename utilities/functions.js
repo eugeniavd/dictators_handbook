@@ -1,10 +1,6 @@
 // utilities/functions.js
 
 /**
- * Utility functions for the site.
- */
-
-/**
  * Switches the design theme by updating the stylesheet link.
  * @param {string} stylePath - Path to the CSS file.
  */
@@ -12,7 +8,7 @@ function switchStyle(stylePath) {
   const themeStylesheet = document.getElementById('themeStylesheet');
   if (themeStylesheet) {
     themeStylesheet.href = stylePath;
-    // Saving design theme in the local storage
+    // Save the selected theme in localStorage
     localStorage.setItem('selectedTheme', stylePath);
     console.log(`Switched style to: ${stylePath}`);
   } else {
@@ -20,7 +16,7 @@ function switchStyle(stylePath) {
   }
 }
 
-// Applying the chosen theme to other pages
+// Apply the chosen theme on page load
 document.addEventListener('DOMContentLoaded', () => {
   const savedTheme = localStorage.getItem('selectedTheme');
   if (savedTheme) {
@@ -30,8 +26,11 @@ document.addEventListener('DOMContentLoaded', () => {
       console.log(`Applied saved theme: ${savedTheme}`);
     }
   }
+});
 
 // Load header and footer via fetch
+document.addEventListener("DOMContentLoaded", function() {
+  // Load header.html
   fetch('/components/header.html')
     .then(response => {
       if (!response.ok) {
@@ -58,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
     .catch(error => console.error('Error:', error));
 });
 
-// Delegated event listeners for dropdown submenus
+// Delegated event listeners for dropdown submenus (mouseover/mouseout)
 document.addEventListener('mouseover', function(event) {
   const submenuElement = event.target.closest('.dropdown-submenu');
   if (submenuElement) {
@@ -78,3 +77,16 @@ document.addEventListener('mouseout', function(event) {
     }
   }
 });
+
+// Delegated click event for design switching
+document.addEventListener('click', function(event) {
+  const target = event.target;
+  if (target.matches('.dropdown-item') && target.hasAttribute('data-style')) {
+    event.preventDefault(); // Предотвращаем стандартное действие ссылки
+    const stylePath = target.getAttribute('data-style');
+    if (stylePath) {
+      switchStyle(stylePath);
+    }
+  }
+});
+
