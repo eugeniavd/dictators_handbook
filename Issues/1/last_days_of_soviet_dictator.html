@@ -102,6 +102,24 @@
             color: #666;
             font-size: 0.9rem;
         }
+        .dropdown-submenu {
+        position: relative;
+        }
+
+        /* Set the submenu to be absolutely positioned to the right of its parent */
+        .dropdown-menu .submenu {
+        display: none;
+        position: absolute !important;
+        top: 0 !important;;
+        left: 100% !important;       /* always positioned to the right of the parent element */
+        z-index: 1050 !important;    /* high enough to appear above other elements */
+        white-space: nowrap !important; /* prevent items from wrapping */
+        }
+
+        /* Show the submenu on hover */
+        .dropdown-submenu:hover > .submenu {
+        display: block;
+        }
     </style>
 
     <!-- Addidg JavaScript file with additional functions -->
