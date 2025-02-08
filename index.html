@@ -11,54 +11,11 @@
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" />
 
+    <!-- Basic design -->
+    <link rel="stylesheet" href="/css/basic.css">
+
     <!-- Design theme -->
     <link id="themeStylesheet" rel="stylesheet" href="/css/gzhel.css">
-    
-    <style>
-        .map-container {
-            position: fixed;
-            top: 56px; /* Height of the navbar */
-            left: 0;
-            right: 0;
-            height: 400px;
-            z-index: 100;
-            background-color: white;
-        }
-        .placeholder-map {
-            background-color: #e9ecef;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .content-wrapper {
-            margin-top: 456px; /* navbar height (56px) + map height (400px) */
-        }
-        .intro-section {
-            padding: 3rem 0;
-            background-color: #f8f9fa;
-            margin-bottom: 2rem;
-        }
-        .dropdown-submenu {
-        position: relative;
-        }
-
-        /* Set the submenu to be absolutely positioned to the right of its parent */
-        .dropdown-menu .submenu {
-        display: none;
-        position: absolute !important;
-        top: 0 !important;;
-        left: 100% !important;       /* always positioned to the right of the parent element */
-        z-index: 1050 !important;    /* high enough to appear above other elements */
-        white-space: nowrap !important; /* prevent items from wrapping */
-        }
-
-        /* Show the submenu on hover */
-        .dropdown-submenu:hover > .submenu {
-        display: block;
-        }
-        
-    </style>
     
     <!-- Adding JavaScript file with additional functions -->
     <script src="/utilities/functions.js" defer></script>
