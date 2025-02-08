@@ -30,11 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
       console.log(`Applied saved theme: ${savedTheme}`);
     }
   }
-});
 
 // Load header and footer via fetch
-document.addEventListener("DOMContentLoaded", function() {
-  // Load header.html
   fetch('/components/header.html')
     .then(response => {
       if (!response.ok) {
