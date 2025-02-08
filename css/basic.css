@@ -2,7 +2,7 @@
 
 /* Map container styles */
 .map-container {
-    position: fixed;
+    position: fixed !important;
     top: 56px; /* Height of the navbar */
     left: 0;
     right: 0;
