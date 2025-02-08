@@ -39,15 +39,23 @@
             background-color: #f8f9fa;
             margin-bottom: 2rem;
         }
-        .dropdown-menu .submenu {
-            display: none;
-            position: absolute;
-            left: 100%;
-            top: 0;
+        .dropdown-submenu {
+        position: relative;
         }
 
-        .dropdown-item:hover > .submenu {
-            display: block;
+        /* Set the submenu to be absolutely positioned to the right of its parent */
+        .dropdown-menu .submenu {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 100%;       /* always positioned to the right of the parent element */
+        z-index: 1050;    /* high enough to appear above other elements */
+        white-space: nowrap; /* prevent items from wrapping */
+        }
+
+        /* Show the submenu on hover */
+        .dropdown-submenu:hover > .submenu {
+        display: block;
         }
         
     </style>
