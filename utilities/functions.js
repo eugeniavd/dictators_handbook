@@ -8,7 +8,7 @@ function switchStyle(stylePath) {
   const themeStylesheet = document.getElementById('themeStylesheet');
   if (themeStylesheet) {
     themeStylesheet.href = stylePath;
-    // Save the selected theme in localStorage
+    // Saving design theme in the local storage
     localStorage.setItem('selectedTheme', stylePath);
     console.log(`Switched style to: ${stylePath}`);
   } else {
@@ -16,7 +16,7 @@ function switchStyle(stylePath) {
   }
 }
 
-// Apply the chosen theme on page load
+// Applying the chosen theme to other pages
 document.addEventListener('DOMContentLoaded', () => {
   const savedTheme = localStorage.getItem('selectedTheme');
   if (savedTheme) {
@@ -40,6 +40,11 @@ document.addEventListener("DOMContentLoaded", function() {
     })
     .then(html => {
       document.getElementById('header-placeholder').innerHTML = html;
+      // Inizialize Bootstrap dropdown for element with dynamic loading:
+      var dropdownElements = [].slice.call(document.querySelectorAll('.dropdown-toggle'));
+      dropdownElements.forEach(function(el) {
+        new bootstrap.Dropdown(el);
+      });
     })
     .catch(error => console.error('Error:', error));
   
@@ -57,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function() {
     .catch(error => console.error('Error:', error));
 });
 
-// Delegated event listeners for dropdown submenus (mouseover/mouseout)
+// Delegated event listeners for dropdown submenus 
 document.addEventListener('mouseover', function(event) {
   const submenuElement = event.target.closest('.dropdown-submenu');
   if (submenuElement) {
@@ -78,15 +83,4 @@ document.addEventListener('mouseout', function(event) {
   }
 });
 
-// Delegated click event for design switching
-document.addEventListener('click', function(event) {
-  const target = event.target;
-  if (target.matches('.dropdown-item') && target.hasAttribute('data-style')) {
-    event.preventDefault(); // Предотвращаем стандартное действие ссылки
-    const stylePath = target.getAttribute('data-style');
-    if (stylePath) {
-      switchStyle(stylePath);
-    }
-  }
-});
 
