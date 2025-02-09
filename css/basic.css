@@ -1,11 +1,5 @@
 /* Basic style without design themes */
 
-html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-}
-
 /* Content wrapper */
 .content-wrapper {
     margin-top: 456px; /* navbar height (56px) + map height (400px) */
