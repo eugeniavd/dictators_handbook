@@ -33,6 +33,7 @@
     position: absolute;
     right: 0;
     top: 456px; /* Below map */
+    bottom: 0;
     width: 300px;
     height: calc(100vh - 456px);
     background: #f8f9fa;
