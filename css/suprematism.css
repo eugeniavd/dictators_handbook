@@ -13,3 +13,28 @@
     font-family: 'Bootshaus', serif;
   }
   
+  /* Map element styles */
+#map {
+  height: 100%;
+  width: 100%;
+}
+
+/* Map container styles */
+.map-container {
+  position: fixed !important;
+  top: 56px; /* Height of the navbar */
+  left: 0;
+  right: 0;
+  height: 400px;
+  z-index: 100;
+  background-color: white;
+}
+
+/* Placeholder map styles */
+.placeholder-map {
+  background-color: #e9ecef;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
