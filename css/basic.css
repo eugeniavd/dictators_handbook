@@ -150,7 +150,7 @@ html, body {
 .placeholder-map {
     background-color: #e9ecef;
     height: 100%;
-    display: flex;
+    display: fixed;
     align-items: center;
     justify-content: center;
 }
