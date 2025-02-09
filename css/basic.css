@@ -19,11 +19,6 @@ html, body {
     margin-bottom: 2rem;
 }
 
-/* Dropdown submenu container */
-/* .dropdown-submenu {
-    position: relative;
-} */
-
 /* Submenu styling */
 .dropdown-menu .submenu {
     display: none;
