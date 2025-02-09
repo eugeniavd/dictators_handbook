@@ -134,7 +134,7 @@
 
 /* Map container styles */
 .map-container {
-    position: static;
+    position: absolute;
     top: 56px; /* Height of the navbar */
     left: 0;
     right: 0;
