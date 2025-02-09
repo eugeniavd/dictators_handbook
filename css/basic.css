@@ -30,7 +30,7 @@
 
 /* Sidebar styles */
 .sidebar {
-    position: fixed;
+    position: absolute;
     right: 0;
     top: 456px; /* Below map */
     width: 300px;
