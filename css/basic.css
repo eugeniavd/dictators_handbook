@@ -2,7 +2,7 @@
 
 /* Content wrapper */
 .content-wrapper {
-    margin-top: 400px; /* navbar height (56px) + map height (400px) */
+    margin-top: 456px; /* navbar height (56px) + map height (400px) */
     /* padding: 2rem 0; */
 }
 
@@ -134,7 +134,7 @@
 
 /* Map container styles */
 .map-container {
-    position: static;
+    position: absolute;
     top: 56px; /* Height of the navbar */
     left: 0;
     right: 0;
