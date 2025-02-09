@@ -134,6 +134,14 @@ html, body {
     height: 100%;
     width: 100%;
 }
+/* Placeholder map styles */
+.placeholder-map {
+    background-color: #e9ecef;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 /* Map container styles */
 .map-container {
@@ -146,11 +154,4 @@ html, body {
     background-color: white;
 }
 
-/* Placeholder map styles */
-.placeholder-map {
-    background-color: #e9ecef;
-    height: 100%;
-    display: fixed;
-    align-items: center;
-    justify-content: center;
-}
+
