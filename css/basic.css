@@ -1,23 +1,9 @@
 /* Basic style without design themes */
 
-/* Map container styles */
-.map-container {
-    position: fixed !important;
-    top: 56px; /* Height of the navbar */
-    left: 0;
-    right: 0;
-    height: 400px;
-    z-index: 100;
-    background-color: white;
-}
-
-/* Placeholder map styles */
-.placeholder-map {
-    background-color: #e9ecef;
+html, body {
+    margin: 0;
+    padding: 0;
     height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 /* Content wrapper */
@@ -43,8 +29,8 @@
     display: none;
     position: absolute !important;
     top: 0 !important;
-    left: 100% !important; /* Always positioned to the right of the parent element */
-    z-index: 1050 !important; /* High enough to appear above other elements */
+    left: 100% !important;       /* Always positioned to the right of the parent element */
+    z-index: 1050 !important;     /* High enough to appear above other elements */
     white-space: nowrap !important; /* Prevent items from wrapping */
 }
 
@@ -89,12 +75,6 @@
 /* Main content margin for sidebar space */
 .main-content {
     margin-right: 300px;
-}
-
-/* Map element styles */
-#map {
-    height: 100%;
-    width: 100%;
 }
 
 /* Tag styles */
@@ -147,4 +127,30 @@
 .article-metadata {
     color: #666;
     font-size: 0.9rem;
+}
+
+/* Map element styles */
+#map {
+    height: 100%;
+    width: 100%;
+}
+
+/* Map container styles */
+.map-container {
+    position: fixed !important;
+    top: 56px; /* Height of the navbar */
+    left: 0;
+    right: 0;
+    height: 400px;
+    z-index: 100;
+    background-color: white;
+}
+
+/* Placeholder map styles */
+.placeholder-map {
+    background-color: #e9ecef;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
