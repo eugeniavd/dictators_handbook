@@ -29,18 +29,16 @@
 }
 
 /* Sidebar styles */
+
 .sidebar {
-    position: absolute;
-    right: 0;
+    float: right;
     top: 456px; /* Below map */
-    bottom: 0;
     width: 300px;
-    /* height: calc(100vh - 456px); */
     background: #f8f9fa;
     padding: 1rem;
-    overflow-y: auto;
     border-left: 1px solid #dee2e6;
 }
+
 
 .sidebar h3 {
     font-size: 1.2rem;
