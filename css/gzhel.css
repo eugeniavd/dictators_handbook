@@ -1,5 +1,16 @@
 /* gzhel.css */
 
+body {
+  background: #e1e7f7; /* Sets a light background for the page with cold gray shade */
+  margin: 0; /* Removes outer margins to make the page occupy the full screen */
+  padding: 0; /* Removes inner padding */
+  display: flex; /* Sets the body as a flex container */
+  flex-direction: column; /* Aligns elements inside the body vertically */
+  align-items: center; /* Centers all elements horizontally */
+}
+
+
+
 /* Title font */
 @font-face {
     font-family: 'Blagovest';
