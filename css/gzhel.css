@@ -1,14 +1,54 @@
 /* gzhel.css */
 
-body {
-  background: #e6ecfa; /* Sets a light background for the page with cold gray shade */
-  margin: 0; /* Removes outer margins to make the page occupy the full screen */
-  padding: 0 2rem; /* Removes inner padding */
-  display: flex; /* Sets the body as a flex container */
-  flex-direction: column; /* Aligns elements inside the body vertically */
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:root {
+  --page-height: 100vh;  /* Height equals 100% of the viewport height */
+  --page-width: 50vw;    /* Width equals 50% of the viewport width */
+  --double-page-padding: 10vw; /* Inner padding */
+}
+
+@media (max-width: 768px) {
+  :root {
+    --page-width: 90vw; 
+  }
+}
+
+.loading {
+  background-color: #f5f7fc;
+  margin: 0;
+  padding: 0 0,5rem;
+  color: #333333;
+  font-family: 'Blagovest', 'A_la_russ', serif;
+  letter-spacing: 0.2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  overflow-x: hidden;
+  height: 100%;
+  width: 100%;
 }
 
 
+body.article {
+  background-color: #f5f7fc;
+  margin: 0;
+  padding: 0 0,5rem;
+  color: #333333;
+  font-family: 'Blagovest', 'A_la_russ', serif;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 8% 92%;
+  grid-template-columns: 8% 92%;
+  overflow-x: hidden;
+  transition: 0.3s;
+}
 
 /* Title font */
 @font-face {
@@ -17,6 +57,14 @@ body {
     font-weight: normal;
     font-style: normal;
   }
+
+  /* Text font */
+@font-face {
+  font-family: 'A_la_russ';
+  src: url('/fonts/A_la_russ.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
   
   /* Applying font for the titles */
   h1, h2, h3, h4, h5, h6 {
