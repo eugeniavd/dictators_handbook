@@ -2,20 +2,18 @@
 <header>
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
-      <a class="navbar-brand" href="/index.html">MMMM Project</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/index.html">Dictators’ Handbook</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" 
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <!-- Home -->
-          <li class="nav-item">
-            <a class="nav-link active" href="/index.html">Home</a>
-          </li>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mb-2 mb-lg-0">
           <!-- Issues dropdown -->
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="issuesDropdown" role="button" data-bs-toggle="dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="issuesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Issues
             </a>
             <ul class="dropdown-menu">
@@ -37,12 +35,20 @@
                   <li><a class="dropdown-item" href="#">Chinese celebrity chef vows to never cook egg fried rice again after nationalist backlash</a></li>
                 </ul>
               </li>
+              <li><a class="dropdown-item" href="#issueList">See all issues</a></li>
             </ul>
           </li>
+
           <!-- About -->
           <li class="nav-item">
-            <a class="nav-link" href="/about.html">About</a>
+            <a class="nav-link" href="#About">About</a>
           </li>
+          
+          <!-- Documentation -->
+          <li class="nav-item">
+            <a class="nav-link" href="#" target="_blank">Documentation</a>
+          </li>
+          
           <!-- Change Design dropdown -->
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="styleDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -63,6 +69,17 @@
               </li>
             </ul>
           </li>
+
+          <!-- Disclaimer -->
+          <li class="nav-item">
+            <a class="nav-link" id="disclaimer-button">Disclaimer</a>
+          </li>
+
+          <!-- Map -->
+          <li class="nav-item">
+            <a class="nav-link" href="#map_intro">Explore the map</a>
+          </li>
+        
         </ul>
       </div>
     </div>

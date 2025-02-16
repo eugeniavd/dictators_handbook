@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MMMM: Mixing Maps, Magazines and Metadata</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Dictators’ Handbook</title>
     
     <!-- Bootstrap CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
@@ -16,40 +18,146 @@
 
     <!-- Design theme -->
     <link id="themeStylesheet" rel="stylesheet" href="/css/gzhel.css">
-    
+
+    <link rel="preload" href="/css/suprematism.css" as="style">
+
     <!-- Adding JavaScript file with additional functions -->
     <script src="/utilities/functions.js" defer></script>
 </head>
-<body>
+<body class="home">
 
     <!-- Adding the header -->
     <div id="header-placeholder"></div>
 
-    <!-- Map Section -->
-    <div class="map-container">
-        <div class="container h-100">
-            <div class="placeholder-map">
-                <h2 class="text-muted">Interactive Map Coming Soon</h2>
-            </div>
-        </div>
-    </div>
-
     <!-- Main Content -->
-    <div class="content-wrapper">
-        <div class="container">
-            <!-- Introduction Section -->
-        <div class="intro-section rounded">
-            <div class="container">
-                <h1 class="display-4">Welcome to MMMM</h1>
-                <p class="lead">Mixing Maps, Magazines and Metadata - A new way to experience georeferenced publications.</p>
-                <hr class="my-4">
-                <p>MMMM is an innovative framework that combines the traditional appeal of magazines with modern interactive mapping and rich metadata. Our platform allows readers to explore content through geographic locations, discovering how stories connect across space and time.</p>
-                <p>Each issue focuses on specific themes, presenting carefully curated articles that are enhanced with geographic references and interconnected through a sophisticated metadata layer. Navigate through our collections using interactive maps, explore relationships between articles, and discover new perspectives on fascinating topics.</p>
+    <main class="home">
+        <div class="disclaimer-container"></div>
+
+        <!-- Introduction Section -->
+        <section id="intro">
+            <div class="intro_image"></div>
+            <div class="intro-text">
+                <div class="intro-text-container">
+                    <h1>Dictators’ Handbook</h1>
+                    <h2>From political chess moves to untold secrets, we cover it all.</h2>
+                </div>
             </div>
+        </section>
+
+        <!-- About Section -->
+        <div class="about-container" id="About">
+            <section class="about-content">
+                <h2>About the Project</h2>
+                <p>
+                    MMMM is an innovative framework that combines the traditional appeal of magazines with 
+                    modern interactive mapping and rich metadata. Our platform allows readers to explore 
+                    content through geographic locations, discovering how stories connect across space 
+                    and time.
+                </p>
+                <p>
+                    Each issue focuses on specific themes, presenting carefully curated articles that are 
+                    enhanced with geographic references and interconnected through a sophisticated 
+                    metadata layer. Navigate through our collections using interactive maps, explore 
+                    relationships between articles, and discover new perspectives on fascinating topics.
+                </p>
+                <button class="round-button">
+                    <a class="element-with-dynamic-dots" href="#" target="_blank">
+                        Read the Documentation
+                    </a>
+                </button>                    
+            </section>
         </div>
-    </div>
+
+        <!-- Design Themes Section -->
+        <section class="themes-section" id="themes">
+            <div class="themes-container">
+                <h2 class="section-title">Customize Your Magazine</h2>
+                <p class="section-description">
+                    We created several design of our magazine for you. Choose a style below....
+                </p>
+                <div class="card-container">
+                    <div class="card-row">
+                        <!-- Russian Craft Gzhel -->
+                        <div class="theme-card">
+                            <img src="#" alt="Russian Craft Gzhel">
+                            <h3>Russian Craft Gzhel</h3>
+                            <p>Inspired by Russian Craft Gzhel and old slavic manuscripts</p>
+                            <button onclick="switchStyle('gzhel.css')">Apply</button>
+                        </div>
+        
+                        <!-- Suprematizm Theme -->
+                        <div class="theme-card">
+                            <img src="#" alt="Suprematizm Theme">
+                            <h3>Suprematizm</h3>
+                            <p>Suprematism was a Russian avant-garde art movement founded in the early 20th century, emphasizing geometric forms and pure abstraction.</p>
+                            <button onclick="switchStyle('suprematism.css')">Apply</button>
+                        </div>
+                    </div>
+        
+                    <div class="card-row">
+                        <!-- 3rd Theme -->
+                        <div class="theme-card">
+                            <img src="#" alt="3rd Theme">
+                            <h3>3rd Theme</h3>
+                            <p>ghdfhfgh</p>
+                            <button onclick="switchStyle('#')">Apply</button>
+                        </div>
+        
+                        <!-- 4th Theme -->
+                        <div class="theme-card">
+                            <img src="#" alt="4th Theme">
+                            <h3>4th Theme</h3>
+                            <p>gfxfgxf</p>
+                            <button onclick="switchStyle('#')">Apply</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Issues Section -->
+        <section class="issues-section" id="issueList">
+            <div class="issues-container">
+                <h2 class="section-title">Read the Next Issue</h2>
+        
+                <div class="card-container">
+                    <div class="issue-card">
+                        <img src="/Issues/1/img/stalin.png" alt="Stalin Issue">
+                        <h3>Stalin Issue</h3>
+                        <button class="check-out-btn" onclick="window.open(
+                            '/Issues/1/last_days_of_soviet_dictator.html', '_blank')">
+                            Check Out
+                        </button>
+                    </div>
+        
+                    <div class="issue-card">
+                        <img src="/Issues/2/img/mao.png" alt="Mao Issue">
+                        <h3>Mao Issue</h3>
+                        <button class="check-out-btn" onclick="window.open(
+                            '/Issues/2/house-of-mao.html', '_blank')">
+                            Check Out
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Map Section -->
+        <section class="section-map" id="map_intro">
+            <div class="plp-column slider">
+                <div class="plp-row center">
+                    <h2>Our Universe</h2>
+                </div>
+                <div class="placeholder-map">
+                    <div class="map" id="map"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
     <!-- Adding the footer -->
     <div id="footer-placeholder"></div>
+    
     <!-- Bootstrap JS Bundle -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
 </body>
