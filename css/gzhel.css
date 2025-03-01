@@ -99,7 +99,9 @@ body.home a {
 }
 
 main.home {
-  width: 70vw;
+  width: calc(100vw - 18% - 2rem); /* Subtract the width of the menu and some padding */
+  margin-left: 18%; /* Shift content to the right so it does not overlap the menu */
+  padding: 1rem; /* Add padding */
 }
 
 .container-fluid {
@@ -116,8 +118,16 @@ section {
 nav.navbar {
   font-size: 0.8rem;
   background-color: transparent !important;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding: 1rem;
+  position: fixed;
+  top: 20px;
+  left: 0;
+  height: 100%;
+  width: 18%;
+  z-index: 1;
+  overflow-y: auto;
+  margin-left: 0;
+
 }
 
 .navbar-brand {
