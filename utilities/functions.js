@@ -40,14 +40,17 @@ document.addEventListener("DOMContentLoaded", function() {
     })
     .then(html => {
       document.getElementById('header-placeholder').innerHTML = html;
-      // Inizialize Bootstrap dropdown for element with dynamic loading:
+      // Initialize Bootstrap dropdowns after header load
       var dropdownElements = [].slice.call(document.querySelectorAll('.dropdown-toggle'));
       dropdownElements.forEach(function(el) {
         new bootstrap.Dropdown(el);
       });
+
+      // Reinitialize submenu event listeners after header is loaded
+      initializeSubmenuListeners();
     })
     .catch(error => console.error('Error:', error));
-  
+
   // Load footer.html
   fetch('/components/footer.html')
     .then(response => {
@@ -62,38 +65,56 @@ document.addEventListener("DOMContentLoaded", function() {
     .catch(error => console.error('Error:', error));
 });
 
-// Delegated event listeners for dropdown submenus 
-document.addEventListener('mouseover', function(event) {
-  const submenuElement = event.target.closest('.dropdown-submenu');
-  if (submenuElement) {
-    const submenuDropdown = submenuElement.querySelector('.submenu');
-    if (submenuDropdown) {
-      submenuDropdown.style.display = 'block';
-    }
-  }
-});
+// Function to initialize submenu hover and click behavior
+function initializeSubmenuListeners() {
+  document.querySelectorAll('.dropdown-submenu .dropdown-toggle').forEach(function(el) {
+    el.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      let submenu = this.nextElementSibling;
+      if (submenu) {
+        submenu.classList.toggle('show');
+      }
+    });
+  });
 
-document.addEventListener('mouseout', function(event) {
-  const submenuElement = event.target.closest('.dropdown-submenu');
-  if (submenuElement) {
-    const submenuDropdown = submenuElement.querySelector('.submenu');
-    if (submenuDropdown) {
-      submenuDropdown.style.display = 'none';
-    }
-  }
-});
+  document.addEventListener('click', function(e) {
+    document.querySelectorAll('.dropdown-submenu .dropdown-menu').forEach(function(submenu) {
+      if (!submenu.contains(e.target)) {
+        submenu.classList.remove('show');
+      }
+    });
+  });
+
+  // Hover support
+  document.querySelectorAll('.dropdown-submenu').forEach(function(submenu) {
+    submenu.addEventListener('mouseenter', function() {
+      let dropdownMenu = this.querySelector('.submenu');
+      if (dropdownMenu) {
+        dropdownMenu.style.display = 'block';
+      }
+    });
+
+    submenu.addEventListener('mouseleave', function() {
+      let dropdownMenu = this.querySelector('.submenu');
+      if (dropdownMenu) {
+        dropdownMenu.style.display = 'none';
+      }
+    });
+  });
+}
+
+// Call submenu listener function after DOM is loaded
+document.addEventListener("DOMContentLoaded", initializeSubmenuListeners);
 
 // Delegated click event for design switching
 document.addEventListener('click', function(event) {
-  // Checking click for .dropdown-item
   const target = event.target;
   if (target.matches('.dropdown-item') && target.hasAttribute('data-style')) {
-    event.preventDefault(); // Prevent href
+    event.preventDefault(); // Prevent href navigation
     const stylePath = target.getAttribute('data-style');
     if (stylePath) {
       switchStyle(stylePath);
     }
   }
 });
-
-
