@@ -71,7 +71,7 @@ body.home {
   margin: 0;
   padding: 0;
   color: #333333;
-  font-family: 'Blagovest', 'A_la_russ', serif;
+  font-family: 'balkara', 'A_la_russ', serif;
   letter-spacing: 0.1em;
   display: flex;
   flex-direction: column;
@@ -146,12 +146,12 @@ nav.navbar {
   padding: 0;
   border-radius: 0 !important;
   background-color: #f5f7fc;
-  background-image: url("/images/ghzel/porcelain.avif");
+  background-image: url("/images/ghzel/white_paper.jpg");
 }
 
 .dropdown-item:hover {
   background-color: #f5f7fc;
-  background-image: url("/images/ghzel/porcelain.avif");
+  background-image: url("/images/ghzel/white_paper.jpg");
   font-weight: bold;
 }
 
@@ -189,7 +189,7 @@ nav.navbar {
 }
 
 .intro-text-container > h1 {
-  font-family: 'Blagovest', serif;
+  font-family: 'balkara', serif;
   font-weight: 100;
   text-transform: uppercase;
   font-size: 6rem;
