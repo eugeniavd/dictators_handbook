@@ -21,7 +21,7 @@
   margin: 0;
   padding: 0 0.5rem;
   color: #333333;
-  font-family: 'Blagovest', 'A_la_russ', serif;
+  font-family: 'balkara', 'A_la_russ', serif;
   letter-spacing: 0.2em;
   display: flex;
   flex: 1;
@@ -36,7 +36,7 @@ body.article {
   margin: 0;
   padding: 0 0,5rem;
   color: #333333;
-  font-family: 'Blagovest', 'A_la_russ', serif;
+  font-family: 'balkara', 'A_la_russ', serif;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 8% 92%;
@@ -47,8 +47,8 @@ body.article {
 
 /* Title font */
 @font-face {
-    font-family: 'Blagovest';
-    src: url('/fonts/Blagovest.ttf') format('truetype');
+    font-family: 'balkara';
+    src: url('/fonts/balkara.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
   }
