@@ -178,7 +178,7 @@ nav.navbar {
 
 .intro_image {
   height: 50vh;
-  width: 70vw;
+  width: 100vw;
   background: url('/images/ghzel/top.png') no-repeat center center;
   background-size: contain;
 }
