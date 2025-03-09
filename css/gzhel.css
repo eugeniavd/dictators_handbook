@@ -120,9 +120,9 @@ nav.navbar {
   background-color: transparent !important;
   padding: 1rem;
   position: fixed;
-  top: 10px;
-  left: 20px;
-  height: 100%;
+  top: 0;
+  left: 0;
+  height: 100vh;
   width: 18%;
   z-index: 10;
   overflow-y: auto;
@@ -138,8 +138,10 @@ nav.navbar {
   cursor: pointer;
 }
 
-.dropdown-menu li {
-  position: relative;
+.dropdown-menu {
+  display: block !important;
+  max-height: 100vh; /* Чтобы меню не обрезалось */
+  overflow-y: auto;
 }
 
 .dropdown-menu .dropdown-submenu {
@@ -215,7 +217,7 @@ nav.navbar {
 
 .intro-text-container > h2 {
   font-family: 'A_la_russ', serif;
-  font-size: 3vw;
+  font-size: 2vw;
   text-transform: uppercase;
   letter-spacing: 0.5rem;
   margin-right: -1rem;
