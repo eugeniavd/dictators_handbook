@@ -174,11 +174,13 @@ nav.navbar {
   justify-content: space-between;
   text-align: center;
   padding: 5vh 0;
+  margin-left: 18%; 
+  width: 82vw;
 }
 
 .intro_image {
   height: 70vh;
-  width: 100vw;
+  width: 100%;
   background: url('/images/ghzel/top.png') no-repeat center center;
   background-size: contain;
 }
@@ -202,11 +204,10 @@ nav.navbar {
 }
 
 .intro-text-container > h1 {
-  font-size: 5vw;
   font-family: 'balkara', serif;
   font-weight: 100;
   text-transform: uppercase;
-  font-size: 6rem;
+  font-size: 4rem;
   letter-spacing: 1rem;
   margin-right: -1rem;
   margin-top: 20px;
@@ -214,7 +215,7 @@ nav.navbar {
 
 .intro-text-container > h2 {
   font-family: 'A_la_russ', serif;
-  font-size: 2vw;
+  font-size: 3vw;
   text-transform: uppercase;
   letter-spacing: 0.5rem;
   margin-right: -1rem;
