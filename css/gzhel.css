@@ -100,8 +100,8 @@ body.home a {
 }
 
 main.home {
-  width: calc(100vw - 18% - 2rem); /* Subtract the width of the menu and some padding */
-  margin-left: 18%; /* Shift content to the right so it does not overlap the menu */
+  width: calc(100vw - 15% - 2rem); /* Subtract the width of the menu and some padding */
+  margin-left: 15%; /* Shift content to the right so it does not overlap the menu */
   padding: 1rem; /* Add padding */
   overflow-x: hidden;
 }
@@ -121,13 +121,13 @@ section {
 nav.navbar {
   font-size: 0.9rem;
   background-color: transparent !important;
-  padding: 0.5rem 0;
+  padding: 1rem 0;
   position: fixed;
   top: 0;
   left: 0;
   height: 100vh;
-  width: 18%;
-  z-index: 10;
+  width: 15%;
+  z-index: 1000;
   overflow-y: auto;
   margin-left: 0;
   display: flex;
@@ -158,12 +158,13 @@ nav.navbar {
 
 .nav-item > a {
   display: block; 
-  padding: 0.8rem 0;
+  padding: 0.8rem 1rem;
   width: 100%;
   text-align: left;
   color: #0055CC;
   text-decoration: none;
   font-weight: bold;
+  white-space: nowrap;
 }
 
 .nav-item > a:hover {
@@ -176,6 +177,14 @@ nav.navbar {
   position: relative;
   width: 100%;
   padding-left: 1rem;
+}
+
+.nav-item:hover .dropdown-menu {
+  display: block; 
+}
+
+.dropdown-submenu {
+  width: 100%;
 }
 
 .dropdown-menu .dropdown-item {
