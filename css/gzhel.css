@@ -78,6 +78,7 @@ body.home {
   align-items: center;
 
   box-shadow: inset 0px 0px 80px 0px #929fb4;
+  overflow-x: hidden;
 }
 
 body.home p {
@@ -102,11 +103,13 @@ main.home {
   width: calc(100vw - 18% - 2rem); /* Subtract the width of the menu and some padding */
   margin-left: 18%; /* Shift content to the right so it does not overlap the menu */
   padding: 1rem; /* Add padding */
+  overflow-x: hidden;
 }
 
 .container-fluid {
   display: flex;
   justify-content: flex-start;
+  width: 100%;
 }
 
 section {
@@ -224,6 +227,7 @@ nav.navbar {
   margin-right: -1rem;
   margin-top: 5px;
   text-align: center;
+  padding-bottom: 2rem;
 }
 
 
