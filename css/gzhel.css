@@ -119,9 +119,9 @@ section {
 }
 
 nav.navbar {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   background-color: transparent !important;
-  padding: 1rem 0;
+  padding: 0.8rem 0;
   position: fixed;
   top: 0;
   left: 0;
@@ -140,7 +140,7 @@ nav.navbar {
   display: flex !important;
   flex-direction: column !important; 
   width: 100%;
-  padding-left: 1rem;
+  padding-left: 0.5rem;
 }
 
 .navbar-brand {
@@ -165,7 +165,7 @@ nav.navbar {
 
 .nav-item > a {
   display: block !important; 
-  padding: 0.8rem 1rem;
+  padding: 0.6rem 0.8rem;
   width: 100%;
   text-align: left;
   color: #0055CC;
@@ -182,7 +182,7 @@ nav.navbar {
   display: none;
   position: relative;
   width: 100%;
-  padding-left: 1rem;
+  padding-left: 0.5rem;
 }
 
 .nav-item:hover .dropdown-menu {
@@ -190,11 +190,33 @@ nav.navbar {
 }
 
 .dropdown-submenu {
+  position: relative;
+  display: block;
   width: 100%;
 }
 
 .dropdown-menu .dropdown-item {
   padding-left: 1.5rem; 
+}
+
+.dropdown-menu .submenu {
+  display: none;
+  position: absolute;
+  left: 100%; 
+  top: 0;
+  min-width: 12rem; 
+  background-color: #f5f7fc;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 0.3rem 0;
+}
+
+.dropdown-menu .dropdown-item {
+  padding: 0.4rem 0.8rem; 
+  font-size: 0.75rem; 
+}
+
+.nav-item > a:hover, .dropdown-item:hover {
+  background-color: rgba(0, 85, 204, 0.1);
 }
 
 #intro {
