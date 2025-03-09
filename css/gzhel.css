@@ -136,6 +136,13 @@ nav.navbar {
 
 }
 
+.navbar-nav {
+  display: flex !important;
+  flex-direction: column !important; 
+  width: 100%;
+  padding-left: 1rem;
+}
+
 .navbar-brand {
   display: none;
 }
@@ -157,14 +164,13 @@ nav.navbar {
 }
 
 .nav-item > a {
-  display: block; 
+  display: block !important; 
   padding: 0.8rem 1rem;
   width: 100%;
   text-align: left;
   color: #0055CC;
   text-decoration: none;
   font-weight: bold;
-  white-space: nowrap;
 }
 
 .nav-item > a:hover {
