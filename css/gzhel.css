@@ -177,10 +177,10 @@ nav.navbar {
 }
 
 .intro_image {
-  max-height: 50vh;
+  height: 50vh;
   width: 70vw;
   background: url('/images/ghzel/top.png') no-repeat center center;
-  object-fit: contain;
+  background-size: contain;
 }
 
 .intro-text {
@@ -214,7 +214,7 @@ nav.navbar {
 
 .intro-text-container > h2 {
   font-family: 'A_la_russ', serif;
-  font-size: 1.5vw;
+  font-size: 2vw;
   text-transform: uppercase;
   letter-spacing: 0.5rem;
   margin-right: -1rem;
