@@ -100,8 +100,8 @@ body.home a {
 }
 
 main.home {
-  width: calc(100vw - 10% - 1rem); /* Subtract the width of the menu and some padding */
-  margin-left: 10%; /* Shift content to the right so it does not overlap the menu */
+  width: calc(100vw - 5% - 1rem); /* Subtract the width of the menu and some padding */
+  margin-left: 5%; /* Shift content to the right so it does not overlap the menu */
   padding: 1rem; /* Add padding */
   overflow-x: hidden;
 }
@@ -126,7 +126,7 @@ nav.navbar {
   top: 0;
   left: 0;
   height: 100vh;
-  width: 15%;
+  width: 5%;
   z-index: 1000;
   overflow-y: auto;
   display: flex;
