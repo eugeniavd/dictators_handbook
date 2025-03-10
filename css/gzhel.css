@@ -71,8 +71,8 @@ body.home a {
 }
 
 main.home {
-  width: calc(100vw - 7% - 1rem); /* Subtract the width of the menu and some padding */
-  margin-left: 7%; /* Shift content to the right so it does not overlap the menu */
+  width: calc(100vw - 10% - 1rem); /* Subtract the width of the menu and some padding */
+  margin-left: 10%; /* Shift content to the right so it does not overlap the menu */
   padding: 1rem; /* Add padding */
   overflow-x: hidden;
 }
@@ -87,6 +87,76 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.intro {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  padding-top:  1vh;
+  margin-left: 2%; 
+  width: 100vw;
+}
+
+.intro_image {
+  height: 100vh;
+  width: 100%;
+  background: url('/images/ghzel/top.png') no-repeat center center;
+  background-size: contain;
+  margin-top: 0; 
+}
+
+.intro-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  padding-top: 1rem;
+}
+
+.intro-text-container {
+  max-width: 90vw;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  word-wrap: break-word; 
+  overflow-wrap: break-word;
+}
+
+.intro-text-container > h1 {
+  font-family: 'A_la_russ', serif;
+  font-weight: 100;
+  text-transform: uppercase;
+  font-size: 4.5rem;
+  letter-spacing: 0.1rem;
+  margin-top: 5px; 
+  max-width: 90%;
+}
+
+.intro-text-container > h2 {
+  font-family: 'balkara', serif;
+  font-size: 1.5vw;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  margin-right: -0.5rem;
+  margin-top: 5px;
+  text-align: center;
+  padding-bottom: 2rem;
+}
+
+
+.intro-text-container > p::first-letter {
+  all: unset;
+  font-size: 1.5rem !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  float: none !important;
 }
 
 nav.navbar {
@@ -181,76 +251,6 @@ nav.navbar {
 
 .nav-item > a:hover, .dropdown-item:hover {
   background-color: rgba(0, 85, 204, 0.1);
-}
-
-#intro {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  text-align: center;
-  padding-top:  1vh;
-  margin-left: 2%; 
-  width: 100vw;
-}
-
-.intro_image {
-  height: 100vh;
-  width: 100%;
-  background: url('/images/ghzel/top.png') no-repeat center center;
-  background-size: contain;
-  margin-top: 0; 
-}
-
-.intro-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  width: 100%;
-  padding-top: 1rem;
-}
-
-.intro-text-container {
-  max-width: 90vw;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  word-wrap: break-word; 
-  overflow-wrap: break-word;
-}
-
-.intro-text-container > h1 {
-  font-family: 'A_la_russ', serif;
-  font-weight: 100;
-  text-transform: uppercase;
-  font-size: 4.5rem;
-  letter-spacing: 0.1rem;
-  margin-top: 5px; 
-  max-width: 90%;
-}
-
-.intro-text-container > h2 {
-  font-family: 'balkara', serif;
-  font-size: 1.5vw;
-  text-transform: uppercase;
-  letter-spacing: 0.2rem;
-  margin-right: -0.5rem;
-  margin-top: 5px;
-  text-align: center;
-  padding-bottom: 2rem;
-}
-
-
-.intro-text-container > p::first-letter {
-  all: unset;
-  font-size: 1.5rem !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  float: none !important;
 }
 
 .card-container {
