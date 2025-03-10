@@ -225,7 +225,7 @@ nav.navbar {
 }
 
 .intro_image {
-  height: 80vh;
+  height: 90vh;
   width: 100%;
   background: url('/images/ghzel/top.png') no-repeat center center;
   background-size: contain;
@@ -243,7 +243,7 @@ nav.navbar {
 }
 
 .intro-text-container {
-  max-width: 60vw;
+  max-width: 70vw;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -255,7 +255,7 @@ nav.navbar {
   font-weight: 100;
   text-transform: uppercase;
   font-size: 4.5rem;
-  letter-spacing: 1rem;
+  letter-spacing: 0.3rem;
   margin-top: 5px; 
   max-width: 90%;
 }
