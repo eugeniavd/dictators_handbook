@@ -1,3 +1,40 @@
+:root {
+    --page-height: 100vh;  /* Height equals 100% of the viewport height */
+    --page-width: 50vw;    /* Width equals 50% of the viewport width */
+    --double-page-padding: 10vw; /* Inner padding */
+  }
+
+
+
+.loading {
+    background-color: #f5f7fc;
+    margin: 0;
+    padding: 0 0.5rem;
+    color: #333333;
+    font-family: 'balkara', 'A_la_russ', serif;
+    letter-spacing: 0.2em;
+    display: flex;
+    flex: 1;
+    overflow-x: hidden;
+    height: 100%;
+    width: 100%;
+  }
+  
+  
+  body.article {
+    background-color: #f5f7fc;
+    margin: 0;
+    padding: 0 0,5rem;
+    color: #333333;
+    font-family: 'balkara', 'A_la_russ', serif;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 8% 92%;
+    grid-template-columns: 8% 92%;
+    overflow-x: hidden;
+    transition: 0.3s;
+  }
+
 /* Header */
 
 .header-container {
