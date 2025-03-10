@@ -121,7 +121,7 @@ document.addEventListener('click', function(event) {
 
 
 document.addEventListener("DOMContentLoaded", function () {
-  const menuToggle = document.querySelector(".custom-menu-icon");
+  const menuToggle = document.querySelector(".navbar-toggler");
   const navbar = document.querySelector(".navbar");
 
   menuToggle.addEventListener("click", function () {

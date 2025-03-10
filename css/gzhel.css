@@ -181,12 +181,12 @@ section {
 }
 
 .custom-menu-icon {
-  width: 50px; 
+  width: 60px; 
   height: auto;
   transition: opacity 0.3s;
 }
 
-.custom-toggler:hover .custom-menu-icon {
+.navbar-toggler:hover .custom-menu-icon {
   opacity: 0.7;
 }
 
