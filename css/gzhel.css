@@ -6,7 +6,7 @@
 
 :root {
   --page-height: 100vh;  
-  --page-width: 80vw;   
+  --page-width: 90vw;   
   --double-page-padding: 10vw; 
 }
 
@@ -18,16 +18,16 @@
 
 /* Title font */
 @font-face {
-    font-family: 'balkara';
-    src: url('/fonts/balkara.ttf') format('truetype');
+    font-family: 'A_la_russ';
+    src: url('/fonts/A_la_russ.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
   }
 
   /* Text font */
 @font-face {
-  font-family: 'A_la_russ';
-  src: url('/fonts/A_la_russ.ttf') format('truetype');
+  font-family: 'balkara';
+  src: url('/fonts/balkara.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
