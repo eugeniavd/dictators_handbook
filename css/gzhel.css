@@ -220,12 +220,12 @@ nav.navbar {
   justify-content: flex-start;
   text-align: center;
   padding-top:  1vh;
-  margin-left: 10%; 
+  margin-left: 5%; 
   width: 90vw;
 }
 
 .intro_image {
-  height: 75vh;
+  height: 80vh;
   width: 100%;
   background: url('/images/ghzel/top.png') no-repeat center center;
   background-size: contain;
