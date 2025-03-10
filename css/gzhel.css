@@ -243,7 +243,7 @@ nav.navbar {
 }
 
 .intro-text-container {
-  max-width: 70vw;
+  max-width: 90vw;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -251,7 +251,7 @@ nav.navbar {
 }
 
 .intro-text-container > h1 {
-  font-family: 'A_la_russ' serif;
+  font-family: 'A_la_russ', serif;
   font-weight: 100;
   text-transform: uppercase;
   font-size: 4.5rem;
@@ -262,9 +262,9 @@ nav.navbar {
 
 .intro-text-container > h2 {
   font-family: 'balkara', serif;
-  font-size: 2.5vw;
+  font-size: 1.5vw;
   text-transform: uppercase;
-  letter-spacing: 0.5rem;
+  letter-spacing: 0.3rem;
   margin-right: -0.5rem;
   margin-top: 5px;
   text-align: center;
