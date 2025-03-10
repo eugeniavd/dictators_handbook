@@ -100,8 +100,8 @@ body.home a {
 }
 
 main.home {
-  width: calc(100vw - 15% - 2rem); /* Subtract the width of the menu and some padding */
-  margin-left: 15%; /* Shift content to the right so it does not overlap the menu */
+  width: calc(100vw - 10% - 1rem); /* Subtract the width of the menu and some padding */
+  margin-left: 10%; /* Shift content to the right so it does not overlap the menu */
   padding: 1rem; /* Add padding */
   overflow-x: hidden;
 }
@@ -226,7 +226,7 @@ nav.navbar {
 
 .intro_image {
   height: 75vh;
-  width: 95%;
+  width: 100%;
   background: url('/images/ghzel/top.png') no-repeat center center;
   background-size: contain;
   margin-top: 0; 
