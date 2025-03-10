@@ -219,6 +219,8 @@ nav.navbar {
   display: flex;
   flex-direction: column;
   align-items: center;
+  word-wrap: break-word; 
+  overflow-wrap: break-word;
 }
 
 .intro-text-container > h1 {
