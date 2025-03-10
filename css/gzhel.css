@@ -220,13 +220,13 @@ nav.navbar {
   justify-content: flex-start;
   text-align: center;
   padding-top:  1vh;
-  margin-left: 18%; 
-  width: 82vw;
+  margin-left: 10%; 
+  width: 90vw;
 }
 
 .intro_image {
-  height: 70vh;
-  width: 90%;
+  height: 75vh;
+  width: 95%;
   background: url('/images/ghzel/top.png') no-repeat center center;
   background-size: contain;
   margin-top: 0; 
@@ -243,7 +243,7 @@ nav.navbar {
 }
 
 .intro-text-container {
-  max-width: 50vw;
+  max-width: 60vw;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -254,18 +254,18 @@ nav.navbar {
   font-family: 'balkara', serif;
   font-weight: 100;
   text-transform: uppercase;
-  font-size: 4rem;
+  font-size: 4.5rem;
   letter-spacing: 1rem;
   margin-top: 5px; 
-  max-width: 80%;
+  max-width: 90%;
 }
 
 .intro-text-container > h2 {
   font-family: 'A_la_russ', serif;
-  font-size: 2vw;
+  font-size: 2.5vw;
   text-transform: uppercase;
   letter-spacing: 0.5rem;
-  margin-right: -1rem;
+  margin-right: -0.5rem;
   margin-top: 5px;
   text-align: center;
   padding-bottom: 2rem;
