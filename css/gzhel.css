@@ -102,7 +102,7 @@ section {
 }
 
 .intro_image {
-  height: 90vh;
+  height: 80%;
   width: 90%;
   background: url('/images/ghzel/top.png') no-repeat center center;
   background-size: contain;
