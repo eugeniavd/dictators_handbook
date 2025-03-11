@@ -1,15 +1,14 @@
 <!-- header.html -->
 <header>
-  <!-- Navigation -->
-  <nav id="side-menu" class="side-navbar">
-    <ul class="navbar-nav">
-    <div class="container-fluid">
-      <button id="menu-toggle" class="navbar-toggler">
-        <img src="/images/ghzel/men_1.png" alt="Menu" class="custom-menu-icon">
-    </button>
+  <!-- Кнопка меню (вынесена из nav) -->
+  <button id="menu-toggle" class="navbar-toggler">
+      <img src="/images/ghzel/men_1.png" alt="Menu" class="custom-menu-icon">
+  </button>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mb-2 mb-lg-0">
+  <!-- Боковое меню -->
+  <nav id="side-menu" class="side-navbar">
+    <div class="container-fluid">
+      <ul class="navbar-nav mb-2 mb-lg-0">
           
           <!-- Issues dropdown -->
           <li class="nav-item dropdown">
@@ -38,55 +37,35 @@
                     </ul>
                 </li>
             </ul>
-        </li>
+          </li>
 
           <!-- About -->
-          <li class="nav-item">
-            <a class="nav-link" href="#About">About</a>
-          </li>
-          
+          <li class="nav-item"><a class="nav-link" href="#About">About</a></li>
+
           <!-- Documentation -->
-          <li class="nav-item">
-            <a class="nav-link" href="#" target="_blank">Documentation</a>
-          </li>
-          
+          <li class="nav-item"><a class="nav-link" href="#" target="_blank">Documentation</a></li>
+
           <!-- Change Design dropdown -->
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="styleDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Change Design
+                Change Design
             </a>
             <ul class="dropdown-menu" aria-labelledby="styleDropdown">
-              <li>
-                <a class="dropdown-item" href="#" data-style="/css/gzhel.css">Old Russian Gzhel</a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="#" data-style="/css/suprematism.css">Suprematism</a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="#" data-style="/css/design3.css">Design 3</a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="#" data-style="/css/design4.css">Design 4</a>
-              </li>
+              <li><a class="dropdown-item" href="#" data-style="/css/gzhel.css">Old Russian Gzhel</a></li>
+              <li><a class="dropdown-item" href="#" data-style="/css/suprematism.css">Suprematism</a></li>
+              <li><a class="dropdown-item" href="#" data-style="/css/design3.css">Design 3</a></li>
+              <li><a class="dropdown-item" href="#" data-style="/css/design4.css">Design 4</a></li>
             </ul>
           </li>
 
           <!-- Disclaimer -->
-          <li class="nav-item">
-            <a class="nav-link" id="disclaimer-button">Disclaimer</a>
-          </li>
+          <li class="nav-item"><a class="nav-link" id="disclaimer-button">Disclaimer</a></li>
 
           <!-- Map -->
-          <li class="nav-item">
-            <a class="nav-link" href="#map_intro">Explore the map</a>
-          </li>
-        
-        </ul>
-      </div>
+          <li class="nav-item"><a class="nav-link" href="#map_intro">Explore the map</a></li>
+
+      </ul>
     </div>
-  </ul>
   </nav>
 </header>
 
-
-    

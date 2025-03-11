@@ -120,19 +120,25 @@ document.addEventListener('click', function(event) {
 });
 
 
-document.addEventListener("DOMContentLoaded", function () {
-  const toggler = document.querySelector("menu-toggle");
-  const navbar = document.querySelector("side-menu");
+document.addEventListener("DOMContentLoaded", function() {
+  const toggler = document.getElementById("menu-toggle");
+  const navbar = document.getElementById("side-menu");
+  const overlay = document.createElement("div");
+  overlay.classList.add("menu-overlay");
+  document.body.appendChild(overlay);
 
-  toggler.addEventListener("click", function (event) {
-    navbar.classList.toggle("open"); // Open / close menu
-    event.stopPropagation();
+  toggler.addEventListener("click", function(event) {
+      navbar.classList.toggle("open");
+      overlay.classList.toggle("active");
+      event.stopPropagation(); 
   });
 
-  // Close menu with click outside of it
-  document.addEventListener("click", function (event) {
-    if (!navbar.contains(event.target) && !toggler.contains(event.target)) {
-      navbar.classList.remove("open");
-    }
+
+  document.addEventListener("click", function(event) {
+      if (!navbar.contains(event.target) && !toggler.contains(event.target)) {
+          navbar.classList.remove("open");
+          overlay.classList.remove("active");
+      }
   });
 });
+

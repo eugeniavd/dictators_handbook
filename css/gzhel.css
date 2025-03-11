@@ -178,6 +178,12 @@ section {
   outline: none; 
 }
 
+@media (max-width: 768px) {
+  .custom-menu-icon {
+      width: 60px; 
+  }
+}
+
 .navbar-toggler:hover .custom-menu-icon {
   opacity: 0.7;
 }
@@ -185,7 +191,7 @@ section {
 .side-navbar {
   position: fixed;
   top: 0;
-  left: -250px; /* Меню скрыто */
+  left: -250px; 
   width: 250px;
   height: 100vh;
   background-color: white;
@@ -200,6 +206,22 @@ section {
 
 .side-navbar.open {
   left: 0;
+  box-shadow: 5px 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.menu-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 999;
+}
+
+.menu-overlay.active {
+  display: block;
 }
 
 .nav-item > a {
@@ -237,11 +259,16 @@ section {
 
 .dropdown-submenu:hover > .dropdown-menu {
   display: block;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  min-width: 200px;
+  background: white;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Адаптация для мобильных */
 @media (max-width: 768px) {
-  .navbar {
+  .side-navbar {
       width: 60%;
   }
 }
