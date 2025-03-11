@@ -119,26 +119,3 @@ document.addEventListener('click', function(event) {
   }
 });
 
-
-document.addEventListener("DOMContentLoaded", function() {
-  const toggler = document.getElementById("menu-toggle");
-  const navbar = document.getElementById("side-menu");
-  const overlay = document.createElement("div");
-  overlay.classList.add("menu-overlay");
-  document.body.appendChild(overlay);
-
-  toggler.addEventListener("click", function(event) {
-      navbar.classList.toggle("open");
-      overlay.classList.toggle("active");
-      event.stopPropagation(); 
-  });
-
-
-  document.addEventListener("click", function(event) {
-      if (!navbar.contains(event.target) && !toggler.contains(event.target)) {
-          navbar.classList.remove("open");
-          overlay.classList.remove("active");
-      }
-  });
-});
-
