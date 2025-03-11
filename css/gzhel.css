@@ -71,8 +71,8 @@ body.home a {
 }
 
 main.home {
-  width: calc(100vw - 15% - 1rem); /* Subtract the width of the menu and some padding */
-  margin-left: 15%; /* Shift content to the right so it does not overlap the menu */
+  width: width: 100vw;
+  margin: 0 auto;
   padding: 1rem; /* Add padding */
   overflow-x: hidden;
 }
@@ -106,6 +106,8 @@ section {
   width: auto;
   background: url('/images/ghzel/top.png') no-repeat center center;
   background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
   margin-top: 0; 
 }
 
