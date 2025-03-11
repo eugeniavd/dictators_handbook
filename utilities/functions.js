@@ -122,16 +122,16 @@ document.addEventListener('click', function(event) {
 
 document.addEventListener("DOMContentLoaded", function () {
   const toggler = document.querySelector(".navbar-toggler");
-  const navbar = document.querySelector(".navbar");
+  const navbar = document.querySelector("#navbarSupportedContent");
 
   toggler.addEventListener("click", function () {
-    navbar.classList.toggle("open"); // Open / close menu
+    navbar.classList.toggle("show"); // Open / close menu
   });
 
   // Close menu with click outside of it
   document.addEventListener("click", function (event) {
     if (!navbar.contains(event.target) && !toggler.contains(event.target)) {
-      navbar.classList.remove("open");
+      navbar.classList.remove("show");
     }
   });
 });
