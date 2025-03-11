@@ -159,20 +159,19 @@ section {
 }
 
 .navbar-toggler {
-  position: fixed; 
+  position: fixed;
   top: 1rem;
   left: 1rem;
-  z-index: 1100; 
+  z-index: 1100;
   background: none;
   border: none;
   padding: 0;
   cursor: pointer;
-  display: block !important; 
+  display: block !important;
 }
 
 .custom-menu-icon {
   width: 90px; 
-  height: auto;
   transition: opacity 0.3s;
   border: none; 
   outline: none; 
@@ -206,7 +205,6 @@ section {
 
 .side-navbar.open {
   left: 0;
-  box-shadow: 5px 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .menu-overlay {
