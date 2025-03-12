@@ -71,7 +71,7 @@ body.home a {
 }
 
 main.home {
-  width: width: 100vw;
+  width: 100vw;
   margin: 0 auto;
   padding: 1rem; 
   overflow-x: hidden;
@@ -155,11 +155,11 @@ section {
 
 @media (max-width: 768px) {
   .intro_image {
-    height: 50vh; /* Меньше изображение на мобилках */
+    height: 50vh; 
   }
 
   .intro-text-container > h1 {
-    font-size: 3rem; /* Уменьшенный заголовок */
+    font-size: 3rem; 
   }
 
   .intro-text-container > h2 {
