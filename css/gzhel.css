@@ -103,7 +103,7 @@ section {
 
 .intro_image {
   height: 75vh;
-  width: 80;
+  width: 80vw;
   background: url('/images/ghzel/top.png') no-repeat center center;
   background-size: contain;
   margin-top: -2vh; 
