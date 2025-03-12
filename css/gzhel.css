@@ -70,11 +70,24 @@ body.home a {
   color: #003399;
 }
 
+body.home a:hover {
+  color: #0055CC; 
+}
+
 main.home {
   width: 100vw;
   margin: 0 auto;
   padding: 1rem; 
   overflow-x: hidden;
+}
+
+main.home h1, 
+main.home h2, 
+main.home h3, 
+main.home h4, 
+main.home h5, 
+main.home h6 {
+  color: #003399; 
 }
 
 .container-fluid {
@@ -138,7 +151,6 @@ section {
   letter-spacing: 0.1rem;
   margin-top: -1vh; 
   max-width: 90%;
-  color: #003399;
 }
 
 .intro-text-container > h2 {
@@ -150,7 +162,6 @@ section {
   margin-top: 0.5vh;
   text-align: center;
   padding-bottom: 1vh;
-  color: #003399;
 }
 
 @media (max-width: 768px) {
@@ -237,7 +248,6 @@ section {
 .nav-item > a {
   padding: 0.1rem 0.2rem; 
   text-align: left;
-  color: #0055CC;
   text-decoration: none;
   font-weight: bold;
   font-size: inherit;
