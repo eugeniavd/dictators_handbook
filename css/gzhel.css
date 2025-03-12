@@ -221,7 +221,10 @@ section {
   top: 0;
   left: 100%;
   display: none;
-  min-width: 200px;
+  min-width: 180px; 
+  padding: 0.2rem 0.5rem; 
+  margin-left: -5px; 
+  border: 1px solid #000; 
 }
 
 .dropdown-submenu:hover > .dropdown-menu {
@@ -229,7 +232,7 @@ section {
 }
 
 .nav-item > a {
-  padding: 0.6rem 0.8rem;
+  padding: 0.4rem 0.8rem;
   text-align: left;
   color: #0055CC;
   text-decoration: none;
