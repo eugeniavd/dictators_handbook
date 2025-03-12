@@ -202,9 +202,8 @@ section {
 
 .navbar-collapse {
   transition: all 0.3s ease-in-out;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0rem;
 }
-
 
 .dropdown-menu {
   background: white;
