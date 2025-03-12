@@ -90,7 +90,7 @@ section {
 }
 
 .intro {
-  height: 100vh;
+  height: 95vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -98,14 +98,15 @@ section {
   justify-content: flex-start;
   text-align: center;
   padding: 0 0;
+  margin-top: 3rem;
 }
 
 .intro_image {
-  height: 80vh;
-  width: 90vh;
+  height: 75vh;
+  width: auto;
   background: url('/images/ghzel/top.png') no-repeat center center;
   background-size: contain;
-  margin-top: 0; 
+  margin-top: -2vh; 
 }
 
 .intro-text {
@@ -116,7 +117,7 @@ section {
   text-align: center;
   width: 100%;
   padding-top: 0.5vh;
-  padding-bottom: 1.5vh;
+  padding-bottom: 0.5vh;
 }
 
 .intro-text-container {
@@ -145,22 +146,22 @@ section {
   text-transform: uppercase;
   letter-spacing: 0.2rem;
   margin-right: -0.5rem;
-  margin-top: 1vh;
+  margin-top: 0.5vh;
   text-align: center;
-  padding-bottom: 2vh;
+  padding-bottom: 1vh;
 }
 
 @media (max-width: 768px) {
   .intro_image {
-    height: 60vh; 
+    height: 40vh; 
   }
 
   .intro-text-container > h1 {
-    font-size: 3rem; 
+    font-size: 2.5rem; 
   }
 
   .intro-text-container > h2 {
-    font-size: 4vw;
+    font-size: 3vw;
   }
 }
 
@@ -185,7 +186,7 @@ section {
 
 .navbar-toggler {
   position: fixed; 
-  top: 1rem;
+  top: 0.8rem;
   left: 1rem;
   z-index: 1100; 
   background: none;
@@ -226,7 +227,6 @@ section {
   display: block;
 }
 
-/* Стили ссылок */
 .nav-item > a {
   padding: 0.6rem 0.8rem;
   text-align: left;
