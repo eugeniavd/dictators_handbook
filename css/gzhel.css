@@ -205,6 +205,8 @@ section {
 .navbar-collapse {
   transition: all 0.3s ease-in-out;
   margin-bottom: 0rem;
+  border: 2px dashed #0055CC; 
+  padding: 0.3rem 0.5rem; 
 }
 
 .dropdown-menu {
@@ -221,10 +223,11 @@ section {
   top: 0;
   left: 100%;
   display: none;
-  min-width: 180px; 
-  padding: 0.2rem 0.5rem; 
+  min-width: 160px; 
+  padding: 0.2rem 0.4rem; 
   margin-left: -5px; 
-  border: 1px solid #000; 
+  border: 2px dashed #0055CC; 
+  
 }
 
 .dropdown-submenu:hover > .dropdown-menu {
@@ -232,7 +235,7 @@ section {
 }
 
 .nav-item > a {
-  padding: 0.4rem 0.8rem;
+  padding: 0.3rem 0.6rem;
   text-align: left;
   color: #0055CC;
   text-decoration: none;
