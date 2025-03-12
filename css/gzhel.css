@@ -67,7 +67,7 @@ body.home p::first-letter {
 }
 
 body.home a {
-  color: #0055CC;
+  color: #003399;
 }
 
 main.home {
@@ -150,7 +150,7 @@ section {
   margin-top: 0.5vh;
   text-align: center;
   padding-bottom: 1vh;
-  color: #0047AB;
+  color: #003399;
 }
 
 @media (max-width: 768px) {
@@ -232,7 +232,7 @@ section {
 .nav-item > a {
   padding: 0.6rem 0.8rem;
   text-align: left;
-  color: #3b40d7;
+  color: #0055CC;
   text-decoration: none;
   font-weight: bold;
 }
