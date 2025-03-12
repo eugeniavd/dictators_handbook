@@ -103,7 +103,7 @@ section {
 
 .intro_image {
   height: 75vh;
-  width: auto;
+  width: 80;
   background: url('/images/ghzel/top.png') no-repeat center center;
   background-size: contain;
   margin-top: -2vh; 
@@ -153,7 +153,7 @@ section {
 
 @media (max-width: 768px) {
   .intro_image {
-    height: 40vh; 
+    height: 50vh; 
   }
 
   .intro-text-container > h1 {
