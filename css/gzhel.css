@@ -198,7 +198,6 @@ section {
   display: block !important; 
 }
 
-
 .navbar-toggler:hover .custom-menu-icon {
   opacity: 0.7;
 }
@@ -209,8 +208,8 @@ section {
 }
 
 .dropdown-menu {
-  background: white;
-  border-radius: 5px;
+  background-image: url("/images/ghzel/white_paper.jpg");
+  border-radius: 3px;
 }
 
 .dropdown-submenu {
@@ -238,12 +237,12 @@ section {
 }
 
 .nav-item > a:hover {
-  background-color: rgba(0, 85, 204, 0.1);
+  background-color: #0055cc1a;
 }
 
 @media (max-width: 768px) {
   .navbar {
-      width: 60%;
+      width: 70%;
   }
 }
 
