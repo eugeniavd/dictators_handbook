@@ -58,12 +58,15 @@ body.home p {
 }
 
 body.home p::first-letter {
-  font-size: 2rem;
-  line-height: 2.5rem;
+  font-size: 200%;
+  line-height: 1rem;
   float: left;
-  margin-right: 0.2rem;
-  margin-bottom: -1rem;
+  margin-right: 0.3rem;
+  margin-bottom: -0.7rem;
   padding-right: 0;
+  font-weight: bold; 
+  text-transform: uppercase; 
+  color: #003399;
 }
 
 body.home a {
