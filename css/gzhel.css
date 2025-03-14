@@ -40,7 +40,7 @@ body.home {
   background-size: cover;
   background-position: center;
   text-align: left !important;
-  text-align-last: left; 
+  text-align-last: left !important;
   word-spacing: normal; 
   margin: 0 auto;
   padding: 0;
