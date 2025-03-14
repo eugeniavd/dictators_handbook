@@ -278,20 +278,20 @@ section {
 
 .doc-button {
   margin-top: 30px;
-  width: 150px; 
+  width: 75px; 
   height: auto;  
   display: inline-block;
   cursor: pointer;  
   transition: transform 0.2s, opacity 0.2s; 
+  background: url('images/ghzel/flow_doc.png') no-repeat center;
+  background-size: contain;
+  border: none; 
+  outline: none;
 }
 
-.doc-button img {
-  width: 100%;
-  height: auto;
-}
 
 .doc-button:hover {
-  transform: scale(1.05); 
+  transform: scale(1.5); 
   opacity: 0.8; 
 }
 
