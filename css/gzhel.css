@@ -283,7 +283,7 @@ section {
   display: inline-block;
   cursor: pointer;  
   transition: transform 0.2s, opacity 0.2s; 
-  background: url('images/ghzel/flow_doc.png') no-repeat center;
+  background: url('/images/ghzel/flow_doc.png') no-repeat center;
   background-size: contain;
   border: none; 
   outline: none;
