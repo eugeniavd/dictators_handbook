@@ -39,6 +39,7 @@ body.home {
   background-image: url("/images/ghzel/white_paper.jpg");
   background-size: cover;
   background-position: center;
+  text-align: left;
   text-align-last: left; 
   word-spacing: normal; 
   margin: 0 auto;
