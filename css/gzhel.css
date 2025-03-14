@@ -47,7 +47,7 @@ body.home {
   color: #595757;
   font-family: 'balkara', 'A_la_russ', serif;
   text-transform: none;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.05em;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -267,6 +267,19 @@ section {
       width: 70%;
   }
 }
+
+.about-content h2 {
+  margin-bottom: 20px; 
+}
+
+.about-content p {
+  margin-bottom: 15px; 
+}
+
+.round-button {
+  margin-top: 30px; 
+}
+
 
 
 .card-container {
