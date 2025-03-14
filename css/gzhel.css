@@ -276,8 +276,28 @@ section {
   margin-bottom: 15px; 
 }
 
-.round-button {
-  margin-top: 30px; 
+.doc-button {
+  margin-top: 30px;
+  width: 150px; 
+  height: auto;  
+  display: inline-block;
+  cursor: pointer;  
+  transition: transform 0.2s, opacity 0.2s; 
+}
+
+.doc-button img {
+  width: 100%;
+  height: auto;
+}
+
+.doc-button:hover {
+  transform: scale(1.05); 
+  opacity: 0.8; 
+}
+
+.doc-button:active {
+  transform: scale(0.95); 
+  opacity: 0.6;
 }
 
 
