@@ -61,7 +61,7 @@ body.home p::first-letter {
   font-size: 300%;
   line-height: 1rem;
   float: left;
-  margin-right: 0.4rem;
+  margin-right: 0.3rem;
   margin-bottom: -0.6rem;
   padding-right: 0;
   text-transform: uppercase; 
