@@ -39,8 +39,8 @@ body.home {
   background-image: url("/images/ghzel/white_paper.jpg");
   background-size: cover;
   background-position: center;
-  text-align: left !important;
-  text-align-last: left !important;
+  text-align: justify;
+  text-align-last: left;
   word-spacing: normal; 
   margin: 0 auto;
   padding: 0;
@@ -56,10 +56,6 @@ body.home {
   overflow-x: hidden;
 }
 
-body.home p {
-  text-align: justify;
-  text-align-last: justify;
-}
 
 body.home p::first-letter {
   font-size: 300%;
