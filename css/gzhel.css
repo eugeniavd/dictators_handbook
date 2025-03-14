@@ -90,7 +90,7 @@ main.home h4,
 main.home h5, 
 main.home h6 {
   color: #003399;
-  text-shadow: 2px 2px 4px #00003380; 
+  text-shadow: 1px 1px 3px #0000334d;
 }
 
 .container-fluid {
