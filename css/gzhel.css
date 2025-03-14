@@ -43,7 +43,8 @@ body.home {
   padding: 0;
   color: #595757;
   font-family: 'balkara', 'A_la_russ', serif;
-  letter-spacing: 0.1em;
+  text-transform: none;
+  letter-spacing: 0.05em;
   display: flex;
   flex-direction: column;
   align-items: center;
