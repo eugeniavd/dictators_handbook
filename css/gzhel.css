@@ -39,7 +39,10 @@ body.home {
   background-image: url("/images/ghzel/white_paper.jpg");
   background-size: cover;
   background-position: center;
-  margin: 0;
+  text-align: justify;
+  text-align-last: left; 
+  word-spacing: normal; 
+  margin: 0 auto;
   padding: 0;
   color: #595757;
   font-family: 'balkara', 'A_la_russ', serif;
