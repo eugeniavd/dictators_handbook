@@ -399,7 +399,7 @@ button:active {
   display: block;
   margin: 0 auto; 
   border: none !important; 
-  box-shadow: none;
+  box-shadow: 8px 8px 20px #929fb4;
 }
 
 .text-left {
@@ -421,7 +421,7 @@ button:active {
   transition: transform 0.2s, opacity 0.2s;
   display: inline-block; 
   cursor: pointer;
-  min-width: 100px;
+  max-width: 60px;
 }
 
 .card button:hover {
