@@ -279,24 +279,30 @@ section {
 .doc-button {
   margin-top: 30px;
   display: inline-flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;  
   transition: transform 0.2s, opacity 0.2s; 
-  background: url('/images/ghzel/fl_doc_2.png') no-repeat center;
-  background-size: contain;
+  background-color: #3b40d9;
+  color: white;
+  font-size: 16px;
+  text-decoration: none;
   border: none; 
   outline: none;
-  padding: 0;
+  padding: 12px 24px;
+  border-radius: 50px;
+  white-space: nowrap;
+  min-width: 180px;
 }
 
-
 .doc-button:hover {
-  transform: scale(1.5); 
-  opacity: 0.8; 
+  transform: scale(1.05); 
+  opacity: 0.9; 
 }
 
 .doc-button:active {
   transform: scale(0.95); 
-  opacity: 0.6;
+  opacity: 0.7;
 }
 
 
