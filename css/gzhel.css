@@ -338,6 +338,17 @@ button:active {
   opacity: 0.8;
 }
 
+.themes-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.themes-container {
+  width: calc(100vw - 6cm); 
+  max-width: 1200px; 
+}
+
 .themes-header {
   margin-top: 2rem;
   padding-top: 1rem;
@@ -360,9 +371,8 @@ button:active {
   flex-wrap: wrap;
   justify-content: center;
   gap: 3rem;
-  margin: 2rem 0;
-  margin-top: 3rem; 
-  max-width: 90%;
+  margin: 2rem auto;
+  width: 100%;
 }
 
 .card-row {
@@ -398,6 +408,10 @@ button:active {
       flex-direction: column;
       text-align: center;
   }
+
+  .card {
+    width: 100%;
+}
 
   .text-left, .text-right {
       text-align: center;
