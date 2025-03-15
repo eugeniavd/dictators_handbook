@@ -39,12 +39,13 @@ body.home {
   background-image: url("/images/ghzel/white_paper.jpg");
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   text-align: justify;
   text-align-last: left;
   word-spacing: normal; 
   margin: 0 auto;
   padding: 0;
-  color: #595757;
+  color: #7d7979;
   font-family: 'balkara', 'A_la_russ', serif;
   text-transform: none;
   letter-spacing: 0.05em;
@@ -54,6 +55,7 @@ body.home {
 
   box-shadow: inset 0px 0px 80px 0px #929fb4;
   overflow-x: hidden;
+  min-height: 100vh;
 }
 
 
@@ -77,10 +79,16 @@ body.home a:hover {
 }
 
 main.home {
-  width: 100vw;
+  width: calc(100vw - 4cm);
   margin: 0 auto;
   padding: 1rem; 
   overflow-x: hidden;
+}
+
+@media (max-width: 768px) {
+  main.home {
+    width: calc(100vw - 2cm); 
+  }
 }
 
 main.home h1, 
@@ -266,6 +274,11 @@ section {
   .navbar {
       width: 70%;
   }
+}
+
+.about-content {
+  margin-bottom: 3rem; 
+  padding-bottom: 2rem; 
 }
 
 .about-content h2 {
