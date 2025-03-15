@@ -283,15 +283,20 @@ section {
   justify-content: center;
   cursor: pointer;  
   transition: transform 0.2s, opacity 0.2s; 
+
   background-color: transparent;
+  border-radius: 50px;
+  border: 2px solid #3b40d9;
+
   color: #3b40d9;
   font-size: 14px;
   text-decoration: none;
-  border: 2px solid #3b40d9;
+  text-align: center;
+  
   outline: none !important;
   box-shadow: none !important;
-  padding: 8px 20px;
-  border-radius: 50px;
+
+  padding: 10px 25px;
   white-space: nowrap;
   min-width: 160px;
 }
@@ -301,14 +306,6 @@ section {
   outline: none !important;
   box-shadow: none !important;
   border-color: #3b40d9 !important;
-}
-
-button.doc-button,
-a.doc-button {
-  all: unset;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .doc-button:hover {
