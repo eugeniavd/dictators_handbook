@@ -336,6 +336,10 @@ button:active {
   opacity: 0.8;
 }
 
+.themes-section h2 {
+  text-align: center; 
+  margin-bottom: 20px; 
+}
 
 
 
