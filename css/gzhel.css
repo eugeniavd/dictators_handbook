@@ -45,7 +45,7 @@ body.home {
   word-spacing: normal; 
   margin: 0 auto;
   padding: 0;
-  color: #7d7979;
+  color: #636060;
   font-family: 'balkara', 'A_la_russ', serif;
   text-transform: none;
   letter-spacing: 0.05em;
@@ -79,7 +79,7 @@ body.home a:hover {
 }
 
 main.home {
-  width: calc(100vw - 4cm);
+  width: calc(100vw - 6cm);
   margin: 0 auto;
   padding: 1rem; 
   overflow-x: hidden;
@@ -87,7 +87,7 @@ main.home {
 
 @media (max-width: 768px) {
   main.home {
-    width: calc(100vw - 2cm); 
+    width: calc(100vw - 3cm); 
   }
 }
 
