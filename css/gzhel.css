@@ -421,7 +421,7 @@ button:active {
   transition: transform 0.2s, opacity 0.2s;
   display: inline-block; 
   cursor: pointer;
-  max-width: 30px;
+  max-width: 15px;
 }
 
 .card button:hover {
