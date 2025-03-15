@@ -347,6 +347,7 @@ button:active {
 
 .themes-header h2 {
   margin-bottom: 20px;
+  text-align: center !important;
 }
 
 .themes-header p {
