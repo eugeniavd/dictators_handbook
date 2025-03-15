@@ -354,11 +354,11 @@ button:active {
   padding-top: 1rem;
   margin-bottom: 2rem;
   padding-bottom: 1rem;
+  text-align: center;
 }
 
 .themes-header h2 {
   margin-bottom: 20px;
-  text-align: center !important;
 }
 
 .themes-header p {
@@ -386,6 +386,7 @@ button:active {
 .card {
   flex: 1;
   text-align: center;
+  background: none; 
 }
 
 .card > img {
@@ -393,6 +394,8 @@ button:active {
   max-width: 300px;
   height: auto;
   border-radius: 10px;
+  display: block;
+  margin: 0 auto; 
 }
 
 .text-left {
@@ -401,6 +404,28 @@ button:active {
 
 .text-right {
   text-align: left;
+}
+
+.card button {
+  background-color: transparent;
+  border: 2px solid #3b40d9;
+  color: #3b40d9;
+  font-size: 14px;
+  text-decoration: none;
+  padding: 5px 10px; 
+  border-radius: 50px;
+  transition: transform 0.2s, opacity 0.2s;
+  display: inline-block; 
+  cursor: pointer;
+}
+
+.card button:hover {
+  transform: scale(1.05);
+}
+
+.card button:active {
+  transform: scale(0.95);
+  opacity: 0.8;
 }
 
 @media (max-width: 768px) {
