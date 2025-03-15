@@ -289,10 +289,16 @@ section {
   text-decoration: none;
   border: 2px solid #3b40d9;
   outline: none;
+  box-shadow: none;
   padding: 8px 20px;
   border-radius: 50px;
   white-space: nowrap;
   min-width: 160px;
+}
+
+.doc-button:focus {
+  outline: none;
+  box-shadow: none;
 }
 
 .doc-button:hover {
