@@ -276,7 +276,7 @@ section {
   margin-bottom: 15px; 
 }
 
-.doc-button {
+button {
   margin-top: 30px;
   display: inline-flex;
   align-items: center;
@@ -301,21 +301,20 @@ section {
   min-width: 160px;
 }
 
-.doc-button:focus,
-.doc-button:active {
+button:focus,
+button:active {
   outline: none !important;
   box-shadow: none !important;
   border-color: #3b40d9 !important;
 }
 
-.doc-button:hover {
+button:hover {
   transform: scale(1.05); 
-  opacity: 0.9; 
 }
 
-.doc-button:active {
+button:active {
   transform: scale(0.95);
-  opacity: 0.7;
+  opacity: 0.8;
 }
 
 
