@@ -284,21 +284,31 @@ section {
   cursor: pointer;  
   transition: transform 0.2s, opacity 0.2s; 
   background-color: transparent;
-  color: white;
+  color: #3b40d9;
   font-size: 14px;
   text-decoration: none;
   border: 2px solid #3b40d9;
-  outline: none;
-  box-shadow: none;
+  outline: none !important;
+  box-shadow: none !important;
   padding: 8px 20px;
   border-radius: 50px;
   white-space: nowrap;
   min-width: 160px;
 }
 
-.doc-button:focus {
-  outline: none;
-  box-shadow: none;
+.doc-button:focus,
+.doc-button:active {
+  outline: none !important;
+  box-shadow: none !important;
+  border-color: #3b40d9 !important;
+}
+
+button.doc-button,
+a.doc-button {
+  all: unset;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .doc-button:hover {
@@ -307,9 +317,10 @@ section {
 }
 
 .doc-button:active {
-  transform: scale(0.95); 
+  transform: scale(0.95);
   opacity: 0.7;
 }
+
 
 
 
