@@ -338,31 +338,19 @@ button:active {
   opacity: 0.8;
 }
 
-.themes-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center; 
-  text-align: center; 
-  justify-content: center;
+.themes-header {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
 }
 
-.themes-container {
-  width: 100%;
-  max-width: 900px;
-  margin: 0 auto;
-  text-align: center;
+.themes-header h2 {
+  margin-bottom: 20px;
 }
 
-.themes-title {
-  text-align: center !important; 
-  margin-bottom: 20px; 
-  width: 100%;
-}
-
-.themes-section p {
-  font-size: 1rem;
-  margin-bottom: 2rem; 
-  max-width: 70%;
+.themes-header p {
+  margin-bottom: 15px;
 }
 
 .card-container {
