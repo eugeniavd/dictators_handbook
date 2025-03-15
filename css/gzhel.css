@@ -387,6 +387,8 @@ button:active {
   flex: 1;
   text-align: center;
   background: none; 
+  border: none !important; 
+  box-shadow: none !important;
 }
 
 .card > img {
@@ -396,6 +398,8 @@ button:active {
   border-radius: 10px;
   display: block;
   margin: 0 auto; 
+  border: none !important; 
+  box-shadow: 0px 10px 30px #929fb4;
 }
 
 .text-left {
@@ -412,11 +416,12 @@ button:active {
   color: #3b40d9;
   font-size: 14px;
   text-decoration: none;
-  padding: 5px 10px; 
+  padding: 3px 8px; 
   border-radius: 50px;
   transition: transform 0.2s, opacity 0.2s;
   display: inline-block; 
   cursor: pointer;
+  min-width: auto;
 }
 
 .card button:hover {
