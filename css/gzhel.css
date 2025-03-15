@@ -111,6 +111,7 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 4rem;
 }
 
 .intro {
@@ -337,7 +338,7 @@ button:active {
 }
 
 .themes-section h2 {
-  text-align: center; 
+  text-align: center !important; 
   margin-bottom: 20px; 
 }
 
@@ -418,6 +419,8 @@ button:active {
     width: 100%; 
   }
 }
+
+
 
 body.home .section-map {
   height: 50vh;
