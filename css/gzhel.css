@@ -342,7 +342,12 @@ button:active {
   margin-bottom: 20px; 
 }
 
-
+.themes-section p {
+  text-align: center;
+  font-size: 1rem;
+  margin-bottom: 2rem; 
+  max-width: 70%;
+}
 
 .card-container {
   display: flex;
@@ -351,6 +356,7 @@ button:active {
   justify-content: center;
   gap: 3rem;
   margin: 2rem 0;
+  margin-top: 3rem; 
   max-width: 90%;
 }
 
