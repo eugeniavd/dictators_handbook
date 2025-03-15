@@ -346,14 +346,13 @@ button:active {
   justify-content: center;
 }
 
-.themes-section h2 {
+.themes-title {
   text-align: center; 
   margin-bottom: 20px; 
   width: 100%;
 }
 
 .themes-section p {
-  text-align: center;
   font-size: 1rem;
   margin-bottom: 2rem; 
   max-width: 70%;
