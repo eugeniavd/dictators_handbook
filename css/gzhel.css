@@ -402,6 +402,13 @@ button:active {
   box-shadow: none;
 }
 
+.card p {
+  color: #636060 !important; 
+  font-size: 1rem;
+  margin-top: 5px;
+  text-align: inherit;
+}
+
 .text-left {
   text-align: right;
 }
