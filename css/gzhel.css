@@ -351,7 +351,8 @@ button:active {
 .themes-container {
   width: calc(100vw - 6cm); 
   max-width: 1200px; 
-  display: flex; justify-content: left;
+  display: flex; 
+  justify-content: left;
 }
 
 .themes-header {
@@ -359,6 +360,8 @@ button:active {
   padding-top: 1rem;
   margin-bottom: 2rem;
   padding-bottom: 1rem;
+  display: flex;  
+  flex-direction: column; 
   text-align: center;
   align-items: center; 
   justify-content: center;
