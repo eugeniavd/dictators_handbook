@@ -479,11 +479,23 @@ button:active {
   }
 }
 
+.issues-section {
+  width: 100%;
+  min-height: 100vh; 
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+}
+
+
 .issues-container {
   width: 100%;
   max-width: 1200px;
-  margin: 0 auto;
   text-align: center;
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  justify-content: center;
 }
 
 .issues-header {
@@ -498,14 +510,13 @@ button:active {
 .issues-title {
   font-size: 2rem;
   font-weight: bold;
-  margin-bottom: 1.5rem; 
+  margin-bottom: 1rem; 
 }
-
 
 .issues-card-container {
   display: flex;
   justify-content: center; 
-  gap: 2rem; 
+  gap: 3rem; 
   flex-wrap: wrap; 
   align-items: center; 
 }
@@ -515,12 +526,12 @@ button:active {
   flex-direction: column; 
   align-items: center; 
   text-align: center;
-  width: 250px; 
+  width: 300px; 
 }
 
 .issue img {
   width: 100%;
-  max-width: 250px;
+  max-width: 300px;
   border-radius: 10px;
   height: auto; 
 }
