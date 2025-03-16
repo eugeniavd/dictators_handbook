@@ -352,7 +352,9 @@ button:active {
   width: calc(100vw - 6cm); 
   max-width: 1200px; 
   display: flex; 
-  justify-content: left;
+  flex-direction: column;  
+  align-items: center;
+  justify-content: center;
 }
 
 .themes-header {
