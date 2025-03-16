@@ -587,11 +587,6 @@ body.home .map {
 
 
 footer.home {
-  background-image: url("/images/ghzel/white_paper.jpg"); 
-  background-size: cover; 
-  background-position: center; 
-  background-repeat: no-repeat; 
-  
   width: calc(100vw - 6cm); 
   max-width: 1200px;
   margin: 0 auto;
@@ -611,14 +606,15 @@ footer .container {
 footer .container.p-4 {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 
-footer h5 {
+.footer-title {
   font-size: 1.25rem;
-  margin-bottom: 1rem;
   font-weight: bold;
+  text-align: left;
+  flex: 1; 
 }
 
 footer .footer-text {
@@ -626,6 +622,7 @@ footer .footer-text {
   color: #636060;
   margin-bottom: 1rem;
   text-align-last: left;
+  flex: 2;
 }
 
 footer .footer-text a {
@@ -637,9 +634,12 @@ footer .footer-text a:hover {
   text-decoration: underline;
 }
 
-footer .p-3 {
+.footer-copyright {
   font-size: 0.875rem;
-  color: #256ed4;
+  color: #3b40d9;
+  text-align: center;
+  margin-top: 1rem;
+  width: 100%;
 }
 
 @media (max-width: 768px) {
@@ -651,6 +651,13 @@ footer .p-3 {
     flex-direction: column;
     align-items: center;
     text-align: center;
+  }
+
+  .footer-title,
+  .footer-text {
+    text-align: center;
+    flex: none;
+    width: 100%;
   }
 }
 
