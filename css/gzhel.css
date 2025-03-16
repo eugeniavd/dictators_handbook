@@ -338,10 +338,6 @@ button:active {
   opacity: 0.8;
 }
 
-.themes-container, .themes-header, .themes-title {
-  border: 1px solid red; 
-}
-
 .themes-section {
   width: 100%;
   display: flex;
@@ -482,6 +478,50 @@ button:active {
       text-align: center;
   }
 }
+
+.issues-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.issues-card-container {
+  display: flex;
+  justify-content: center; 
+  gap: 2rem; 
+  flex-wrap: wrap; 
+}
+
+.issue {
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  text-align: center;
+  width: 250px; 
+}
+
+.issue img {
+  width: 100%;
+  max-width: 100%; 
+  border-radius: 10px;
+}
+
+.issue-button-container {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center; 
+  width: 100%;
+}
+
+
+/* Адаптация для мобильных */
+@media (max-width: 768px) {
+  .issue-card-container {
+    flex-direction: column; 
+  }
+}
+
 
 
 body.home .section-map {
