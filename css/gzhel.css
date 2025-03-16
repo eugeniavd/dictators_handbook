@@ -486,6 +486,22 @@ button:active {
   text-align: center;
 }
 
+.issues-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  padding: 2rem 0; 
+}
+
+.issues-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem; 
+}
+
+
 .issues-card-container {
   display: flex;
   justify-content: center; 
