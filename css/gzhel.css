@@ -491,6 +491,7 @@ button:active {
   justify-content: center; 
   gap: 2rem; 
   flex-wrap: wrap; 
+  align-items: center; 
 }
 
 .issue {
@@ -503,8 +504,9 @@ button:active {
 
 .issue img {
   width: 100%;
-  max-width: 100%; 
+  max-width: 250px;
   border-radius: 10px;
+  height: auto; 
 }
 
 .issue-button-container {
@@ -514,11 +516,15 @@ button:active {
   width: 100%;
 }
 
-
-/* Адаптация для мобильных */
 @media (max-width: 768px) {
-  .issue-card-container {
+  .issues-card-container {
     flex-direction: column; 
+    align-items: center;
+  }
+
+  .issue {
+    width: 100%; 
+    max-width: 300px; 
   }
 }
 
