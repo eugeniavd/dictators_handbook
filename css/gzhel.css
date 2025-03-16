@@ -338,6 +338,10 @@ button:active {
   opacity: 0.8;
 }
 
+.themes-container, .themes-header, .themes-title {
+  border: 1px solid red; 
+}
+
 .themes-section {
   width: 100%;
   display: flex;
@@ -347,6 +351,7 @@ button:active {
 .themes-container {
   width: calc(100vw - 6cm); 
   max-width: 1200px; 
+  display: flex; justify-content: left;
 }
 
 .themes-header {
