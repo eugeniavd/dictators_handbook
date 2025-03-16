@@ -52,7 +52,6 @@ body.home {
   display: flex;
   flex-direction: column;
   align-items: center;
-
   box-shadow: inset 0px 0px 80px 0px #929fb4;
   overflow-x: hidden;
   min-height: 100vh;
@@ -585,14 +584,22 @@ body.home .map {
   width: 100%;
 }
 
+
+
 footer.home {
-  background-color: #f8f9fa;
+  background-image: url("/images/ghzel/white_paper.jpg"); 
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  
+  width: calc(100vw - 6cm); 
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 2rem 0;
   text-align: center;
-  border-image: url("/images/ghzel/map_border.png") 27 31 27 22 fill;
-  border-image-width: 10px 0px 0px 0px;
-  border-image-outset: 5px 6px 6px 6px;
-  border-image-repeat: stretch;
+  
+  border-top: 8px solid #3b40d9; 
+  border-image: none; 
 }
 
 footer .container {
@@ -603,8 +610,9 @@ footer .container {
 
 footer .container.p-4 {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 footer h5 {
@@ -615,13 +623,13 @@ footer h5 {
 
 footer .footer-text {
   font-size: 1rem;
-  color: #6c757d;
+  color: #636060;
   margin-bottom: 1rem;
   text-align-last: left;
 }
 
 footer .footer-text a {
-  color: #333333;
+  color: #003399;
   text-decoration: none;
 }
 
@@ -631,6 +639,18 @@ footer .footer-text a:hover {
 
 footer .p-3 {
   font-size: 0.875rem;
-  color: #333333;
+  color: #256ed4;
+}
+
+@media (max-width: 768px) {
+  footer.home {
+    width: calc(100vw - 3cm); 
+  }
+
+  footer .container.p-4 {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 }
 
