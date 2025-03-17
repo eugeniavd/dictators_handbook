@@ -157,10 +157,10 @@
         <!-- Map Section -->
         <section class="section-map" id="map_intro">
             <div class="plp-column slider">
-                <div class="plp-row center">
+                <div class="map-title">
                     <h2>Our Universe</h2>
                 </div>
-                <div class="placeholder-map">
+                <div class="map-container">
                     <div class="map" id="map"></div>
                 </div>
             </div>
@@ -172,5 +172,39 @@
     
     <!-- Bootstrap JS Bundle -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Создаем карту без начального setView, чтобы fitBounds работал правильно
+            const map = L.map('map');
+    
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap contributors'
+            }).addTo(map);
+    
+            // Локации
+            const locations = [
+                { name: "Moscow", coords: [55.7558, 37.6173] },
+                { name: "USSR (Center)", coords: [61.5240, 105.3188] },
+                { name: "Siberia", coords: [62.5464, 107.3701] },
+                { name: "Vorkuta", coords: [67.4946, 64.1646] },
+                { name: "Kursk", coords: [51.7442, 36.1979] },
+                { name: "Germany", coords: [51.0837, 10.2719] },
+                { name: "Berlin", coords: [52.5231, 13.4096] },
+                { name: "Kiev", coords: [50.4396, 30.6464] },
+                { name: "Perekop", coords: [46.3159, 35.0253] }
+            ];
+    
+            // Добавляем маркеры
+            locations.forEach(location => {
+                L.marker(location.coords)
+                    .bindPopup(location.name)
+                    .addTo(map);
+            });
+    
+            // Автоматически подгоняем карту под все маркеры
+            const bounds = locations.map(loc => loc.coords);
+            map.fitBounds(bounds);
+        });
+    </script>
 </body>
 </html>

@@ -562,32 +562,23 @@ button:active {
   }
 }
 
-
-body.home .section-map {
-  height: 50vh;
-  width: calc(100vw - 6cm); 
+.map-container {
+  width: calc(100vw - 6cm);
   max-width: 1200px;
-  padding: 1rem;
-  margin: 1rem auto 3rem auto;
+  height: 50vh;
+  margin: 0 auto;
   position: relative;
-}
-
-body.home .placeholder-map {
-  height: 100%;
-  width: 100%;
-  padding: 2rem; 
+  border: 35px solid transparent;
   border-image-source: url("/images/ghzel/map_border.png");
-  border-image-slice: 90; 
-  border-image-width: 40px; 
+  border-image-slice: 90;
+  border-image-width: 40px;
   border-image-outset: 20px;
   border-image-repeat: round;
-  border-style: solid;
 }
 
-body.home .map {
-  height: 100%;
+.map {
   width: 100%;
-  background: #f0f0f0; 
+  height: 100%;
 }
 
 
