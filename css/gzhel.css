@@ -585,7 +585,7 @@ button:active {
 }
 
 .map-container {
-  width: calc(100vw - 6cm); 
+  width: calc(100vw - 7cm); 
   height: 100%;
   display: flex;
   justify-content: center;
@@ -596,12 +596,7 @@ button:active {
 .map {
   width: 100%;
   height: 100%;
-  border: 40px solid transparent;
-    border-image-source: url("/images/ghzel/map_border.png");
-    border-image-slice: 90;
-    border-image-width: 40px; 
-    border-image-outset: 0px; 
-    border-image-repeat: round;
+  border-image: url("/images/ghzel/map_border.png") 90 / 40px / 0 round;
 }
 
 
