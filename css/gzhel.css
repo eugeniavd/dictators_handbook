@@ -571,22 +571,18 @@ button:active {
   text-align: center; 
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   align-items: center;
 }
 
 .map-title {
-  position: absolute;
-    top: 0; 
-    left: 50%;
-    transform: translateX(-50%); 
-    padding: 0.5rem 1rem; 
-    z-index: 10; 
+  padding: 0.5rem 1rem; 
+  z-index: 10; 
+  flex-shrink: 0; 
 }
 
 .map-container {
-  width: calc(100vw - 7cm); 
-  height: 100%;
+  flex-grow: 1; 
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -596,6 +592,7 @@ button:active {
 .map {
   width: 100%;
   height: 100%;
+  border: 40px solid transparent;
   border-image: url("/images/ghzel/map_border.png") 90 / 40px / 0 round;
 }
 
