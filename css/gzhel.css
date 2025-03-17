@@ -562,6 +562,8 @@ button:active {
   }
 }
 
+
+
 .map-container {
   width: calc(100vw - 6cm);
   max-width: 1200px;
@@ -579,6 +581,23 @@ button:active {
 .map {
   width: 100%;
   height: 100%;
+}
+
+
+
+.section-map {
+  outline: 2px solid blue !important;
+}
+
+
+.map-container {
+  outline: 2px solid red !important;
+  position: relative;
+}
+
+
+.map {
+  outline: 2px solid green !important;
 }
 
 
