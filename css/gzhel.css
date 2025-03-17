@@ -625,6 +625,8 @@ footer .container.p-4 {
   font-size: 1.25rem;
   font-weight: bold;
   text-align: left;
+  color: #003399 !important;
+  margin-left: -20px;
 }
 
 .footer-right {
@@ -633,7 +635,7 @@ footer .container.p-4 {
 }
 
 footer .footer-text {
-  font-size: 1rem;
+  font-size: 0.875rem;
   color: #636060;
   margin-bottom: 0.5rem;
 }
@@ -648,7 +650,7 @@ footer .footer-text a:hover {
 }
 
 .footer-copyright {
-  font-size: 0.875rem;
+  font-size: 0.7rem;
   color: #3b40d9;
   text-align: center;
   margin-top: 1rem;
