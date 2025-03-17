@@ -619,14 +619,16 @@ footer .container.p-4 {
 .footer-left {
   flex: 1; 
   text-align: left;
+  position: relative;
 }
 
 .footer-title {
   font-size: 1.25rem;
-  font-weight: bold;
   text-align: left;
   color: #003399 !important;
-  margin-left: -20px;
+  margin-left: 0;
+  position: absolute; 
+  left: 0; 
 }
 
 .footer-right {
@@ -635,9 +637,10 @@ footer .container.p-4 {
 }
 
 footer .footer-text {
-  font-size: 0.875rem;
+  font-size: 0.8rem;
   color: #636060;
   margin-bottom: 0.5rem;
+  text-align: justify;
 }
 
 footer .footer-text a {
