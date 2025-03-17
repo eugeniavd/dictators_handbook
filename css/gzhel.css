@@ -592,9 +592,11 @@ footer.home {
   margin: 0 auto;
   padding: 2rem 0;
   text-align: center;
-  
-  border-top: 8px solid #3b40d9; 
-  border-image: none; 
+  background-image: url("/images/ghzel/foot-bord.png"); 
+  background-repeat: repeat-x; 
+  background-position: top center; 
+  background-size: contain;
+  padding-top: 10px;
 }
 
 footer .container {
