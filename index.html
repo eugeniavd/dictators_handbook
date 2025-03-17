@@ -165,46 +165,41 @@
                 </div>
             </div>
         </section>
-    </main>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <!-- Leaflet JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+    <script>
+        // Initialize map
+        const map = L.map('map').setView([55.7558, 37.6173], 5);
+        
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        // Add markers for locations mentioned in the article
+        const locations = [
+            { name: "Moscow", coords: [55.7558, 37.6173] },
+            { name: "USSR", coords: [55.747570216100165, 37.635310612724105] },
+            { name: "Siberia", coords: [62.54636796042364, 107.37017037357955] },
+            { name: "Vorkuta", coords: [67.49460389528203, 64.16462502889635] },
+            { name: "Kursk", coords: [51.74421538609571, 36.197914483480034] },
+            { name: "Germany", coords: [51.083709614354404, 10.27195322711689] },
+            { name: "Berlin", coords: [52.52314066841012, 13.409625548661674] },
+            { name: "Kiev", coords: [50.439598651382056, 30.64641907309808] },
+            { name: "Perekop", coords: [46.31591817842109, 35.02529470438314] }
+        ];
+
+        locations.forEach(location => {
+            L.marker(location.coords)
+             .bindPopup(location.name)
+             .addTo(map);
+        });
+    </script>
+</main>
 
     <!-- Adding the footer -->
     <div id="footer-placeholder"></div>
-    
-    <!-- Bootstrap JS Bundle -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            // Создаем карту без начального setView, чтобы fitBounds работал правильно
-            const map = L.map('map');
-    
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: '© OpenStreetMap contributors'
-            }).addTo(map);
-    
-            // Локации
-            const locations = [
-                { name: "Moscow", coords: [55.7558, 37.6173] },
-                { name: "USSR (Center)", coords: [61.5240, 105.3188] },
-                { name: "Siberia", coords: [62.5464, 107.3701] },
-                { name: "Vorkuta", coords: [67.4946, 64.1646] },
-                { name: "Kursk", coords: [51.7442, 36.1979] },
-                { name: "Germany", coords: [51.0837, 10.2719] },
-                { name: "Berlin", coords: [52.5231, 13.4096] },
-                { name: "Kiev", coords: [50.4396, 30.6464] },
-                { name: "Perekop", coords: [46.3159, 35.0253] }
-            ];
-    
-            // Добавляем маркеры
-            locations.forEach(location => {
-                L.marker(location.coords)
-                    .bindPopup(location.name)
-                    .addTo(map);
-            });
-    
-            // Автоматически подгоняем карту под все маркеры
-            const bounds = locations.map(loc => loc.coords);
-            map.fitBounds(bounds);
-        });
-    </script>
 </body>
 </html>
