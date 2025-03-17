@@ -585,7 +585,7 @@ button:active {
 }
 
 .map-container {
-  width: 100%;
+  width: calc(100vw - 6cm); 
   height: 100%;
   display: flex;
   justify-content: center;
