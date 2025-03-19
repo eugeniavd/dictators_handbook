@@ -593,7 +593,7 @@ button:active {
   margin-top: -25px; 
   overflow: hidden;
   background-image: url("/images/ghzel/white_paper.jpg");
-  background-size: cover;  
+  background-size: 200px 200px;  
   background-position: center; 
   background-repeat: repeat;
   
