@@ -565,7 +565,7 @@ button:active {
 .section-map {
   width: calc(100vw - 6cm); 
   max-width: 1200px;
-  height: 55vh; 
+  height: 70vh; 
   margin: 0 auto 3cm auto; 
   position: relative; 
   text-align: center; 
