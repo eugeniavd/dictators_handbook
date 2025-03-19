@@ -396,6 +396,7 @@ button:active {
   justify-content: center;
   gap: 1.5rem;
   margin-bottom: 1.5rem;
+  width: 100%; 
 }
 
 .card {
@@ -404,12 +405,12 @@ button:active {
   background: none; 
   border: none !important; 
   box-shadow: none !important;
-  max-width: 300px;
+  width: 100%;
 }
 
 .card > img {
   width: 100%;
-  max-width: 300px;
+  max-width: 100%;
   height: auto;
   border-radius: 10px;
   display: block;
@@ -423,6 +424,7 @@ button:active {
   font-size: 1rem;
   margin-top: 5px;
   text-align: justify;
+  width: 100%;
 }
 
 .text-left {
