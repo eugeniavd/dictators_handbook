@@ -578,7 +578,7 @@ button:active {
   padding: 0.5rem 1rem; 
   z-index: 10; 
   flex-shrink: 0; 
-  padding-bottom: 0.25rem; 
+  margin-bottom: 0.5rem;
 }
 
 .map-container {
