@@ -565,7 +565,7 @@ button:active {
 .section-map {
   width: calc(100vw - 6cm); 
   max-width: 1200px;
-  height: 90vh; 
+  height: 95vh; 
   margin: 0 auto 3cm auto; 
   position: relative; 
   text-align: center; 
@@ -602,7 +602,7 @@ button:active {
   top: 0;
   left: 0;
   z-index: 1;
-  clip-path: ellipse(50% 50% at center); 
+  clip-path: ellipse(40% 50% at center); 
 }
 
 .map-container::after {
