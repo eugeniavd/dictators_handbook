@@ -176,32 +176,35 @@
 
         // Add markers for locations mentioned in the article
         const locations = [
-            { name: "Moscow", coords: [55.7558, 37.6173] },
-            { name: "USSR", coords: [55.747570216100165, 37.635310612724105] },
-            { name: "Siberia", coords: [62.54636796042364, 107.37017037357955] },
-            { name: "Vorkuta", coords: [67.49460389528203, 64.16462502889635] },
-            { name: "Kursk", coords: [51.74421538609571, 36.197914483480034] },
-            { name: "Germany", coords: [51.083709614354404, 10.27195322711689] },
-            { name: "Berlin", coords: [52.52314066841012, 13.409625548661674] },
-            { name: "Kiev", coords: [50.439598651382056, 30.64641907309808] },
-            { name: "Perekop", coords: [46.31591817842109, 35.02529470438314] },
-            { name: "Kuntsevo", coords: [55.7262, 37.4062] },
-            { name: "Abkhazia", coords: [43.0016, 41.0234] },
-            { name: "Red Square", coords: [55.7539, 37.6208] },
-            { name: "Kremlin", coords: [55.75109928706953, 37.61863765190776] },
-            { name: "House_trade_unions", coords: [55.759009110216645, 37.61718344083452] },
-            { name: "Georgia", coords: [42.17672580678014, 43.211670588964004] },
-            { name: "Megrelia", coords: [42.52330104421747, 41.86820792100772] },
-            { name: "Gori", coords: [41.98420201009441, 44.11571832111576] },
-            { name: "Saint Petersburg", coords: [59.92802981267338, 30.505285577997853] },
-            { name: "Russia", coords: [62.524124153040454, 92.10156237991846] }
-        ];
+        { name: "Moscow", coords: [55.7558, 37.6173], slug: "moscow" },
+        { name: "USSR", coords: [55.747570216100165, 37.635310612724105], slug: "ussr" },
+        { name: "Siberia", coords: [62.54636796042364, 107.37017037357955], slug: "siberia" },
+        { name: "Vorkuta", coords: [67.49460389528203, 64.16462502889635], slug: "vorkuta" },
+        { name: "Kursk", coords: [51.74421538609571, 36.197914483480034], slug: "kursk" },
+        { name: "Germany", coords: [51.083709614354404, 10.27195322711689], slug: "germany" },
+        { name: "Berlin", coords: [52.52314066841012, 13.409625548661674], slug: "berlin" },
+        { name: "Kiev", coords: [50.439598651382056, 30.64641907309808], slug: "kiev" },
+        { name: "Perekop", coords: [46.31591817842109, 35.02529470438314], slug: "perekop" },
+        { name: "Kuntsevo", coords: [55.7262, 37.4062], slug: "kuntsevo" },
+        { name: "Abkhazia", coords: [43.0016, 41.0234], slug: "abkhazia" },
+        { name: "Red Square", coords: [55.7539, 37.6208], slug: "red-square" },
+        { name: "Kremlin", coords: [55.75109928706953, 37.61863765190776], slug: "kremlin" },
+        { name: "House_trade_unions", coords: [55.759009110216645, 37.61718344083452], slug: "house-trade-unions" },
+        { name: "Georgia", coords: [42.17672580678014, 43.211670588964004], slug: "georgia" },
+        { name: "Megrelia", coords: [42.52330104421747, 41.86820792100772], slug: "megrelia" },
+        { name: "Gori", coords: [41.98420201009441, 44.11571832111576], slug: "gori" },
+        { name: "Saint Petersburg", coords: [59.92802981267338, 30.505285577997853], slug: "saint-petersburg" },
+        { name: "Russia", coords: [62.524124153040454, 92.10156237991846], slug: "russia" }
+    ];
 
-        locations.forEach(location => {
-            L.marker(location.coords)
-             .bindPopup(location.name)
-             .addTo(map);
-        });
+    fetch('/utilities/map.json')
+    .then(res => res.json())
+    .then(meta => {
+      addMapMarkers(map, locations, meta);
+    })
+    .catch(err => {
+      console.error("Error with loading map.json:", err);
+    });
     </script>
 </main>
 

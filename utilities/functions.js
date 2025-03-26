@@ -119,3 +119,44 @@ document.addEventListener('click', function(event) {
   }
 });
 
+// Take an article's title for the map
+fetch('/utilities/map.json')
+  .then(res => res.json())
+  .then(meta => {
+    const enrichedLocations = locations.map(loc => {
+      const metaEntry = meta.find(m => m.slug === loc.slug);
+      return {
+        ...loc,
+        articleTitle: metaEntry?.title || 'No name'
+      };
+    });
+    addMapMarkers(map, enrichedLocations);
+  });
+
+  function addMapMarkers(map, locations, meta) {
+    locations.forEach(loc => {
+      const matched = meta.find(entry => entry.slug === loc.slug);
+      const articles = matched?.articles || [];
+  
+      let popupContent = `<strong>${loc.name}</strong><br>`;
+  
+      if (articles.length > 0) {
+        popupContent += `<ul>`;
+        articles.forEach(article => {
+          popupContent += `
+            <li><a href="${article.url}" target="_blank">${article.title}</a></li>
+          `;
+        });
+        popupContent += `</ul>`;
+      } else {
+        popupContent += `<em>We haven't any article about this place<em>`;
+      }
+  
+      L.marker(loc.coords)
+        .addTo(map)
+        .bindPopup(popupContent);
+    });
+  }
+  
+  window.addMapMarkers = addMapMarkers;
+  
