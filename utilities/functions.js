@@ -141,7 +141,7 @@ fetch('/utilities/map.json')
       let popupContent = `<strong>${loc.name}</strong><br>`;
   
       if (articles.length > 0) {
-        popupContent += `<ul>`;
+        popupContent += `<span><em>Appears in:</em></span><ul>`;
         articles.forEach(article => {
           popupContent += `
             <li><a href="${article.url}" target="_blank">${article.title}</a></li>
