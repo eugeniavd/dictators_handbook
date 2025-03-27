@@ -626,12 +626,14 @@ button:active {
 
 .leaflet-popup-content {
   font-family: "balkara", serif;
-  color: #636060; 
+  color: #636060;
+  font-size: 14px; 
 }
 
 .leaflet-popup-content strong {
   font-family: "A_la_russ", serif;
   color: #003399;
+  font-size: 16px;
   display: block;
   margin-bottom: 4px;
 }
@@ -654,7 +656,7 @@ button:active {
 }
 
 .leaflet-popup-content li {
-  margin-bottom: 2px;
+  margin-bottom: 4px;
 }
 
 .leaflet-popup-tip,
