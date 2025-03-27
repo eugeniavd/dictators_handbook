@@ -640,6 +640,7 @@ button:active {
 
 .leaflet-popup-content a {
   color: #286edf;
+  font-size: 14px;
   text-decoration: none;
   border-bottom: 1px dotted #003399;
   transition: color 0.2s;
