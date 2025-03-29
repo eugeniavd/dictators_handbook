@@ -147,22 +147,28 @@ fetch('/utilities/map.json')
             <a href="${loc.wikipedia}" target="_blank" style="
               display: inline-flex;
               align-items: center;
-              padding: 4px 8px;
-              background-color: #000;
-              color: white;
+              margin-left: 6px;
+              padding: 2px 6px;
+              background-color: transparent;
+              color: #333;
               text-decoration: none;
-              border-radius: 4px;
-              font-size: 13px;
+              border-radius: 3px;
+              font-size: 12px;
               line-height: 1.2;
-              gap: 6px;
+              gap: 4px;
+              transition: all 0.2s ease-in-out;
+              " onmouseover="this.style.borderColor='#666'; this.style.color='#000'"
+              onmouseout="this.style.borderColor='#ccc'; this.style.color='#333'"
             ">
               <img src="https://upload.wikimedia.org/wikipedia/commons/8/80/Wikipedia-logo-v2.svg"
-                alt="Wikipedia" width="16" height="16" />
-              Wikipedia
+                alt="Open Wikipedia page" width="14" height="14" />
+              Read more
             </a>
           </div>
         `;
       }
+
+      popupContent += `<br><br>`;
 
       if (loc.articles.length > 0) {
         popupContent += `<span><em>Appears in:</em></span><ul>`;
