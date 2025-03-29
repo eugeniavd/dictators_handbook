@@ -152,7 +152,7 @@ fetch('/utilities/map.json')
             border: 1px solid #ccc;
             text-decoration: none;
             border-radius: 3px;
-            font-size: 12px;
+            font-size: 9px;
             line-height: 1.1;
             gap: 4px;
             transition: all 0.2s ease-in-out;
@@ -160,7 +160,7 @@ fetch('/utilities/map.json')
           onmouseover="this.style.borderColor='#666'; this.style.color='#000'"
           onmouseout="this.style.borderColor='#ccc'; this.style.color='#333'">
             <img src="https://upload.wikimedia.org/wikipedia/commons/8/80/Wikipedia-logo-v2.svg"
-              alt="Wikipedia" width="14" height="14" />
+              alt="Wikipedia" width="10" height="10" />
             Read more
           </a>` : ''}
       </div>
