@@ -139,34 +139,30 @@ fetch('/utilities/map.json')
 
   function addMapMarkers(map, locations) {
     locations.forEach(loc => {
-      let popupContent = `<strong>${loc.name}</strong><br>`;
-
-      if (loc.wikipedia) {
-        popupContent += `
-          <div style="margin: 4px 0;">
-            <a href="${loc.wikipedia}" target="_blank" style="
-              display: inline-flex;
-              align-items: center;
-              margin-left: 6px;
-              padding: 2px 6px;
-              background-color: transparent;
-              color: #333;
-              text-decoration: none;
-              border-radius: 3px;
-              font-size: 12px;
-              line-height: 1.2;
-              gap: 4px;
-              transition: all 0.2s ease-in-out;
-              " onmouseover="this.style.borderColor='#666'; this.style.color='#000'"
-              onmouseout="this.style.borderColor='#ccc'; this.style.color='#333'"
-            ">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/8/80/Wikipedia-logo-v2.svg"
-                alt="Open Wikipedia page" width="14" height="14" />
-              Read more
-            </a>
-          </div>
-        `;
-      }
+      popupContent += `
+  <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 6px;">
+    <strong style="font-size: 14px;">${loc.name}</strong>
+    ${loc.wikipedia ? `
+      <a href="${loc.wikipedia}" target="_blank" style="
+        display: inline-flex;
+        align-items: center;
+        padding: 2px 6px;
+        background-color: transparent;
+        color: #333;
+        border: 1px solid #ccc;
+        text-decoration: none;
+        border-radius: 3px;
+        font-size: 12px;
+        line-height: 1.1;
+        gap: 4px;
+      " onmouseover="this.style.borderColor='#666'; this.style.color='#000'"
+        onmouseout="this.style.borderColor='#ccc'; this.style.color='#333'">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/80/Wikipedia-logo-v2.svg"
+          alt="Wikipedia" width="14" height="14" />
+        Read more
+      </a>` : ''}
+  </div>
+`;
 
       popupContent += `<br><br>`;
 
