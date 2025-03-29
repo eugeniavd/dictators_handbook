@@ -196,15 +196,6 @@
         { name: "Saint Petersburg", coords: [59.92802981267338, 30.505285577997853], slug: "saint-petersburg" },
         { name: "Russia", coords: [62.524124153040454, 92.10156237991846], slug: "russia" }
     ];
-
-    fetch('/utilities/map.json')
-    .then(res => res.json())
-    .then(meta => {
-      addMapMarkers(map, locations, meta);
-    })
-    .catch(err => {
-      console.error("Error with loading map.json:", err);
-    });
     </script>
 </main>
 

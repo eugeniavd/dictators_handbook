@@ -119,22 +119,23 @@ document.addEventListener('click', function(event) {
   }
 });
 
-// Take an article's title for the map
 fetch('/utilities/map.json')
-  .then(res => res.json())
-  .then(meta => {
-    const enrichedLocations = locations.map(loc => {
-      const metaEntry = meta.find(m => m.slug === loc.slug);
-      return {
-        ...loc,
-        articleTitle: metaEntry?.title || 'No name',
-        wikipedia: metaEntry?.wikipedia || null,
-        articles: metaEntry?.articles || [] 
-      };
-    });
+    .then(res => res.json())
+    .then(meta => {
+      const enrichedLocations = locations.map(loc => {
+        const metaEntry = meta.find(m => m.slug === loc.slug);
+        return {
+          ...loc,
+          wikipedia: metaEntry?.wikipedia || null,
+          articles: metaEntry?.articles || []
+        };
+      });
 
-    addMapMarkers(map, enrichedLocations);
-  });
+      addMapMarkers(map, enrichedLocations);
+    })
+    .catch(err => {
+      console.error("Error loading map.json:", err);
+    });
 
   function addMapMarkers(map, locations) {
     locations.forEach(loc => {
@@ -162,24 +163,24 @@ fetch('/utilities/map.json')
           </div>
         `;
       }
-  
-      if (loc.articles && loc.articles.length > 0) {
+
+      if (loc.articles.length > 0) {
         popupContent += `<span><em>Appears in:</em></span><ul>`;
-        articles.forEach(article => {
+        loc.articles.forEach(article => {
           popupContent += `
             <li><a href="${article.url}" target="_blank">${article.title}</a></li>
           `;
         });
         popupContent += `</ul>`;
       } else {
-        popupContent += `<em>We haven't any article about this place<em>`;
+        popupContent += `<em>We haven't any article about this place</em>`;
       }
-  
+
       L.marker(loc.coords)
         .addTo(map)
         .bindPopup(popupContent);
     });
   }
-  
+
   window.addMapMarkers = addMapMarkers;
   
