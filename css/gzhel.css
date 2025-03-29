@@ -212,7 +212,7 @@ section {
 }
 
 .navbar-toggler-icon {
-  display: none;
+  display: inline-block; 
 }
 
 .navbar-toggler:focus,
@@ -287,6 +287,12 @@ section {
 @media (max-width: 768px) {
   .navbar {
       width: 70%;
+  }
+
+  .navbar-collapse {
+    display: block;
+    background: white;
+    width: 100%;
   }
 }
 
