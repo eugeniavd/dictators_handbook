@@ -127,7 +127,8 @@ fetch('/utilities/map.json')
       const metaEntry = meta.find(m => m.slug === loc.slug);
       return {
         ...loc,
-        articleTitle: metaEntry?.title || 'No name'
+        articleTitle: metaEntry?.title || 'No name',
+        wikipedia: metaEntry?.wikipedia || null 
       };
     });
     addMapMarkers(map, enrichedLocations);
@@ -139,6 +140,29 @@ fetch('/utilities/map.json')
       const articles = matched?.articles || [];
   
       let popupContent = `<strong>${loc.name}</strong><br>`;
+
+      if (loc.wikipedia) {
+        popupContent += `
+          <div style="margin: 4px 0;">
+            <a href="${loc.wikipedia}" target="_blank" style="
+              display: inline-flex;
+              align-items: center;
+              padding: 4px 8px;
+              background-color: #000;
+              color: white;
+              text-decoration: none;
+              border-radius: 4px;
+              font-size: 13px;
+              line-height: 1.2;
+              gap: 6px;
+            ">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/8/80/Wikipedia-logo-v2.svg"
+                alt="Wikipedia" width="16" height="16" />
+              Wikipedia
+            </a>
+          </div>
+        `;
+      }
   
       if (articles.length > 0) {
         popupContent += `<span><em>Appears in:</em></span><ul>`;
