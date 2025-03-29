@@ -132,11 +132,14 @@ fetch('/utilities/map.json')
         articles: metaEntry?.articles || [] 
       };
     });
+
+    console.log(enrichedLocations); 
     addMapMarkers(map, enrichedLocations);
   });
 
   function addMapMarkers(map, locations, meta) {
     locations.forEach(loc => {
+      console.log('Rendering:', loc.name, loc.wikipedia);
       const matched = meta.find(entry => entry.slug === loc.slug);
       const articles = matched?.articles || [];
   
