@@ -212,7 +212,13 @@ section {
 }
 
 .navbar-toggler-icon {
-  display: inline-block; 
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%280,0,0,0.5%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
 }
 
 .navbar-toggler:focus,
@@ -231,7 +237,7 @@ section {
   border: none;
   padding: 0;
   cursor: pointer;
-  display: block !important; 
+  display: none; 
 }
 
 .navbar-toggler:hover .custom-menu-icon {
@@ -285,14 +291,17 @@ section {
 }
 
 @media (max-width: 768px) {
+  .navbar-toggler {
+    display: block;
+  }
+  
   .navbar {
-      width: 70%;
+      width: 100%;
   }
 
   .navbar-collapse {
-    display: block;
     background: white;
-    width: 100%;
+    padding: 1rem;
   }
 }
 

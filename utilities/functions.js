@@ -66,6 +66,13 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 // Function to initialize submenu hover and click behavior
+
+// Initialize collapse (mobile menu)
+var collapseElement = document.getElementById('navbarSupportedContent');
+if (collapseElement) {
+  new bootstrap.Collapse(collapseElement, { toggle: false });
+}
+
 function initializeSubmenuListeners() {
   document.querySelectorAll('.dropdown-submenu .dropdown-toggle').forEach(function(el) {
     el.addEventListener('click', function(e) {
@@ -119,6 +126,7 @@ document.addEventListener('click', function(event) {
   }
 });
 
+// Map functions
 fetch('/utilities/map.json')
     .then(res => res.json())
     .then(meta => {
