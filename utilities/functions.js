@@ -133,16 +133,11 @@ fetch('/utilities/map.json')
       };
     });
 
-    console.log(enrichedLocations); 
     addMapMarkers(map, enrichedLocations);
   });
 
-  function addMapMarkers(map, locations, meta) {
+  function addMapMarkers(map, locations) {
     locations.forEach(loc => {
-      console.log('Rendering:', loc.name, loc.wikipedia);
-      const matched = meta.find(entry => entry.slug === loc.slug);
-      const articles = matched?.articles || [];
-  
       let popupContent = `<strong>${loc.name}</strong><br>`;
 
       if (loc.wikipedia) {
@@ -168,7 +163,7 @@ fetch('/utilities/map.json')
         `;
       }
   
-      if (articles.length > 0) {
+      if (loc.articles && loc.articles.length > 0) {
         popupContent += `<span><em>Appears in:</em></span><ul>`;
         articles.forEach(article => {
           popupContent += `
