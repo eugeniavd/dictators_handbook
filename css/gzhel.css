@@ -14,6 +14,13 @@
   :root {
     --page-width: 90vw; 
   }
+
+  button {
+    min-width: auto;
+    width: 100%;
+    max-width: 300px;
+    font-size: 0.95rem;
+  }
 }
 
 /* Title font */
@@ -190,6 +197,12 @@ section {
   }
 }
 
+@media (max-width: 480px) {
+  .intro-text-container > h2 {
+    font-size: 1rem;
+  }
+}
+
 .intro-text-container > p::first-letter {
   all: unset;
   font-size: 1.5rem !important;
@@ -337,6 +350,18 @@ button:active {
   opacity: 0.8;
 }
 
+@media (max-width: 768px) {
+  .about-content {
+    padding: 1rem;
+    margin: 1rem 0;
+    text-align: center;
+  }
+
+  .about-content p {
+    font-size: 0.95rem;
+  }
+}
+
 .themes-section {
   width: 100%;
   display: flex;
@@ -480,6 +505,11 @@ button:active {
 
   .text-left, .text-right {
       text-align: center;
+  }
+
+  .themes-container {
+    width: 95vw;
+    padding: 1rem;
   }
 }
 
@@ -675,6 +705,17 @@ button:active {
   border-radius: 12px;
   box-shadow: 2px 4px 10px #929fb4;
   max-width: 280px; 
+}
+
+@media (max-width: 768px) {
+  .section-map {
+    width: 100vw;
+    height: 80vh;
+  }
+
+  .map-container {
+    height: 75vh;
+  }
 }
 
 
