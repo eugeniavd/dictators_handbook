@@ -128,7 +128,8 @@ fetch('/utilities/map.json')
       return {
         ...loc,
         articleTitle: metaEntry?.title || 'No name',
-        wikipedia: metaEntry?.wikipedia || null 
+        wikipedia: metaEntry?.wikipedia || null,
+        articles: metaEntry?.articles || [] 
       };
     });
     addMapMarkers(map, enrichedLocations);
