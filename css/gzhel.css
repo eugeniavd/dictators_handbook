@@ -229,18 +229,6 @@ section {
   border: none;
 }
 
-.navbar-toggler {
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-  z-index: 1050;
-  padding: 0.4rem 0.6rem; 
-  background-color: rgb(41, 55, 204); 
-  border: 1px solid #ccc;  
-  border-radius: 4px;
-  display: block;
-}
-
 .navbar-toggler:hover .custom-menu-icon {
   opacity: 0.7;
 }
@@ -297,6 +285,17 @@ section {
 }
 
 @media (max-width: 768px) {
+  .navbar-toggler {
+    top: 0.5rem;
+    left: 0.5rem;
+    width: 40px;
+    height: 40px;
+    padding: 0.3rem;
+    background-color: #f3f4f8; 
+    border: 1px solid #2937cc; 
+    border-radius: 4px;
+  }
+
   .dropdown-submenu > .dropdown-menu {
     position: relative !important;
     top: 0 !important;
