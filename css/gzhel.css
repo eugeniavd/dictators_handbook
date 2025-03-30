@@ -41,6 +41,18 @@
 
 /* Homepage */
 
+#header-placeholder {
+  position: relative;
+  z-index: 1000;
+  overflow: visible; 
+}
+
+html, body, header, #header-placeholder {
+  overflow: visible !important;
+  position: relative;
+  z-index: auto;
+}
+
 body.home {
   background-color: #f5f7fc;
   background-image: url("/images/ghzel/white_paper.jpg");
