@@ -299,13 +299,6 @@ section {
     justify-content: center;
   }
 
-  .navbar-toggler:focus,
-  .navbar-toggler:active {
-    outline: none;
-    box-shadow: none;
-    border: 1px solid #2937cc; 
-}
-
   .navbar-toggler:hover {
     border-color: #1a27a3; 
     cursor: pointer;
