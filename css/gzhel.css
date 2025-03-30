@@ -293,7 +293,7 @@ section {
     height: 40px;
     padding: 0;
     background-color: transparent;
-    border: 2px #2937cc; 
+    border: 1px solid #2937cc; 
     border-radius: 4px;
     z-index: 1050;
     display: flex;
