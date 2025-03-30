@@ -301,36 +301,6 @@ section {
     justify-content: center;
   }
 
-  .navbar-toggler-icon {
-    width: 14px;
-    height: 16px;
-    position: relative;
-  }
-
-  .navbar-toggler-icon::before,
-  .navbar-toggler-icon::after,
-  .navbar-toggler-icon div {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    background-color: #2937cc;
-    left: 0;
-    transition: all 0.3s ease;
-  }
-
-  .navbar-toggler-icon::before {
-    top: 0;
-  }
-
-  .navbar-toggler-icon div {
-    top: 6px;
-  }
-
-  .navbar-toggler-icon::after {
-    top: 12px;
-  }
-
   .dropdown-submenu > .dropdown-menu {
     position: relative !important;
     top: 0 !important;
