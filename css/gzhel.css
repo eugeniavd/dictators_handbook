@@ -230,11 +230,15 @@ section {
 }
 
 .navbar-toggler {
-  display: block;
   position: absolute;
   top: 1rem;
   left: 1rem;
-  z-index: 9999;
+  z-index: 1050;
+  padding: 0.4rem 0.6rem; 
+  background-color: rgb(41, 55, 204); 
+  border: 1px solid #ccc;  
+  border-radius: 4px;
+  display: block;
 }
 
 .navbar-toggler:hover .custom-menu-icon {
@@ -299,19 +303,19 @@ section {
     left: 0 !important;
     width: 100% !important;
     margin-left: 1rem !important;
+    display: none;
     background-color: white;
     z-index: 1000;
   }
+
+  .dropdown-submenu .dropdown-menu.show {
+    display: block !important;
+  }
+
   .dropdown-submenu > a::after {
     content: "▾";
     float: right;
     margin-left: 10px;
-  }
-  .dropdown-menu {
-    width: 100%;
-  }
-  .dropdown-submenu .dropdown-menu.show {
-    display: block !important;
   }
 }
 

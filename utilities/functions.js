@@ -17,7 +17,7 @@ function switchStyle(stylePath) {
 }
 
 // ==============================
-// 🌐 Apply saved theme
+// Apply saved theme + Load header/footer
 // ==============================
 document.addEventListener('DOMContentLoaded', () => {
   const savedTheme = localStorage.getItem('selectedTheme');
@@ -29,9 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // ==============================
-  // 🔗 Load Header
-  // ==============================
+  // Load Header
   fetch('/components/header.html')
     .then(res => {
       if (!res.ok) throw new Error('Header load error');
@@ -40,22 +38,22 @@ document.addEventListener('DOMContentLoaded', () => {
     .then(html => {
       document.getElementById('header-placeholder').innerHTML = html;
 
-      // Init Bootstrap dropdowns
-      const dropdownElements = [].slice.call(document.querySelectorAll('.dropdown-toggle'));
-      dropdownElements.forEach(el => new bootstrap.Dropdown(el));
+      // Delay to ensure DOM is mounted
+      setTimeout(() => {
+        const dropdownElements = [].slice.call(document.querySelectorAll('.dropdown-toggle'));
+        dropdownElements.forEach(el => new bootstrap.Dropdown(el));
 
-      initializeSubmenuListeners();
+        initializeSubmenuListeners();
 
-      const collapseEl = document.querySelector('#navbarSupportedContent');
-      if (collapseEl) {
-        new bootstrap.Collapse(collapseEl, { toggle: false });
-      }
+        const collapseEl = document.querySelector('#navbarSupportedContent');
+        if (collapseEl) {
+          new bootstrap.Collapse(collapseEl, { toggle: false });
+        }
+      }, 0);
     })
     .catch(err => console.error('Header error:', err));
 
-  // ==============================
-  // 🔗 Load Footer
-  // ==============================
+  // Load Footer
   fetch('/components/footer.html')
     .then(res => {
       if (!res.ok) throw new Error('Footer load error');
@@ -66,9 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
     .catch(err => console.error('Footer error:', err));
 
-  // ==============================
-  // 🧭 Map Markers
-  // ==============================
+  // Map Markers
   fetch('/utilities/map.json')
     .then(res => res.json())
     .then(meta => {
@@ -87,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ==============================
-// 🎯 Add Markers to Map
+// Add markers to Leaflet map
 // ==============================
 function addMapMarkers(map, locations) {
   locations.forEach(loc => {
@@ -134,25 +130,31 @@ function addMapMarkers(map, locations) {
 window.addMapMarkers = addMapMarkers;
 
 // ==============================
-// 🧠 Submenu & Dropdown logic
+// Submenu logic (with cleanup)
 // ==============================
+function handleSubmenuClick(e) {
+  e.preventDefault();
+  e.stopPropagation();
+
+  const subMenu = this.nextElementSibling;
+  if (subMenu && subMenu.classList.contains('dropdown-menu')) {
+    const isVisible = subMenu.classList.contains('show');
+
+    document.querySelectorAll('.dropdown-submenu .dropdown-menu').forEach(menu => {
+      if (menu !== subMenu) menu.classList.remove('show');
+    });
+
+    if (!isVisible) subMenu.classList.add('show');
+  }
+}
+
 function initializeSubmenuListeners() {
   document.querySelectorAll('.dropdown-submenu > a').forEach(el => {
-    el.addEventListener('click', function (e) {
-      e.preventDefault();
-      e.stopPropagation();
-      const subMenu = this.nextElementSibling;
-      if (subMenu && subMenu.classList.contains('dropdown-menu')) {
-        const isVisible = subMenu.classList.contains('show');
-        document.querySelectorAll('.dropdown-submenu .dropdown-menu').forEach(menu => {
-          if (menu !== subMenu) menu.classList.remove('show');
-        });
-        if (!isVisible) subMenu.classList.add('show');
-      }
-    });
+    el.removeEventListener('click', handleSubmenuClick);
+    el.addEventListener('click', handleSubmenuClick);
   });
 
-  // Close all submenus when clicking outside
+  // Outside click closes all
   document.addEventListener('click', function (e) {
     if (!e.target.closest('.dropdown-menu')) {
       document.querySelectorAll('.dropdown-submenu .dropdown-menu').forEach(menu => {
@@ -163,7 +165,7 @@ function initializeSubmenuListeners() {
 }
 
 // ==============================
-// 🎨 Handle Design Switch
+// Handle design switch
 // ==============================
 document.addEventListener('click', e => {
   const target = e.target;
