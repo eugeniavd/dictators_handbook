@@ -211,6 +211,7 @@ section {
   float: none !important;
 }
 
+
 .navbar-toggler-icon {
   display: inline-block;
   width: 1.5em;
@@ -304,6 +305,8 @@ section {
     padding: 1rem;
   }
 }
+
+
 
 .about-content {
   margin-top: 2rem;
