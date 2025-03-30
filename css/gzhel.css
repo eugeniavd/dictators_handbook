@@ -293,7 +293,7 @@ section {
     height: 40px;
     padding: 0;
     background-color: transparent;
-    border: 2px solid #2937cc; /* синяя рамка */
+    border: 2px #2937cc; 
     border-radius: 4px;
     z-index: 1050;
     display: flex;
@@ -302,8 +302,8 @@ section {
   }
 
   .navbar-toggler-icon {
-    width: 20px;
-    height: 14px;
+    width: 10px;
+    height: 16px;
     position: relative;
   }
 
