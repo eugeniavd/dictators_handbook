@@ -289,12 +289,10 @@ section {
     position: fixed;
     top: 0.5rem;
     left: 0.5rem;
-    width: 20px;
+    width: 36px;
     height: 40px;
     padding: 0;
     background-color: transparent;
-    border: 1px solid #2937cc; 
-    border-radius: 4px;
     z-index: 1050;
     display: flex;
     align-items: center;
