@@ -327,7 +327,6 @@ section {
   }
 
   .dropdown-submenu > a::after {
-    content: "▾";
     float: right;
     margin-left: 10px;
   }
