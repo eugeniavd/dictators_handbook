@@ -137,6 +137,7 @@ window.addMapMarkers = addMapMarkers;
 // 🧠 Submenu & Dropdown logic
 // ==============================
 function initializeSubmenuListeners() {
+  // Handle click/tap on submenu links
   document.querySelectorAll('.dropdown-submenu > a').forEach(el => {
     el.addEventListener('click', function (e) {
       e.preventDefault();
@@ -146,18 +147,42 @@ function initializeSubmenuListeners() {
       if (subMenu && subMenu.classList.contains('dropdown-menu')) {
         const isVisible = subMenu.classList.contains('show');
 
-        // Hide all other submenus
+        // Close all other submenus
         document.querySelectorAll('.dropdown-submenu .dropdown-menu').forEach(menu => {
-          menu.classList.remove('show');
+          if (menu !== subMenu) {
+            menu.classList.remove('show');
+          }
         });
 
-        // Show current
+        // Toggle current submenu
         if (!isVisible) {
           subMenu.classList.add('show');
         }
       }
     });
   });
+
+  // Close all submenus when clicking outside
+  document.addEventListener('click', function (e) {
+    if (!e.target.closest('.dropdown-menu')) {
+      document.querySelectorAll('.dropdown-submenu .dropdown-menu').forEach(menu => {
+        menu.classList.remove('show');
+      });
+    }
+  });
+
+  // On mobile, override submenu positioning to display below instead of to the right
+  const isMobile = window.matchMedia("(max-width: 768px)").matches;
+  if (isMobile) {
+    document.querySelectorAll('.dropdown-submenu .dropdown-menu').forEach(menu => {
+      menu.style.position = 'relative';
+      menu.style.left = '0';
+      menu.style.top = '0';
+      menu.style.marginTop = '0.5rem';
+    });
+  }
+}
+
 
   // Global click closes all submenus
   document.addEventListener('click', e => {
