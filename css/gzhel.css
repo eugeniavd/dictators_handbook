@@ -230,7 +230,7 @@ section {
 }
 
 .navbar-toggler {
-  position: fixed; 
+  position: absolute;
   top: 0.8rem;
   left: 1rem;
   z-index: 9999;  
@@ -238,7 +238,7 @@ section {
   border: none;
   padding: 0;
   cursor: pointer;
-  display: none; 
+  display: block;
 }
 
 .navbar-toggler:hover .custom-menu-icon {
@@ -321,7 +321,7 @@ section {
   .navbar-toggler {
     display: block;
   }
-  
+
   .navbar {
       width: 100%;
   }
