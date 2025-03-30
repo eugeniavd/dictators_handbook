@@ -1,8 +1,9 @@
-// utilities/functions.js
+// ==============================
+// 📁 utilities/functions.js
+// ==============================
 
 /**
- * Switches the design theme by updating the stylesheet link.
- * @param {string} stylePath - Path to the CSS file.
+ * Switch design theme
  */
 function switchStyle(stylePath) {
   const themeStylesheet = document.getElementById('themeStylesheet');
@@ -15,7 +16,9 @@ function switchStyle(stylePath) {
   }
 }
 
-// Apply previously selected theme
+// ==============================
+// 🌐 Apply saved theme
+// ==============================
 document.addEventListener('DOMContentLoaded', () => {
   const savedTheme = localStorage.getItem('selectedTheme');
   if (savedTheme) {
@@ -25,104 +28,67 @@ document.addEventListener('DOMContentLoaded', () => {
       console.log(`Applied saved theme: ${savedTheme}`);
     }
   }
-});
 
-// Load header and footer
-document.addEventListener("DOMContentLoaded", function () {
+  // ==============================
+  // 🔗 Load Header
+  // ==============================
   fetch('/components/header.html')
-    .then(response => {
-      if (!response.ok) throw new Error('Header load error');
-      return response.text();
+    .then(res => {
+      if (!res.ok) throw new Error('Header load error');
+      return res.text();
     })
     .then(html => {
-      const headerEl = document.getElementById('header-placeholder');
-      if (!headerEl) return;
-      headerEl.innerHTML = html;
+      document.getElementById('header-placeholder').innerHTML = html;
 
       // Init Bootstrap dropdowns
       const dropdownElements = [].slice.call(document.querySelectorAll('.dropdown-toggle'));
       dropdownElements.forEach(el => new bootstrap.Dropdown(el));
 
-      // Init submenu and collapse
       initializeSubmenuListeners();
+
       const collapseEl = document.querySelector('#navbarSupportedContent');
       if (collapseEl) {
         new bootstrap.Collapse(collapseEl, { toggle: false });
       }
     })
-    .catch(error => console.error('Header error:', error));
+    .catch(err => console.error('Header error:', err));
 
+  // ==============================
+  // 🔗 Load Footer
+  // ==============================
   fetch('/components/footer.html')
-    .then(response => {
-      if (!response.ok) throw new Error('Footer load error');
-      return response.text();
+    .then(res => {
+      if (!res.ok) throw new Error('Footer load error');
+      return res.text();
     })
     .then(html => {
-      const footerEl = document.getElementById('footer-placeholder');
-      if (footerEl) {
-        footerEl.innerHTML = html;
-      }
+      document.getElementById('footer-placeholder').innerHTML = html;
     })
-    .catch(error => console.error('Footer error:', error));
-});
+    .catch(err => console.error('Footer error:', err));
 
-// Submenu toggle (mobile and hover)
-function initializeSubmenuListeners() {
-  // Mobile click toggle
-  document.querySelectorAll('.dropdown-submenu > a').forEach(el => {
-    el.addEventListener('click', function (e) {
-      e.preventDefault();
-      e.stopPropagation();
-      const subMenu = this.nextElementSibling;
-      if (subMenu?.classList.contains('dropdown-menu')) {
-        subMenu.classList.toggle('show');
-      }
-
-      // Close other submenus
-      document.querySelectorAll('.dropdown-submenu .dropdown-menu').forEach(menu => {
-        if (menu !== subMenu) menu.classList.remove('show');
+  // ==============================
+  // 🧭 Map Markers
+  // ==============================
+  fetch('/utilities/map.json')
+    .then(res => res.json())
+    .then(meta => {
+      const enrichedLocations = locations.map(loc => {
+        const metaEntry = meta.find(m => m.slug === loc.slug);
+        return {
+          ...loc,
+          wikipedia: metaEntry?.wikipedia || null,
+          articles: metaEntry?.articles || []
+        };
       });
-    });
-  });
 
-  // Global close on outside click
-  document.addEventListener('click', e => {
-    document.querySelectorAll('.dropdown-submenu .dropdown-menu').forEach(submenu => {
-      if (!submenu.contains(e.target)) submenu.classList.remove('show');
-    });
-  });
-}
-
-// Handle theme switching
-document.addEventListener('click', function (event) {
-  const target = event.target;
-  if (target.matches('.dropdown-item') && target.hasAttribute('data-style')) {
-    event.preventDefault();
-    const stylePath = target.getAttribute('data-style');
-    if (stylePath) {
-      switchStyle(stylePath);
-    }
-  }
+      addMapMarkers(map, enrichedLocations);
+    })
+    .catch(err => console.error('Map load error:', err));
 });
 
-// Load and enrich map markers
-fetch('/utilities/map.json')
-  .then(res => res.json())
-  .then(meta => {
-    const enrichedLocations = locations.map(loc => {
-      const metaEntry = meta.find(m => m.slug === loc.slug);
-      return {
-        ...loc,
-        wikipedia: metaEntry?.wikipedia || null,
-        articles: metaEntry?.articles || []
-      };
-    });
-
-    addMapMarkers(map, enrichedLocations);
-  })
-  .catch(err => console.error("Map load error:", err));
-
-// Add markers to map
+// ==============================
+// 🎯 Add Markers to Map
+// ==============================
 function addMapMarkers(map, locations) {
   locations.forEach(loc => {
     let popupContent = `
@@ -141,10 +107,9 @@ function addMapMarkers(map, locations) {
             font-size: 9px;
             line-height: 1.1;
             gap: 4px;
-            transition: all 0.2s ease-in-out;
-          "
-          onmouseover="this.style.borderColor='#666'; this.style.color='#000'"
-          onmouseout="this.style.borderColor='#ccc'; this.style.color='#333'">
+            transition: all 0.2s ease-in-out;"
+            onmouseover="this.style.borderColor='#666'; this.style.color='#000'"
+            onmouseout="this.style.borderColor='#ccc'; this.style.color='#333'">
             <img src="https://upload.wikimedia.org/wikipedia/commons/8/80/Wikipedia-logo-v2.svg"
               alt="Wikipedia" width="10" height="10" />
             Read more
@@ -155,9 +120,7 @@ function addMapMarkers(map, locations) {
     if (loc.articles.length > 0) {
       popupContent += `<span><em>Appears in:</em></span><ul>`;
       loc.articles.forEach(article => {
-        popupContent += `
-          <li><a href="${article.url}" target="_blank">${article.title}</a></li>
-        `;
+        popupContent += `<li><a href="${article.url}" target="_blank">${article.title}</a></li>`;
       });
       popupContent += `</ul>`;
     } else {
@@ -169,3 +132,50 @@ function addMapMarkers(map, locations) {
 }
 
 window.addMapMarkers = addMapMarkers;
+
+// ==============================
+// 🧠 Submenu & Dropdown logic
+// ==============================
+function initializeSubmenuListeners() {
+  document.querySelectorAll('.dropdown-submenu > a').forEach(el => {
+    el.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      const subMenu = this.nextElementSibling;
+      if (subMenu && subMenu.classList.contains('dropdown-menu')) {
+        const isVisible = subMenu.classList.contains('show');
+
+        // Hide all other submenus
+        document.querySelectorAll('.dropdown-submenu .dropdown-menu').forEach(menu => {
+          menu.classList.remove('show');
+        });
+
+        // Show current
+        if (!isVisible) {
+          subMenu.classList.add('show');
+        }
+      }
+    });
+  });
+
+  // Global click closes all submenus
+  document.addEventListener('click', e => {
+    document.querySelectorAll('.dropdown-submenu .dropdown-menu').forEach(menu => {
+      if (!menu.contains(e.target)) {
+        menu.classList.remove('show');
+      }
+    });
+  });
+}
+
+// ==============================
+// 🎨 Handle Design Switch
+// ==============================
+document.addEventListener('click', e => {
+  const target = e.target;
+  if (target.matches('.dropdown-item') && target.hasAttribute('data-style')) {
+    e.preventDefault();
+    switchStyle(target.getAttribute('data-style'));
+  }
+});

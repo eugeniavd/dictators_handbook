@@ -230,9 +230,8 @@ section {
 }
 
 .navbar-toggler {
-  position: fixed; 
-  top: 0.8rem;
-  left: 1rem;
+  position: relative; 
+  margin-left: auto; 
   z-index: 1100; 
   background: none;
   border: none;
@@ -256,6 +255,14 @@ section {
   border-radius: 3px;
   padding: 0.1rem 0.1rem;
   margin: 0;
+  min-width: 200px; 
+}
+
+.dropdown-submenu .dropdown-menu.show {
+  display: block !important;
+  position: relative;
+  margin-left: 1rem;
+  margin-top: 0.5rem;
 }
 
 .dropdown-submenu {
@@ -303,6 +310,10 @@ section {
   .navbar-collapse {
     background: white;
     padding: 1rem;
+  }
+
+  .dropdown-menu {
+    width: 100%;
   }
 }
 
