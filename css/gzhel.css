@@ -230,8 +230,9 @@ section {
 }
 
 .navbar-toggler {
-  position: relative; 
-  margin-left: auto; 
+  position: absolute; 
+  top: 0.8rem;
+  left: 1rem;
   z-index: 1100; 
   background: none;
   border: none;
@@ -299,6 +300,21 @@ section {
 }
 
 @media (max-width: 768px) {
+
+  .dropdown-submenu > .dropdown-menu {
+    position: relative !important;
+    left: 0 !important;
+    top: 0 !important;
+    margin-left: 0.5rem;
+    margin-top: 0.5rem;
+    display: none;
+    width: 100%;
+  }
+
+  .dropdown-submenu .dropdown-menu.show {
+    display: block !important;
+  }
+  
   .navbar-toggler {
     display: block;
   }
