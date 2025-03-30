@@ -289,7 +289,7 @@ section {
     position: fixed;
     top: 0.5rem;
     left: 0.5rem;
-    width: 36px;
+    width: 20px;
     height: 40px;
     padding: 0;
     background-color: transparent;
@@ -299,12 +299,6 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-
-  .navbar-toggler-icon {
-    position: relative;
-    width: 24px;
-    height: 18px;
   }
 
   .navbar-toggler:focus,
