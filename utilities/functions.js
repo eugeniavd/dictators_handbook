@@ -220,6 +220,19 @@ function initializeSubmenuListeners() {
     el.addEventListener('click', handleSubmenuClick);
   });
 
+document.querySelectorAll('.dropdown-submenu > a').forEach(toggle => {
+  toggle.addEventListener('click', function (e) {
+    e.preventDefault(); // Prevent link navigation
+
+    const submenu = this.nextElementSibling;
+
+    // Close all other open submenus
+    document.querySelectorAll('.dropdown-submenu .dropdown-menu.show').forEach(menu => {
+      if (menu !== submenu) {
+        menu.classList.remove('show');
+      }
+    });
+
   // Hide submenu on outside click
   document.addEventListener('click', function (e) {
     if (!e.target.closest('.dropdown-menu')) {
@@ -228,7 +241,12 @@ function initializeSubmenuListeners() {
       });
     }
   });
-}
+}    
+
+    // Toggle visibility of this submenu
+    submenu.classList.toggle('show');
+  });
+});
 
 // ==============================
 // Handle clicking theme switch items
