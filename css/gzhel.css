@@ -7,7 +7,6 @@
 :root {
   --page-height: 100vh;  
   --page-width: 90vw;   
-  --double-page-padding: 10vw; 
 }
 
 @media (max-width: 768px) {
@@ -118,12 +117,6 @@ main.home h6 {
   color: #003399;
   text-shadow: 1px 1px 3px #0516536d;
   text-align: center; 
-}
-
-.container-fluid {
-  display: flex;
-  justify-content: flex-start;
-  width: 100%;
 }
 
 section {
@@ -389,10 +382,6 @@ button {
   padding: 5px 15px;
   white-space: nowrap;
   min-width: 160px;
-}
-
-button a {
-  text-decoration: none !important;
 }
 
 button:focus,
