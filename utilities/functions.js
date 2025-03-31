@@ -58,13 +58,24 @@ document.addEventListener('DOMContentLoaded', () => {
           new bootstrap.Collapse(collapseEl, { toggle: false });
         }
 
-        // Fix scroll locking issue on mobile nav toggle
-        const navbarToggler = document.querySelector('.navbar-toggler');
+        // ==============================
+        // Fix mobile scroll lock on page load
+        // ==============================
+
         const body = document.body;
+        const html = document.documentElement;
+
+        // Always allow scroll on initial load
+        body.style.overflow = 'auto';
+        html.style.overflow = 'auto';
+        body.classList.remove('modal-open', 'offcanvas-open', 'overflow-hidden');
+
+        // Fix scroll after toggling navbar
+        const navbarToggler = document.querySelector('.navbar-toggler');
 
         function restoreScroll() {
           body.style.overflow = 'auto';
-          document.documentElement.style.overflow = 'auto';
+          html.style.overflow = 'auto';
           body.classList.remove('modal-open', 'offcanvas-open', 'overflow-hidden');
         }
 
@@ -76,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
           });
         }
 
-        // Handle scroll issues on screen rotation / resizing
+        // Re-enable scroll on viewport resize / orientation change
         window.addEventListener('resize', restoreScroll);
         window.addEventListener('orientationchange', restoreScroll);
       }, 0);
