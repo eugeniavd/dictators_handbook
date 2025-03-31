@@ -768,7 +768,7 @@ footer.home {
     word-break: break-word;
     line-height: 1.3;
     padding: 0.5rem 1rem;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     transition: background-color 0.2s ease;
   }
 
@@ -778,7 +778,7 @@ footer.home {
 
   .dropdown-submenu {
     position: relative; 
-    z-index: 1000;
+    z-index: 2600;
 }
 
 .dropdown-submenu > .dropdown-menu {
@@ -805,6 +805,7 @@ footer.home {
   .dropdown-submenu > a {
     white-space: normal;
     word-break: break-word;
+    font-size: 0.8rem;
   }
 
   .dropdown-submenu > a::after {
