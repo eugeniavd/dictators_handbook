@@ -26,6 +26,13 @@
   font-style: normal;
 }
 
+body, html {
+  scroll-behavior: smooth;
+  overscroll-behavior: auto;
+  touch-action: manipulation;
+}
+
+
 /* Homepage */
 
 #header-placeholder {
