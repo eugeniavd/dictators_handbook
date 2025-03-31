@@ -5,7 +5,6 @@
 // ==============================
 // Force scroll on initial load (mobile fix)
 // ==============================
-
 (function fixScrollBug() {
   const restoreScrollEarly = () => {
     document.body.style.overflow = 'auto';
@@ -13,19 +12,15 @@
     document.body.classList.remove('modal-open', 'offcanvas-open', 'overflow-hidden');
   };
 
-  // Run early
   restoreScrollEarly();
-
-  // Run again right after render (failsafe)
   window.addEventListener('load', restoreScrollEarly);
-
-  // Run again on orientation/resizing
   window.addEventListener('resize', restoreScrollEarly);
   window.addEventListener('orientationchange', restoreScrollEarly);
 })();
 
-
-// Set custom CSS variable --vh to match real viewport height
+// ==============================
+// Set real viewport height
+// ==============================
 function setRealVh() {
   const vh = window.innerHeight * 0.01;
   document.documentElement.style.setProperty('--vh', `${vh}px`);
@@ -34,7 +29,9 @@ window.addEventListener('resize', setRealVh);
 window.addEventListener('orientationchange', setRealVh);
 setRealVh();
 
-// Switch active design theme
+// ==============================
+// Theme switching logic
+// ==============================
 function switchStyle(stylePath) {
   const themeStylesheet = document.getElementById('themeStylesheet');
   if (themeStylesheet) {
@@ -47,10 +44,10 @@ function switchStyle(stylePath) {
 }
 
 // ==============================
-// Apply saved theme + load header/footer
+// Document Ready
 // ==============================
 document.addEventListener('DOMContentLoaded', () => {
-  // Load previously selected theme if saved
+  // Apply saved theme
   const savedTheme = localStorage.getItem('selectedTheme');
   if (savedTheme) {
     const themeStylesheet = document.getElementById('themeStylesheet');
@@ -60,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Load header from external HTML
+  // Load header
   fetch('/components/header.html')
     .then(res => {
       if (!res.ok) throw new Error('Header load error');
@@ -69,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
     .then(html => {
       document.getElementById('header-placeholder').innerHTML = html;
 
-      // Wait for DOM to update
+      // After header is injected:
       setTimeout(() => {
         const dropdownElements = [].slice.call(document.querySelectorAll('.dropdown-toggle'));
         dropdownElements.forEach(el => new bootstrap.Dropdown(el));
@@ -81,43 +78,27 @@ document.addEventListener('DOMContentLoaded', () => {
           new bootstrap.Collapse(collapseEl, { toggle: false });
         }
 
-        // ==============================
-        // Fix mobile scroll lock on page load
-        // ==============================
-
-        const body = document.body;
-        const html = document.documentElement;
-
-        // Always allow scroll on initial load
-        body.style.overflow = 'auto';
-        html.style.overflow = 'auto';
-        body.classList.remove('modal-open', 'offcanvas-open', 'overflow-hidden');
-
-        // Fix scroll after toggling navbar
+        // Restore scroll after toggling navbar
         const navbarToggler = document.querySelector('.navbar-toggler');
-
-        function restoreScroll() {
-          body.style.overflow = 'auto';
-          html.style.overflow = 'auto';
-          body.classList.remove('modal-open', 'offcanvas-open', 'overflow-hidden');
-        }
+        const restoreScroll = () => {
+          document.body.style.overflow = 'auto';
+          document.documentElement.style.overflow = 'auto';
+          document.body.classList.remove('modal-open', 'offcanvas-open', 'overflow-hidden');
+        };
 
         if (navbarToggler) {
           navbarToggler.addEventListener('click', () => {
-            setTimeout(() => {
-              restoreScroll(); // Allow scroll again after menu animation
-            }, 350);
+            setTimeout(restoreScroll, 350);
           });
         }
 
-        // Re-enable scroll on viewport resize / orientation change
         window.addEventListener('resize', restoreScroll);
         window.addEventListener('orientationchange', restoreScroll);
       }, 0);
     })
     .catch(err => console.error('Header error:', err));
 
-  // Load footer from external HTML
+  // Load footer
   fetch('/components/footer.html')
     .then(res => {
       if (!res.ok) throw new Error('Footer load error');
@@ -128,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
     .catch(err => console.error('Footer error:', err));
 
-  // Load map metadata and enrich locations
+  // Load map metadata and enrich markers
   fetch('/utilities/map.json')
     .then(res => res.json())
     .then(meta => {
@@ -147,7 +128,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ==============================
-// Add location markers to Leaflet map
+// Add location markers to map
 // ==============================
 function addMapMarkers(map, locations) {
   locations.forEach(loc => {
@@ -193,7 +174,7 @@ function addMapMarkers(map, locations) {
 window.addMapMarkers = addMapMarkers;
 
 // ==============================
-// Submenu toggle logic (dropdown inside dropdown)
+// Submenu toggle 
 // ==============================
 function handleSubmenuClick(e) {
   e.preventDefault();
@@ -201,55 +182,31 @@ function handleSubmenuClick(e) {
 
   const subMenu = this.nextElementSibling;
 
-  
-  const siblingMenus = this.closest('.dropdown-menu').querySelectorAll('.dropdown-menu');
-  siblingMenus.forEach(menu => {
+  document.querySelectorAll('.dropdown-submenu .dropdown-menu.show').forEach(menu => {
     if (menu !== subMenu) menu.classList.remove('show');
   });
 
-  
   if (subMenu) {
     subMenu.classList.toggle('show');
   }
 }
 
-// Init submenu listeners
 function initializeSubmenuListeners() {
   document.querySelectorAll('.dropdown-submenu > a').forEach(el => {
     el.removeEventListener('click', handleSubmenuClick);
     el.addEventListener('click', handleSubmenuClick);
   });
+}
 
-document.querySelectorAll('.dropdown-submenu > a').forEach(toggle => {
-  toggle.addEventListener('click', function (e) {
-    e.preventDefault(); // Prevent link navigation
-
-    const submenu = this.nextElementSibling;
-
-    // Close all other open submenus
-    document.querySelectorAll('.dropdown-submenu .dropdown-menu.show').forEach(menu => {
-      if (menu !== submenu) {
-        menu.classList.remove('show');
-      }
-    });
-
-  // Hide submenu on outside click
-  document.addEventListener('click', function (e) {
-    if (!e.target.closest('.dropdown-menu')) {
-      document.querySelectorAll('.dropdown-submenu .dropdown-menu').forEach(menu => {
-        menu.classList.remove('show');
-      });
-    }
-  });
-}    
-
-    // Toggle visibility of this submenu
-    submenu.classList.toggle('show');
-  });
+document.addEventListener('click', function (e) {
+  if (!e.target.closest('.dropdown-menu')) {
+    document.querySelectorAll('.dropdown-submenu .dropdown-menu.show')
+      .forEach(menu => menu.classList.remove('show'));
+  }
 });
 
 // ==============================
-// Handle clicking theme switch items
+// Theme switch via dropdown
 // ==============================
 document.addEventListener('click', e => {
   const target = e.target;
