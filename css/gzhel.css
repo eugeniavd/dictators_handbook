@@ -766,8 +766,9 @@ footer.home {
   .dropdown-menu .dropdown-item {
     white-space: normal;
     word-break: break-word;
-    line-height: 1.3;
-    padding: 0.5rem 1rem;
+    line-height: 1.2;
+    padding: 0.35rem 0.75rem;
+    margin: 0; 
     font-size: 0.8rem;
     transition: background-color 0.2s ease;
   }
@@ -789,7 +790,7 @@ footer.home {
   max-width: 100% !important;
   min-width: 240px;
   margin: 0 !important;
-  padding: 0.3rem 0.5rem;
+  padding: 0.2rem 0.5rem; 
   background-color: white;
   z-index: 2700;
   word-break: break-word;
@@ -806,6 +807,10 @@ footer.home {
     white-space: normal;
     word-break: break-word;
     font-size: 0.8rem;
+    position: relative;        
+    background-color: white;   
+    z-index: 2750;
+    padding: 0.4rem 1rem;         
   }
 
   .dropdown-submenu > a::after {
