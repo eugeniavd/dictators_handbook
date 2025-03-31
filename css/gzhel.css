@@ -733,7 +733,7 @@ footer.home {
   }
 
   .navbar-toggler {
-    position: fixed;
+    position: fixed !important;
     top: 0.5rem;
     left: 0.5rem;
     width: 36px;
@@ -778,12 +778,11 @@ footer.home {
 
   .dropdown-submenu {
     position: relative; 
-    z-index: 2600;
 }
 
 .dropdown-submenu > .dropdown-menu {
   position: absolute !important;
-  top: 40px !important;
+  top: 100% !important;
   left: 0 !important;
   width: 100% !important;
   max-width: 100% !important;
