@@ -2,6 +2,7 @@
 // 📁 utilities/functions.js
 // ==============================
 
+// Set custom CSS variable --vh to match real viewport height
 function setRealVh() {
   const vh = window.innerHeight * 0.01;
   document.documentElement.style.setProperty('--vh', `${vh}px`);
@@ -10,28 +11,7 @@ window.addEventListener('resize', setRealVh);
 window.addEventListener('orientationchange', setRealVh);
 setRealVh();
 
-document.addEventListener('DOMContentLoaded', function () {
-  const navbarToggler = document.querySelector('.navbar-toggler');
-  const body = document.body;
-
-  if (navbarToggler) {
-    navbarToggler.addEventListener('click', () => {
-      // Wait a bit after the menu animation, then ensure scrolling is enabled
-      setTimeout(() => {
-        body.style.overflow = 'auto'; // ✅ Allow scrolling again
-      }, 300);
-    });
-  }
-
-  // Also re-enable scrolling if window is resized
-  window.addEventListener('resize', () => {
-    body.style.overflow = 'auto';
-  });
-});
-
-/**
- * Switch design theme
- */
+// Switch active design theme
 function switchStyle(stylePath) {
   const themeStylesheet = document.getElementById('themeStylesheet');
   if (themeStylesheet) {
@@ -44,9 +24,10 @@ function switchStyle(stylePath) {
 }
 
 // ==============================
-// Apply saved theme + Load header/footer
+// Apply saved theme + load header/footer
 // ==============================
 document.addEventListener('DOMContentLoaded', () => {
+  // Load previously selected theme if saved
   const savedTheme = localStorage.getItem('selectedTheme');
   if (savedTheme) {
     const themeStylesheet = document.getElementById('themeStylesheet');
@@ -56,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Load Header
+  // Load header from external HTML
   fetch('/components/header.html')
     .then(res => {
       if (!res.ok) throw new Error('Header load error');
@@ -65,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
     .then(html => {
       document.getElementById('header-placeholder').innerHTML = html;
 
-      // Delay to ensure DOM is mounted
+      // Wait for DOM to update
       setTimeout(() => {
         const dropdownElements = [].slice.call(document.querySelectorAll('.dropdown-toggle'));
         dropdownElements.forEach(el => new bootstrap.Dropdown(el));
@@ -76,11 +57,33 @@ document.addEventListener('DOMContentLoaded', () => {
         if (collapseEl) {
           new bootstrap.Collapse(collapseEl, { toggle: false });
         }
+
+        // Fix scroll locking issue on mobile nav toggle
+        const navbarToggler = document.querySelector('.navbar-toggler');
+        const body = document.body;
+
+        function restoreScroll() {
+          body.style.overflow = 'auto';
+          document.documentElement.style.overflow = 'auto';
+          body.classList.remove('modal-open', 'offcanvas-open', 'overflow-hidden');
+        }
+
+        if (navbarToggler) {
+          navbarToggler.addEventListener('click', () => {
+            setTimeout(() => {
+              restoreScroll(); // Allow scroll again after menu animation
+            }, 350);
+          });
+        }
+
+        // Handle scroll issues on screen rotation / resizing
+        window.addEventListener('resize', restoreScroll);
+        window.addEventListener('orientationchange', restoreScroll);
       }, 0);
     })
     .catch(err => console.error('Header error:', err));
 
-  // Load Footer
+  // Load footer from external HTML
   fetch('/components/footer.html')
     .then(res => {
       if (!res.ok) throw new Error('Footer load error');
@@ -91,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
     .catch(err => console.error('Footer error:', err));
 
-  // Map Markers
+  // Load map metadata and enrich locations
   fetch('/utilities/map.json')
     .then(res => res.json())
     .then(meta => {
@@ -110,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ==============================
-// Add markers to Leaflet map
+// Add location markers to Leaflet map
 // ==============================
 function addMapMarkers(map, locations) {
   locations.forEach(loc => {
@@ -153,11 +156,10 @@ function addMapMarkers(map, locations) {
     L.marker(loc.coords).addTo(map).bindPopup(popupContent);
   });
 }
-
 window.addMapMarkers = addMapMarkers;
 
 // ==============================
-// Submenu logic (with cleanup)
+// Submenu toggle logic (dropdown inside dropdown)
 // ==============================
 function handleSubmenuClick(e) {
   e.preventDefault();
@@ -175,13 +177,14 @@ function handleSubmenuClick(e) {
   }
 }
 
+// Init submenu listeners
 function initializeSubmenuListeners() {
   document.querySelectorAll('.dropdown-submenu > a').forEach(el => {
     el.removeEventListener('click', handleSubmenuClick);
     el.addEventListener('click', handleSubmenuClick);
   });
 
-  // Outside click closes all
+  // Hide submenu on outside click
   document.addEventListener('click', function (e) {
     if (!e.target.closest('.dropdown-menu')) {
       document.querySelectorAll('.dropdown-submenu .dropdown-menu').forEach(menu => {
@@ -192,7 +195,7 @@ function initializeSubmenuListeners() {
 }
 
 // ==============================
-// Handle design switch
+// Handle clicking theme switch items
 // ==============================
 document.addEventListener('click', e => {
   const target = e.target;
