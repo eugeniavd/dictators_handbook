@@ -2,6 +2,29 @@
 // 📁 utilities/functions.js
 // ==============================
 
+// ==============================
+// Force scroll on initial load (mobile fix)
+// ==============================
+
+(function fixScrollBug() {
+  const restoreScrollEarly = () => {
+    document.body.style.overflow = 'auto';
+    document.documentElement.style.overflow = 'auto';
+    document.body.classList.remove('modal-open', 'offcanvas-open', 'overflow-hidden');
+  };
+
+  // Run early
+  restoreScrollEarly();
+
+  // Run again right after render (failsafe)
+  window.addEventListener('load', restoreScrollEarly);
+
+  // Run again on orientation/resizing
+  window.addEventListener('resize', restoreScrollEarly);
+  window.addEventListener('orientationchange', restoreScrollEarly);
+})();
+
+
 // Set custom CSS variable --vh to match real viewport height
 function setRealVh() {
   const vh = window.innerHeight * 0.01;
