@@ -10,6 +10,25 @@ window.addEventListener('resize', setRealVh);
 window.addEventListener('orientationchange', setRealVh);
 setRealVh();
 
+document.addEventListener('DOMContentLoaded', function () {
+  const navbarToggler = document.querySelector('.navbar-toggler');
+  const body = document.body;
+
+  if (navbarToggler) {
+    navbarToggler.addEventListener('click', () => {
+      // Wait a bit after the menu animation, then ensure scrolling is enabled
+      setTimeout(() => {
+        body.style.overflow = 'auto'; // ✅ Allow scrolling again
+      }, 300);
+    });
+  }
+
+  // Also re-enable scrolling if window is resized
+  window.addEventListener('resize', () => {
+    body.style.overflow = 'auto';
+  });
+});
+
 /**
  * Switch design theme
  */
