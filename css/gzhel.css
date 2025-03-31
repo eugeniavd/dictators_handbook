@@ -728,14 +728,6 @@ footer.home {
     font-size: 0.95rem;
   }
 
-  .dropdown-menu {
-    display: none;
-  }
-
-  .dropdown-menu.show {
-    display: block !important;
-  }
-
   .navbar {
     z-index: 1999;
   }
