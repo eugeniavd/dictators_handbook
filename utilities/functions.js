@@ -200,14 +200,16 @@ function handleSubmenuClick(e) {
   e.stopPropagation();
 
   const subMenu = this.nextElementSibling;
-  if (subMenu && subMenu.classList.contains('dropdown-menu')) {
-    const isVisible = subMenu.classList.contains('show');
 
-    document.querySelectorAll('.dropdown-submenu .dropdown-menu').forEach(menu => {
-      if (menu !== subMenu) menu.classList.remove('show');
-    });
+  
+  const siblingMenus = this.closest('.dropdown-menu').querySelectorAll('.dropdown-menu');
+  siblingMenus.forEach(menu => {
+    if (menu !== subMenu) menu.classList.remove('show');
+  });
 
-    if (!isVisible) subMenu.classList.add('show');
+  
+  if (subMenu) {
+    subMenu.classList.toggle('show');
   }
 }
 
