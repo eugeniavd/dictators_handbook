@@ -865,6 +865,8 @@ footer.home {
   .intro-text-container > h2 {
     font-size: 5vw;
     text-align: center;
+    display: block;
+    width: 100%; 
   }
 
   .about-content {
