@@ -721,9 +721,7 @@ footer.home {
 
 
 @media (max-width: 768px) {
-  :root {
-    --page-width: 98vw;
-  }
+
 
   main.home {
     width: 100vw;
