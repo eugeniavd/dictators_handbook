@@ -726,10 +726,13 @@ footer.home {
   }
 
   button {
-    min-width: auto;
-    width: 100%;
-    max-width: 300px;
+    width: auto;              
+    max-width: none;          
+    min-width: 0;             
     font-size: 0.95rem;
+    padding: 6px 16px;        
+    display: inline-flex;     
+    margin: 1rem auto 0; 
   }
 
   .navbar {
