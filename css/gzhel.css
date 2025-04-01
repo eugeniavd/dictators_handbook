@@ -956,6 +956,10 @@ footer.home {
     height: 70vh;
   }
 
+  .map-container::after {
+    background: url("/images/ghzel/map-image-vertical.png") center/cover no-repeat;
+  }
+
   footer.home {
     width: 100vw;
     padding: 1rem 0.5rem;
