@@ -955,7 +955,7 @@ footer.home {
   .map-container {
     height: 70vh;
     background-image: url("/images/ghzel/white_paper.jpg");
-    background-size: clamp(300px, 80vw, 700px) auto;
+    background-size: 600px, 600px;
     background-position: center; 
     background-repeat: repeat;
   }
