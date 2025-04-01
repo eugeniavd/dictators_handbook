@@ -841,6 +841,10 @@ footer.home {
   .intro-text-container {
     max-width: 95vw;
     padding: 0 0.5rem;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
   }
 
   .intro-text-container > h1 {
