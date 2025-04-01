@@ -374,8 +374,8 @@ button:active {
   display: block; 
 }
 
-.themes-title span {
-  display: none;
+.themes-title .word {
+  display: inline;
 }
 
 .card-container {
@@ -972,9 +972,9 @@ footer.home {
 
 @media (max-width: 480px) {
 
-  .themes-title {
+  .themes-title .word {
+    display: block;
     text-align: center;
-    font-size: clamp(1.5rem, 6vw, 2.5rem);
   }
 
   .leaflet-popup-content {
