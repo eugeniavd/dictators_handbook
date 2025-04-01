@@ -176,6 +176,11 @@ section {
   max-width: 90%;
 }
 
+.intro-text-container > h1 span {
+  display: inline;
+  text-align: inherit; 
+}
+
 .intro-text-container > h2 {
   font-family: 'balkara', serif;
   font-size: 1.5vw;
@@ -847,8 +852,13 @@ footer.home {
     justify-content: center;
   }
 
+  .intro-text-container > h1 span {
+    display: block;
+    text-align: center;
+  }
+
   .intro-text-container > h1 {
-    font-size: 2.5rem;
+    font-size: 4rem;
     text-align: center; 
   }
 
