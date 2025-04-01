@@ -863,7 +863,7 @@ footer.home {
   }
 
   .intro-text-container > h2 {
-    font-size: 5vw;
+    font-size: clamp(1.25rem, 5vw, 2.5rem);
     text-align: center;
     display: block;
     width: 100%; 
