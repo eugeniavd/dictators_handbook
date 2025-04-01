@@ -953,6 +953,7 @@ footer.home {
   }
 
   .map-container {
+    position: relative; 
     height: 70vh;
     background-image: url("/images/ghzel/white_paper.jpg");
     background-size: 600px, 600px;
@@ -962,6 +963,7 @@ footer.home {
 
   .map-container::after {
     background: url("/images/ghzel/map-image-vertical.png") center/cover no-repeat;
+    width: 100vw;  
   }
 
   footer.home {
