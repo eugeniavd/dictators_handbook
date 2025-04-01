@@ -371,6 +371,10 @@ button:active {
   display: block; 
 }
 
+.themes-title br {
+  display: none;
+}
+
 .card-container {
   display: flex;
   flex-direction: column;
@@ -967,9 +971,7 @@ footer.home {
 
   .themes-title {
     text-align: center;
-    word-break: break-word;
-    padding: 0 1rem; 
-    font-size: clamp(1.25rem, 5vw, 2rem);
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
   }
 
   .leaflet-popup-content {
