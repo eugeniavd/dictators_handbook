@@ -946,13 +946,13 @@ footer.home {
   }
 
   .section-map {
-    width: 100vw;
+    width: 100%;
     margin: 0;
     padding: 0;
   }
 
   .map-container {
-    width: 100vw;
+    width: 100%;
     margin: 0;
     padding: 0;
     position: relative; 
@@ -964,7 +964,7 @@ footer.home {
 
   .map-container::after {
     background: url("/images/ghzel/map-image-vertical.png") center/cover no-repeat;
-    width: 100vw;  
+    width: 100%;  
     left: 0;
   }
 
