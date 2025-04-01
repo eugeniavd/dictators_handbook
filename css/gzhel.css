@@ -176,10 +176,6 @@ section {
   max-width: 90%;
 }
 
-.intro-text-container > h1 span {
-  display: block;
-}
-
 .intro-text-container > h2 {
   font-family: 'balkara', serif;
   font-size: 1.5vw;
