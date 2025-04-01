@@ -890,8 +890,10 @@ footer.home {
     display: block;
     width: 100%;
     max-width: 100%;
-    text-align: center;
-    margin: 0 auto;
+    text-align: justify;           
+    padding: 0 0.5rem;
+    word-break: break-word;
+    overflow-wrap: break-word;
   }
 
   .themes-description {
