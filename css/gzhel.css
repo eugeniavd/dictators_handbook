@@ -371,7 +371,7 @@ button:active {
   display: block; 
 }
 
-.themes-title br {
+.themes-title span {
   display: none;
 }
 
