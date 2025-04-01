@@ -966,12 +966,10 @@ footer.home {
 @media (max-width: 480px) {
 
   .themes-title {
-    text-align: justify !important;
-    margin: 0;
-    padding: 0 0.5rem;
+    text-align: center;
     word-break: break-word;
-    overflow-wrap: break-word;
-    text-indent: 0;
+    padding: 0 1rem; 
+    font-size: clamp(1.25rem, 5vw, 2rem);
   }
 
   .leaflet-popup-content {
