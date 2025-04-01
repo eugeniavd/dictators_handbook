@@ -725,8 +725,11 @@ footer.home {
 
   main.home {
     width: 100vw;
-    padding: 0.5rem;
+    padding: 0; 
+    box-sizing: border-box;
   }
+
+  
 
   button {
     width: auto;              
