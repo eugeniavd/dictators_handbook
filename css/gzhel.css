@@ -342,10 +342,7 @@ button:active {
   flex-direction: column;  
   align-items: center;
   justify-content: center;
-  padding-bottom: 0;
-
-  border: 2px solid #d93b63; 
-  padding: 1rem;   
+  padding-bottom: 0; 
 }
 
 .themes-header {
@@ -893,8 +890,6 @@ footer.home {
     padding: 0.5rem;
   }
 
-  
-
   .themes-description {
     display: block;
     width: 100%;
@@ -918,7 +913,17 @@ footer.home {
 
   .card {
     width: 100%;
-}
+  }
+  
+  .card.image-left,
+  .card.image-right {
+    order: 0; 
+  }
+
+  .card.text-left,
+  .card.text-right {
+    order: 1; 
+  }
 
   .text-left, .text-right {
       text-align: center;
