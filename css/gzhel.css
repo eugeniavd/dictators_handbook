@@ -966,15 +966,12 @@ footer.home {
 @media (max-width: 480px) {
 
   .themes-title {
-    display: block;
-    width: 100%;
-    max-width: 100%;
-    text-align: justify;           
+    text-align: justify !important;
+    margin: 0;
+    padding: 0 0.5rem;
     word-break: break-word;
     overflow-wrap: break-word;
-    margin: 0;             
-    text-indent: 0;        
-    padding: 0 0.5rem;
+    text-indent: 0;
   }
 
   .leaflet-popup-content {
