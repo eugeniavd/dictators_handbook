@@ -310,7 +310,6 @@ button {
 
   padding: 5px 15px;
   white-space: nowrap;
-  min-width: 160px;
 }
 
 button:focus,
