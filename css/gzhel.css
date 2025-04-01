@@ -972,6 +972,9 @@ footer.home {
     text-align: justify;           
     word-break: break-word;
     overflow-wrap: break-word;
+    margin: 0;             
+    text-indent: 0;        
+    padding: 0 0.5rem;
   }
 
   .leaflet-popup-content {
