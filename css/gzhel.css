@@ -972,8 +972,16 @@ footer.home {
 }
 
 @media (max-width: 480px) {
-  .intro-text-container > h2 {
-    font-size: 1rem;
+  
+
+  .themes-title {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    text-align: justify;           
+    padding: 0 0.5rem;
+    word-break: break-word;
+    overflow-wrap: break-word;
   }
   
   .leaflet-popup-content {
