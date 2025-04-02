@@ -996,7 +996,16 @@ footer.home {
   }
 
   .map {
-    clip-path: ellipse(70% 85% at center);
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+    z-index: 2;
+    clip-path: ellipse(50% 50% at center);
+    -webkit-clip-path: ellipse(50% 50% at center);
+    border-radius: 50%; 
+    overflow: hidden;
   }
 
   footer.home {
