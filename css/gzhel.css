@@ -988,7 +988,8 @@ footer.home {
     content: "";
     position: absolute;
     top: 0;
-    background: url("/images/ghzel/map-image-vertical.png") center/contain no-repeat;
+    background: url("/images/ghzel/map-image-vertical.png") no-repeat;
+    background-position: center -40px;
     z-index: 10;
     pointer-events: none;
   }
