@@ -1029,13 +1029,13 @@ footer.home {
   }
 
   .leaflet-popup-content {
-    font-size: 12px;
-    padding: 2px 4px;
+    font-size: 11px;
+    padding: 1px 2px;
     line-height: 1.2;
   }
 
   .leaflet-popup-content strong {
-    font-size: 13px;
+    font-size: 12px;
     margin-bottom: 1px;
     display: block;
   }
@@ -1047,8 +1047,8 @@ footer.home {
 
   .leaflet-popup-tip,
   .leaflet-popup-content-wrapper {
-    max-width: 80vw;
-    padding: 4px;
+    max-width: 70vw;
+    padding: 2px;
     border-radius: 5px;
     box-shadow: 1px 2px 6px #8d9ddb21;
   }
