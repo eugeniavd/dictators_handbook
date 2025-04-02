@@ -970,7 +970,7 @@ footer.home {
   .map-container {
     width: 100%;
     max-width: 100vw;
-    height: 66vh;
+    height: 40vh;
     aspect-ratio: 25 / 31;
     position: relative; 
     background-size: cover;
