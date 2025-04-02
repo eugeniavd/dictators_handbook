@@ -1007,7 +1007,8 @@ footer.home {
 
   footer.home {
     width: 100%;
-    padding: 0.5rem 0.5rem 1rem;      
+    padding: 1rem 0.5rem 1.5rem;
+    margin-top: 1rem;
     background-size: 200% auto;      
     background-position: top center;
     background-repeat: repeat-x;
@@ -1026,6 +1027,13 @@ footer.home {
     width: 100%;
     text-align: center;
     padding: 0;
+  }
+
+  .footer-title {
+    text-align: center;           
+    margin: 0 auto;
+    margin-bottom: 0.5rem;       
+    padding-top: 0.5rem;          
   }
 }
 
