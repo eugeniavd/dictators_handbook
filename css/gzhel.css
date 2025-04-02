@@ -1002,8 +1002,8 @@ footer.home {
     width: 86%;
     height: 86%;
     z-index: 2;
-    clip-path: ellipse(42% 24% at center);
-    -webkit-clip-path: ellipse(42% 24% at center);
+    clip-path: ellipse(42% 30% at center);
+    -webkit-clip-path: ellipse(42% 30% at center);
     border-radius: 50%; 
     overflow: hidden;
   }
