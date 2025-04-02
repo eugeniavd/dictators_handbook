@@ -977,10 +977,11 @@ footer.home {
     background-repeat: repeat;
     overflow: hidden;
     margin: 0 auto;
+    border: 2px dashed red;
   }
 
   .map-wrapper {
-    height: 80vh; 
+    height: 95vh; 
     overflow: hidden; 
     position: relative;
   }
