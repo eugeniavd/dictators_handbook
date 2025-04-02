@@ -61,7 +61,6 @@ html, body {
 
 body.home {
   background-color: #f5f7fc;
-  background-image: url("/images/ghzel/white_paper.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -563,7 +562,6 @@ button:active {
   padding-top: 0 !important; 
   margin-top: -30px !important; 
   overflow: visible;
-  background-image: url("/images/ghzel/white_paper.jpg");
   background-size: 2000px 2000px;  
   background-position: center; 
   background-repeat: repeat;
@@ -975,8 +973,6 @@ footer.home {
     max-width: 100vw;
     aspect-ratio: 25 / 31;
     position: relative; 
-    background-image: url("/images/ghzel/white_paper.jpg");
-    box-shadow: inset 0px 0px 80px 0px #d8e0eb;
     background-size: cover;
     background-position: center; 
     background-repeat: repeat;
@@ -1000,11 +996,11 @@ footer.home {
     top: 0%;
     left: 50%;
     transform: translate(-50%, -15%);
-    width: 86%;
-    height: 86%;
+    width: 92%;
+    height: 76%;
     z-index: 2;
-    clip-path: ellipse(42% 30% at center);
-    -webkit-clip-path: ellipse(42% 30% at center);
+    clip-path: ellipse(42% 26% at center);
+    -webkit-clip-path: ellipse(42% 26% at center);
     border-radius: 50%; 
     overflow: hidden;
   }
