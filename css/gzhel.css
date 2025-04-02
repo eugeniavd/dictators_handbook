@@ -895,9 +895,8 @@ footer.home {
   }
 
   .themes-container {
-    width: 100%;
+    width: 98vw;
     padding: 0.5rem;
-    box-sizing: border-box;
   }
 
   .themes-description {
@@ -905,7 +904,7 @@ footer.home {
     width: 100%;
     max-width: 100%;
     text-align: justify;
-    padding: 0 0.5rem;
+    padding: 0;
     word-break: break-word;       
     overflow-wrap: break-word;    
   }
@@ -914,11 +913,11 @@ footer.home {
     flex-direction: column;
     gap: 1rem;
     margin-bottom: 1rem;
-    padding: 0 0.5rem;
+    padding: 0;
   }
 
   .card p {
-    padding: 0 0.25rem;
+    padding: 0;
   }
 
   .card {
