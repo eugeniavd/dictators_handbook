@@ -977,6 +977,8 @@ footer.home {
     background-repeat: repeat;
     overflow: hidden;
     margin: 0 auto;
+    clip-path: inset(0 0 25% 0); 
+    -webkit-clip-path: inset(0 0 25% 0);
     border: 2px dashed red;
   }
 
@@ -1007,7 +1009,8 @@ footer.home {
 
   footer.home {
     width: 98vw;
-    padding: 0.5rem;        
+    padding: 0.5rem;
+    margin-top: -1rem;        
   }
 
   footer .container.p-4 {
