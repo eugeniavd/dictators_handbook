@@ -1048,7 +1048,7 @@ footer.home {
 
   .leaflet-popup-tip,
   .leaflet-popup-content-wrapper {
-    max-width: 70vw;
+    max-width: 60vw;
     padding: 1px 2px;   
     border-radius: 4px;
     box-shadow: 1px 1px 4px #8d9ddb21;
