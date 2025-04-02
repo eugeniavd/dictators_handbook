@@ -1006,24 +1006,26 @@ footer.home {
   }
 
   footer.home {
-    width: 98vw;
-    padding: 0.5rem;     
+    width: 100%;
+    padding: 0.5rem 0.5rem 1rem;      
+    background-size: 200% auto;      
+    background-position: top center;
+    background-repeat: repeat-x;
+    box-sizing: border-box;
   }
 
   footer .container.p-4 {
     flex-direction: column;
     gap: 0.5rem;
+    align-items: center;
+    padding: 0.5rem;
   }
 
-  .footer-title,
-  .footer-text {
+  .footer-left,
+  .footer-right {
     width: 100%;
-    text-align: center;           
-  }
-  
-  .footer-left {
-    width: 100%;
-    text-align: center;           
+    text-align: center;
+    padding: 0;
   }
 }
 
@@ -1065,15 +1067,19 @@ footer.home {
     word-break: break-word;
   }
 
-  .footer-title,
-  .footer-text {
-    width: 100%;
-    margin-left: 0;
-    text-align: center;           
-    font-size: 14px;
+  .footer-title {
+    font-size: 1.1rem;              
+    text-align: center;
+    margin: 0 auto;
   }
 
   .footer-text {
-    font-size: 12px;              
+    font-size: 0.75rem;             
+    margin-top: 0.5rem;
+  }
+
+  .footer-copyright {
+    font-size: 0.65rem;
+    margin-top: 1rem;
   }
 }
