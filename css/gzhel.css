@@ -1006,10 +1006,8 @@ footer.home {
   }
 
   footer.home {
-    width: 100%;
-    max-width: 100vw;
-    padding: 0.5rem 0.5rem;        
-    box-sizing: border-box;
+    width: 98vw;
+    padding: 0.5rem;        
   }
 
   footer .container.p-4 {
@@ -1074,7 +1072,7 @@ footer.home {
     width: 100%;
     margin-left: 0;
     text-align: center;           
-    font-size: 13px;
+    font-size: 14px;
   }
 
   .footer-text {
