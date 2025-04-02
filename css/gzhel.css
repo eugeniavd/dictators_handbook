@@ -987,9 +987,9 @@ footer.home {
   .map-container::after {
     content: "";
     display: block;
-    aspect-ratio: 25 / 31;
     background: url("/images/ghzel/map-image-vertical.png") center/cover no-repeat;
-    width: 100%;  
+    background-size: contain; 
+    width: 100vw;  
     background-repeat: no-repeat;
     margin: 0 auto;
     position: relative;
