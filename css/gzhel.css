@@ -530,6 +530,11 @@ button:active {
   width: 100%;
 }
 
+#map {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
 .section-map {
   width: calc(100vw - 6cm); 
   max-width: 1200px;
