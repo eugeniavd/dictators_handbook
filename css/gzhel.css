@@ -990,14 +990,14 @@ footer.home {
     top: 0;
     background: url("/images/ghzel/map-image-vertical.png") no-repeat;
     background-size: contain;
-    background-position: center -4px;
+    background-position: center 0px;
     z-index: 10;
     pointer-events: none;
   }
 
   .map {
     position: absolute;
-    top: 7%;
+    top: 4.5%;
     left: 7%;
     width: 86%;
     height: 86%;
