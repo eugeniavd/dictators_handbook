@@ -980,9 +980,18 @@ footer.home {
   }
 
   .map-container::after {
+    content: "";
+    display: block;
+    aspect-ratio: 25 / 31;
     background: url("/images/ghzel/map-image-vertical.png") center/cover no-repeat;
     width: 100%;  
     left: 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+    pointer-events: none;
   }
 
   footer.home {
