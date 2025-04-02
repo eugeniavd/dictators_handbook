@@ -728,14 +728,15 @@ footer.home {
     box-sizing: border-box;
   }
 
-  body > *:not(.section-map):not(.map-container) {
+  body > * {
     padding-left: 0.5rem !important;
     padding-right: 0.5rem !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
+    box-sizing: border-box;
   }
 
-  section:not(.section-map) {
+  section {
     margin-top: 1rem !important;
     margin-bottom: 1rem !important;
   }
@@ -959,18 +960,20 @@ footer.home {
   }
 
   .section-map {
-    margin-top: 2rem;
-    margin-bottom: 0;
-    padding: 0 !important;
-    width: 100vw;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 0;
+    width: 100%;
     max-width: 100vw;
     overflow: hidden;
+    box-sizing: border-box;
+    text-align: center;
   }
 
   .map-container {
-    width: 100vw;
-    aspect-ratio: 25 / 31;
-    left: 0;
+    width: 100%;
+    max-width: 100vw;
+    aspect-ratio: 25 / 35;
     position: relative; 
     background-image: url("/images/ghzel/white_paper.jpg");
     box-shadow: inset 0px 0px 80px 0px #d8e0eb;
@@ -978,6 +981,7 @@ footer.home {
     background-position: center; 
     background-repeat: repeat;
     overflow: hidden;
+    margin: 0 auto;
   }
 
   .map-container::after {
@@ -986,8 +990,6 @@ footer.home {
     aspect-ratio: 25 / 31;
     background: url("/images/ghzel/map-image-vertical.png") center/cover no-repeat;
     width: 100%;  
-    left: 0;
-    background-size: contain;
     background-repeat: no-repeat;
     margin: 0 auto;
     position: relative;
@@ -997,13 +999,13 @@ footer.home {
 
   .map {
     position: absolute;
-    top: 5%;
-    left: 5%;
-    width: 90%;
-    height: 90%;
+    top: 7%;
+    left: 7%;
+    width: 86%;
+    height: 86%;
     z-index: 2;
-    clip-path: ellipse(50% 50% at center);
-    -webkit-clip-path: ellipse(50% 50% at center);
+    clip-path: ellipse(48% 48% at center);
+    -webkit-clip-path: ellipse(48% 48% at center);
     border-radius: 50%; 
     overflow: hidden;
   }
