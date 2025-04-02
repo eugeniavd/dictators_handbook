@@ -721,15 +721,23 @@ footer.home {
 
 
 @media (max-width: 768px) {
-
-
   main.home {
     width: 100vw;
     padding: 0; 
     box-sizing: border-box;
   }
 
-  
+  body > *:not(.section-map):not(.map-container) {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  section:not(.section-map) {
+    margin-top: 1rem !important;
+    margin-bottom: 1rem !important;
+  }
 
   button {
     width: auto;              
