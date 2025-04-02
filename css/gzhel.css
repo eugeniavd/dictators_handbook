@@ -995,6 +995,10 @@ footer.home {
     pointer-events: none;
   }
 
+  .map {
+    clip-path: ellipse(70% 85% at center);
+  }
+
   footer.home {
     width: 100vw;
     padding: 1rem 0.5rem;
