@@ -530,11 +530,6 @@ button:active {
   width: 100%;
 }
 
-#map {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-}
-
 .section-map {
   width: calc(100vw - 6cm); 
   max-width: 1200px;
@@ -549,10 +544,11 @@ button:active {
 }
 
 .map-title {
-  padding: 0.5rem 1rem; 
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+  line-height: 1.1;
   z-index: 10; 
   flex-shrink: 0; 
-  margin-bottom: 0.125rem;
 }
 
 .map-container {
@@ -564,8 +560,8 @@ button:active {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 0; 
-  margin-top: -25px; 
+  padding-top: 0 !important; 
+  margin-top: -15px !important; 
   overflow: visible;
   background-image: url("/images/ghzel/white_paper.jpg");
   background-size: 2000px 2000px;  
@@ -971,16 +967,7 @@ footer.home {
     overflow: hidden;
   }
 
-  .section-map h2 {
-    margin-top: 0.25rem !important;
-    margin-bottom: 0.25rem !important;
-    line-height: 1.2;
-    text-align: center;
-  }
-
   .map-container {
-    margin: 0 !important; 
-    padding: 0 !important; 
     width: 100vw;
     left: 0;
     position: relative; 
