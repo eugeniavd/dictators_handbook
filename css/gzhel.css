@@ -987,7 +987,7 @@ footer.home {
   .map-container::after {
     content: "";
     position: absolute;
-    inset: 0; 
+    top: 0;
     background: url("/images/ghzel/map-image-vertical.png") center/contain no-repeat;
     z-index: 10;
     pointer-events: none;
