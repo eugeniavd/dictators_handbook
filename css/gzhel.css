@@ -376,6 +376,13 @@ button:active {
   display: inline;
 }
 
+.themes-description {
+  text-align: justify;       
+  max-width: 100%;          
+  width: 100%;               
+  margin: 0 auto;            
+}
+
 .card-container {
   display: flex;
   flex-direction: column;
