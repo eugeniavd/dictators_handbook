@@ -734,8 +734,8 @@ footer.home {
   }
 
   section {
-    margin-top: 1rem !important;
-    margin-bottom: 1rem !important;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
   }
 
   button {
