@@ -957,7 +957,7 @@ footer.home {
   }
 
   .section-map {
-    margin-top: 2rem;
+    margin-top: 2rem !important;
     margin-bottom: 1rem;
     padding: 0;
     width: 100%;
