@@ -1016,7 +1016,13 @@ footer.home {
   }
 
   footer.home ::first-letter {
-    all: unset; 
+    all: unset;
+    font: inherit;
+    color: inherit;
+    text-transform: none;
+    font-weight: normal;
+    font-size: inherit;
+    letter-spacing: normal;
   }
 
   footer .container.p-4 {
