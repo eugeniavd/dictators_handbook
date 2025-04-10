@@ -968,7 +968,6 @@ footer.home {
     max-width: 100vw;
     aspect-ratio: 25 / 31;
     position: relative; 
-    padding-top: 124%;
     background-size: cover;
     background-position: center; 
     background-repeat: repeat;
@@ -986,8 +985,6 @@ footer.home {
     background-position: center 0px;
     z-index: 10;
     pointer-events: none;
-    width: 100%;
-    height: 100%;
   }
 
   .map {
@@ -1007,7 +1004,7 @@ footer.home {
   footer.home {
     width: 100%;
     padding: 1rem 0.5rem 1.5rem;
-    margin-top: 1rem;
+    margin-top: -3rem;
     background-size: 200% auto;      
     background-position: top center;
     background-repeat: repeat-x;
