@@ -1009,7 +1009,7 @@ footer.home {
     background-position: top center;
     background-repeat: repeat-x;
     box-sizing: border-box;
-    z-index: 11;
+    z-index: 15;
     position: relative;
   }
 
