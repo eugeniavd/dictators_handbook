@@ -976,7 +976,6 @@ footer.home {
     background-repeat: repeat;
     overflow: hidden;
     margin: 0 auto;
-    border: 2px dashed red;
   }
 
   .map-container::after {
@@ -1016,6 +1015,10 @@ footer.home {
     position: relative;
   }
 
+  footer.home ::first-letter {
+    all: unset; 
+  }
+
   footer .container.p-4 {
     flex-direction: column;
     gap: 0.5rem;
@@ -1028,6 +1031,7 @@ footer.home {
     width: 100%;
     text-align: center;
     padding: 0;
+    margin-top: 1rem;
   }
 
   .footer-title {
