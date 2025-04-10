@@ -1004,11 +1004,13 @@ footer.home {
   footer.home {
     width: 100%;
     padding: 1rem 0.5rem 1.5rem;
-    margin-top: -3rem;
+    margin-top: -1rem;
     background-size: 200% auto;      
     background-position: top center;
     background-repeat: repeat-x;
     box-sizing: border-box;
+    z-index: 0;
+    position: relative;
   }
 
   footer .container.p-4 {
