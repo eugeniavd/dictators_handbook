@@ -736,6 +736,7 @@ footer.home {
   section {
     margin-top: 1rem;
     margin-bottom: 1rem;
+    padding: 0 0.5rem;
   }
 
   button {
@@ -842,12 +843,7 @@ footer.home {
     position: relative; 
     z-index: 3000;
   }
-
-  section {
-    margin-bottom: 2rem;
-    padding: 0 0.5rem;
-  }
-
+  
   .intro {
     margin-top: 4rem !important;
     padding: 0 0.5rem;
