@@ -693,7 +693,7 @@ footer .footer-text {
 
 footer .footer-text a {
   color: #003399;
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 footer .footer-text a:hover {
