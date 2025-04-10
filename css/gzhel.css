@@ -771,14 +771,14 @@ footer.home {
 
   .navbar-toggler {
     position: fixed !important;
-    top: 0.5rem;
-    left: 0.5rem;
+    top: 0.5rem !important;
+    left: 0.5rem !important;
     width: 36px;
     height: 40px;
     padding: 0;
-    background-color: transparent;
+    background: transparent;
     border: none;
-    z-index: 4000;
+    z-index: 4000 !important;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1022,7 +1022,7 @@ footer.home {
   footer.home {
     width: 100%;
     padding: 1rem 0.5rem 1.5rem;
-    margin-top: 7rem;
+    margin-top: 5rem;
     background-size: 200% auto;      
     background-position: top center;
     background-repeat: repeat-x;
