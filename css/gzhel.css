@@ -85,8 +85,8 @@ body.home p::first-letter {
   font-size: 300%;
   line-height: 1rem;
   float: left;
-  margin-right: 0.3rem;
-  margin-bottom: -0.6rem;
+  margin-right: 0.15rem;
+  margin-top: 0.4rem; 
   padding-right: 0;
   text-transform: uppercase; 
   color: #003399;
