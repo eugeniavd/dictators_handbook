@@ -701,14 +701,11 @@ footer .footer-text a:hover {
 }
 
 footer .footer-text::first-letter {
-  float: left;
-  font-size: 280%;              
+  font-size: 280%;
   line-height: 1;
   margin-right: 0.3rem;
-  margin-top: 0.35rem;        
-  vertical-align: bottom;
-  color: #003399;
-  font-weight: bold;
+  padding-top: 0.35rem;      
+  vertical-align: bottom; 
 }
 
 
