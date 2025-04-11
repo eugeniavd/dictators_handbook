@@ -267,9 +267,11 @@ section {
   font-size: inherit;
   display: block;
   line-height: 1.2;
+  color: #003399;
 }
 
 .nav-item > a:hover {
+  color: #0055CC;
   background-color: #0055cc1a;
 }
 
