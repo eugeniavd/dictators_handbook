@@ -234,7 +234,16 @@ section {
   padding: 0.1rem 0.1rem;
   margin: 0;
   min-width: 200px; 
+}
+
+.dropdown-menu a {
   color: #003399;
+  text-decoration: none;
+}
+
+.dropdown-menu a:hover {
+  color: #0055CC;
+  background-color: #0055cc1a;
 }
 
 .dropdown-submenu .dropdown-menu.show {
