@@ -77,7 +77,6 @@ body {
   min-height: 100vh;
 }
 
-
 body p::first-letter {
   font-size: 300%;
   line-height: 1rem;
@@ -97,6 +96,17 @@ body a:hover {
   color: #0055CC; 
 }
 
+main h1, 
+main h2, 
+main h3, 
+main h4, 
+main h5, 
+main h6 {
+  color: #003399;
+  text-shadow: 1px 1px 3px #0516536d;
+  text-align: center; 
+}
+
 /* Homepage */
 
 main.home {
@@ -106,16 +116,7 @@ main.home {
   overflow-x: hidden;
 }
 
-main.home h1, 
-main.home h2, 
-main.home h3, 
-main.home h4, 
-main.home h5, 
-main.home h6 {
-  color: #003399;
-  text-shadow: 1px 1px 3px #0516536d;
-  text-align: center; 
-}
+
 
 section {
   display: flex;
