@@ -1142,3 +1142,104 @@ footer.home {
     margin-top: 1rem;
   }
 }
+
+/* Article Page */
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.article-header {
+  padding: 2rem;
+  text-align: center;
+}
+
+.article-header h1 {
+  margin: 0;
+}
+
+.article-header h2 {
+  margin-top: 0.5rem;
+}
+
+main {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* Left: Scrollable Content */
+.article-content,
+.img-box {
+  max-width: 100%;
+  padding: 1rem 2rem;
+}
+
+.article-content {
+  overflow-y: scroll;
+  width: 65%;
+  line-height: 1.65;
+}
+
+/* Right: Sticky Metadata + Map */
+.sidebar {
+  width: 35%;
+  overflow-y: auto;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  padding: 1rem 1.5rem;
+}
+
+/* Sidebar Collapsible Sections */
+.sidebar-section h5 {
+  margin: 1rem 0 0.5rem;
+  cursor: pointer;
+  padding-bottom: 0.3rem;
+}
+
+.sidebar-list {
+  list-style: none;
+  padding-left: 1rem;
+  display: none;
+  margin: 0;
+}
+
+.sidebar-section.active .sidebar-list {
+  display: block;
+}
+
+/* Map Styling */
+.map-container {
+  width: 100%;
+  height: 300px;
+  margin-top: 2rem;
+}
+
+/* Scrollbar Customization for Left Column */
+.article-content::-webkit-scrollbar {
+  width: 10px;
+}
+.article-content::-webkit-scrollbar-track {
+  background: #fdf9f2;
+}
+.article-content::-webkit-scrollbar-thumb {
+  background-color: #c4b89f;
+  border-radius: 5px;
+}
+
+/* Responsive Adjustment */
+@media (max-width: 1024px) {
+  main {
+    flex-direction: column;
+  }
+  .article-content, .sidebar {
+    width: 100%;
+    height: auto;
+  }
+  .article-content {
+    overflow-y: auto;
+  }
+}

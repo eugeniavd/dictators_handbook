@@ -215,3 +215,14 @@ document.addEventListener('click', e => {
     switchStyle(target.getAttribute('data-style'));
   }
 });
+
+// ==============================
+// Toggle for Sidebar Metadata Sections
+// ==============================
+
+document.querySelectorAll('.sidebar-section h5').forEach(header => {
+  header.addEventListener('click', () => {
+    const section = header.parentElement;
+    section.classList.toggle('active');
+  });
+});
