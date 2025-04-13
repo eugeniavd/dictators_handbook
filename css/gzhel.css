@@ -1193,7 +1193,7 @@ main.content-wrapper {
   color: #003399;
   cursor: pointer;
   z-index: 4000;
-  padding: 0.45rem 0.7rem;
+  padding: 0.4rem 0.7rem 0.5rem;
   border-radius: 8px;
   display: flex;
   align-items: center;
