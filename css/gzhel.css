@@ -1205,6 +1205,18 @@ body.article-page .navbar-collapse.show {
   display: block !important;
 }
 
+body.article-page #header-placeholder > * {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+main.content-wrapper,
+body.article-page,
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
 .article-header {
   position: relative;
   height: auto;
@@ -1216,7 +1228,7 @@ body.article-page .navbar-collapse.show {
   align-items: center;
   justify-content: space-between;
   text-align: center;
-  padding: 0 !important;
+  padding-top: 0 !important;
   margin-top: 0 !important;
 }
 
