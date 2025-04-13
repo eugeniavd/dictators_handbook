@@ -242,3 +242,27 @@ function toggleNavbar() {
 
   bsCollapse.toggle();
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  const isArticle = document.body.classList.contains("article-page");
+  if (!isArticle) return;
+
+  const waitForHeader = setInterval(() => {
+    const header = document.querySelector('.article-header');
+    const image = document.querySelector('.article-header-image');
+    const navbar = document.getElementById('navbarSupportedContent');
+
+    if (header && image && navbar && !document.querySelector('.article-burger-fixed')) {
+      console.log("Burger inserted ✅");
+
+      const burger = document.createElement("button");
+      burger.className = "article-burger-fixed";
+      burger.innerHTML = "☰";
+      burger.setAttribute("aria-label", "Toggle menu");
+      burger.onclick = toggleNavbar;
+
+      header.insertBefore(burger, image);
+      clearInterval(waitForHeader);
+    }
+  }, 100);
+});
