@@ -1207,21 +1207,23 @@ body.article-page .navbar-collapse.show {
 
 .article-header {
   position: relative;
-  min-height: auto;
   height: auto;
+  max-height: 100vh;
   width: 100vw;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
   text-align: center;
   padding: 0 !important;
   margin-top: 0 !important;
 }
 
 .article-header-image {
+  flex-shrink: 0;
   width: 100vw;
-  height: 35vh;
+  height: 50vh;
   background: url('/images/ghzel/top_article_1_white.png') no-repeat center center;
   background-size: contain;
   background-repeat: no-repeat;
@@ -1230,15 +1232,13 @@ body.article-page .navbar-collapse.show {
 
 
 .article-header-container {
-  max-width: 80vw;
-  text-align: center;
+  flex-grow: 1;
+  max-height: 60vh;
+  overflow: hidden;
+  padding: 2vh 1rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  padding-top: 2vh;
-  padding-bottom: 2vh;
+  justify-content: flex-start;
 }
 
 .article-header-container h1 {
@@ -1262,6 +1262,9 @@ body.article-page .navbar-collapse.show {
   text-align: center;
   color: #003399;
 }
+
+
+
 
 .article-metadata {
   font-size: 1rem;
