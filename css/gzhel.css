@@ -1188,7 +1188,7 @@ main.content-wrapper {
   top: 1rem;
   left: 2rem;
   font-size: 2rem;
-  border: 2px solid #3b40d9;
+  border: 1px solid #3b40d9;
   background: none;
   color: #003399;
   cursor: pointer;
@@ -1227,15 +1227,19 @@ main.content-wrapper {
 }
 
 .article-header-container {
-  flex-grow: 1;
-  max-height: 60vh;
-  overflow: hidden;
-  padding: 2cm 2cm;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50vw;
+  height: 100vh;
+  padding: 2cm;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
   align-items: center;
+  pointer-events: none; 
+  z-index: 1;
 }
 
 .article-header {
@@ -1245,7 +1249,7 @@ main.content-wrapper {
   width: 100vw;
   overflow: hidden;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: space-between;
   text-align: center;
@@ -1254,12 +1258,10 @@ main.content-wrapper {
 }
 
 .article-header-image {
-  flex-shrink: 0;
-  width: 100vw;
-  height: 70vh;
+  flex: 1;
+  height: 100vh;
   background: url('/images/ghzel/top_article_1_white.png') no-repeat center center;
-  background-size: contain;
-  background-repeat: no-repeat;
+  background-size: cover;
   margin-top: 0;
 }
 
@@ -1348,17 +1350,20 @@ main.content-wrapper {
 /* Right: Sticky Metadata + Map */
 
 .sidebar {
-  width: 35%;
-  overflow-y: auto;
+  width: 50vw;
   height: 100vh;
-  position: sticky;
-  top: 0;
-  padding: 1rem 1.5rem;
-  flex-shrink: 0;
-  min-width: 0;
+  overflow-y: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 2rem 1.5rem;
+  background-color: white;
+  box-sizing: border-box;
 }
 
 /* Sidebar Collapsible Sections */
+
 .sidebar-section h5 {
   margin: 1rem 0 0.5rem;
   cursor: pointer;
@@ -1377,10 +1382,12 @@ main.content-wrapper {
 }
 
 /* Map Styling */
+
 .map-container {
   width: 100%;
-  height: 300px;
-  margin-top: 2rem;
+  flex-grow: 1; 
+  height: auto;
+  margin-top: 1rem;
 }
 
 /* Scrollbar Customization for Left Column */
