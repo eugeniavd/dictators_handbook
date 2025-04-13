@@ -242,10 +242,8 @@ function toggleNavbar() {
 
   bsCollapse.toggle();
 }
-
 document.addEventListener("DOMContentLoaded", () => {
-  const isArticle = document.body.classList.contains("article-page");
-  if (!isArticle) return;
+  if (!document.body.classList.contains("article-page")) return;
 
   const waitForHeader = setInterval(() => {
     const header = document.querySelector('.article-header');
@@ -253,15 +251,27 @@ document.addEventListener("DOMContentLoaded", () => {
     const navbar = document.getElementById('navbarSupportedContent');
 
     if (header && image && navbar && !document.querySelector('.article-burger-fixed')) {
-      console.log("Burger inserted ✅");
-
       const burger = document.createElement("button");
       burger.className = "article-burger-fixed";
       burger.innerHTML = "☰";
-      burger.setAttribute("aria-label", "Toggle menu");
-      burger.onclick = toggleNavbar;
+
+      const menu = document.createElement("div");
+      menu.className = "article-flyout-menu";
+      menu.innerHTML = navbar.innerHTML;
+
+      burger.addEventListener("click", (e) => {
+        e.stopPropagation();
+        menu.classList.toggle("show");
+      });
+
+      document.addEventListener("click", (e) => {
+        if (!menu.contains(e.target) && !burger.contains(e.target)) {
+          menu.classList.remove("show");
+        }
+      });
 
       header.insertBefore(burger, image);
+      header.appendChild(menu);
       clearInterval(waitForHeader);
     }
   }, 100);
