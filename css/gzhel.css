@@ -1259,9 +1259,9 @@ main.content-wrapper {
 
 .article-header-image {
   flex: 1;
-  height: 100vh;
+  height: 40vh;
   background: url('/images/ghzel/top_article_1_white.png') no-repeat center center;
-  background-size: cover;
+  background-size: contain;
   margin-top: 0;
 }
 
