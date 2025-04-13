@@ -1164,6 +1164,25 @@ main.content-wrapper {
   max-width: 100%;
 }
 
+.article-burger-fixed {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  font-size: 2.2rem;
+  border: none;
+  background: none;
+  color: #003399;
+  z-index: 3000;
+  cursor: pointer;
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .article-burger-fixed {
+    display: block;
+  }
+}
+
 .article-header {
   min-height: auto;
   height: auto;
@@ -1265,7 +1284,7 @@ main.content-wrapper {
 .article-content,
 .img-box {
   max-width: 100%;
-  padding: 1rem 2rem;
+  padding: 1rem 4rem;
 }
 
 .article-content {

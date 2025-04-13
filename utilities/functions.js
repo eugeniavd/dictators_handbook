@@ -226,3 +226,27 @@ document.querySelectorAll('.sidebar-section h5').forEach(header => {
     section.classList.toggle('active');
   });
 });
+
+// ==============================
+// Menu For Article Page
+// ==============================
+
+document.addEventListener("DOMContentLoaded", () => {
+  const header = document.querySelector(".article-header");
+  const navbar = document.querySelector(".navbar-collapse");
+
+  if (header && navbar) {
+    // Создать кнопку
+    const burger = document.createElement("button");
+    burger.className = "article-burger-fixed";
+    burger.setAttribute("aria-label", "Toggle menu");
+    burger.innerHTML = "☰";
+    burger.onclick = () => navbar.classList.toggle("show");
+
+    // Вставить перед .article-header-image
+    const image = header.querySelector(".article-header-image");
+    if (image) {
+      header.insertBefore(burger, image);
+    }
+  }
+});
