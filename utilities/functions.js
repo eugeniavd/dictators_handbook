@@ -276,3 +276,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }, 100);
 });
+
+const burger = document.querySelector('.article-burger-fixed');
+const menu = document.querySelector('.article-flyout-menu');
+
+burger.addEventListener('click', () => {
+  menu.classList.toggle('show');
+});
