@@ -231,25 +231,14 @@ document.querySelectorAll('.sidebar-section h5').forEach(header => {
 // Menu For Article Page
 // ==============================
 
-function insertBurgerWhenReady() {
-  const tryInsert = () => {
-    const header = document.querySelector('.article-header');
-    const image = document.querySelector('.article-header-image');
-    const navbar = document.querySelector('.navbar-collapse');
+function toggleNavbar() {
+  if (!document.body.classList.contains("article-page")) return;
 
-    if (header && image && navbar && !document.querySelector('.article-burger-fixed')) {
-      const burger = document.createElement("button");
-      burger.className = "article-burger-fixed";
-      burger.setAttribute("aria-label", "Toggle menu");
-      burger.innerHTML = "☰";
-      burger.onclick = () => navbar.classList.toggle("show");
+  const navbar = document.getElementById('navbarSupportedContent');
+  if (!navbar) return;
 
-      header.insertBefore(burger, image);
-      clearInterval(waiter);
-    }
-  };
+  const bsCollapse = bootstrap.Collapse.getInstance(navbar)
+    || new bootstrap.Collapse(navbar, { toggle: false });
 
-  const waiter = setInterval(tryInsert, 100); 
+  bsCollapse.toggle();
 }
-
-document.addEventListener("DOMContentLoaded", insertBurgerWhenReady);

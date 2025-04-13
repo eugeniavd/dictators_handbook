@@ -1177,6 +1177,14 @@ main.content-wrapper {
   display: block;
 }
 
+body.article-page .navbar-collapse {
+  display: none !important;
+}
+
+body.article-page .navbar-collapse.show {
+  display: block !important;
+}
+
 .article-header {
   min-height: auto;
   height: auto;
