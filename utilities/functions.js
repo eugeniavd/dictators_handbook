@@ -231,22 +231,25 @@ document.querySelectorAll('.sidebar-section h5').forEach(header => {
 // Menu For Article Page
 // ==============================
 
-document.addEventListener("DOMContentLoaded", () => {
-  const header = document.querySelector(".article-header");
-  const navbar = document.querySelector(".navbar-collapse");
+function insertBurgerWhenReady() {
+  const tryInsert = () => {
+    const header = document.querySelector('.article-header');
+    const image = document.querySelector('.article-header-image');
+    const navbar = document.querySelector('.navbar-collapse');
 
-  if (header && navbar) {
-    // Создать кнопку
-    const burger = document.createElement("button");
-    burger.className = "article-burger-fixed";
-    burger.setAttribute("aria-label", "Toggle menu");
-    burger.innerHTML = "☰";
-    burger.onclick = () => navbar.classList.toggle("show");
+    if (header && image && navbar && !document.querySelector('.article-burger-fixed')) {
+      const burger = document.createElement("button");
+      burger.className = "article-burger-fixed";
+      burger.setAttribute("aria-label", "Toggle menu");
+      burger.innerHTML = "☰";
+      burger.onclick = () => navbar.classList.toggle("show");
 
-    // Вставить перед .article-header-image
-    const image = header.querySelector(".article-header-image");
-    if (image) {
       header.insertBefore(burger, image);
+      clearInterval(waiter);
     }
-  }
-});
+  };
+
+  const waiter = setInterval(tryInsert, 100); 
+}
+
+document.addEventListener("DOMContentLoaded", insertBurgerWhenReady);
