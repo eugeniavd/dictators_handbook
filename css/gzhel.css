@@ -1174,13 +1174,7 @@ main.content-wrapper {
   color: #003399;
   z-index: 3000;
   cursor: pointer;
-  display: none;
-}
-
-@media (max-width: 1024px) {
-  .article-burger-fixed {
-    display: block;
-  }
+  display: block;
 }
 
 .article-header {
