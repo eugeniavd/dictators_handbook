@@ -1143,12 +1143,6 @@ footer.home {
 
 /* Article Page */
 
-body.article-page {
-  padding-left: 2cm;
-  padding-right: 2cm;
-  box-sizing: border-box;
-}
-
 body.article-page #header-placeholder > * {
   margin: 0;
   padding: 0;
@@ -1160,6 +1154,12 @@ body.article-page .navbar-collapse {
 
 body.article-page .navbar-collapse.show {
   display: block !important;
+}
+
+.content-wrapper {
+  padding-left: 2cm;
+  padding-right: 2cm;
+  box-sizing: border-box;
 }
 
 .article-burger-fixed {
