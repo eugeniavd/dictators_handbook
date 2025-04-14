@@ -1157,10 +1157,12 @@ body.article-page .navbar-collapse.show {
 }
 
 .content-wrapper {
+  width: 100vw;
   padding-left: 2cm;
   padding-right: 2cm;
   box-sizing: border-box;
   border: 2px solid #bf1137;
+  margin: 0 auto;
 }
 
 .article-burger-fixed {
