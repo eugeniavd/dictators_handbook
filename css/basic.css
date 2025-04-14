@@ -41,13 +41,27 @@
     font-style: italic;
 }
 
-/* Article header and metadata */
-.article-header {
-    margin-bottom: 2rem;
+/* Map element styles */
+#map {
+    height: 100%;
+    width: 100%;
+}
+/* Placeholder map styles */
+.placeholder-map {
+    background-color: #e9ecef;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.article-metadata {
-    color: #666;
-    font-size: 0.9rem;
+/* Map container styles */
+.map-container {
+    position: absolute;
+    top: 56px; /* Height of the navbar */
+    left: 0;
+    right: 0;
+    height: 400px;
+    z-index: 100;
+    background-color: white;
 }
-
