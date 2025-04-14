@@ -1164,10 +1164,10 @@ body.article-page .navbar-collapse.show {
 }
 
 main.content-wrapper {
+  width: 50vw;
   display: flex;
-  flex-direction: row; 
-  height: 100vh;
-  overflow: hidden;
+  flex-direction: column; 
+  overflow-y: auto;
 }
 
 
@@ -1230,7 +1230,7 @@ main.content-wrapper {
 .article-header {
   position: relative;
   height: auto;
-  width: 100vw;
+  width: 100%; 
   overflow: hidden;
   display: flex;
   flex-direction: column;
