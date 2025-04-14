@@ -1145,9 +1145,15 @@ footer.home {
 
 /* Article Page */
 
-body.article-page #header-placeholder > * {
+body.article-page {
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
 }
 
 body.article-page .navbar-collapse {
@@ -1159,8 +1165,7 @@ body.article-page .navbar-collapse.show {
 }
 
 .content-wrapper {
-  max-width: 100%;
-  width: 100vw;
+  width: calc(100vw - 4cm); 
   padding-left: 2cm;
   padding-right: 2cm;
   box-sizing: border-box;
