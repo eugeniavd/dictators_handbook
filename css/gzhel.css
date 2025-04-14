@@ -1146,9 +1146,7 @@ footer.home {
 body.article-page {
   padding-left: 2cm;
   padding-right: 2cm;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+  box-sizing: border-box;
 }
 
 body.article-page #header-placeholder > * {
