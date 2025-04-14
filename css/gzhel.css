@@ -53,6 +53,8 @@ html, body {
   overflow-y: auto;
   position: relative;
   z-index: auto;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -1157,12 +1159,14 @@ body.article-page .navbar-collapse.show {
 }
 
 .content-wrapper {
+  max-width: 100%;
   width: 100vw;
   padding-left: 2cm;
   padding-right: 2cm;
   box-sizing: border-box;
   border: 2px solid #bf1137;
   margin: 0 auto;
+  overflow-x: hidden;
 }
 
 .article-burger-fixed {
