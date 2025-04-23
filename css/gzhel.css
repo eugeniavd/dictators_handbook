@@ -1146,7 +1146,6 @@ footer.home {
 /* Article Page */
 
 body.article-page {
-  position: relative;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
@@ -1166,7 +1165,6 @@ body.article-page .navbar-collapse.show {
 }
 
 .content-wrapper {
-  position: relative;
   width: calc(100vw - 2cm); 
   padding-left: 2cm;
   padding-right: 2cm;
@@ -1179,7 +1177,7 @@ body.article-page .navbar-collapse.show {
 .article-burger-fixed {
   position: absolute;
   top: 1rem;
-  left: 0;
+  left: -2cm;
   font-size: 2rem;
   border: 1px solid #3b40d9;
   background: none;
