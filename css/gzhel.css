@@ -1175,7 +1175,7 @@ body.article-page .navbar-collapse.show {
 .article-burger-fixed {
   position: absolute;
   top: 1rem;
-  left: -1cm;
+  left: 0;
   font-size: 2rem;
   border: 1px solid #3b40d9;
   background: none;
