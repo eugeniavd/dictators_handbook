@@ -38,6 +38,7 @@ body, html {
   position: relative;
   z-index: 1000;
   overflow: visible; 
+  border: 1px solid #010817;
 }
 
 header, #header-placeholder {
@@ -1039,6 +1040,7 @@ footer.home {
     -webkit-clip-path: ellipse(42% 26% at center);
     border-radius: 50%; 
     overflow: hidden;
+    border: 1px solid #009199;
   }
 
   footer.home {
@@ -1165,7 +1167,7 @@ body.article-page .navbar-collapse.show {
 }
 
 .content-wrapper {
-  width: calc(100vw - 2cm); 
+  width: calc(100vw - 4cm); 
   box-sizing: border-box;
   border: 2px solid #bf1137;
   margin: 0 auto;
@@ -1227,6 +1229,7 @@ body.article-page .navbar-collapse.show {
   display: flex;
   flex-direction: column;
   overflow-y: auto;
+  border: 1px solid #009933;
 }
 
 .article-header-container {
@@ -1239,6 +1242,7 @@ body.article-page .navbar-collapse.show {
   align-items: center;
   pointer-events: none; 
   z-index: 1;
+  border: 1px solid #009699;
 }
 
 .article-header {
@@ -1253,6 +1257,7 @@ body.article-page .navbar-collapse.show {
   text-align: center;
   padding-top: 0 !important;
   margin-top: 0 !important;
+  border: 1px solid #995200;
 }
 
 .article-header-image {
@@ -1261,6 +1266,7 @@ body.article-page .navbar-collapse.show {
   background: url('/images/ghzel/top_article_1_white.png') no-repeat center center;
   background-size: contain;
   margin-top: 0;
+  border: 1px solid #789900;
 }
 
 .article-header-container h1 {
@@ -1291,6 +1297,7 @@ body.article-page .navbar-collapse.show {
   color: #636060;
   margin-top: 1.5rem;
   font-family: 'balkara', serif;
+  border: 1px solid #2e0099;
 }
 
 .article-metadata p {
@@ -1317,6 +1324,7 @@ body.article-page .navbar-collapse.show {
   justify-content: center;
   align-items: center;
   font-family: 'balkara', serif;
+  border: 1px solid #910099;
 }
 
 .article-data-container h5 {
@@ -1342,11 +1350,17 @@ body.article-page .navbar-collapse.show {
   flex-direction: column;
   overflow-y: auto;
   background-color: white;
+  border: 1px solid #990069;
 }
 
 .sidebar {
   flex: 1;
   overflow-y: auto;
+  border: 1px solid #990005;
+}
+
+.sidebar-section {
+ border: 1px solid #420099;
 }
 
 /* Sidebar Collapsible Sections */
@@ -1373,6 +1387,8 @@ body.article-page .navbar-collapse.show {
 .map-container {
   height: 300px;
   padding: 1rem 1.5rem;
+  border: 1px solid #009914;
+  
 }
 
 /* Scrollbar Customization for Left Column */
