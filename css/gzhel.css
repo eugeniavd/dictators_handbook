@@ -1168,10 +1168,12 @@ body.article-page .navbar-collapse.show {
 
 .content-wrapper {
   width: calc(100vw - 4cm); 
+  display: flex;
   box-sizing: border-box;
   border: 2px solid #bf1137;
   margin: 0 auto;
   overflow-x: hidden;
+  justify-content: space-between;
 }
 
 .article-burger-fixed {
@@ -1351,6 +1353,9 @@ body.article-page .navbar-collapse.show {
   overflow-y: auto;
   background-color: white;
   border: 1px solid #990069;
+  margin-left: auto; 
+  position: absolute; 
+  right: 0;
 }
 
 .sidebar {
