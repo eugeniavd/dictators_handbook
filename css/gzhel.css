@@ -1269,16 +1269,16 @@ body.article-page .navbar-collapse.show {
   font-family: 'A_la_russ', serif;
   font-weight: 100;
   text-transform: uppercase;
-  font-size: 3.5rem;
+  font-size: 4rem;
   letter-spacing: 0.02rem;
-  margin-top: -2vh;
+  margin-top: -2.2vh;
   max-width: 100%;
   color: #022770; 
   text-shadow: 1px 1px 3px #0516536d;
   white-space: nowrap; 
   overflow: hidden;
   text-overflow: ellipsis;
-  transform: scaleX(0.7);
+  transform: scaleX(0.6);
 }
 
 .article-header-container h2 {
