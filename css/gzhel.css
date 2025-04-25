@@ -1283,7 +1283,7 @@ body.article-page .navbar-collapse.show {
   color: #022770; 
   text-shadow: 1px 1px 3px #0516536d;
   display: inline-block;
-  transform: scaleX(0.6);
+  transform: scaleX(0.6) translateX(-1%);
   transform-origin: center;
   white-space: nowrap;
 }
