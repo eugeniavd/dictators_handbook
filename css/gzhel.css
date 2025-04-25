@@ -1251,6 +1251,7 @@ body.article-page .navbar-collapse.show {
   align-items: center;
   justify-content: space-between;
   text-align: center;
+  padding: 0 1cm; 
   padding-top: 0 !important;
   margin-top: 0 !important;
   border: 1px solid #995200;
