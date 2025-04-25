@@ -1266,22 +1266,28 @@ body.article-page .navbar-collapse.show {
   border: 1px solid #789900;
 }
 
-.article-header-container h1 {
-  font-family: 'A_la_russ', serif;
-  text-transform: uppercase;
-  font-size: 4vw;
-  letter-spacing: 0.02rem;
+.h1-wrapper {
+  width: 100%;
+  overflow: hidden;
   padding: 0 1cm;
   box-sizing: border-box;
+  text-align: center;
+}
+
+.h1-wrapper .title {
+  font-family: 'A_la_russ', serif;
+  text-transform: uppercase;
+  font-size: 5vw;
+  letter-spacing: 0.02rem;
   margin-top: -3vh;
-  max-width: 100%;
   color: #022770; 
   text-shadow: 1px 1px 3px #0516536d;
-  white-space: nowrap; 
-  overflow: hidden;
-  text-overflow: ellipsis;
+  display: inline-block;
   transform: scaleX(0.6);
+  transform-origin: center;
+  white-space: nowrap;
 }
+
 
 .article-header-container h2 {
   font-family: 'balkara', serif;
