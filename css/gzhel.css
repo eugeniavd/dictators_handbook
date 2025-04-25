@@ -1229,6 +1229,7 @@ body.article-page .navbar-collapse.show {
 
 .article-header-container {
   width: 100%;
+  padding: 0;
   height: 50vh;
   display: flex;
   flex-direction: column;
@@ -1251,7 +1252,6 @@ body.article-page .navbar-collapse.show {
   align-items: center;
   justify-content: space-between;
   text-align: center;
-  padding: 0 1cm; 
   padding-top: 0 !important;
   margin-top: 0 !important;
   border: 1px solid #995200;
@@ -1270,10 +1270,12 @@ body.article-page .navbar-collapse.show {
   font-family: 'A_la_russ', serif;
   font-weight: 100;
   text-transform: uppercase;
-  font-size: 4rem;
+  font-size: 6vw;
   letter-spacing: 0.02rem;
+  padding: 0 1cm;
+  box-sizing: border-box;
   margin-top: -3vh;
-  max-width: 100% !important;
+  max-width: 100%;
   color: #022770; 
   text-shadow: 1px 1px 3px #0516536d;
   white-space: nowrap; 
