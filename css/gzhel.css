@@ -1276,18 +1276,18 @@ body.article-page .navbar-collapse.show {
   display: inline-block;
   transform: scaleX(0.6);
   transform-origin: center;
+  white-space: nowrap;
 }
 
 .h1-inner .title {
   font-family: 'A_la_russ', serif;
   text-transform: uppercase;
-  font-size: 6vw;
+  font-size: 5vw;
   letter-spacing: 0.02rem;
   margin-top: -1vh;
   color: #022770; 
   text-shadow: 1px 1px 3px #0516536d;
   margin: 0;
-  white-space: normal;
 }
 
 
