@@ -1220,7 +1220,6 @@ body.article-page .navbar-collapse.show {
 
 .main-article{
   width: 50%;
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
   overflow-y: auto;
@@ -1282,7 +1281,6 @@ body.article-page .navbar-collapse.show {
   color: #022770; 
   text-shadow: 1px 1px 3px #0516536d;
   display: inline-block;
-  transform: scaleX(0.6) scaleY(1);
   transform-origin: center;
   white-space: nowrap;
 }
