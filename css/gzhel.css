@@ -1274,7 +1274,7 @@ body.article-page .navbar-collapse.show {
 
 .h1-inner {
   display: inline-block;
-  transform: scaleX(0.55) scaleY(1.2) translateX(-40.9%);
+  transform: scaleX(0.55) scaleY(1.2) translateX(-39%);
   transform-origin: center;
   white-space: nowrap;
 }
@@ -1285,7 +1285,7 @@ body.article-page .navbar-collapse.show {
   font-size: 5vw;
   letter-spacing: 0.02rem;
   margin-top: -1vh;
-  color: #022770; 
+  color: #3b40d9; 
   text-shadow: 1px 1px 3px #0516536d;
   margin: 0;
 }
