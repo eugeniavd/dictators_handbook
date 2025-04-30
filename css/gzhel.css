@@ -1170,7 +1170,6 @@ body.article-page .navbar-collapse.show {
   width: calc(100vw - 4cm); 
   display: flex;
   box-sizing: border-box;
-  border: 2px solid #bf1137;
   margin: 0 auto;
   overflow-x: hidden;
   justify-content: space-between;
@@ -1221,10 +1220,10 @@ body.article-page .navbar-collapse.show {
 
 .main-article{
   width: 50%;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   overflow-y: auto;
-  border: 1px solid #009933;
 }
 
 .article-header-container {
@@ -1263,7 +1262,6 @@ body.article-page .navbar-collapse.show {
   background: url('/images/ghzel/top_article_1_white.png') no-repeat center center;
   background-size: contain;
   margin-top: 0;
-  border: 1px solid #789900;
 }
 
 .h1-wrapper {
@@ -1272,6 +1270,7 @@ body.article-page .navbar-collapse.show {
   padding: 0 1cm;
   box-sizing: border-box;
   text-align: center;
+  border: 1px dashed red; 
 }
 
 .h1-wrapper .title {
