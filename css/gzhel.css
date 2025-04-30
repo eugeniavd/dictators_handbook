@@ -1277,13 +1277,13 @@ body.article-page .navbar-collapse.show {
 .h1-wrapper .title {
   font-family: 'A_la_russ', serif;
   text-transform: uppercase;
-  font-size: 5vw;
+  font-size: 7vw;
   letter-spacing: 0.02rem;
-  margin-top: -3vh;
+  margin-top: -2vh;
   color: #022770; 
   text-shadow: 1px 1px 3px #0516536d;
   display: inline-block;
-  transform: scaleX(0.6) translateX(-1%);
+  transform: scaleX(0.6) scaleY(2) translateX(-1%);
   transform-origin: center;
   white-space: nowrap;
 }
