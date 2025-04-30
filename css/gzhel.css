@@ -1274,7 +1274,7 @@ body.article-page .navbar-collapse.show {
 
 .h1-inner {
   display: inline-block;
-  transform: scaleX(0.6);
+  transform: scaleX(0.6) translateX(-33.33%);
   transform-origin: center;
   white-space: nowrap;
 }
