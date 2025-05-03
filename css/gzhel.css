@@ -1321,9 +1321,8 @@ body.article-page .navbar-collapse.show {
 
 .article-metadata p {
   margin: 0.3rem 0;
-  display: block; 
+  display: block;
   text-align: center;
-  width: 100%;
 }
 
 .article-metadata a {
@@ -1333,8 +1332,8 @@ body.article-page .navbar-collapse.show {
   display: inline-block;
   margin: 0 auto;
   text-align: center;
-  width: 100%;
 }
+
 
 .article-metadata a:hover {
   color: #0055cc;
