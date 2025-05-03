@@ -1311,7 +1311,7 @@ body.article-page .navbar-collapse.show {
   text-transform: uppercase;
   margin-top: 1.5rem;
   font-family: 'balkara', serif;
-  letter-spacing: 0.2rem;
+  letter-spacing: 0.05rem;
   padding: 0.5em 1em;
   pointer-events: auto;
   border: 1px solid #2e0099;
