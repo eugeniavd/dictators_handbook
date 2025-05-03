@@ -1415,23 +1415,32 @@ body.article-page .navbar-collapse.show {
 }
 
 .img-box.narrow {
+  display: block;
   float: left;
-  margin: 0 1rem 1rem 0;
-  max-width: 50%;
+  margin: 0 1.5rem 1.5rem 0; 
+  max-width: none; 
+  clear: both;
 }
 
+.img-box.narrow picture,
 .img-box.narrow img {
   display: block;
-  width: 100%;
+  width: auto; 
   height: auto;
 }
 
-.img-description {
+.img-box.narrow figcaption {
   font-size: 0.75rem;
-  color: #4341418c;
-  margin-top: 0.5rem;
+  opacity: 0.5;
+  color: #222;
   text-align: left;
+  line-height: 1.2;
+  margin-top: 0.25rem;
+  width: auto;
+  max-width: 100%;
+  padding: 0;
 }
+
 
 
 /* Right: Sticky Metadata + Map */
