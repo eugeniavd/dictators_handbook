@@ -1300,14 +1300,12 @@ body.article-page .navbar-collapse.show {
   white-space: normal;
 }
 
-.article-metadata-wrapper {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
 .article-metadata {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;      
+  justify-content: center;   
+  text-align: center;        
   font-size: 1rem;
   color: #022770;
   letter-spacing: 0.1em;
@@ -1331,6 +1329,7 @@ body.article-page .navbar-collapse.show {
   margin: 0.3rem 0;
   display: block; 
   text-align: center;
+  width: 100%;
 }
 
 .article-metadata a {
@@ -1340,6 +1339,7 @@ body.article-page .navbar-collapse.show {
   display: inline-block;
   margin: 0 auto;
   text-align: center;
+  width: 100%;
 }
 
 .article-metadata a:hover {
