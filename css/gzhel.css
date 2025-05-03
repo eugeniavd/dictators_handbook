@@ -1381,6 +1381,8 @@ body.article-page .navbar-collapse.show {
   margin: 1rem 0;
   display: block;
   max-width: 100%;
+  margin-bottom: 2rem;
+  clear: both; 
 }
 
 .img-box img {
@@ -1388,17 +1390,19 @@ body.article-page .navbar-collapse.show {
   height: auto;
   display: block;
   margin: 0 auto;
+  float: none;
 }
 
 .img-box img[width][height]:not([width="652"]) {
-  float: right;
+  display: inline-block;
+  vertical-align: top;
   margin: 0 0 1rem 1rem;
-  max-width: 50%; 
+  max-width: 50%;
 }
 
 .img-description {
-  font-size: 0.85rem;
-  color: rgba(67, 65, 65, 0.8);
+  font-size: 0.75rem;
+  color: #4341418c;
   font-weight: normal;
   font-family: 'balkara', serif;
   line-height: 1.4;
