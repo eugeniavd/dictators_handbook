@@ -1307,8 +1307,8 @@ body.article-page .navbar-collapse.show {
   letter-spacing: 0.1em;
   margin-top: 1.5rem;
   font-family: 'balkara', serif;
-  background: linear-gradient(to top, #ffffff 50%, #cdddf5 50%);
   padding: 0.1em 0.3em;
+  pointer-events: auto;
   border: 1px solid #2e0099;
 }
 
@@ -1325,6 +1325,7 @@ body.article-page .navbar-collapse.show {
 .article-metadata a {
   color: #003399;
   text-decoration: underline;
+  cursor: pointer;
 }
 
 .article-metadata a:hover {
@@ -1334,6 +1335,8 @@ body.article-page .navbar-collapse.show {
 .article-metadata p::first-letter {
   all: unset;
 }
+
+
 
 .article-data-container {
   margin-top: 1rem;
