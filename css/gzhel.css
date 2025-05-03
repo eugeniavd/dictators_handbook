@@ -1414,6 +1414,25 @@ body.article-page .navbar-collapse.show {
   all: unset; 
 }
 
+.img-box.narrow {
+  float: left;
+  margin: 0 1rem 1rem 0;
+  max-width: 50%;
+}
+
+.img-box.narrow img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.img-description {
+  font-size: 0.75rem;
+  color: #4341418c;
+  margin-top: 0.5rem;
+  text-align: left;
+}
+
 
 /* Right: Sticky Metadata + Map */
 
