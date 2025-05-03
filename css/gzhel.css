@@ -1301,7 +1301,7 @@ body.article-page .navbar-collapse.show {
 }
 
 .article-metadata {
-  text-align: center;
+  text-align: center !important;
   font-size: 1rem;
   color: #022770;
   letter-spacing: 0.1em;
@@ -1320,7 +1320,6 @@ body.article-page .navbar-collapse.show {
   color: #022770;
 }
 
-
 .article-metadata p {
   margin: 0.3rem 0;
   display: block; 
@@ -1331,7 +1330,6 @@ body.article-page .navbar-collapse.show {
   text-decoration: underline;
   cursor: pointer;
   display: inline-block;
-  text-align: center;
   margin: 0 auto;
 }
 
