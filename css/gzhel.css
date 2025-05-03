@@ -1349,24 +1349,27 @@ body.article-page .navbar-collapse.show {
   line-height: inherit;
 }
 
-
-
 .article-data-container {
-  margin-top: 1rem;
+  position: absolute;
+  top: 4.2rem;
+  left: 1rem;
   display: flex;
-  gap: 2rem;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  gap: 0.2rem;
   font-family: 'balkara', serif;
+  z-index: 3000;
   border: 1px solid #910099;
+  padding: 0.4rem 0.6rem;
 }
 
 .article-data-container h5 {
-  font-size: 1rem;
+  font-size: 0.75rem;
   margin: 0;
-  color: #003399;
+  color: #434141;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.05rem;
+  line-height: 1.2;
+  text-align: left;
 }
 
 /* Left: Scrollable Content */
