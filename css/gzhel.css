@@ -1331,6 +1331,7 @@ body.article-page .navbar-collapse.show {
   cursor: pointer;
   display: inline-block;
   margin: 0 auto;
+  text-align: center !important;
 }
 
 .article-metadata a:hover {
