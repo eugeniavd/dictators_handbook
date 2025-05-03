@@ -1312,20 +1312,18 @@ body.article-page .navbar-collapse.show {
   border: 1px solid #2e0099;
 }
 
-.article-metadata strong::before {
-  content: '☦'; 
-  margin-right: 0.3em;
-  color: #022770;
-}
-
 .article-metadata p {
   margin: 0.3rem 0;
+  display: block; 
+  text-align: center;
 }
 
 .article-metadata a {
   color: #003399;
   text-decoration: underline;
   cursor: pointer;
+  display: block; 
+  text-align: center;
 }
 
 .article-metadata a:hover {
