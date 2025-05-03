@@ -1377,6 +1377,40 @@ body.article-page .navbar-collapse.show {
   max-width: 100%;
 }
 
+.img-box {
+  margin: 1rem 0;
+  display: block;
+  max-width: 100%;
+}
+
+.img-box img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.img-box img[width][height]:not([width="652"]) {
+  float: right;
+  margin: 0 0 1rem 1rem;
+  max-width: 50%; 
+}
+
+.img-description {
+  font-size: 0.85rem;
+  color: rgba(67, 65, 65, 0.8);
+  font-weight: normal;
+  font-family: 'balkara', serif;
+  line-height: 1.4;
+  margin-top: 0.3rem;
+  text-align: justify;
+}
+
+.img-description::first-letter {
+  all: unset; 
+}
+
+
 /* Right: Sticky Metadata + Map */
 
 .sidebar-section-group {
