@@ -1300,18 +1300,23 @@ body.article-page .navbar-collapse.show {
   white-space: normal;
 }
 
+.article-metadata-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
 .article-metadata {
-  width: fit-content; 
-  max-width: 90%;
-  margin: 1.5rem auto; 
   text-align: center;
   font-size: 1rem;
   color: #022770;
   letter-spacing: 0.1em;
+  margin-top: 1.5rem;
   font-family: 'balkara', serif;
   padding: 0.5em 1em;
   pointer-events: auto;
   border: 1px solid #2e0099;
+  max-width: 100%;
   box-sizing: border-box;
 }
 
