@@ -1352,10 +1352,9 @@ body.article-page .navbar-collapse.show {
 .article-data-container {
   position: absolute;
   top: 7rem;
-  left: 0.3rem;
+  left: 0rem;
   display: flex;
   flex-direction: column;
-  gap: 0rem;
   font-family: 'balkara', serif;
   z-index: 3000;
   padding: 0.4rem 0.6rem;
