@@ -298,7 +298,7 @@ document.addEventListener("DOMContentLoaded", function () {
     wrapper.className = "dropcap-wrapper";
 
     const img = document.createElement("img");
-    img.src = `/images/gzhel/letters/${firstChar}.png`; 
+    img.src = `/images/ghzel/letters/${firstChar}.png`; 
     img.alt = firstChar;
     img.className = "dropcap-image";
 
