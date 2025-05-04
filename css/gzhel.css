@@ -1432,7 +1432,7 @@ body.article-page .navbar-collapse.show {
 
 .img-box.narrow .img-description {
   display: block;
-  width: 100%;
+  width: 100% !important;
   caption-side: bottom;
   font-size: 0.75rem;
   opacity: 0.5;
