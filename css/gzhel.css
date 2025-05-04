@@ -1426,7 +1426,6 @@ body.article-page .navbar-collapse.show {
 
 .img-box.narrow img {
   display: block;
-  width: auto;
   height: auto;
   max-width: 100%;
 }
@@ -1440,8 +1439,8 @@ body.article-page .navbar-collapse.show {
   text-align: left;
   line-height: 1.2;
   margin-top: 0.25rem;
-  word-wrap: break-word;
-  white-space: normal;
+  width: fit-content;
+  max-width: 100%;
 }
 
 
