@@ -1379,13 +1379,12 @@ body.article-page .navbar-collapse.show {
 
 .article-content p {
   margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .article-content h3 {
-  margin-top: 4rem;
-  margin-bottom: 2rem;
-  text-align: center;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
 }
 
 .img-box {
