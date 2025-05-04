@@ -1425,13 +1425,15 @@ body.article-page .navbar-collapse.show {
 }
 
 .img-box.narrow img {
-  display: table-row; 
+  display: block;
   width: auto;
   height: auto;
+  max-width: 100%;
 }
 
 .img-box.narrow .img-description {
-  display: table-caption;
+  display: block;
+  width: 100%;
   caption-side: bottom;
   font-size: 0.75rem;
   opacity: 0.5;
