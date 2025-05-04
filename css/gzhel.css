@@ -1415,13 +1415,9 @@ body.article-page .navbar-collapse.show {
 }
 
 .img-box.narrow {
+  display: table;
   float: left;
   margin: 0 1.5rem 1.5rem 0; 
-}
-
-.img-box.narrow .img-wrapper {
-  display: table;
-  text-align: left;
 }
 
 .img-box.narrow img {
@@ -1432,6 +1428,7 @@ body.article-page .navbar-collapse.show {
 
 .img-box.narrow .img-description {
   display: table-caption;
+  caption-side: bottom;
   font-size: 0.75rem;
   opacity: 0.5;
   color: #222;
