@@ -1420,20 +1420,18 @@ body.article-page .navbar-collapse.show {
 }
 
 .img-box.narrow {
-  display: inline-block;
+  display: inline-table;
   text-align: left;
-  width: auto; 
 }
 
 .img-box.narrow img {
-  display: block;
+  display: table-row; 
   width: auto;
   height: auto;
 }
 
 .img-box.narrow .img-description {
-  display: block;
-  width: 100%;
+  display: table-caption;
   caption-side: bottom;
   font-size: 0.75rem;
   opacity: 0.5;
