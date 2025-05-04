@@ -1394,9 +1394,10 @@ body.article-page .navbar-collapse.show {
 }
 
 .dropcap-image {
-  width: 2.5rem;
+  width: 2em;
   height: auto;
-  display: block;
+  float: left;
+  margin-right: 0.5em;
 }
 
 .img-box {

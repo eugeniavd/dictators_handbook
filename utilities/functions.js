@@ -285,29 +285,23 @@ burger.addEventListener('click', () => {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  const articles = document.querySelectorAll(".article-content p");
+  const paragraphs = document.querySelectorAll(".article-content p");
 
-  articles.forEach((p) => {
-    const text = p.textContent.trim();
-    if (!text) return;
+  for (const p of paragraphs) {
+    const html = p.innerHTML.trim();
+    if (!html) continue;
 
-    const firstChar = text[0].toUpperCase();
-    const restText = text.slice(1);
+    
+    const updatedHTML = html.replace(
+      /^(\s*(<[^>]+>\s*)*)?([A-Za-zА-Яа-яЁё])/u,
+      function (match, prefix = '', _, firstChar) {
+        const upperChar = firstChar.toUpperCase();
+        return `${prefix || ''}<span class="dropcap-wrapper"><img src="images/ghzel/letters/${upperChar}.png" alt="${upperChar}" class="dropcap-image"></span>`;
+      }
+    );
 
-    const wrapper = document.createElement("span");
-    wrapper.className = "dropcap-wrapper";
-
-    const img = document.createElement("img");
-    img.src = `/images/ghzel/letters/${firstChar}.png`; 
-    img.alt = firstChar;
-    img.className = "dropcap-image";
-
-    const textNode = document.createTextNode(restText);
-
-    wrapper.appendChild(img);
-    wrapper.appendChild(textNode);
-
-    p.textContent = "";
-    p.appendChild(wrapper);
-  });
+    p.innerHTML = updatedHTML;
+    break; 
+  }
 });
+
