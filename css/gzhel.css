@@ -1415,11 +1415,9 @@ body.article-page .navbar-collapse.show {
 }
 
 .img-box.narrow {
-  display: block;
+  display: table;
   float: left;
   margin: 0 1.5rem 1.5rem 0; 
-  max-width: none; 
-  clear: both;
 }
 
 .img-box.narrow picture,
@@ -1427,18 +1425,18 @@ body.article-page .navbar-collapse.show {
   display: block;
   width: auto; 
   height: auto;
+  max-width: 100%;
 }
 
 .img-box.narrow figcaption {
+  display: table-caption;
+  caption-side: bottom;
   font-size: 0.75rem;
   opacity: 0.5;
   color: #222;
   text-align: left;
   line-height: 1.2;
   margin-top: 0.25rem;
-  width: auto;
-  max-width: 100%;
-  padding: 0;
 }
 
 
