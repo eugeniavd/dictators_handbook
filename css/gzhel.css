@@ -1420,7 +1420,7 @@ body.article-page .navbar-collapse.show {
 }
 
 .img-box.narrow {
-  display: inline-table;
+  display: inline-block;
   text-align: left;
 }
 
@@ -1433,7 +1433,6 @@ body.article-page .navbar-collapse.show {
 
 .img-box.narrow .img-description {
   display: block;
-  width: 100%;
   caption-side: bottom;
   font-size: 0.75rem;
   opacity: 0.5;
