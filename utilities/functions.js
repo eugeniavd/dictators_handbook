@@ -287,21 +287,18 @@ burger.addEventListener('click', () => {
 document.addEventListener("DOMContentLoaded", function () {
   const paragraphs = document.querySelectorAll(".article-content p");
 
-  for (const p of paragraphs) {
+  paragraphs.forEach((p) => {
     const html = p.innerHTML.trim();
-    if (!html) continue;
+    if (!html) return;
 
     
-    const updatedHTML = html.replace(
-      /^(\s*(<[^>]+>\s*)*)?([A-Za-zА-Яа-яЁё])/u,
-      function (match, prefix = '', _, firstChar) {
-        const upperChar = firstChar.toUpperCase();
-        return `${prefix || ''}<span class="dropcap-wrapper"><img src="images/ghzel/letters/${upperChar}.png" alt="${upperChar}" class="dropcap-image"></span>`;
-      }
-    );
+    const updatedHTML = html.replace(/^(\s*)(\w)/, function (match, spaces, firstChar) {
+      const upperChar = firstChar.toUpperCase();
+      return `${spaces}<span class="dropcap-wrapper"><img src="images/ghzel/letters/${upperChar}.png" alt="${upperChar}" class="dropcap-image"></span>`;
+    });
 
     p.innerHTML = updatedHTML;
-    break; 
-  }
+  });
 });
+
 
