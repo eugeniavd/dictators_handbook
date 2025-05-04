@@ -1415,21 +1415,21 @@ body.article-page .navbar-collapse.show {
 }
 
 .img-box.narrow {
-  display: table;
   float: left;
   margin: 0 1.5rem 1.5rem 0; 
+  max-width: 100%; 
 }
 
 .img-box.narrow picture,
 .img-box.narrow img {
   display: block;
-  width: auto; 
+  max-width: none;
   height: auto;
-  max-width: 100%;
 }
 
 .img-box.narrow figcaption {
-  display: table-caption;
+  display: block;
+  width: auto;
   caption-side: bottom;
   font-size: 0.75rem;
   opacity: 0.5;
