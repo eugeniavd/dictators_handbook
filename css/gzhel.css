@@ -1432,6 +1432,8 @@ body.article-page .navbar-collapse.show {
 
 .img-box.narrow .img-description {
   display: block;
+  width: fit-content;
+  max-width: 100%;
   caption-side: bottom;
   font-size: 0.75rem;
   opacity: 0.5;
