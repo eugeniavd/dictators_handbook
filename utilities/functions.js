@@ -283,3 +283,31 @@ const menu = document.querySelector('.article-flyout-menu');
 burger.addEventListener('click', () => {
   menu.classList.toggle('show');
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const articles = document.querySelectorAll(".article-content p");
+
+  articles.forEach((p) => {
+    const text = p.textContent.trim();
+    if (!text) return;
+
+    const firstChar = text[0].toUpperCase();
+    const restText = text.slice(1);
+
+    const wrapper = document.createElement("span");
+    wrapper.className = "dropcap-wrapper";
+
+    const img = document.createElement("img");
+    img.src = `/images/gzhel/letters/${firstChar}.png`; 
+    img.alt = firstChar;
+    img.className = "dropcap-image";
+
+    const textNode = document.createTextNode(restText);
+
+    wrapper.appendChild(img);
+    wrapper.appendChild(textNode);
+
+    p.textContent = "";
+    p.appendChild(wrapper);
+  });
+});
