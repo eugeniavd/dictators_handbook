@@ -1391,7 +1391,6 @@ body.article-page .navbar-collapse.show {
   margin: 1rem 0;
   display: block;
   max-width: 100%;
-  margin-bottom: 2rem;
   clear: both; 
 }
 
@@ -1400,14 +1399,6 @@ body.article-page .navbar-collapse.show {
   height: auto;
   display: block;
   margin: 0 auto;
-  float: none;
-}
-
-.img-box img[width][height]:not([width="652"]) {
-  display: inline-block;
-  vertical-align: top;
-  margin: 0 0 1rem 1rem;
-  max-width: 50%;
 }
 
 .img-description {
