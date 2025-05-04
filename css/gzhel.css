@@ -1415,28 +1415,30 @@ body.article-page .navbar-collapse.show {
 }
 
 .img-box.narrow {
-  float: left;
+  display: inline-block;
+  vertical-align: top;
   margin: 0 1.5rem 1.5rem 0; 
-  max-width: 100%; 
 }
 
-.img-box.narrow picture,
+.img-box.narrow .img-wrapper {
+  display: inline-block;
+  text-align: left;
+}
+
 .img-box.narrow img {
   display: block;
-  max-width: none;
+  width: auto;
   height: auto;
 }
 
-.img-box.narrow figcaption {
-  display: block;
-  width: auto;
-  caption-side: bottom;
+.img-box.narrow .img-description {
   font-size: 0.75rem;
   opacity: 0.5;
   color: #222;
   text-align: left;
   line-height: 1.2;
   margin-top: 0.25rem;
+  max-width: 100%;
 }
 
 
