@@ -1377,6 +1377,16 @@ body.article-page .navbar-collapse.show {
   max-width: 100%;
 }
 
+.article-content p {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.article-content h3 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
 .img-box {
   margin: 1rem 0;
   display: block;
