@@ -1378,13 +1378,14 @@ body.article-page .navbar-collapse.show {
 }
 
 .article-content p {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .article-content h3 {
   margin-top: 4rem;
   margin-bottom: 2rem;
+  text-align: center;
 }
 
 .img-box {
