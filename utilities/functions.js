@@ -289,24 +289,28 @@ burger.addEventListener('click', () => {
 // ==============================
 
 document.addEventListener("DOMContentLoaded", function () {
-  const firstParagraph = document.querySelector(".article-content p:first-of-type");
-  if (!firstParagraph) return;
+  const articles = document.querySelectorAll(".article-content");
 
-  const html = firstParagraph.innerHTML.trim();
-  if (!html) return;
+  articles.forEach((article) => {
+    const firstParagraph = article.querySelector("p:first-of-type");
+    if (!firstParagraph) return;
 
-  const firstLetter = html.charAt(0);
-  const remainingHTML = html.slice(1);
+    const html = firstParagraph.innerHTML.trim();
+    if (!html) return;
 
-  const dropCapSpan = document.createElement("span");
-  dropCapSpan.className = "drop-cap";
-  dropCapSpan.textContent = firstLetter;
+    const firstLetter = html.charAt(0);
+    const remainingHTML = html.slice(1);
 
-  dropCapSpan.style.backgroundImage = `url(/images/ghzel/letters/${firstLetter.toLowerCase()}.png)`;
+    const dropCapSpan = document.createElement("span");
+    dropCapSpan.className = "drop-cap";
+    dropCapSpan.textContent = firstLetter;
 
-  firstParagraph.innerHTML = "";
-  firstParagraph.appendChild(dropCapSpan);
-  firstParagraph.insertAdjacentHTML("beforeend", remainingHTML);
+    dropCapSpan.style.backgroundImage = `url(/images/ghzel/letters/${firstLetter.toLowerCase()}.png)`;
+
+    firstParagraph.innerHTML = "";
+    firstParagraph.appendChild(dropCapSpan);
+    firstParagraph.insertAdjacentHTML("beforeend", remainingHTML);
+  });
 });
 
 
