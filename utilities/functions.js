@@ -284,6 +284,10 @@ burger.addEventListener('click', () => {
   menu.classList.toggle('show');
 });
 
+// ==============================
+// Capital Letters For Article Page
+// ==============================
+
 document.addEventListener("DOMContentLoaded", function () {
   const paragraphs = document.querySelectorAll(".article-content p");
 
@@ -291,8 +295,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const html = p.innerHTML.trim();
     if (!html) return;
 
-    
-    const updatedHTML = html.replace(/^(\s*)(\w)/, function (match, spaces, firstChar) {
+    const updatedHTML = html.replace(/^(\s*)([A-Za-z])/, function (match, spaces, firstChar) {
       const upperChar = firstChar.toUpperCase();
       return `${spaces}<span class="dropcap-wrapper"><img src="images/ghzel/letters/${upperChar}.png" alt="${upperChar}" class="dropcap-image"></span>`;
     });
@@ -300,5 +303,6 @@ document.addEventListener("DOMContentLoaded", function () {
     p.innerHTML = updatedHTML;
   });
 });
+
 
 
