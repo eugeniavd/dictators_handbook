@@ -289,7 +289,7 @@ burger.addEventListener('click', () => {
 // ==============================
 
 const dropCaps = () => {
-  const firstParagraph = document.querySelector(".article-text p:first-of-type");
+  const firstParagraph = document.querySelector(".article-content p:first-of-type");
   if (!firstParagraph) return;
 
   const html = firstParagraph.innerHTML.trim();
