@@ -292,17 +292,30 @@ document.addEventListener("DOMContentLoaded", function () {
   const paragraphs = document.querySelectorAll(".article-content p");
 
   paragraphs.forEach((p) => {
-    const html = p.innerHTML.trim();
-    if (!html) return;
+    const text = p.textContent.trim();
+    if (!text) return;
 
-    const updatedHTML = html.replace(/^(\s*)([A-Za-z])/, function (match, spaces, firstChar) {
-      const upperChar = firstChar.toUpperCase();
-      return `${spaces}<span class="dropcap-wrapper"><img src="images/ghzel/letters/${upperChar}.png" alt="${upperChar}" class="dropcap-image"></span>`;
-    });
+    const firstChar = text[0].toUpperCase();
+    const restText = text.slice(1);
 
-    p.innerHTML = updatedHTML;
+    const wrapper = document.createElement("span");
+    wrapper.className = "dropcap-wrapper";
+
+    const img = document.createElement("img");
+    img.src = `/images/ghzel/letters/${firstChar}.png`; 
+    img.alt = firstChar;
+    img.className = "dropcap-image";
+
+    const textNode = document.createTextNode(restText);
+
+    wrapper.appendChild(img);
+    wrapper.appendChild(textNode);
+
+    p.textContent = "";
+    p.appendChild(wrapper);
   });
 });
+
 
 
 
