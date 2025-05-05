@@ -288,22 +288,29 @@ burger.addEventListener('click', () => {
 // Capital Letters For Article Page
 // ==============================
 
-const firstParagraph = document.querySelector(
-  ".article-text p:first-of-type"
-);
+function dropCaps() {
+  const firstParagraph = document.querySelector(".article-content p:first-of-type");
+  if (!firstParagraph) return;
 
-dropCaps: () => {
-  const firstParagraph = document.querySelector(
-    ".article-content p:first-of-type"
-  );
-  const firstLetter = firstParagraph.textContent.trim().charAt(0);
-  const remainingText = firstParagraph.innerHTML.trim().slice(1);
+  const textContent = firstParagraph.textContent.trim();
+  if (!textContent) return;
 
-  firstParagraph.innerHTML = `<span class="drop-cap">${firstLetter}</span>${remainingText}`;
-  document.querySelector(
-    ".drop-cap"
-  ).style.backgroundImage = `url(images/ghzel/letters/${firstLetter.toLowerCase()}.png)`;
-};
+  const firstLetter = textContent.charAt(0);
+  const remainingText = textContent.slice(1);
+
+  const dropCapSpan = document.createElement("span");
+  dropCapSpan.className = "drop-cap";
+  dropCapSpan.textContent = firstLetter;
+
+  dropCapSpan.style.backgroundImage = `url(/images/ghzel/letters/${firstLetter.toUpperCase()}.png)`;
+
+  firstParagraph.innerHTML = "";
+  firstParagraph.appendChild(dropCapSpan);
+  firstParagraph.appendChild(document.createTextNode(remainingText));
+}
+
+document.addEventListener("DOMContentLoaded", dropCaps);
+
 
 
 
