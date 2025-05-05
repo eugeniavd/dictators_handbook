@@ -288,29 +288,28 @@ burger.addEventListener('click', () => {
 // Capital Letters For Article Page
 // ==============================
 
-document.addEventListener("DOMContentLoaded", () => {
-  const articles = document.querySelectorAll(".article-text");
+const dropCaps = () => {
+  const firstParagraph = document.querySelector(".article-text p:first-of-type");
+  if (!firstParagraph) return;
 
-  articles.forEach((article) => {
-    const firstParagraph = article.querySelector("p:first-of-type");
-    if (!firstParagraph) return;
+  const html = firstParagraph.innerHTML.trim();
+  if (!html) return;
 
-    const html = firstParagraph.innerHTML.trim();
-    if (!html) return;
+  const firstLetter = html.charAt(0);
+  const remainingHTML = html.slice(1);
 
-    const firstLetter = html.charAt(0);
-    const remainingHTML = html.slice(1);
+  const dropCapSpan = document.createElement("span");
+  dropCapSpan.className = "drop-cap";
+  dropCapSpan.textContent = firstLetter;
 
-    const dropCapSpan = document.createElement("span");
-    dropCapSpan.className = "drop-cap";
-    dropCapSpan.textContent = firstLetter;
-    dropCapSpan.style.backgroundImage = `url(/images/ghzel/letters/${firstLetter.toUpperCase()}.png)`;
+  dropCapSpan.style.backgroundImage = `url(/images/ghzel/letters/${firstLetter.toUpperCase()}.png)`;
 
-    firstParagraph.innerHTML = "";
-    firstParagraph.appendChild(dropCapSpan);
-    firstParagraph.insertAdjacentHTML("beforeend", remainingHTML);
-  });
-});
+  firstParagraph.innerHTML = "";
+  firstParagraph.appendChild(dropCapSpan);
+  firstParagraph.insertAdjacentHTML("beforeend", remainingHTML);
+};
+
+document.addEventListener("DOMContentLoaded", dropCaps);
 
 
 
