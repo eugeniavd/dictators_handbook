@@ -1388,14 +1388,13 @@ body.article-page .navbar-collapse.show {
 }
 
 .drop-cap {
-  display: inline-block;
-  width: 3rem;
-  height: 3rem;
+  color: transparent;
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: center;
-  vertical-align: top;
-  margin-right: 0.5rem;
+  padding: 3rem;
+  font-size: 0px;
+  float: left;
+  margin-right: 0.2rem;
 }
 
 .img-box {
