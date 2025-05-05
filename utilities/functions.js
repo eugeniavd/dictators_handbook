@@ -288,33 +288,30 @@ burger.addEventListener('click', () => {
 // Capital Letters For Article Page
 // ==============================
 
-document.addEventListener("DOMContentLoaded", function () {
-  const paragraphs = document.querySelectorAll(".article-content p");
+document.addEventListener("DOMContentLoaded", () => {
+  const articles = document.querySelectorAll(".article-text");
 
-  paragraphs.forEach((p) => {
-    const text = p.textContent.trim();
-    if (!text) return;
+  articles.forEach((article) => {
+    const firstParagraph = article.querySelector("p:first-of-type");
+    if (!firstParagraph) return;
 
-    const firstChar = text[0].toUpperCase();
-    const restText = text.slice(1);
+    const html = firstParagraph.innerHTML.trim();
+    if (!html) return;
 
-    const wrapper = document.createElement("span");
-    wrapper.className = "dropcap-wrapper";
+    const firstLetter = html.charAt(0);
+    const remainingHTML = html.slice(1);
 
-    const img = document.createElement("img");
-    img.src = `images/ghzel/letters/${firstChar}.png`; 
-    img.alt = firstChar;
-    img.className = "dropcap-image";
+    const dropCapSpan = document.createElement("span");
+    dropCapSpan.className = "drop-cap";
+    dropCapSpan.textContent = firstLetter;
+    dropCapSpan.style.backgroundImage = `url(/images/ghzel/letters/${firstLetter.toUpperCase()}.png)`;
 
-    const textNode = document.createTextNode(restText);
-
-    wrapper.appendChild(img);
-    wrapper.appendChild(textNode);
-
-    p.textContent = "";
-    p.appendChild(wrapper);
+    firstParagraph.innerHTML = "";
+    firstParagraph.appendChild(dropCapSpan);
+    firstParagraph.insertAdjacentHTML("beforeend", remainingHTML);
   });
 });
+
 
 
 
