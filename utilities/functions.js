@@ -288,15 +288,15 @@ burger.addEventListener('click', () => {
 // Capital Letters For Article Page
 // ==============================
 
-function dropCaps() {
+document.addEventListener("DOMContentLoaded", function () {
   const firstParagraph = document.querySelector(".article-content p:first-of-type");
   if (!firstParagraph) return;
 
-  const textContent = firstParagraph.textContent.trim();
-  if (!textContent) return;
+  const html = firstParagraph.innerHTML.trim();
+  if (!html) return;
 
-  const firstLetter = textContent.charAt(0);
-  const remainingText = textContent.slice(1);
+  const firstLetter = html.charAt(0);
+  const remainingHTML = html.slice(1);
 
   const dropCapSpan = document.createElement("span");
   dropCapSpan.className = "drop-cap";
@@ -306,10 +306,10 @@ function dropCaps() {
 
   firstParagraph.innerHTML = "";
   firstParagraph.appendChild(dropCapSpan);
-  firstParagraph.appendChild(document.createTextNode(remainingText));
-}
+  firstParagraph.insertAdjacentHTML("beforeend", remainingHTML);
+});
 
-document.addEventListener("DOMContentLoaded", dropCaps);
+
 
 
 
