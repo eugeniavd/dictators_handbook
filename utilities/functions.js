@@ -303,7 +303,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const dropCapSpan = document.createElement("span");
     dropCapSpan.className = "drop-cap";
-    dropCapSpan.style.backgroundImage = `url("/images/ghzel/letters/${firstLetter.toLowerCase()}.png")`;
+    dropCapSpan.style.backgroundImage = `url("/images/ghzel/letters/${firstLetter.toUpperCase()}.png")`;
 
     
     const wrapper = document.createElement("div");
