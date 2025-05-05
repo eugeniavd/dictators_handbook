@@ -298,20 +298,27 @@ document.addEventListener("DOMContentLoaded", function () {
     const html = firstParagraph.innerHTML.trim();
     if (!html) return;
 
-    const firstLetter = html.charAt(0);
-    const remainingHTML = html.slice(1);
+    const firstLetter = html[0];
+    const rest = html.slice(1);
 
     const dropCapSpan = document.createElement("span");
     dropCapSpan.className = "drop-cap";
+    dropCapSpan.style.backgroundImage = `url(/images/ghzel/letters/${firstLetter.toLowerCase()}.png)`;
     dropCapSpan.textContent = firstLetter;
 
-    dropCapSpan.style.backgroundImage = `url(/images/ghzel/letters/${firstLetter.toLowerCase()}.png)`;
-
+    
+    const wrapper = document.createElement("div");
+    wrapper.innerHTML = rest;
+    
+    
     firstParagraph.innerHTML = "";
     firstParagraph.appendChild(dropCapSpan);
-    firstParagraph.insertAdjacentHTML("beforeend", remainingHTML);
+
+    
+    [...wrapper.childNodes].forEach(node => firstParagraph.appendChild(node));
   });
 });
+
 
 
 
