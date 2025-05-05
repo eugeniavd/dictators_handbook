@@ -1387,6 +1387,10 @@ body.article-page .navbar-collapse.show {
   margin-bottom: 1rem;
 }
 
+.article-content p:first-of-type::first-letter {
+  all: unset;
+}
+
 .drop-cap {
   color: transparent;
   background-size: contain;
