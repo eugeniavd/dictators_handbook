@@ -304,8 +304,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const dropCapSpan = document.createElement("span");
     dropCapSpan.className = "drop-cap";
     dropCapSpan.style.backgroundImage = `url(/images/ghzel/letters/${firstLetter.toLowerCase()}.png)`;
-    dropCapSpan.textContent = firstLetter;
-
     
     const wrapper = document.createElement("div");
     wrapper.innerHTML = rest;

@@ -1392,12 +1392,13 @@ body.article-page .navbar-collapse.show {
 }
 
 .drop-cap {
-  color: transparent;
-  background-size: contain;
+  display: inline-block;
+  width: 3rem;
+  height: 3rem;
+  background-size: cover;
   background-repeat: no-repeat;
-  padding: 3rem;
+  background-position: center;
   font-size: 0;
-  float: left;
   margin-right: 0.5rem;
   line-height: 1;
 }
