@@ -302,7 +302,7 @@ function dropCaps() {
   dropCapSpan.className = "drop-cap";
   dropCapSpan.textContent = firstLetter;
 
-  dropCapSpan.style.backgroundImage = `url(/images/ghzel/letters/${firstLetter.toUpperCase()}.png)`;
+  dropCapSpan.style.backgroundImage = `url(/images/ghzel/letters/${firstLetter.toLowerCase()}.png)`;
 
   firstParagraph.innerHTML = "";
   firstParagraph.appendChild(dropCapSpan);
