@@ -1387,17 +1387,14 @@ body.article-page .navbar-collapse.show {
   margin-bottom: 1rem;
 }
 
-.dropcap-wrapper {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.5rem;
-}
-
-.dropcap-image {
-  width: 2em;
-  height: auto;
+.drop-cap {
+  color: transparent;
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding: 3rem;
+  font-size: 0px;
   float: left;
-  margin-right: 0.5em;
+  margin-right: 0.2rem;
 }
 
 .img-box {
