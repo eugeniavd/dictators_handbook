@@ -269,33 +269,46 @@ document.addEventListener("DOMContentLoaded", () => {
   const lastParagraph = document.querySelector(".article-content p:last-of-type");
   if (!lastParagraph) return;
 
-  const words = lastParagraph.textContent.trim().split(/\s+/);
-  const totalChars = words.join(" ").length;
+  const originalHTML = lastParagraph.innerHTML;
+  const wordsWithTags = originalHTML.match(/(<[^>]+>|[^<>\s]+)/g) || [];
 
-  const charsPerLineBase = 90;
-  const minLines = 6;
-  const maxLines = 20;
-  const lines = Math.min(maxLines, Math.max(minLines, Math.ceil(totalChars / charsPerLineBase)));
+  const totalChars = wordsWithTags.reduce((acc, w) => acc + (w.startsWith('<') ? 0 : w.length), 0);
 
-  let html = "";
-  let start = 0;
+  const charsPerLine = 80;
+  const lines = Math.max(14, Math.ceil(totalChars / charsPerLine));
 
-  for (let i = 0; i < lines; i++) {
-    const ratio = (lines - i) / lines;
-    const targetLen = Math.ceil((totalChars * ratio) / lines);
-    let lineWords = [];
-    let len = 0;
+  let result = "";
+  let line = "";
+  let lineLen = 0;
+  let currentLineLength = 0;
 
-    while (start < words.length && len + words[start].length + 1 <= targetLen) {
-      len += words[start].length + 1;
-      lineWords.push(words[start++]);
+  for (let i = 0; i < wordsWithTags.length; i++) {
+    const word = wordsWithTags[i];
+    const isTag = word.startsWith("<");
+
+    const currentLineChars = Math.floor((totalChars * (i + 1) / wordsWithTags.length) / lines);
+    if (!isTag) {
+      if (lineLen + word.length + 1 > currentLineChars && result.split("<span").length - 1 < lines) {
+        const indent = "&nbsp;".repeat((result.split("<span").length - 1) * 2);
+        result += `<span class="triangle-line">${indent}${line.trim()}</span>\n`;
+        line = "";
+        lineLen = 0;
+      }
+      line += word + " ";
+      lineLen += word.length + 1;
+    } else {
+      line += word;
     }
-
-    html += `<span class="triangle-line">${lineWords.join(" ")}</span>\n`;
   }
 
-  lastParagraph.innerHTML = html;
+  if (line.trim()) {
+    const indent = "&nbsp;".repeat((lines - 1) * 2);
+    result += `<span class="triangle-line">${indent}${line.trim()}</span>`;
+  }
+
+  lastParagraph.innerHTML = result;
   lastParagraph.classList.add("triangle-text");
 });
+
 
 
