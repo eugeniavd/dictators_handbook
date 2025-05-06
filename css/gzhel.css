@@ -1422,7 +1422,7 @@ body.article-page .navbar-collapse.show {
   top: 0;
   width: 50%;
   height: 100%;
-  z-index: 10;
+  z-index: 10000;
   background: white;
   pointer-events: none;
 }
@@ -1439,7 +1439,7 @@ body.article-page .navbar-collapse.show {
 
 .fin-paragraph p {
   position: relative;
-  z-index: 20;
+  z-index: 20000;
 }
 
 
