@@ -1451,12 +1451,11 @@ body.article-page .navbar-collapse.show {
 }
 
 .triangle-text {
-  text-align: center;
-  line-height: 1.6;
   max-width: 80ch;
-  margin: 2rem auto 4rem;
-  hyphens: auto;
-  word-break: break-word;
+  margin: 2rem auto 5rem auto;
+  text-align: left;
+  line-height: 1.7;
+  font-size: 1rem;
 }
 
 .triangle-line {

@@ -269,39 +269,30 @@ document.addEventListener("DOMContentLoaded", () => {
   const lastParagraph = document.querySelector(".article-content p:last-of-type");
   if (!lastParagraph) return;
 
-  const text = lastParagraph.textContent.trim();
-  const cleanText = text.replace(/\s+/g, ''); 
-  const totalChars = cleanText.length;
+  const words = lastParagraph.textContent.trim().split(/\s+/);
+  const totalChars = words.join(" ").length;
 
-  const lines = [];
-  let remaining = totalChars;
-  let perLine = Math.floor(Math.sqrt(2 * totalChars)); 
+  const lines = Math.max(6, Math.round(totalChars / 80)); // ~80 chars total = 6 lines
+  let html = "";
+  let start = 0;
 
-  const words = text.trim().split(/\s+/);
-  const flat = words.join(''); 
+  for (let i = 0; i < lines; i++) {
+    const ratio = (lines - i) / lines;
+    const targetLength = Math.ceil(totalChars * ratio / lines);
+    let lineWords = [];
+    let currentLength = 0;
 
-  for (let i = perLine; i > 0 && remaining > 0; i--) {
-    const count = Math.min(i, remaining);
-    lines.push(count);
-    remaining -= count;
-  }
-
-  let currentWord = 0;
-  let result = "";
-
-  for (let i = 0; i < lines.length; i++) {
-    const lineLen = lines[i];
-    let charCount = 0;
-    let line = "";
-    while (currentWord < words.length && charCount + words[currentWord].length <= lineLen) {
-      line += words[currentWord] + " ";
-      charCount += words[currentWord].length;
-      currentWord++;
+    while (start < words.length && currentLength + words[start].length + 1 <= targetLength) {
+      currentLength += words[start].length + 1;
+      lineWords.push(words[start]);
+      start++;
     }
-    const spaces = "&nbsp;".repeat(lines.length - i);
-    result += `<span class="triangle-line">${spaces}${line.trim()}</span><br>`;
+
+    const indent = "&nbsp;".repeat(i * 2); // more indent for lower lines
+    html += `<span class="triangle-line">${indent}${lineWords.join(" ")}</span><br>`;
   }
 
-  lastParagraph.innerHTML = result;
+  lastParagraph.innerHTML = html;
   lastParagraph.classList.add("triangle-text");
 });
+
