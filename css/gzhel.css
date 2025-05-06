@@ -1450,17 +1450,43 @@ body.article-page .navbar-collapse.show {
   max-width: 100%;
 }
 
-.triangle-text {
-  text-align: center;
-  line-height: 1.1;
-  display: block;
-  margin-bottom: 3rem;
+.fin-paragraph {
+  position: relative;
+  max-width: 60ch;
+  margin: 3rem auto 6rem auto;
+  font-size: 1.2rem;
+  line-height: 1.4;
+  text-align: justify;
+  hyphens: auto;
 }
 
-.triangle-line {
-  display: block;
-  white-space: nowrap;
-  margin: 0 auto;
+.fin-paragraph::before,
+.fin-paragraph::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  z-index: 0;
+}
+
+.fin-paragraph::before {
+  left: 0;
+  background: white;
+  clip-path: polygon(0 0, 100% 0, 0% 100%);
+}
+
+.fin-paragraph::after {
+  right: 0;
+  background: white;
+  clip-path: polygon(0 0, 100% 0, 100% 100%);
+}
+
+.fin-paragraph p {
+  position: relative;
+  z-index: 1;
+  padding: 1rem;
+  background: transparent;
 }
 
 
