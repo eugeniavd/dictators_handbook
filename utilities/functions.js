@@ -345,5 +345,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+function testFunctionLoaded() {
+  console.log("✅ functions.js загружен и работает!");
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  if (typeof testFunctionLoaded === "function") {
+    testFunctionLoaded();
+  }
+});
 
 
