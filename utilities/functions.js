@@ -323,37 +323,24 @@ document.addEventListener("DOMContentLoaded", function () {
 // ==============================
 
 document.addEventListener("DOMContentLoaded", () => {
-  const paragraphs = document.querySelectorAll(".triangle-text");
+  const lastParagraph = document.querySelector(".article-content p:last-of-type");
+  if (!lastParagraph) return;
 
-  paragraphs.forEach((triangle) => {
-    const words = triangle.innerText.trim().split(/\s+/);
-    triangle.innerHTML = "";
+  const words = lastParagraph.textContent.trim().split(/\s+/);
+  const linesCount = 12; // adjustable number of lines
+  const wordsPerLine = Math.ceil(words.length / linesCount);
+  let html = "";
 
-    const minLines = 6;
-    const maxLines = 14;
-    const lines = Math.min(maxLines, Math.max(minLines, Math.ceil(words.length / 8)));
-    const wordsPerLine = Math.ceil(words.length / lines);
+  for (let i = 0; i < linesCount; i++) {
+    const lineWords = words.slice(i * wordsPerLine, (i + 1) * wordsPerLine);
+    if (lineWords.length) {
+      const spaces = "&nbsp;".repeat(linesCount - i);
+      html += `<span class="triangle-line">${spaces}${lineWords.join(" ")}</span>`;
+    }
+  }
 
-    let lineWords = [];
-    let lineIndex = 0;
-
-    words.forEach((word, idx) => {
-      lineWords.push(word);
-      const isLastWord = idx === words.length - 1;
-      const isLineEnd = (idx + 1) % wordsPerLine === 0;
-
-      if (isLineEnd || isLastWord) {
-        const span = document.createElement("span");
-        span.textContent = lineWords.join(" ");
-        span.classList.add("triangle-line");
-        span.style.width = `${100 - lineIndex * (100 / lines)}%`;
-        span.style.margin = "0 auto";
-        triangle.appendChild(span);
-        lineWords = [];
-        lineIndex++;
-      }
-    });
-  });
+  lastParagraph.innerHTML = html;
+  lastParagraph.classList.add("triangle-text");
 });
 
 
