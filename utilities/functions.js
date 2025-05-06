@@ -286,21 +286,37 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  const total = preserved.length;
-  const linesCount = 18;
+  const totalChars = preserved.length;
 
-  const lineLengths = [];
-  const minLineLength = 5; // ensure triangle has a point
-  const decrement = (total - minLineLength) / (linesCount - 1);
+  // Estimate width per character based on previous paragraph
+  const paraWidth = lastParagraph.offsetWidth || 600;
+  const charWidthEstimate = 10; // px per character on average
+  const maxLineChars = Math.floor(paraWidth / charWidthEstimate);
 
-  for (let i = 0; i < linesCount; i++) {
-    lineLengths.push(Math.round(total - i * decrement));
+  // Calculate lines needed for inverted triangle
+  let lineLens = [];
+  let remaining = totalChars;
+  let base = maxLineChars;
+
+  while (remaining > 0 && base > 0) {
+    lineLens.push(base);
+    remaining -= base;
+    base--;
   }
-  lineLengths.reverse();
+
+  // Adjust to balance remaining chars
+  if (remaining < 0) {
+    let i = 0;
+    while (remaining < 0 && i < lineLens.length) {
+      lineLens[i]--;
+      remaining++;
+      i = (i + 1) % lineLens.length;
+    }
+  }
 
   const lines = [];
   let index = 0;
-  for (let len of lineLengths) {
+  for (let len of lineLens) {
     if (index >= preserved.length) break;
     const chunk = preserved.slice(index, index + len).map(obj => {
       if (obj.wrapper) {
@@ -317,4 +333,3 @@ document.addEventListener("DOMContentLoaded", () => {
   lastParagraph.innerHTML = lines.join("");
   lastParagraph.classList.add("triangle-text");
 });
-
