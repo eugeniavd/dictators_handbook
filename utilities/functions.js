@@ -266,50 +266,46 @@ document.addEventListener("DOMContentLoaded", function () {
 // ==============================
 
 document.addEventListener("DOMContentLoaded", () => {
-  const lastParagraph = document.querySelector(".article-content p:last-of-type");
-  if (!lastParagraph) return;
+  const paragraph = document.querySelector(".article-content p:last-of-type");
+  if (!paragraph) return;
 
-  const originalHTML = lastParagraph.innerHTML.trim();
-  const temp = document.createElement("div");
-  temp.innerHTML = originalHTML;
-  const rawText = temp.textContent || "";
+  const originalHTML = paragraph.innerHTML;
+  const plainText = paragraph.innerText.trim().replace(/\s+/g, " ");
+  const totalLength = plainText.length;
 
-  const totalChars = rawText.length;
+  // Estimate line count: more characters = more lines
+  const linesCount = Math.ceil(Math.sqrt(totalLength * 2)); // approx triangle height
+  const containerWidth = paragraph.offsetWidth;
 
-  const baseLineChars = 80; // maximum chars on the top row
-  const minLineChars = 20; // minimum chars at the tip of the triangle
-  const estimatedLines = Math.round((2 * totalChars) / (baseLineChars + minLineChars));
-  const linesCount = Math.max(10, estimatedLines); // guarantee minimum
+  // Match words + keep inline tags
+  const wordRegex = /(<[^>]+>)|(\S+)/g;
+  const tokens = [...originalHTML.matchAll(wordRegex)].map(match => match[0]);
 
-  // remove inner spans and rebuild character groups preserving tags
-  const characters = [];
-  for (const node of temp.childNodes) {
-    if (node.nodeType === Node.TEXT_NODE) {
-      characters.push(...node.textContent.split(""));
-    } else if (node.nodeType === Node.ELEMENT_NODE) {
-      const span = node.cloneNode(false);
-      const inner = node.textContent.split("");
-      inner.forEach(char => {
-        const wrapped = span.cloneNode(false);
-        wrapped.textContent = char;
-        characters.push(wrapped.outerHTML);
-      });
+  const lines = [];
+  let lineIndex = 0;
+
+  for (let i = 0; i < tokens.length; ) {
+    if (!lines[lineIndex]) lines[lineIndex] = "";
+    const token = tokens[i];
+
+    lines[lineIndex] += token + " ";
+    const tempSpan = document.createElement("span");
+    tempSpan.innerHTML = lines[lineIndex];
+    paragraph.appendChild(tempSpan);
+
+    const width = tempSpan.offsetWidth;
+    paragraph.removeChild(tempSpan);
+
+    const maxWidth = containerWidth * (1 - lineIndex / linesCount);
+    if (width > maxWidth && lineIndex + 1 < linesCount) {
+      lineIndex++;
+    } else {
+      i++;
     }
   }
 
-  const lines = [];
-  let start = 0;
-  for (let i = 0; i < linesCount; i++) {
-    const ratio = 1 - i / linesCount;
-    const count = Math.max(minLineChars, Math.floor(baseLineChars * ratio));
-    const line = characters.slice(start, start + count);
-    lines.push(`<span class="triangle-line">${line.join("")}</span>`);
-    start += count;
-    if (start >= characters.length) break;
-  }
-
-  lastParagraph.innerHTML = lines.join("");
-  lastParagraph.classList.add("triangle-text");
+  paragraph.innerHTML = lines
+    .map(line => `<span class="triangle-line">${line.trim()}</span>`)
+    .join("<br>");
+  paragraph.classList.add("triangle-text");
 });
-
-

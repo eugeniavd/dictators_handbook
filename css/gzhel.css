@@ -1452,13 +1452,15 @@ body.article-page .navbar-collapse.show {
 
 .triangle-text {
   text-align: center;
-  line-height: 1.2;
+  line-height: 1.1;
   display: block;
   margin-bottom: 3rem;
 }
 
 .triangle-line {
   display: block;
+  white-space: nowrap;
+  margin: 0 auto;
 }
 
 
