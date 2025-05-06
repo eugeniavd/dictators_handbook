@@ -288,14 +288,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const total = preserved.length;
   const linesCount = 18;
-  const lineLengths = [];
 
-  // Form decreasing lengths to create inverted triangle
-  let baseLength = Math.round((2 * total) / (linesCount + 1));
+  const lineLengths = [];
+  const minLineLength = 5; // ensure triangle has a point
+  const decrement = (total - minLineLength) / (linesCount - 1);
+
   for (let i = 0; i < linesCount; i++) {
-    const length = Math.round(baseLength * ((linesCount - i) / linesCount));
-    lineLengths.push(length);
+    lineLengths.push(Math.round(total - i * decrement));
   }
+  lineLengths.reverse();
 
   const lines = [];
   let index = 0;
@@ -316,3 +317,4 @@ document.addEventListener("DOMContentLoaded", () => {
   lastParagraph.innerHTML = lines.join("");
   lastParagraph.classList.add("triangle-text");
 });
+
