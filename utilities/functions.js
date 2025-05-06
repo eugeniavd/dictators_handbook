@@ -318,9 +318,43 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// ==============================
+// Triangle End For Article Page
+// ==============================
 
+document.addEventListener("DOMContentLoaded", () => {
+  const paragraphs = document.querySelectorAll(".triangle-text");
 
+  paragraphs.forEach((triangle) => {
+    const words = triangle.innerText.trim().split(/\s+/);
+    triangle.innerHTML = "";
 
+    const minLines = 6;
+    const maxLines = 14;
+    const lines = Math.min(maxLines, Math.max(minLines, Math.ceil(words.length / 8)));
+    const wordsPerLine = Math.ceil(words.length / lines);
+
+    let lineWords = [];
+    let lineIndex = 0;
+
+    words.forEach((word, idx) => {
+      lineWords.push(word);
+      const isLastWord = idx === words.length - 1;
+      const isLineEnd = (idx + 1) % wordsPerLine === 0;
+
+      if (isLineEnd || isLastWord) {
+        const span = document.createElement("span");
+        span.textContent = lineWords.join(" ");
+        span.classList.add("triangle-line");
+        span.style.width = `${100 - lineIndex * (100 / lines)}%`;
+        span.style.margin = "0 auto";
+        triangle.appendChild(span);
+        lineWords = [];
+        lineIndex++;
+      }
+    });
+  });
+});
 
 
 
