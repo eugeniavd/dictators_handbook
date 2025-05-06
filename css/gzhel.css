@@ -1174,49 +1174,6 @@ body.article-page .navbar-collapse.show {
   justify-content: space-between;
 }
 
-.article-burger-fixed {
-  position: absolute;
-  top: 1rem;
-  left: 0;
-  font-size: 2rem;
-  border: 1px solid #3b40d9;
-  background: none;
-  color: #003399;
-  cursor: pointer;
-  z-index: 4000;
-  padding: 0.4rem 0.7rem 0.6rem;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  line-height: 1;
-}
-
-.article-flyout-menu {
-  position: absolute;
-  top: 2rem;
-  left: 5rem;
-  background: white;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  padding: 1rem;
-  z-index: 3000;
-  width: 250px;
-  box-shadow: 0 2px 10px #0000001a;
-  display: none;
-  opacity: 0;
-  transform: translateY(-20px);
-  transition: opacity 3s ease-in-out, transform 3s ease-in-out;
-  pointer-events: none;
-}
-
-.article-flyout-menu.show {
-  display: block;
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-}
-
 .main-article{
   width: 50%;
   display: flex;
@@ -1454,8 +1411,7 @@ body.article-page .navbar-collapse.show {
   position: relative;
   max-width: 60ch;
   margin: 0 auto 5rem auto; 
-  font-size: 1.2rem;
-  line-height: 1.4;
+  line-height: 0.9;
   text-align: justify;
   hyphens: auto;
 }
@@ -1473,13 +1429,13 @@ body.article-page .navbar-collapse.show {
 .fin-paragraph::before {
   left: 0;
   background: white;
-  clip-path: polygon(0 0, 100% 0, 0% 100%);
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
 }
 
 .fin-paragraph::after {
   right: 0;
   background: white;
-  clip-path: polygon(0 0, 100% 0, 100% 100%);
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
 }
 
 .fin-paragraph p {
