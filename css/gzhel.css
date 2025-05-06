@@ -1421,7 +1421,7 @@ body.article-page .navbar-collapse.show {
   float: left;
   width: 18vw;
   height: 10rem;
-  shape-outside: polygon(0% 20%, 80% 100%, 0 100%);
+  shape-outside: polygon(0% 20%, 100% 100%, 0 100%);
 }
 
 .fin-paragraph > p::before {
