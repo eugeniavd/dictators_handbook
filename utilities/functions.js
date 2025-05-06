@@ -269,46 +269,47 @@ document.addEventListener("DOMContentLoaded", () => {
   const lastParagraph = document.querySelector(".article-content p:last-of-type");
   if (!lastParagraph) return;
 
-  const originalHTML = lastParagraph.innerHTML;
-  const wordsWithTags = originalHTML.match(/(<[^>]+>|[^<>\s]+)/g) || [];
+  const originalHTML = lastParagraph.innerHTML.trim();
+  const temp = document.createElement("div");
+  temp.innerHTML = originalHTML;
+  const rawText = temp.textContent || "";
 
-  const totalChars = wordsWithTags.reduce((acc, w) => acc + (w.startsWith('<') ? 0 : w.length), 0);
+  const totalChars = rawText.length;
 
-  const charsPerLine = 80;
-  const lines = Math.max(14, Math.ceil(totalChars / charsPerLine));
+  const baseLineChars = 80; // maximum chars on the top row
+  const minLineChars = 20; // minimum chars at the tip of the triangle
+  const estimatedLines = Math.round((2 * totalChars) / (baseLineChars + minLineChars));
+  const linesCount = Math.max(10, estimatedLines); // guarantee minimum
 
-  let result = "";
-  let line = "";
-  let lineLen = 0;
-  let currentLineLength = 0;
-
-  for (let i = 0; i < wordsWithTags.length; i++) {
-    const word = wordsWithTags[i];
-    const isTag = word.startsWith("<");
-
-    const currentLineChars = Math.floor((totalChars * (i + 1) / wordsWithTags.length) / lines);
-    if (!isTag) {
-      if (lineLen + word.length + 1 > currentLineChars && result.split("<span").length - 1 < lines) {
-        const indent = "&nbsp;".repeat((result.split("<span").length - 1) * 2);
-        result += `<span class="triangle-line">${indent}${line.trim()}</span>\n`;
-        line = "";
-        lineLen = 0;
-      }
-      line += word + " ";
-      lineLen += word.length + 1;
-    } else {
-      line += word;
+  // remove inner spans and rebuild character groups preserving tags
+  const characters = [];
+  for (const node of temp.childNodes) {
+    if (node.nodeType === Node.TEXT_NODE) {
+      characters.push(...node.textContent.split(""));
+    } else if (node.nodeType === Node.ELEMENT_NODE) {
+      const span = node.cloneNode(false);
+      const inner = node.textContent.split("");
+      inner.forEach(char => {
+        const wrapped = span.cloneNode(false);
+        wrapped.textContent = char;
+        characters.push(wrapped.outerHTML);
+      });
     }
   }
 
-  if (line.trim()) {
-    const indent = "&nbsp;".repeat((lines - 1) * 2);
-    result += `<span class="triangle-line">${indent}${line.trim()}</span>`;
+  const lines = [];
+  let start = 0;
+  for (let i = 0; i < linesCount; i++) {
+    const ratio = 1 - i / linesCount;
+    const count = Math.max(minLineChars, Math.floor(baseLineChars * ratio));
+    const line = characters.slice(start, start + count);
+    lines.push(`<span class="triangle-line">${line.join("")}</span>`);
+    start += count;
+    if (start >= characters.length) break;
   }
 
-  lastParagraph.innerHTML = result;
+  lastParagraph.innerHTML = lines.join("");
   lastParagraph.classList.add("triangle-text");
 });
-
 
 
