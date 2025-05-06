@@ -1413,7 +1413,7 @@ body.article-page .navbar-collapse.show {
   -webkit-hyphens: manual;
       -ms-hyphens: manual;
           hyphens: manual;
-  shape-outside: polygon(50% 100%, 10% 0, 90% 0);
+  shape-outside: polygon(51% 63%, 0 1%, 100% 0);
 }  
 
 .fin-paragraph::before {
@@ -1436,11 +1436,6 @@ body.article-page .navbar-collapse.show {
   text-align: center;
 }
 
-.last-line {
-  display: inline-block;
-  width: 100%;
-  text-align: center;
-}
 
 
 
