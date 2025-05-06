@@ -228,63 +228,6 @@ document.querySelectorAll('.sidebar-section h5').forEach(header => {
 });
 
 // ==============================
-// Menu For Article Page
-// ==============================
-
-function toggleNavbar() {
-  if (!document.body.classList.contains("article-page")) return;
-
-  const navbar = document.getElementById('navbarSupportedContent');
-  if (!navbar) return;
-
-  const bsCollapse = bootstrap.Collapse.getInstance(navbar)
-    || new bootstrap.Collapse(navbar, { toggle: false });
-
-  bsCollapse.toggle();
-}
-document.addEventListener("DOMContentLoaded", () => {
-  if (!document.body.classList.contains("article-page")) return;
-
-  const waitForHeader = setInterval(() => {
-    const header = document.querySelector('.article-header');
-    const image = document.querySelector('.article-header-image');
-    const navbar = document.getElementById('navbarSupportedContent');
-
-    if (header && image && navbar && !document.querySelector('.article-burger-fixed')) {
-      const burger = document.createElement("button");
-      burger.className = "article-burger-fixed";
-      burger.innerHTML = "☰";
-
-      const menu = document.createElement("div");
-      menu.className = "article-flyout-menu";
-      menu.innerHTML = navbar.innerHTML;
-
-      burger.addEventListener("click", (e) => {
-        e.stopPropagation();
-        menu.classList.toggle("show");
-      });
-
-      document.addEventListener("click", (e) => {
-        if (!menu.contains(e.target) && !burger.contains(e.target)) {
-          menu.classList.remove("show");
-        }
-      });
-
-      header.insertBefore(burger, image);
-      header.appendChild(menu);
-      clearInterval(waitForHeader);
-    }
-  }, 100);
-});
-
-const burger = document.querySelector('.article-burger-fixed');
-const menu = document.querySelector('.article-flyout-menu');
-
-burger.addEventListener('click', () => {
-  menu.classList.toggle('show');
-});
-
-// ==============================
 // Capital Letters For Article Page
 // ==============================
 
@@ -326,33 +269,39 @@ document.addEventListener("DOMContentLoaded", () => {
   const lastParagraph = document.querySelector(".article-content p:last-of-type");
   if (!lastParagraph) return;
 
-  const words = lastParagraph.textContent.trim().split(/\s+/);
-  const linesCount = 12; // adjustable number of lines
-  const wordsPerLine = Math.ceil(words.length / linesCount);
-  let html = "";
+  const text = lastParagraph.textContent.trim();
+  const cleanText = text.replace(/\s+/g, ''); 
+  const totalChars = cleanText.length;
 
-  for (let i = 0; i < linesCount; i++) {
-    const lineWords = words.slice(i * wordsPerLine, (i + 1) * wordsPerLine);
-    if (lineWords.length) {
-      const spaces = "&nbsp;".repeat(linesCount - i);
-      html += `<span class="triangle-line">${spaces}${lineWords.join(" ")}</span>`;
-    }
+  const lines = [];
+  let remaining = totalChars;
+  let perLine = Math.floor(Math.sqrt(2 * totalChars)); 
+
+  const words = text.trim().split(/\s+/);
+  const flat = words.join(''); 
+
+  for (let i = perLine; i > 0 && remaining > 0; i--) {
+    const count = Math.min(i, remaining);
+    lines.push(count);
+    remaining -= count;
   }
 
-  lastParagraph.innerHTML = html;
+  let currentWord = 0;
+  let result = "";
+
+  for (let i = 0; i < lines.length; i++) {
+    const lineLen = lines[i];
+    let charCount = 0;
+    let line = "";
+    while (currentWord < words.length && charCount + words[currentWord].length <= lineLen) {
+      line += words[currentWord] + " ";
+      charCount += words[currentWord].length;
+      currentWord++;
+    }
+    const spaces = "&nbsp;".repeat(lines.length - i);
+    result += `<span class="triangle-line">${spaces}${line.trim()}</span><br>`;
+  }
+
+  lastParagraph.innerHTML = result;
   lastParagraph.classList.add("triangle-text");
 });
-
-
-
-function testFunctionLoaded() {
-  console.log("✅ functions.js загружен и работает!");
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  if (typeof testFunctionLoaded === "function") {
-    testFunctionLoaded();
-  }
-});
-
-
