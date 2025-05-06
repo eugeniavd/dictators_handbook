@@ -1450,6 +1450,17 @@ body.article-page .navbar-collapse.show {
   max-width: 100%;
 }
 
+.article-content p:last-of-type {
+  font-family: inherit;
+  max-width: 40ch;
+  margin: 0 auto 4rem auto;
+  text-align: justify;
+  line-height: 1.6;
+  shape-outside: polygon(0 0, 100% 0, 50% 100%);
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 50% 100%);
+  padding: 2rem;
+}
 
 
 
