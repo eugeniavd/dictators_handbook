@@ -1453,7 +1453,7 @@ body.article-page .navbar-collapse.show {
 .fin-paragraph {
   position: relative;
   max-width: 60ch;
-  margin: 3rem auto 6rem auto;
+  margin: 0 auto 5rem auto; 
   font-size: 1.2rem;
   line-height: 1.4;
   text-align: justify;
@@ -1485,8 +1485,8 @@ body.article-page .navbar-collapse.show {
 .fin-paragraph p {
   position: relative;
   z-index: 1;
-  padding: 1rem;
-  background: transparent;
+  margin: 0;
+  padding: 0;
 }
 
 
