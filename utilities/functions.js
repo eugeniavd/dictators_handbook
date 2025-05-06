@@ -272,27 +272,30 @@ document.addEventListener("DOMContentLoaded", () => {
   const words = lastParagraph.textContent.trim().split(/\s+/);
   const totalChars = words.join(" ").length;
 
-  const lines = Math.max(6, Math.round(totalChars / 80)); // ~80 chars total = 6 lines
+  const charsPerLineBase = 90;
+  const minLines = 6;
+  const maxLines = 20;
+  const lines = Math.min(maxLines, Math.max(minLines, Math.ceil(totalChars / charsPerLineBase)));
+
   let html = "";
   let start = 0;
 
   for (let i = 0; i < lines; i++) {
     const ratio = (lines - i) / lines;
-    const targetLength = Math.ceil(totalChars * ratio / lines);
+    const targetLen = Math.ceil((totalChars * ratio) / lines);
     let lineWords = [];
-    let currentLength = 0;
+    let len = 0;
 
-    while (start < words.length && currentLength + words[start].length + 1 <= targetLength) {
-      currentLength += words[start].length + 1;
-      lineWords.push(words[start]);
-      start++;
+    while (start < words.length && len + words[start].length + 1 <= targetLen) {
+      len += words[start].length + 1;
+      lineWords.push(words[start++]);
     }
 
-    const indent = "&nbsp;".repeat(i * 2); // more indent for lower lines
-    html += `<span class="triangle-line">${indent}${lineWords.join(" ")}</span><br>`;
+    html += `<span class="triangle-line">${lineWords.join(" ")}</span>\n`;
   }
 
   lastParagraph.innerHTML = html;
   lastParagraph.classList.add("triangle-text");
 });
+
 

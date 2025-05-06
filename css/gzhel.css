@@ -1452,10 +1452,9 @@ body.article-page .navbar-collapse.show {
 
 .triangle-text {
   max-width: 80ch;
-  margin: 2rem auto 5rem auto;
+  margin: 2rem auto 4rem auto;
+  text-align: center;
   text-align: left;
-  line-height: 1.7;
-  font-size: 1rem;
 }
 
 .triangle-line {
