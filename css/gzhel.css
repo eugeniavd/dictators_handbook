@@ -1451,16 +1451,46 @@ body.article-page .navbar-collapse.show {
 }
 
 .article-content p:last-of-type {
-  font-family: inherit;
-  max-width: 40ch;
-  margin: 0 auto 4rem auto;
+  margin-top: 1.5rem;           /* стандартный отступ от предыдущего абзаца */
+  margin-bottom: 4rem;          /* отступ до футера */
+  padding: 0;
   text-align: justify;
+  max-width: 60ch;
+  margin-left: auto;
+  margin-right: auto;
   line-height: 1.6;
-  shape-outside: polygon(0 0, 100% 0, 50% 100%);
-  clip-path: polygon(0 0, 100% 0, 50% 100%);
-  -webkit-clip-path: polygon(0 0, 100% 0, 50% 100%);
-  padding: 2rem;
+  clip-path: polygon(
+    5% 0%,    /* левый верх чуть внутри */
+    95% 0%,   /* правый верх чуть внутри */
+    85% 10%, 
+    75% 20%, 
+    65% 30%, 
+    55% 40%, 
+    45% 50%, 
+    35% 60%, 
+    25% 70%, 
+    15% 80%, 
+    5% 90%, 
+    0% 100%, 
+    100% 100%, 
+    95% 90%, 
+    85% 80%, 
+    75% 70%, 
+    65% 60%, 
+    55% 50%, 
+    45% 40%, 
+    35% 30%, 
+    25% 20%, 
+    15% 10%
+  );
+  -webkit-clip-path: polygon(
+    5% 0%, 95% 0%,
+    85% 10%, 75% 20%, 65% 30%, 55% 40%, 45% 50%, 35% 60%, 25% 70%, 15% 80%, 5% 90%,
+    0% 100%, 100% 100%,
+    95% 90%, 85% 80%, 75% 70%, 65% 60%, 55% 50%, 45% 40%, 35% 30%, 25% 20%, 15% 10%
+  );
 }
+
 
 
 
