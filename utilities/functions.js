@@ -266,46 +266,53 @@ document.addEventListener("DOMContentLoaded", function () {
 // ==============================
 
 document.addEventListener("DOMContentLoaded", () => {
-  const paragraph = document.querySelector(".article-content p:last-of-type");
-  if (!paragraph) return;
+  const lastParagraph = document.querySelector(".article-content p:last-of-type");
+  if (!lastParagraph) return;
 
-  const originalHTML = paragraph.innerHTML;
-  const plainText = paragraph.innerText.trim().replace(/\s+/g, " ");
-  const totalLength = plainText.length;
+  const originalHTML = lastParagraph.innerHTML.trim();
+  const container = document.createElement("div");
+  container.innerHTML = originalHTML;
 
-  // Estimate line count: more characters = more lines
-  const linesCount = Math.ceil(Math.sqrt(totalLength * 2)); // approx triangle height
-  const containerWidth = paragraph.offsetWidth;
-
-  // Match words + keep inline tags
-  const wordRegex = /(<[^>]+>)|(\S+)/g;
-  const tokens = [...originalHTML.matchAll(wordRegex)].map(match => match[0]);
-
-  const lines = [];
-  let lineIndex = 0;
-
-  for (let i = 0; i < tokens.length; ) {
-    if (!lines[lineIndex]) lines[lineIndex] = "";
-    const token = tokens[i];
-
-    lines[lineIndex] += token + " ";
-    const tempSpan = document.createElement("span");
-    tempSpan.innerHTML = lines[lineIndex];
-    paragraph.appendChild(tempSpan);
-
-    const width = tempSpan.offsetWidth;
-    paragraph.removeChild(tempSpan);
-
-    const maxWidth = containerWidth * (1 - lineIndex / linesCount);
-    if (width > maxWidth && lineIndex + 1 < linesCount) {
-      lineIndex++;
-    } else {
-      i++;
+  const preserved = [];
+  for (const node of container.childNodes) {
+    if (node.nodeType === Node.TEXT_NODE) {
+      preserved.push(...node.textContent.split("").map(char => ({ char })));
+    } else if (node.nodeType === Node.ELEMENT_NODE) {
+      const outer = node.cloneNode(false);
+      const innerChars = node.textContent.split("");
+      innerChars.forEach(char => {
+        preserved.push({ char, wrapper: outer.cloneNode(false) });
+      });
     }
   }
 
-  paragraph.innerHTML = lines
-    .map(line => `<span class="triangle-line">${line.trim()}</span>`)
-    .join("<br>");
-  paragraph.classList.add("triangle-text");
+  const total = preserved.length;
+  const linesCount = 18;
+  const lineLengths = [];
+
+  // Form decreasing lengths to create inverted triangle
+  let baseLength = Math.round((2 * total) / (linesCount + 1));
+  for (let i = 0; i < linesCount; i++) {
+    const length = Math.round(baseLength * ((linesCount - i) / linesCount));
+    lineLengths.push(length);
+  }
+
+  const lines = [];
+  let index = 0;
+  for (let len of lineLengths) {
+    if (index >= preserved.length) break;
+    const chunk = preserved.slice(index, index + len).map(obj => {
+      if (obj.wrapper) {
+        const el = obj.wrapper.cloneNode(false);
+        el.textContent = obj.char;
+        return el.outerHTML;
+      }
+      return obj.char;
+    });
+    lines.push(`<span class="triangle-line">${chunk.join("")}</span>`);
+    index += len;
+  }
+
+  lastParagraph.innerHTML = lines.join("");
+  lastParagraph.classList.add("triangle-text");
 });
