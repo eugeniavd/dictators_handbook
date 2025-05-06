@@ -1429,18 +1429,19 @@ body.article-page .navbar-collapse.show {
 
 .fin-paragraph::before {
   left: 0;
-  clip-path: polygon(0 0, 100% 0, 0% 100%)
+  clip-path: polygon(0 0, 100% 0, 25% 100%);
 }
 
 .fin-paragraph::after {
   right: 0;
-  clip-path: polygon(0 0, 100% 0, 0% 100%)
+  clip-path: polygon(0 0, 100% 0, 75% 100%);
 }
 
 .fin-paragraph p {
   position: relative;
   z-index: 20000;
 }
+
 
 
 
