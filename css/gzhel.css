@@ -1411,7 +1411,7 @@ body.article-page .navbar-collapse.show {
   position: relative;
   max-width: 60ch;
   margin: 0 auto 5rem auto; 
-  line-height: 0.9;
+  line-height: 0.95;
   text-align: justify;
   hyphens: auto;
 }
@@ -1423,26 +1423,26 @@ body.article-page .navbar-collapse.show {
   top: 0;
   width: 50%;
   height: 100%;
-  z-index: 0;
+  z-index: 1;
+  background: white;
+  pointer-events: none;
 }
 
 .fin-paragraph::before {
   left: 0;
   background: white;
-  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  clip-path: polygon(0 0, 100% 0, 0% 100%)
 }
 
 .fin-paragraph::after {
   right: 0;
   background: white;
-  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  clip-path: polygon(0 0, 100% 0, 0% 100%)
 }
 
 .fin-paragraph p {
   position: relative;
-  z-index: 1;
-  margin: 0;
-  padding: 0;
+  z-index: 2;
 }
 
 
