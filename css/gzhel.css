@@ -1356,11 +1356,11 @@ body.article-page .navbar-collapse.show {
   background-repeat: no-repeat;
   background-position: center;
   font-size: 0; 
-  margin-right: 0rem; 
+  margin-right: 0.2rem; 
   line-height: 1;
-  shape-outside: circle(45%); 
+  shape-outside: circle(48%); 
   shape-margin: 0rem;
-  clip-path: circle(45%); 
+  clip-path: circle(48%); 
 }
 
 .img-box {
