@@ -1363,10 +1363,7 @@ body.article-page .navbar-collapse.show {
   clip-path: circle(50%); 
 }
 
-.article-content p:first-of-type {
-  min-height: 12rem;
-  overflow: visible;
-}
+
 
 
 .img-box {
