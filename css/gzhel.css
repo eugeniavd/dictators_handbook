@@ -1350,15 +1350,16 @@ body.article-page .navbar-collapse.show {
 
 .drop-cap {
   float: left;
-  width: 5rem;
-  height: 5rem;
+  width: 10rem;
+  height: 10rem;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   font-size: 0; 
-  margin-right: 1rem; 
+  margin-right: 0.5rem; 
   line-height: 1;
   shape-outside: circle(50%); 
+  shape-margin: 0.2rem;
   clip-path: circle(50%); 
 }
 
