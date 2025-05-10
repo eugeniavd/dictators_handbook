@@ -1358,9 +1358,9 @@ body.article-page .navbar-collapse.show {
   font-size: 0; 
   margin-right: 0.5rem; 
   line-height: 1;
-  shape-outside: circle(56%); 
+  shape-outside: circle(60%); 
   shape-margin: 0rem;
-  clip-path: circle(56%); 
+  clip-path: circle(60%); 
 }
 
 .img-box {
