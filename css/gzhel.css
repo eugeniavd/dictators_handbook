@@ -1350,8 +1350,8 @@ body.article-page .navbar-collapse.show {
 
 .drop-cap {
   float: left;
-  width: 8em;
-  height: 8em;
+  width: 10rem;
+  height: 10rem;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
