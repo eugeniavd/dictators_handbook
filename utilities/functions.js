@@ -268,7 +268,7 @@ document.addEventListener("DOMContentLoaded", function () {
 if (document.body.classList.contains('article-page')) {
   const sidebar = document.querySelector('.sidebar-section-group');
   const content = document.querySelector('.main-article');
-  const footer = document.querySelector('footer');
+  const footer = document.querySelector('#footer-placeholder');
 
   if (!sidebar || !content || !footer) return;
 
