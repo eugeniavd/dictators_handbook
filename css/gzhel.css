@@ -1482,12 +1482,14 @@ body.article-page .navbar-collapse.show {
 .sidebar-unfixed {
   position: absolute;
   top: auto;
+  margin-left: 1cm; 
   bottom: var(--footer-height, 0px);
 }
 
 .sidebar {
   flex: 1;
   overflow-y: auto;
+  margin-left: 1cm; 
 }
 
 .sidebar-section {
@@ -1515,9 +1517,10 @@ body.article-page .navbar-collapse.show {
 
 /* Map Styling */
 
-.map-container {
+.article-page.map-container {
   height: 300px;
   padding: 1rem 1.5rem;
+  margin-left: 1cm; 
   border: 1px solid #009914;
   
 }
