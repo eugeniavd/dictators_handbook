@@ -1438,10 +1438,6 @@ body.article-page .navbar-collapse.show {
   text-align: center;
 }
 
-
-
-
-
 /* Right: Sticky Metadata + Map */
 
 .sidebar-section-group {
@@ -1450,16 +1446,16 @@ body.article-page .navbar-collapse.show {
   flex-direction: column;
   overflow-y: auto;
   background-color: white;
-  border: 1px solid #990069;
   margin-left: auto; 
-  position: absolute; 
+  position: fixed; 
   right: 0;
+  top: 0;
+  bottom: 0;
 }
 
 .sidebar {
   flex: 1;
   overflow-y: auto;
-  border: 1px solid #990005;
 }
 
 .sidebar-section {
