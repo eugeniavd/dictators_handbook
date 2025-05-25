@@ -265,11 +265,12 @@ document.addEventListener("DOMContentLoaded", function () {
 // Sidebar fixed/unfixed
 // ==============================
 
-if (document.body.classList.contains('article-page')) {
+window.addEventListener('load', () => {
   const sidebar = document.querySelector('.sidebar-section-group');
   const content = document.querySelector('.main-article');
   const footer = document.querySelector('#footer-placeholder');
 
+  if (!document.body.classList.contains('article-page')) return;
   if (!sidebar || !content || !footer) return;
 
   function getFooterHeight() {
@@ -284,7 +285,6 @@ if (document.body.classList.contains('article-page')) {
   function adjustSidebarLayout() {
     const footerHeight = getFooterHeight();
     const topOffset = getTopOffset();
-
     sidebar.style.setProperty('--footer-height', `${footerHeight}px`);
     sidebar.style.setProperty('--top-offset', `${topOffset}px`);
   }
@@ -304,8 +304,6 @@ if (document.body.classList.contains('article-page')) {
 
   window.addEventListener('scroll', onScroll);
   window.addEventListener('resize', adjustSidebarLayout);
-  window.addEventListener('load', () => {
-    adjustSidebarLayout();
-    onScroll();
-  });
-}
+  adjustSidebarLayout();
+  onScroll();
+});
