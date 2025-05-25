@@ -1177,8 +1177,6 @@ body.article-page .navbar-collapse.show {
   justify-content: space-between;
   align-items: flex-start;
   position: relative;
-  background: linear-gradient(to right, #fefcf8, #fefcf5); 
-  box-shadow: inset 0 0 30px #0000001a;
 }
 
 .content-wrapper::before {
@@ -1196,10 +1194,7 @@ body.article-page .navbar-collapse.show {
 }
 
 .main-article, .sidebar-section-group {
-  background: #fffdf7;
   padding: 2rem;
-  box-shadow: 0 0 15px #00000033;
-  z-index: 1;
 }
 
 .main-article{
@@ -1207,7 +1202,6 @@ body.article-page .navbar-collapse.show {
   display: flex;
   flex-direction: column;
   overflow-y: auto;
-  margin-right: 1cm;
 }
 
 .article-header-container {
@@ -1358,11 +1352,6 @@ body.article-page .navbar-collapse.show {
 
 /* Left: Scrollable Content */
 
-
-.article-content {
-  margin-right: 1cm;
-}
-
 .article-content,
 .img-box {
   max-width: 100%;
@@ -1480,7 +1469,6 @@ body.article-page .navbar-collapse.show {
   flex-direction: column;
   overflow-y: auto;
   background-color: white;
-  margin-left: 1cm; 
   position: fixed; 
   right: 0;
   top: var(--top-offset, 0px);
@@ -1493,14 +1481,12 @@ body.article-page .navbar-collapse.show {
 .sidebar-unfixed {
   position: absolute;
   top: auto;
-  margin-left: 1cm; 
   bottom: var(--footer-height, 0px);
 }
 
 .sidebar {
   flex: 1;
   overflow-y: auto;
-  margin-left: 1cm; 
 }
 
 .sidebar-section {
@@ -1530,10 +1516,6 @@ body.article-page .navbar-collapse.show {
 
 .article-page.map-container {
   height: 300px;
-  padding: 1rem 1.5rem;
-  margin-left: 1cm; 
-  border: 1px solid #009914;
-  
 }
 
 /* Scrollbar Customization for Left Column */
