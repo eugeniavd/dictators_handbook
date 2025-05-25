@@ -265,36 +265,47 @@ document.addEventListener("DOMContentLoaded", function () {
 // Sidebar fixed/unfixed
 // ==============================
 
-const sidebar = document.querySelector('.sidebar-section-group');
-const content = document.querySelector('.main-article');
-
-function onScroll() {
-  const contentBottom = content.getBoundingClientRect().bottom;
-  if (contentBottom <= window.innerHeight) {
-    sidebar.classList.add('sidebar-unfixed');
-  } else {
-    sidebar.classList.remove('sidebar-unfixed');
-  }
-}
-
-window.addEventListener('scroll', onScroll);
-
-function getFooterHeight() {
-  const footer = document.querySelector('footer');
-  return footer ? footer.offsetHeight : 0;
-}
-
-window.addEventListener('resize', () => {
-  console.log('Footer height:', getFooterHeight());
-});
-
-function adjustSidebarHeight() {
-  const footerHeight = getFooterHeight();
+if (document.body.classList.contains('article-page')) {
   const sidebar = document.querySelector('.sidebar-section-group');
-  sidebar.style.height = `calc(100vh - ${footerHeight}px)`;
+  const content = document.querySelector('.main-article');
+  const footer = document.querySelector('footer');
+
+  if (!sidebar || !content || !footer) return;
+
+  function getFooterHeight() {
+    return footer.offsetHeight;
+  }
+
+  function getTopOffset() {
+    const contentTop = content.getBoundingClientRect().top + window.scrollY;
+    return contentTop;
+  }
+
+  function adjustSidebarLayout() {
+    const footerHeight = getFooterHeight();
+    const topOffset = getTopOffset();
+
+    sidebar.style.setProperty('--footer-height', `${footerHeight}px`);
+    sidebar.style.setProperty('--top-offset', `${topOffset}px`);
+  }
+
+  function onScroll() {
+    const contentBottom = content.getBoundingClientRect().bottom;
+    const windowBottom = window.innerHeight;
+
+    if (contentBottom <= windowBottom) {
+      sidebar.classList.add('sidebar-unfixed');
+      footer.classList.add('visible');
+    } else {
+      sidebar.classList.remove('sidebar-unfixed');
+      footer.classList.remove('visible');
+    }
+  }
+
+  window.addEventListener('scroll', onScroll);
+  window.addEventListener('resize', adjustSidebarLayout);
+  window.addEventListener('load', () => {
+    adjustSidebarLayout();
+    onScroll();
+  });
 }
-
-window.addEventListener('load', adjustSidebarHeight);
-window.addEventListener('resize', adjustSidebarHeight);
-
-

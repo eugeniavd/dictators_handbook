@@ -676,7 +676,7 @@ footer.home {
   padding-top: 40px;
 }
 
-footer .container {
+footer.container {
   max-width: 800px;
   margin: 0 auto;
   padding: 2rem 1rem 1rem; 
@@ -1449,15 +1449,17 @@ body.article-page .navbar-collapse.show {
   margin-left: auto; 
   position: fixed; 
   right: 0;
-  top: 0;
+  top: var(--top-offset, 0px);
+  height: calc(100vh - var(--footer-height, 0px)); 
   bottom: 0;
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
+  z-index: 1000;
 }
 
 .sidebar-unfixed {
   position: absolute;
   top: auto;
-  bottom: 0;
+  bottom: var(--footer-height, 0px);
 }
 
 .sidebar {
@@ -1507,6 +1509,17 @@ body.article-page .navbar-collapse.show {
 .article-content::-webkit-scrollbar-thumb {
   background-color: #c4b89f;
   border-radius: 5px;
+}
+
+/* Footer for Article Page */
+
+.article-page footer {
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.article-page footer.visible {
+  opacity: 1;
 }
 
 
