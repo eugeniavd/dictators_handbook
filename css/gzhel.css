@@ -1167,12 +1167,10 @@ body.article-page .navbar-collapse.show {
 
 .content-wrapper {
   width: calc(100vw - 4cm); 
-  gap: 2cm;
   display: flex;
   flex-direction: row;
   box-sizing: border-box;
   margin: 0 auto;
-  padding: 2rem 0;
   overflow-x: hidden;
   justify-content: space-between;
   align-items: flex-start;
@@ -1193,18 +1191,13 @@ body.article-page .navbar-collapse.show {
   background: linear-gradient(to right, #0000000d, #0000001f, #0000000d);
 }
 
-.main-article,
-.sidebar-section-group {
-  flex: 1;
-  z-index: 1;
-}
-
 
 .main-article{
   width: 50%;
   display: flex;
   flex-direction: column;
   overflow-y: auto;
+  margin-right: 1cm;
 }
 
 .article-header-container {
@@ -1479,6 +1472,7 @@ body.article-page .navbar-collapse.show {
   bottom: 0;
   transition: all 1s ease;
   z-index: 1000;
+  margin-left: 1cm;
 }
 
 .sidebar-unfixed {
