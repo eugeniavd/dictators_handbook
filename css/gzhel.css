@@ -1169,7 +1169,6 @@ body.article-page .navbar-collapse.show {
   width: calc(100vw - 4cm); 
   display: flex;
   flex-direction: row;
-  gap: 2cm;
   box-sizing: border-box;
   margin: 0 auto;
   overflow-x: hidden;
@@ -1197,6 +1196,7 @@ body.article-page .navbar-collapse.show {
   display: flex;
   flex-direction: column;
   overflow-y: auto;
+  margin-right: 1cm;
 }
 
 .article-header-container {
@@ -1464,7 +1464,7 @@ body.article-page .navbar-collapse.show {
   flex-direction: column;
   overflow-y: auto;
   background-color: white;
-  margin-left: auto; 
+  margin-left: 1cm; 
   position: fixed; 
   right: 0;
   top: var(--top-offset, 0px);
