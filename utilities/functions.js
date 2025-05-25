@@ -260,3 +260,41 @@ document.addEventListener("DOMContentLoaded", function () {
     [...wrapper.childNodes].forEach(node => firstParagraph.appendChild(node));
   });
 });
+
+// ==============================
+// Sidebar fixed/unfixed
+// ==============================
+
+const sidebar = document.querySelector('.sidebar-section-group');
+const content = document.querySelector('.main-article');
+
+function onScroll() {
+  const contentBottom = content.getBoundingClientRect().bottom;
+  if (contentBottom <= window.innerHeight) {
+    sidebar.classList.add('sidebar-unfixed');
+  } else {
+    sidebar.classList.remove('sidebar-unfixed');
+  }
+}
+
+window.addEventListener('scroll', onScroll);
+
+function getFooterHeight() {
+  const footer = document.querySelector('footer');
+  return footer ? footer.offsetHeight : 0;
+}
+
+window.addEventListener('resize', () => {
+  console.log('Footer height:', getFooterHeight());
+});
+
+function adjustSidebarHeight() {
+  const footerHeight = getFooterHeight();
+  const sidebar = document.querySelector('.sidebar-section-group');
+  sidebar.style.height = `calc(100vh - ${footerHeight}px)`;
+}
+
+window.addEventListener('load', adjustSidebarHeight);
+window.addEventListener('resize', adjustSidebarHeight);
+
+

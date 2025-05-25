@@ -1451,6 +1451,13 @@ body.article-page .navbar-collapse.show {
   right: 0;
   top: 0;
   bottom: 0;
+  transition: all 0.3s ease;
+}
+
+.sidebar-unfixed {
+  position: absolute;
+  top: auto;
+  bottom: 0;
 }
 
 .sidebar {
