@@ -1193,6 +1193,13 @@ body.article-page .navbar-collapse.show {
   background: linear-gradient(to right, #0000000d, #0000001f, #0000000d);
 }
 
+.main-article,
+.sidebar-section-group {
+  flex: 1;
+  z-index: 1;
+}
+
+
 .main-article{
   width: 50%;
   display: flex;
