@@ -1168,10 +1168,12 @@ body.article-page .navbar-collapse.show {
 .content-wrapper {
   width: calc(100vw - 4cm); 
   display: flex;
+  flex-direction: row;
   box-sizing: border-box;
   margin: 0 auto;
   overflow-x: hidden;
   justify-content: space-between;
+  align-items: flex-start;
 }
 
 .main-article{
@@ -1452,7 +1454,7 @@ body.article-page .navbar-collapse.show {
   top: var(--top-offset, 0px);
   height: calc(100vh - var(--footer-height, 0px)); 
   bottom: 0;
-  transition: all 0.5s ease;
+  transition: all 1s ease;
   z-index: 1000;
 }
 
