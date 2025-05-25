@@ -1347,6 +1347,11 @@ body.article-page .navbar-collapse.show {
 
 /* Left: Scrollable Content */
 
+
+.article-content {
+  margin-right: 1cm;
+}
+
 .article-content,
 .img-box {
   max-width: 100%;
