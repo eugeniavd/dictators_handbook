@@ -1348,6 +1348,10 @@ body.article-page .navbar-collapse.show {
 
 /* Left: Scrollable Content */
 
+.article-content {
+  margin-right: 1cm;
+}
+
 .article-content,
 .img-box {
   max-width: 100%;
@@ -1479,11 +1483,13 @@ body.article-page .navbar-collapse.show {
   position: absolute;
   top: auto;
   bottom: var(--footer-height, 0px);
+  margin-left: 1cm;
 }
 
 .sidebar {
   flex: 1;
   overflow-y: auto;
+  margin-left: 1cm;
 }
 
 .sidebar-section {
@@ -1513,6 +1519,7 @@ body.article-page .navbar-collapse.show {
 
 .article-page.map-container {
   height: 300px;
+  margin-left: 1cm;
 }
 
 /* Scrollbar Customization for Left Column */
