@@ -318,6 +318,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   sidebarItems.forEach(item => {
     item.addEventListener('click', () => {
+      
+      // remove .active from all
+      sidebarItems.forEach(i => i.classList.remove('active'));
+      item.classList.add('active');
+
       const name = item.textContent.trim();
 
       const target = Array.from(document.querySelectorAll('.main-article .tag.person'))
@@ -325,13 +330,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (target) {
         target.scrollIntoView({ behavior: 'smooth', block: 'center' });
-
         target.classList.add('highlight-person');
         setTimeout(() => target.classList.remove('highlight-person'), 1500);
       }
     });
   });
 });
+
 
 document.addEventListener('DOMContentLoaded', () => {
   const personTags = document.querySelectorAll('.tag.person');
