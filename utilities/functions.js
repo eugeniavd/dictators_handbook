@@ -262,7 +262,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // ==============================
-// Sidebar fixed/unfixed
+// Metadata Sidebar 
 // ==============================
 
 window.addEventListener('load', () => {
@@ -306,4 +306,29 @@ window.addEventListener('load', () => {
   window.addEventListener('resize', adjustSidebarLayout);
   adjustSidebarLayout();
   onScroll();
+});
+
+// ==============================
+// Metadata search
+// ==============================
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const sidebarItems = document.querySelectorAll('.sidebar-list li');
+
+  sidebarItems.forEach(item => {
+    item.addEventListener('click', () => {
+      const name = item.textContent.trim();
+
+      const target = Array.from(document.querySelectorAll('.main-article .tag.person'))
+        .find(el => el.textContent.trim() === name);
+
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+        target.classList.add('highlight-person');
+        setTimeout(() => target.classList.remove('highlight-person'), 1500);
+      }
+    });
+  });
 });
