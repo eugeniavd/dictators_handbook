@@ -312,36 +312,29 @@ window.addEventListener('load', () => {
 // Metadata 
 // ==============================
 
-
 document.addEventListener('DOMContentLoaded', () => {
   const sidebarItems = document.querySelectorAll('.sidebar-list li');
 
   sidebarItems.forEach(item => {
     item.addEventListener('click', () => {
-      
-      // remove .active from all
       sidebarItems.forEach(i => i.classList.remove('active'));
       item.classList.add('active');
 
       const name = item.textContent.trim();
 
-      const target = Array.from(document.querySelectorAll('.main-article .tag.person'))
+      const target = Array.from(document.querySelectorAll('.main-article .tag'))
         .find(el => el.textContent.trim() === name);
 
       if (target) {
         target.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        target.classList.add('highlight-person');
-        setTimeout(() => target.classList.remove('highlight-person'), 1500);
+        target.classList.add('highlight-entity');
+        setTimeout(() => target.classList.remove('highlight-entity'), 1500);
       }
     });
   });
-});
 
-
-document.addEventListener('DOMContentLoaded', () => {
-  const personTags = document.querySelectorAll('.tag.person');
-
-  personTags.forEach(tag => {
+  const allTags = document.querySelectorAll('.tag.person, .tag.organization, .tag.event');
+  allTags.forEach(tag => {
     const wikiUrl = tag.dataset.wiki;
     const text = tag.textContent;
 
@@ -358,4 +351,5 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
 

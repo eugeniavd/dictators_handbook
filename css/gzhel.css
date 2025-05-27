@@ -1536,9 +1536,10 @@ body.article-page .navbar-collapse.show {
 }
 
 
-.highlight-person {
+.highlight-entity {
   font-size: 1.5em;
   transition: all 0.4s ease;
+  text-shadow: 0 0 2px #00000099;
 }
 
 
