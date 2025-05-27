@@ -309,7 +309,7 @@ window.addEventListener('load', () => {
 });
 
 // ==============================
-// Metadata search
+// Metadata 
 // ==============================
 
 
@@ -332,3 +332,25 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const personTags = document.querySelectorAll('.tag.person');
+
+  personTags.forEach(tag => {
+    const wikiUrl = tag.dataset.wiki;
+    const text = tag.textContent;
+
+    if (wikiUrl) {
+      const link = document.createElement('a');
+      link.href = wikiUrl;
+      link.textContent = text;
+      link.target = '_blank';
+      link.rel = 'noopener';
+      link.className = tag.className;
+      link.style.cursor = 'pointer';
+
+      tag.replaceWith(link);
+    }
+  });
+});
+
