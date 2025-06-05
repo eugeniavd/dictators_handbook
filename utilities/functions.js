@@ -317,7 +317,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   sidebarItems.forEach(item => {
     item.addEventListener('click', () => {
-      // Сброс активного состояния
       sidebarItems.forEach(i => i.classList.remove('active'));
       item.classList.add('active');
 
@@ -332,12 +331,11 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
-});
-
 
   const allTags = document.querySelectorAll('.tag.person, .tag.organization, .tag.event');
   allTags.forEach(tag => {
     const wikiUrl = tag.dataset.wiki;
+    const id = tag.dataset.id;
     const text = tag.textContent;
 
     if (wikiUrl) {
@@ -347,11 +345,13 @@ document.addEventListener('DOMContentLoaded', () => {
       link.target = '_blank';
       link.rel = 'noopener';
       link.className = tag.className;
+      link.dataset.id = id;
       link.style.cursor = 'pointer';
 
       tag.replaceWith(link);
     }
   });
 });
+
 
 
