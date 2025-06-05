@@ -317,14 +317,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   sidebarItems.forEach(item => {
     item.addEventListener('click', () => {
+      // Сброс активного состояния
       sidebarItems.forEach(i => i.classList.remove('active'));
       item.classList.add('active');
 
-      const name = item.textContent.trim();
+      const id = item.dataset.id;
+      if (!id) return;
 
-      const target = Array.from(document.querySelectorAll('.main-article .tag'))
-        .find(el => el.textContent.trim() === name);
-
+      const target = document.querySelector(`.main-article .tag[data-id="${id}"]`);
       if (target) {
         target.scrollIntoView({ behavior: 'smooth', block: 'center' });
         target.classList.add('highlight-entity');
@@ -332,6 +332,8 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+});
+
 
   const allTags = document.querySelectorAll('.tag.person, .tag.organization, .tag.event');
   allTags.forEach(tag => {
