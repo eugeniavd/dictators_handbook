@@ -1543,7 +1543,7 @@ body.article-page .navbar-collapse.show {
 
 /* Map Styling */
 
-.article-page.map-container {
+.article-map {
   height: 300px;
   margin-left: 1cm;
   padding: 0; 
