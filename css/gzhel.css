@@ -1541,14 +1541,19 @@ body.article-page .navbar-collapse.show {
   transition: all 0.4s ease;
 }
 
-
-
-
 /* Map Styling */
 
 .article-page.map-container {
   height: 300px;
   margin-left: 1cm;
+  padding: 0; 
+  box-sizing: border-box;
+  border-style: solid;
+  border-image: url("images/ghzel/map_border_thin.png");
+  border-image-slice: 90 90 90 90;
+  border-image-width: 35px 41px 40px 40px;
+  border-image-outset: 20px 23px 20px 20px;
+  border-image-repeat: round;
 }
 
 /* Scrollbar Customization for Left Column */
