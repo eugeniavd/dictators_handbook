@@ -1462,10 +1462,10 @@ body.article-page .navbar-collapse.show {
 /* Right: Sticky Metadata + Map */
 
 .sidebar-section-group {
-  width: 50%;
+  width: 50vw;
   display: flex;
   flex-direction: column;
-  overflow-y: auto;
+  overflow: hidden;
   background-color: white;
   position: fixed; 
   right: 0;
@@ -1491,7 +1491,8 @@ body.article-page .navbar-collapse.show {
 }
 
 .sidebar-section {
- border: 1px solid #420099;
+ height: 50%;
+ overflow-y: auto;
 }
 
 /* Sidebar Collapsible Sections */
@@ -1542,16 +1543,17 @@ body.article-page .navbar-collapse.show {
 /* Map Styling */
 
 body.article-page .section-map.article-style {
-  height: 50vh;
+  height: 50%;
   width: 100%;
-  border-image: url('images/ghzel/map_border_thin.png') 90 90 90 90 stretch;
-  border-width: 35px 41px 40px 40px;
   border-style: solid;
+  border-width: 35px 41px 40px 40px;
+  border-image: url('/images/ghzel/map_border_thin.png') 90 90 90 90 stretch;
   border-image-outset: 20px 23px 20px 20px;
   border-image-repeat: round;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  background: none;
 }
 
 body.article-page .section-map.article-style .map-container {
@@ -1560,14 +1562,15 @@ body.article-page .section-map.article-style .map-container {
   justify-content: center;
   align-items: center;
   background: none;
-  min-height: 100%;
+  padding: 0;
+  margin: 0;
 }
 
 body.article-page .section-map.article-style .map {
-  position: relative;
-  clip-path: none;
   width: 100%;
   height: 100%;
+  position: relative;
+  clip-path: none;
   z-index: auto;
 }
 
