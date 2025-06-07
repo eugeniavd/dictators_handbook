@@ -1194,7 +1194,6 @@ body.article-page .navbar-collapse.show {
   flex-direction: column;
   overflow-y: auto;
   margin-right: 1cm;
-  height: 100vh; 
 }
 
 .article-header-container {
