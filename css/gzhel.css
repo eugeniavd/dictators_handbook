@@ -1543,7 +1543,7 @@ body.article-page .navbar-collapse.show {
 
 /* Map Styling */
 
-.section-map.article-style {
+body.article-page .section-map.article-style {
   border-image: url('images/ghzel/map_border_thin.png') 90 90 90 90 stretch;
   border-width: 35px 41px 40px 40px;
   border-style: solid;
@@ -1551,11 +1551,12 @@ body.article-page .navbar-collapse.show {
   border-image-repeat: round;
 }
 
-.section-map.article-style .map-container {
+body.article-page .section-map.article-style .map-container {
   min-height: 300px;
   margin-left: 1cm;
   background: none;
 }
+
 
 
 /* Scrollbar Customization for Left Column */
