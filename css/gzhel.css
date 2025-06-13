@@ -1468,7 +1468,6 @@ body.article-page .navbar-collapse.show {
 
   display: flex;
   flex-direction: column;
-  align-items: stretch;
   overflow: hidden;
 
   z-index: 1000;
@@ -1479,12 +1478,14 @@ body.article-page .navbar-collapse.show {
 
 .sidebar {
   flex: 1 1 50%;
-  overflow-y: auto;
-  box-sizing: border-box;
+  overflow: hidden; 
+  display: flex;
+  flex-direction: column;
 }
 
 .sidebar-section {
-  overflow-y: auto;
+  flex: 1;
+  overflow: hidden;
   box-sizing: border-box;
 }
 
