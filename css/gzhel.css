@@ -1149,6 +1149,7 @@ body.article-page {
   padding: 0;
   overflow-x: hidden;
   box-sizing: border-box;
+  height: 100vh;
 }
 
 *, *::before, *::after {
@@ -1165,10 +1166,9 @@ body.article-page .navbar-collapse.show {
 
 .content-wrapper {
   width: calc(100vw - 4cm); 
+  height: 100vh; 
   display: flex;
   flex-direction: row;
-  box-sizing: border-box;
-  margin: 0 auto;
   overflow-x: hidden;
   justify-content: space-between;
   align-items: flex-start;
@@ -1190,6 +1190,7 @@ body.article-page .navbar-collapse.show {
 
 .main-article{
   width: 50%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   overflow-y: auto;
