@@ -57,6 +57,12 @@ html, body {
   padding: 0;
 }
 
+.main-only { display: list-item; }
+.article-only { display: none; }
+
+body.article-page .main-only { display: none; }
+body.article-page .article-only { display: list-item; }
+
 body {
   background-color: #ffffff;
   background-size: cover;
@@ -1153,14 +1159,6 @@ body.article-page {
 
 *, *::before, *::after {
   box-sizing: inherit;
-}
-
-body.article-page .navbar-collapse {
-  display: none !important;
-}
-
-body.article-page .navbar-collapse.show {
-  display: block !important;
 }
 
 .content-wrapper {

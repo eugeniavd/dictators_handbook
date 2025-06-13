@@ -67,36 +67,44 @@ document.addEventListener('DOMContentLoaded', () => {
       document.getElementById('header-placeholder').innerHTML = html;
 
       // After header is injected:
-      setTimeout(() => {
-        const dropdownElements = [].slice.call(document.querySelectorAll('.dropdown-toggle'));
-        dropdownElements.forEach(el => new bootstrap.Dropdown(el));
+  setTimeout(() => {
+    // Toggle header items based on page type
+    if (document.body.classList.contains('article-page')) {
+      document.querySelectorAll('.main-only').forEach(el => el.style.display = 'none');
+      document.querySelectorAll('.article-only').forEach(el => el.style.display = 'list-item');
+    } else {
+      document.querySelectorAll('.main-only').forEach(el => el.style.display = 'list-item');
+      document.querySelectorAll('.article-only').forEach(el => el.style.display = 'none');
+    }
 
-        initializeSubmenuListeners();
+    const dropdownElements = [].slice.call(document.querySelectorAll('.dropdown-toggle'));
+    dropdownElements.forEach(el => new bootstrap.Dropdown(el));
 
-        const collapseEl = document.querySelector('#navbarSupportedContent');
-        if (collapseEl) {
-          new bootstrap.Collapse(collapseEl, { toggle: false });
-        }
+    initializeSubmenuListeners();
 
-        // Restore scroll after toggling navbar
-        const navbarToggler = document.querySelector('.navbar-toggler');
-        const restoreScroll = () => {
-          document.body.style.overflow = 'auto';
-          document.documentElement.style.overflow = 'auto';
-          document.body.classList.remove('modal-open', 'offcanvas-open', 'overflow-hidden');
-        };
+    const collapseEl = document.querySelector('#navbarSupportedContent');
+    if (collapseEl) {
+      new bootstrap.Collapse(collapseEl, { toggle: false });
+    }
 
-        if (navbarToggler) {
-          navbarToggler.addEventListener('click', () => {
-            setTimeout(restoreScroll, 350);
-          });
-        }
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    const restoreScroll = () => {
+      document.body.style.overflow = 'auto';
+      document.documentElement.style.overflow = 'auto';
+      document.body.classList.remove('modal-open', 'offcanvas-open', 'overflow-hidden');
+    };
 
-        window.addEventListener('resize', restoreScroll);
-        window.addEventListener('orientationchange', restoreScroll);
-      }, 0);
-    })
-    .catch(err => console.error('Header error:', err));
+    if (navbarToggler) {
+      navbarToggler.addEventListener('click', () => {
+        setTimeout(restoreScroll, 350);
+      });
+    }
+
+    window.addEventListener('resize', restoreScroll);
+    window.addEventListener('orientationchange', restoreScroll);
+  }, 0);
+})
+
 
   // Load footer
   fetch('/components/footer.html')
