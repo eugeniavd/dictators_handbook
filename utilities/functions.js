@@ -262,56 +262,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // ==============================
-// Metadata Sidebar 
-// ==============================
-
-window.addEventListener('load', () => {
-  if (!document.body.classList.contains('article-page')) return;
-
-  const sidebar = document.querySelector('.sidebar-section-group');
-  const content = document.querySelector('.main-article');
-  const footer = document.querySelector('#footer-placeholder');
-
-  if (!sidebar || !content || !footer) return;
-
-  function getFooterHeight() {
-    return footer.offsetHeight;
-  }
-
-  function getTopOffset() {
-    const contentTop = content.getBoundingClientRect().top + window.scrollY;
-    return contentTop;
-  }
-
-  function adjustSidebarLayout() {
-    const footerHeight = getFooterHeight();
-    const topOffset = getTopOffset();
-
-    sidebar.style.setProperty('--footer-height', `${footerHeight}px`);
-    sidebar.style.setProperty('--top-offset', `${topOffset}px`);
-  }
-
-  function onScroll() {
-    const contentBottom = content.getBoundingClientRect().bottom;
-    const windowBottom = window.innerHeight;
-
-    if (contentBottom <= windowBottom) {
-      sidebar.classList.add('sidebar-unfixed');
-      document.body.classList.add('footer-visible');
-    } else {
-      sidebar.classList.remove('sidebar-unfixed');
-      document.body.classList.remove('footer-visible');
-    }
-  }
-
-  window.addEventListener('scroll', onScroll);
-  window.addEventListener('resize', adjustSidebarLayout);
-
-  adjustSidebarLayout();
-  onScroll();
-});
-
-// ==============================
 // Metadata 
 // ==============================
 

@@ -1591,17 +1591,3 @@ body.article-page .article-map-wrapper .map {
   background-color: #c4b89f;
   border-radius: 5px;
 }
-
-/* Footer for Article Page */
-
-.article-page #footer-placeholder {
-  opacity: 0;
-  transition: opacity 0.6s ease;
-  display: block;
-}
-
-.article-page #footer-placeholder.visible {
-  opacity: 1;
-}
-
-
