@@ -1232,6 +1232,9 @@ body.article-page {
   background: url('/images/ghzel/top_art.png') no-repeat center center;
   background-size: 70% auto;
   margin-top: 0;
+
+  border: 2px dashed red;
+  box-sizing: border-box;
 }
 
 .h1-wrapper {
@@ -1483,6 +1486,9 @@ body.article-page {
   overflow: hidden; 
   display: flex;
   flex-direction: column;
+
+  border: 2px dashed red;
+  box-sizing: border-box;
 }
 
 .sidebar-section {
