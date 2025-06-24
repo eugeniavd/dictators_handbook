@@ -1325,7 +1325,7 @@ body.article-page {
 
 .article-data-container {
   position: absolute;
-  top: 2rem;
+  top: 1rem;
   left: -0.3rem;
   display: flex;
   flex-direction: column;
@@ -1335,7 +1335,7 @@ body.article-page {
 }
 
 .article-data-container h5 {
-  font-size: 1rem;
+  font-size: 0.8rem;
   margin: 0;
   color: #434141;
   text-transform: uppercase;
