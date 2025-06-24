@@ -1162,27 +1162,16 @@ body.article-page {
 }
 
 .content-wrapper {
-  width: calc(100vw - 4cm); 
+  width: calc(100vw - 9.45rem); 
   height: auto;
   min-height: 100vh;
+  top: 1rem;
   display: flex;
   flex-direction: row;
   overflow-x: hidden;
   justify-content: space-between;
   align-items: flex-start;
   position: relative;
-}
-
-.content-wrapper::before {
-  content: '';
-  position: absolute;
-  left: 50%;
-  top: 0;
-  transform: translateX(-1cm);
-  width: 1.5cm;
-  height: 100%;
-  z-index: 0;
-  pointer-events: none;
 }
 
 
