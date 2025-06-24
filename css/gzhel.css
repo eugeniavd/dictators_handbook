@@ -1214,8 +1214,8 @@ footer.home {
 
 .h1-inner {
   display: inline-block;
-  transform: scaleX(0.55) scaleY(1.2) translateX(-30%);
-  transform-origin: center;
+  transform: scaleX(0.55) scaleY(1.2);
+  transform-origin: 25% 50%;
   white-space: nowrap;
 }
 
