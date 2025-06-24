@@ -28,33 +28,26 @@
   font-style: normal;
 }
 
-body, html {
+html, body {
+  margin: 0;
+  padding: 0;
+
+  /* размеры */
+  height: auto;
+  min-height: 100%;
+
+  overflow-x: hidden;
+  overflow-y: auto;
   scroll-behavior: smooth;
   overscroll-behavior: auto;
   touch-action: manipulation;
 }
 
+header,
 #header-placeholder {
   position: relative;
-  z-index: 1000;
-  overflow: visible; 
-}
-
-header, #header-placeholder {
+  z-index: 1000;        
   overflow: visible !important;
-  position: relative;
-  z-index: auto;
-}
-
-html, body {
-  height: auto;
-  min-height: 100%;
-  overflow-x: hidden;
-  overflow-y: auto;
-  position: relative;
-  z-index: auto;
-  margin: 0;
-  padding: 0;
 }
 
 .main-only { display: list-item; }
@@ -1219,6 +1212,7 @@ body.article-page {
   background-size: contain;
 
   border: 2px dashed red;
+  box-sizing: border-box;
 }
 
 .h1-wrapper {
