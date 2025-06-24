@@ -1232,7 +1232,7 @@ body.article-page {
   margin: 0;                          
   padding: 0;
   background: url('/images/ghzel/top_art.png') no-repeat top center;
-  background-size: cover;
+  background-size: contain;
 
   border: 2px dashed red;
   box-sizing: border-box;
