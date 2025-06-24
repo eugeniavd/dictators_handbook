@@ -1212,7 +1212,7 @@ footer.home {
 .h1-inner {
   display: inline-block;
   transform: scaleX(0.55) scaleY(1.2);
-  transform-origin: 22.5% 50%;
+  transform-origin: 20% 50%;
   white-space: nowrap;
 }
 
@@ -1505,7 +1505,7 @@ footer.home {
 /* Map Styling */
 
 body.article-page .article-map-wrapper {
-  flex: 1 1 50%;
+  flex: 1 1 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -1517,8 +1517,8 @@ body.article-page .article-map-wrapper {
 body.article-page .article-map-wrapper .map-title {
   margin: 0 0 0.5rem;
   padding: 0;
-  font-size: 1.2rem;
-  text-align: left;
+  font-size: 1.5rem;
+  text-align: center;
 }
 
 body.article-page .article-map-wrapper .map-container {
@@ -1528,9 +1528,9 @@ body.article-page .article-map-wrapper .map-container {
   justify-content: center;
   align-items: center;
   border-style: solid;
-  border-width: 35px 41px 40px 40px;
-  border-image: url('/images/ghzel/map_border_thin.png') 90 90 90 90 stretch;
-  border-image-outset: 20px 23px 20px 20px;
+  border-width: 12px;
+  border-image: url('/images/ghzel/map_border_thin.png') 12 round;
+  box-sizing: border-box;
   border-image-repeat: round;
   background: none;
   padding: 0;
@@ -1540,9 +1540,7 @@ body.article-page .article-map-wrapper .map-container {
 body.article-page .article-map-wrapper .map {
   width: 100%;
   height: 100%;
-  position: relative;
-  clip-path: none;
-  z-index: auto;
+  box-sizing: border-box; 
 }
 
 
