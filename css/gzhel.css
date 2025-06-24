@@ -1165,7 +1165,7 @@ body.article-page {
   width: calc(100vw - 9.45rem); 
   height: auto;
   min-height: 100vh;
-  top: 1rem;
+  top: 3rem;
   display: flex;
   flex-direction: row;
   overflow-x: hidden;
