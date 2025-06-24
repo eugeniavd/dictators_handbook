@@ -1325,7 +1325,7 @@ body.article-page {
 
 .article-data-container {
   position: absolute;
-  top: -1rem;
+  top: -0.5rem;
   left: -0.3rem;
   display: flex;
   flex-direction: column;
