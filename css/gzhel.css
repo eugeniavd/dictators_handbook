@@ -1142,25 +1142,22 @@ footer.home {
 
 .content-wrapper {
   width: var(--page-width); 
-  height: auto;
   min-height: var(--page-height);
+  gap: var(--page-gutter);
   top: 3rem;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   align-items: flex-start;
   position: relative;
 }
 
 
 .main-article{
-  width: calc(50% - var(--page-gutter)); 
-  height: auto; 
+  flex: 1 1 0;                  
+  min-width: 0; 
   display: flex;
   flex-direction: column;
   overflow-y: auto;
-  margin-right: var(--page-gutter);  
-  flex-grow: 1;
 }
 
 .article-header-container {
@@ -1215,7 +1212,7 @@ footer.home {
 .h1-inner {
   display: inline-block;
   transform: scaleX(0.55) scaleY(1.2);
-  transform-origin: 25% 50%;
+  transform-origin: 22.5% 50%;
   white-space: nowrap;
 }
 
@@ -1431,19 +1428,18 @@ footer.home {
 /* Right: Sticky Metadata + Map */
 
 .sidebar-section-group {
-  width: calc(50% - var(--page-gutter));   
+  flex: 1 1 0;                
+  min-width: 0;  
   height: var(--page-height); 
   position: sticky;
   top: 0;
-  flex-shrink: 0;
 
   display: flex;
   flex-direction: column;
   overflow: hidden;
 
   z-index: 1000;
-  padding-left: var(--page-gutter);         
-
+  padding-left: var(--page-gutter);
   transition: all 1s ease;
 }
 
