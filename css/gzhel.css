@@ -1175,11 +1175,7 @@ footer.home {
 
 .article-header {
   flex: 0 0 auto;
-  height: calc(
-    var(--page-height)
-    - var(--menu-height)
-    - var(--menu-offset)
-    );
+  height: 100%;
   width: 100%; 
   overflow: hidden;
   display: flex;
@@ -1187,8 +1183,8 @@ footer.home {
   align-items: center;
   justify-content: space-between;
   text-align: center;
-  padding-top: 0 !important;
-  margin-top: 0 !important;
+  margin: 0;
+  padding: 0;
 
   border: 2px dashed rgb(0, 255, 51);
 }
@@ -1332,6 +1328,7 @@ footer.home {
 /* Left: Scrollable Content */
 
 .article-content {
+  flex: 1 1 auto;
   margin-right: 1cm;
 }
 
