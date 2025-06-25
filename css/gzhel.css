@@ -1148,7 +1148,6 @@ footer.home {
     - var(--menu-height)
     );
   gap: var(--page-gutter);
-  top: var(--menu-height);
   display: flex;
   flex-direction: row;
   align-items: flex-start;
