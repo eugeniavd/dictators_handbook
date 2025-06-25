@@ -10,7 +10,9 @@
   --page-height: 100vh;  
   --page-width: 90vw;
   --vh: 1vh;   
-  --page-gutter: 1rem;  
+  --page-gutter: 1rem;
+  --menu-height: 2.5rem;   /* height of Bootstrap navbar */
+  --top-offset: 3rem;    
 }
 
 /* Title font */
@@ -1142,9 +1144,13 @@ footer.home {
 
 .content-wrapper {
   width: var(--page-width); 
-  height: var(--page-height);
+  height: calc(
+    var(--page-height)
+    - var(--menu-height)
+    - var(--top-offset)
+    );
   gap: var(--page-gutter);
-  top: 3rem;
+  top: calc(var(--menu-height) + var(--top-offset));
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -1433,7 +1439,7 @@ footer.home {
 .sidebar-section-group {
   flex: 1 1 0;                
   min-width: 0;  
-  height: var(--page-height); 
+  height: 100%; 
   position: sticky;
   top: 0;
 
