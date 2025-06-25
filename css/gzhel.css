@@ -1149,7 +1149,10 @@ footer.home {
     - var(--menu-height)
     - var(--menu-offset)
     );
-  top: var(--menu-offset);
+  top: calc(
+    var(--menu-height)
+    + var(--menu-offset)
+    );
   gap: var(--page-gutter);
   display: flex;
   flex-direction: row;
@@ -1190,7 +1193,7 @@ footer.home {
 
 .article-header-container {
   width: 100%;
-  max-height: calc(50 * var(--vh));   
+  max-height: calc(60 * var(--vh));   
   overflow: hidden;
   padding: 0 !important;
   display: flex;
@@ -1205,7 +1208,7 @@ footer.home {
 
 .article-header-image {
   width: 100%;
-  height: calc(50 * var(--vh));
+  height: calc(40 * var(--vh));
   margin: 0;                          
   padding: 0;
   background: url('/images/ghzel/top_art.png') no-repeat top center;
