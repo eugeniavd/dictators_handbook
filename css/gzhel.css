@@ -12,7 +12,7 @@
   --vh: 1vh;   
   --page-gutter: 1rem;
   --menu-height: 2.5rem;   /* height of Bootstrap navbar */
-  --top-offset: 3rem;    
+  --top-offset: 1rem;    
 }
 
 /* Title font */
@@ -1155,37 +1155,25 @@ footer.home {
   flex-direction: row;
   align-items: flex-start;
   position: relative;
-  overflow: hidden;  
+  overflow-x: hidden;   
+  overflow-y: visible;
 }
 
 
 .main-article{
   flex: 1 1 0;                  
   min-width: 0; 
+  height: 100%;  
   display: flex;
   flex-direction: column;
   overflow-y: auto;
 }
 
-.article-header-container {
-  width: 100%;
-  min-height: calc(50 * var(--vh));    
-  max-height: var(--page-height);   
-  overflow: hidden;
-  padding: 0 !important;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  text-align: center;
-  align-items: center;
-  pointer-events: auto; 
-  z-index: 1;
-}
 
 .article-header {
+  flex: 0 0 auto;
   position: relative;
   height: auto;
-  max-height: var(--page-height);
   width: 100%; 
   overflow: hidden;
   display: flex;
@@ -1198,6 +1186,22 @@ footer.home {
 
   border: 2px dashed rgb(0, 255, 51);
 }
+
+
+.article-header-container {
+  width: 100%;
+  max-height: calc(50 * var(--vh));   
+  overflow: hidden;
+  padding: 0 !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: center;
+  align-items: center;
+  pointer-events: auto; 
+  z-index: 1;
+}
+
 
 .article-header-image {
   width: 100%;
