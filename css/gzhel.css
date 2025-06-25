@@ -557,7 +557,7 @@ button:active {
   width: 100%;
 }
 
-.section-map {
+.map--homepage {
   width: calc(100vw - 6cm); 
   max-width: 1200px;
   min-height: 95vh;
@@ -570,7 +570,7 @@ button:active {
   align-items: center;
 }
 
-.map-title {
+.map--homepage .map-title {
   margin-bottom: 0 !important;
   padding-bottom: 0 !important;
   line-height: 1.1;
@@ -578,7 +578,7 @@ button:active {
   flex-shrink: 0; 
 }
 
-.map-container {
+.map--homepage .map-container {
   position: relative; 
   flex-grow: 1; 
   width: 100%;
@@ -595,7 +595,7 @@ button:active {
   
 }
 
-.map {
+.map--homepage .map {
   width: 100%;
   height: 100%;
   position: absolute; 
@@ -605,7 +605,7 @@ button:active {
   clip-path: ellipse(40% 45% at center); 
 }
 
-.map-container::after {
+.map--homepage .map-container::after {
   content: "";
   position: absolute;
   top: 0;
