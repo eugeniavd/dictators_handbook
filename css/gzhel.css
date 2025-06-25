@@ -1188,6 +1188,8 @@ footer.home {
   text-align: center;
   padding-top: 0 !important;
   margin-top: 0 !important;
+
+  border: 2px dashed rgb(0, 255, 51);
 }
 
 .article-header-image {
