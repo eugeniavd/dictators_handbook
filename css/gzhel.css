@@ -1174,8 +1174,12 @@ footer.home {
 
 
 .article-header {
-  flex: 1 1 0;
-  height: 100%;
+  flex: 0 0 auto;
+  height: calc(
+    var(--page-height)
+    - var(--menu-height)
+    - var(--menu-offset)
+    );
   width: 100%; 
   overflow: hidden;
   display: flex;
