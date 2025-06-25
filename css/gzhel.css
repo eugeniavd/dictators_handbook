@@ -1146,7 +1146,9 @@ footer.home {
   height: calc(
     var(--page-height)
     - var(--menu-height)
+    - var(--page-gutter * 0.5)
     );
+  top: var(--page-gutter);
   gap: var(--page-gutter);
   display: flex;
   flex-direction: row;
