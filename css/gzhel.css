@@ -1174,9 +1174,8 @@ footer.home {
 
 
 .article-header {
-  flex: 0 0 auto;
-  position: relative;
-  height: auto;
+  flex: 1 1 0;
+  height: 100%;
   width: 100%; 
   overflow: hidden;
   display: flex;
@@ -1193,7 +1192,7 @@ footer.home {
 
 .article-header-container {
   width: 100%;
-  max-height: calc(60 * var(--vh));   
+  flex: 1 1 60%;   
   overflow: hidden;
   padding: 0 !important;
   display: flex;
@@ -1208,7 +1207,7 @@ footer.home {
 
 .article-header-image {
   width: 100%;
-  height: calc(40 * var(--vh));
+  flex: 0 0 40%; 
   margin: 0;                          
   padding: 0;
   background: url('/images/ghzel/top_art.png') no-repeat top center;
