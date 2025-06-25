@@ -11,8 +11,7 @@
   --page-width: 90vw;
   --vh: 1vh;   
   --page-gutter: 1rem;
-  --menu-height: 2.5rem;   /* height of Bootstrap navbar */
-  --top-offset: 1rem;    
+  --menu-height: 2.5rem;   /* height of Bootstrap navbar */ 
 }
 
 /* Title font */
@@ -1147,10 +1146,9 @@ footer.home {
   height: calc(
     var(--page-height)
     - var(--menu-height)
-    - var(--top-offset)
     );
   gap: var(--page-gutter);
-  top: calc(var(--menu-height) + var(--top-offset));
+  top: var(--menu-height);
   display: flex;
   flex-direction: row;
   align-items: flex-start;
