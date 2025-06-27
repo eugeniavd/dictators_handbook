@@ -13,6 +13,11 @@
   --page-gutter: 2rem;
   --menu-height: 2.5rem;   /* height of Bootstrap navbar */ 
   --menu-offset: 2rem; 
+  --available-height: calc(
+    var(--page-height)
+    - var(--menu-height)
+    - var(--menu-offset)
+  );
 }
 
 /* Title font */
@@ -1175,7 +1180,7 @@ footer.home {
 
 .article-header {
   flex: 0 0 auto;
-  height: 100%;
+  height: var(--available-height);
   width: 100%; 
   overflow: hidden;
   display: flex;
@@ -1333,6 +1338,7 @@ footer.home {
 .article-content {
   flex: 1 1 auto;
   margin-right: 1cm;
+  overflow-y: auto;
 }
 
 .article-content,
