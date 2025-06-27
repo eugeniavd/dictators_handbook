@@ -1149,11 +1149,7 @@ footer.home {
 
 .content-wrapper {
   width: var(--page-width); 
-  height: calc(
-    var(--page-height)
-    - var(--menu-height)
-    - var(--menu-offset)
-    );
+  height: var(--available-height);
   top: calc(
     var(--menu-height)
     + var(--menu-offset)
@@ -1163,8 +1159,7 @@ footer.home {
   flex-direction: row;
   align-items: flex-start;
   position: relative;
-  overflow-x: hidden;   
-  overflow-y: visible;
+  overflow: hidden;  
 }
 
 
@@ -1179,8 +1174,7 @@ footer.home {
 
 
 .article-header {
-  flex: 0 0 auto;
-  height: var(--available-height);
+  flex: 0 0 var(--available-height);
   width: 100%; 
   overflow: hidden;
   display: flex;
@@ -1191,7 +1185,7 @@ footer.home {
   margin: 0;
   padding: 0;
 
-  border: 2px dashed rgb(0, 255, 51);
+  outline: 2px dashed lime;
   box-sizing: border-box;
 }
 
@@ -1337,7 +1331,8 @@ footer.home {
 
 .article-content {
   flex: 1 1 auto;
-  margin-right: 1cm;
+  padding: var(--page-gutter);
+  outline: 1px dashed orange;
 }
 
 .article-content,
