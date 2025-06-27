@@ -1187,6 +1187,7 @@ footer.home {
   padding: 0;
 
   border: 2px dashed rgb(0, 255, 51);
+  box-sizing: border-box;
 }
 
 
@@ -1202,6 +1203,7 @@ footer.home {
   align-items: center;
   pointer-events: auto; 
   z-index: 1;
+  box-sizing: border-box;
 }
 
 
@@ -1236,7 +1238,7 @@ footer.home {
   text-transform: uppercase;
   font-size: 5vw;
   letter-spacing: 0.02rem;
-  margin-top: -1vh;
+  margin-top: -1vh 0 0 0;
   color: #3b40d9; 
   text-shadow: 1px 1px 3px #0516536d;
   margin: 0;
@@ -1252,6 +1254,7 @@ footer.home {
   max-width: 65%;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 0;
   color: #3439c0; 
   white-space: normal;
 }
