@@ -1184,9 +1184,6 @@ footer.home {
   text-align: center;
   margin: 0;
   padding: 0;
-
-  outline: 2px dashed lime;
-  box-sizing: border-box;
 }
 
 
@@ -1213,9 +1210,6 @@ footer.home {
   padding: 0;
   background: url('/images/ghzel/top_art.png') no-repeat top center;
   background-size: contain;
-
-  border: 2px dashed red;
-  box-sizing: border-box;
 }
 
 .h1-wrapper {
@@ -1334,7 +1328,6 @@ footer.home {
   padding: var(--page-gutter);
   min-height: 0;         
   overflow: visible;
-  outline: 1px dashed orange;
 }
 
 .article-content,
@@ -1451,7 +1444,7 @@ footer.home {
 .sidebar-section-group {
   flex: 1 1 0;                
   min-width: 0;  
-  height: 100%; 
+  height: var(--available-height); 
   position: sticky;
   top: 0;
 
@@ -1465,12 +1458,10 @@ footer.home {
 }
 
 .sidebar {
-  flex: 1 1 50%;
-  overflow: hidden; 
+  flex: 0 0 50%;
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
-
-  border: 2px dashed red;
 }
 
 .sidebar-section {
@@ -1526,13 +1517,14 @@ footer.home {
 /* Map Styling */
 
 .map--articlepage {
-  flex: 1 1 100%;
+  flex: 0 0 50%;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   width: 100%;
   height: 100%;
   background: none;
+  overflow: hidden;
 }
 
 .map--articlepage .map-title {
