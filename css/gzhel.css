@@ -1443,16 +1443,13 @@ footer.home {
 
 .sidebar-section-group {            
   height: var(--available-height); 
+  display: flex;
+  flex-direction: column;
   position: sticky;
   top: 0;
   flex: 0 0 50%;
   min-width: 0;
-
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-
-  z-index: 1000;
+  overflow: visible;
   transition: all 1s ease;
 }
 
@@ -1533,16 +1530,13 @@ footer.home {
 }
 
 .map--articlepage .map-container {
-  flex-grow: 1;
-  width: 100%;
+  flex: 1 1 auto;  
   display: flex;
   justify-content: center;
   align-items: center;
   border-style: solid;
   border-width: 12px;
   border-image: url('/images/ghzel/map_border_thin.png') 12 round;
-  box-sizing: border-box;
-  border-image-repeat: round;
   background: none;
   padding: 0;
   margin: 0;
@@ -1551,7 +1545,6 @@ footer.home {
 .map--articlepage .map {
   width: 100%;
   height: 100%;
-  box-sizing: border-box; 
 }
 
 
