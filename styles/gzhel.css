@@ -1,0 +1,202 @@
+.gzhel {
+  font-family: Balkara, serif;
+  color: #636060;
+}
+.gzhel .wrapper {
+  padding: 0 24px;
+}
+@media screen and (min-width: 1200px) {
+  .gzhel .wrapper {
+    padding: 0 calc(50vw - 550px);
+  }
+}
+.gzhel header {
+  height: 3rem;
+  display: flex;
+  justify-content: flex-end;
+  font-size: 16px;
+  mso-width-source: 100%;
+}
+.gzhel header .navbar>.navbar-toggler {
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+@media screen and (min-width: 576px) {
+  .gzhel header {
+    justify-content: center;
+  }
+}
+.gzhel header .nav-link {
+  color: #039;
+  padding: 0.1rem 0.2rem;
+}
+.gzhel header .nav-link:hover {
+  background-color: rgba(0,85,204,0.102);
+  color: #05c;
+}
+.gzhel header .nav-link.show {
+  color: #05c;
+}
+.gzhel header .dropdown-menu {
+  background-color: rgba(0,85,204,0.502);
+  backdrop-filter: blur(2px);
+  border: none;
+  padding: 0.2rem;
+}
+.gzhel header .dropdown-menu .dropdown-item {
+  background-color: transparent;
+  position: static;
+  padding: 0.4rem 0.2rem;
+  border-radius: 0.2rem;
+}
+.gzhel header .dropdown-menu .nav-link {
+  color: #fff;
+  width: 100%;
+  border-radius: 0.2rem;
+  text-align: left;
+}
+.gzhel header .dropdown-menu .nav-link:hover {
+  background-color: #05c;
+}
+.gzhel header .offcanvas.show .dropdown-menu {
+  background-color: transparent;
+  padding: 0 1rem;
+}
+.gzhel header .offcanvas.show .dropdown-menu .dropdown-item {
+  padding: 0;
+}
+.gzhel header .offcanvas.show .nav-link {
+  color: inherit;
+}
+.gzhel header .offcanvas.show .nav-link:hover {
+  background-color: rgba(0,85,204,0.102);
+}
+.gzhel .home_title {
+  height: calc(100vh - 3rem);
+  background-image: url("./img/ghzel/top.png");
+  background-size: auto 80%;
+  background-repeat: no-repeat;
+  background-position: top center;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding-bottom: 1rem;
+  position: relative;
+  color: #039;
+  justify-content: center;
+}
+@media screen and (min-width: 576px) {
+  .gzhel .home_title {
+    justify-content: flex-end;
+    background-size: auto 75vh;
+  }
+}
+.gzhel .home_title::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  background-color: rgba(255,255,255,0.533);
+  width: 100%;
+  top: 0;
+}
+@media screen and (min-width: 576px) {
+  .gzhel .home_title::before {
+    background-color: transparent;
+    height: 75vh;
+  }
+}
+.gzhel .home_title h1 {
+  font-family: "A la russ", serif;
+  text-transform: uppercase;
+  justify-self: center;
+  font-size: 5rem;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+.gzhel .home_title h2 {
+  position: absolute;
+  z-index: 1;
+  text-align: center;
+  justify-self: center;
+  text-transform: uppercase;
+  font-size: 2vw;
+  margin: 0;
+  bottom: 1rem;
+  width: 100%;
+}
+@media screen and (min-width: 576px) {
+  .gzhel .home_title h2 {
+    position: relative;
+    bottom: 0;
+    font-size: 1.5vw;
+  }
+}
+.gzhel .home_design article {
+  padding-top: 2rem;
+  display: grid;
+  gap: 1rem;
+}
+.gzhel .home_design article img {
+  width: 100%;
+}
+@media screen and (min-width: 576px) {
+  .gzhel .home_design article {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .gzhel .home_design article:nth-of-type(2) div {
+    grid-row-start: -1;
+  }
+}
+.gzhel .custom_btn {
+  border-radius: 50px;
+  border: 2px solid #3b40d9;
+  color: #3b40d9;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 0.4rem 1rem;
+  width: max-content;
+  margin: 0 auto;
+}
+.gzhel .home_issue {
+  display: grid;
+  justify-content: center;
+  gap: 1rem;
+}
+.gzhel .home_issue img {
+  max-width: 100%;
+}
+.gzhel h2 {
+  color: #039;
+  text-shadow: 1px 1px 3px rgba(5,22,83,0.427);
+  text-align: center;
+  margin-bottom: 1em;
+  margin-top: 3rem;
+  font-size: 32px;
+}
+.gzhel h3 {
+  color: #039;
+  font-size: 20px;
+  margin-bottom: 1em;
+  text-align: center;
+}
+.gzhel p {
+  text-align: justify;
+  margin-bottom: 1em;
+  font-size: 16px;
+}
+.gzhel p::first-letter {
+  font-size: 300%;
+  line-height: 1rem;
+  float: left;
+  margin-right: 0.15rem;
+  margin-top: 0.1rem;
+  padding-right: 0;
+  text-transform: uppercase;
+  color: #039;
+}
+.gzhel footer {
+  color: #add8e6;
+}
