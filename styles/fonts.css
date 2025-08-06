@@ -1,0 +1,78 @@
+@font-face {
+    font-family: "A la russ";
+    src: url("./fonts/A_la_russ.ttf") format("TrueType");
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Balkara";
+    src: url("./fonts/Balkara.ttf") format("TrueType");
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Blagovest";
+    src: url("./fonts/Blagovest.ttf") format("TrueType");
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Bootshaus";
+    src: url("./fonts/Bootshaus.ttf") format("TrueType");
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: "NewsCycle";
+    src: url("./fonts/newscycle/newscycle-regular.ttf") format("TrueType");
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: "NewsCycle";
+    src: url("./fonts/newscycle/newscycle-bold.ttf") format("TrueType");
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Rodchenko Constructed";
+    src: url("./fonts/rodchenko/Rodchenko Constructed ML.ttf") format("TrueType");
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Rodchenko Grotesk";
+    src: url("./fonts/rodchenko/Rodchenko Grotesk ML.ttf") format("TrueType");
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Next Art";
+    src: url("./fonts/nextart/NEXT ART_Thin.otf") format("opentype");
+    font-weight: 100;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Next Art";
+    src: url("./fonts/nextart/NEXT ART_Light.otf") format("opentype");
+    font-weight: 200;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Next Art";
+    src: url("./fonts/nextart/NEXT ART_Regular.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Next Art";
+    src: url("./fonts/nextart/NEXT ART_Bold.otf") format("opentype");
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Next Art";
+    src: url("./fonts/nextart/NEXT ART_SemiBold.otf") format("opentype");
+    font-weight: 700;
+    font-style: normal;
+}
