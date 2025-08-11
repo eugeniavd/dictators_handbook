@@ -1,208 +1,128 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-    <title>Dictators’ Handbook</title>
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
-    
-    <!-- Leaflet CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" />
-
-    <!-- Basic design -->
-    <link rel="stylesheet" href="/css/basic.css">
-
-    <!-- Design theme -->
-    <link id="themeStylesheet" rel="stylesheet" href="/css/gzhel.css">
-
-    <link rel="preload" href="/css/suprematism.css" as="style">
-
-    <!-- Adding JavaScript file with additional functions -->
-    <script src="/utilities/functions.js" defer></script>
-
+    <title>Dictators’ Handbook</title><!--link(rel="favicon icon" href="/favicon.svg" type="image/svg+xml")-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.7/css/bootstrap.min.css"
+        integrity="sha512-fw7f+TcMjTb7bpbLJZlP8g2Y4XcCyFZW8uy8HsRZsH/SwbMw0plKHFHr99DN3l04VsYNwvzicUX/6qurvIxbxw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css"
+        integrity="sha512-t7Few9xlddEmgd3oKZQahkNI4dS6l80+eGEzFQiqtyVYdvcSG2D3Iub77R20BdotfRPA9caaRkg1tyaJiPmO0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="./styles/style.css"><!--script(src="/scripts/functions.js")-->
 </head>
 
-<body class="home">
-
-     <!-- Adding the header -->
-    <div id="header-placeholder"></div>
-    
-    <!-- Main Content -->
-    <main class="home">
-        
-        <!-- Introduction Section -->
-        <section id="intro">
-            <div class="intro_image"></div>
-            <div class="intro-text">
-                <div class="intro-text-container">
-                    <h1><span>Dictators’</span> <span>  Handbook</span></h1>
-                    <h2>From political chess moves to untold secrets, we cover it all.</h2>
+<body>
+    <div class="wrapper">
+        <header>
+            <nav class="navbar navbar-expand-sm"><button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#navbar"><span class="navbar-toggler-icon"></span></button>
+                <div class="offcanvas offcanvas-start" id="navbar" data-bs-scroll="true" data-bs-backdrop="false">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title">Navigation</h5><button class="btn-close" type="button"
+                            data-bs-dismiss="offcanvas"></button>
+                    </div>
+                    <ul class="navbar-nav offcanvas-body">
+                        <li class="nav-item"><a class="nav-link" href="./index.html#about">About</a></li>
+                        <li class="nav-item dropdown"><button class="nav-link dropdown-toggle" type="button"
+                                data-bs-toggle="dropdown" aria-expanded="true">Issues</button>
+                            <ul class="dropdown-menu">
+                                <li class="dropdown-item dropend"><button class="dropdown-toggle nav-link" type="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">Stalin</button>
+                                    <ul class="dropdown-menu">
+                                        <li class="dropdown-item"><a class="nav-link"
+                                                href="./issues/last_days_of_soviet_dictator.html">The Last Days of the
+                                                Soviet Dictator</a></li>
+                                        <li class="dropdown-item"><a class="nav-link"
+                                                href="./issues/joseph_stalin_paranoid_purge.html">Joseph Stalin's
+                                                Paranoid Purge</a></li>
+                                        <li class="dropdown-item"><a class="nav-link"
+                                                href="./issues/world_that_made_stalin.html">The World That Made
+                                                Stalin</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown"><button class="nav-link dropdown-toggle" type="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Change Design</button>
+                            <ul class="dropdown-menu">
+                                <li class="nav-link dropdown-item" data-action="theme" data-value="gzhel">Old Russian
+                                    Ghzel</li>
+                                <li class="nav-link dropdown-item" data-action="theme" data-value="suprematism">
+                                    Suprematism</li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="">Documentation</a></li>
+                        <li class="nav-item"><a class="nav-link" href="">Disclaimer</a></li>
+                    </ul>
                 </div>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <div class="about-container" id="About">
-            <section class="about-content">
-                <h2>About the Project</h2>
-                <p>Dictators’ Handbook is an innovative framework that combines the traditional appeal of magazines with modern interactive mapping and rich 
-                    metadata. Our platform allows readers to explore content through geographic locations, discovering how stories connect across space and 
-                    time. This project is realized for the Web Technology and Information Modeling course at the University of Bologna.</p>
-                <p>Each issue is dedicated to one of the world’s dictators, offering a deep dive into their rise to power, scandals, and lasting impact. All 
-                    articles are enhanced with geographic references and interconnected through the metadata layer about people, organizations, events and
-                    dates. Also, you can switch between different design themes to adjust the page layout to your taste.</p>
-                    <button onclick="window.open('#', '_blank')">Read the Documentation</button>
+            </nav>
+        </header>
+        <main class="home">
+            <section class="home_title">
+                <h1><span>Dictators’ Handbook</span></h1>
+                <h2>From political chess moves to untold secrets, we cover it all.</h2>
             </section>
-        </div>
-
-        <!-- Design Themes Section -->
-        <section class="themes-section" id="themes">
-            <div class="themes-container">
-                <div class="themes-header">
-                    <h2 class="themes-title">
-                        <span class="word">Customize</span>
-                        <span class="word">Your Magazine</span>
-                      </h2>                      
-                    <p class="themes-description">We have developed several unique designs for our magazine, each inspired by a specific historical period and filled with references to particular years and cultures. Immerse yourself in the atmosphere of the past and choose the style that suits you best! You can read more about each design in the project documentation.</p>
+            <section id="about">
+                <h2>About the Project</h2>
+                <p> Dictators’ Handbook is an innovative framework that combines the traditional appeal of magazines
+                    with modern interactive mapping and rich metadata. Our platform allows readers to explore content
+                    through geographic locations, discovering how stories connect across space and time. This project is
+                    realized for the Web Technology and Information Modeling course at the University of Bologna.</p>
+                <p>Each issue is dedicated to one of the world’s dictators, offering a deep dive into their rise to
+                    power, scandals, and lasting impact. All articles are enhanced with geographic references and
+                    interconnected through the metadata layer about people, organizations, events and dates. Also, you
+                    can switch between different design themes to adjust the page layout to your taste.</p><button
+                    class="custom_btn">Read the Documentation</button>
+            </section>
+            <section class="home_design">
+                <div class="home_design_top">
+                    <h2>Customize Your Magazine</h2>
+                    <p>We have developed several unique designs for our magazine, each inspired by a specific historical
+                        period and filled with references to particular years and cultures. Immerse yourself in the
+                        atmosphere of the past and choose the style that suits you best! You can read more about each
+                        design in the project documentation.</p>
                 </div>
-                <div class="card-container">
-                    <div class="card-row">
-                        <div class="card image-left">
-                            <img src="/images/ghzel/gzhel_card.png" alt="Russian Craft Gzhel">
-                        </div>
-                        <div class="card text-right">
-                            <h5>Russian Craft Gzhel</h5>
-                            <p>This style blends the traditional blue-and-white aesthetics of Russian Gzhel ceramics with the ornate typography of ancient Slavic manuscripts. Gzhel is known for its intricate floral and folk-inspired patterns, while the layout echoes medieval scriptoria with decorative initials and structured compositions. The result is a harmonious fusion of folk artistry and historical elegance.</p>
-                            <div class="button-container">
-                                <button onclick="switchStyle('/css/gzhel.css')">Apply</button>
-                            </div>
-                        </div>
+                <article><img src="./images/ghzel/gzhel_card.png">
+                    <div>
+                        <h3>Russian Craft Gzhel</h3>
+                        <p>This style blends the traditional blue-and-white aesthetics of Russian Gzhel ceramics with
+                            the ornate typography of ancient Slavic manuscripts. Gzhel is known for its intricate floral
+                            and folk-inspired patterns, while the layout echoes medieval scriptoria with decorative
+                            initials and structured compositions. The result is a harmonious fusion of folk artistry and
+                            historical elegance.</p><button class="custom_btn" data-action="theme"
+                            data-value="gzhel">Apply</button>
                     </div>
-        
-                    <!-- Suprematizm Theme -->
-                    <div class="card-row">
-                        <div class="card text-left">
-                            <h5>Suprematism</h5>
-                            <p>Suprematism was a Russian avant-garde art movement founded in the early 20th century, emphasizing geometric forms and pure abstraction.</p>
-                            <div class="button-container">
-                                <button onclick="switchStyle('/css/suprematism.css')">Apply</button>
-                            </div>
-                        </div>
-                        <div class="card image-right">
-                            <img src="/images/suprematism/supr-card.png" alt="Suprematizm Theme">
-                        </div>
-                    </div> 
-        
-                    <div class="card-row">
-                        <div class="card image-left">
-                            <img src="/images/ludi_design/blank-card.png" alt="3rd Theme">
-                        </div>
-                        <div class="card text-right">
-                            <h5>3rd Theme</h5>
-                            <p>ghdfhfgh</p>
-                            <div class="button-container">
-                                <button onclick="switchStyle('#')">Apply</button>
-                            </div>
-                        </div>
+                </article>
+                <article><img src="./images/suprematism/supr-card.png">
+                    <div>
+                        <h3>Suprematism</h3>
+                        <p>Suprematism was a Russian avant-garde art movement founded in the early 20th century,
+                            emphasizing geometric forms and pure abstraction.</p><button class="custom_btn"
+                            data-action="theme" data-value="suprematism">Apply</button>
                     </div>
-        
-                    <!-- 4th Theme -->
-                    <div class="card-row">
-                        <div class="card text-left">
-                            <h5>4th Theme</h5>
-                            <p>gfxfgxf</p>
-                            <div class="button-container">
-                                <button onclick="switchStyle('#')">Apply</button>
-                            </div>
-                        </div>
-                        <div class="card image-right">
-                            <img src="/images/ludi_design/blank-card.png" alt="4th Theme">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Issues Section -->
-        <section class="issues-section" id="issueList">
-            <div class="issues-container">
-                <div class="issues-header">
-                    <h2 class="issues-title">Read the Next Issue</h2>
-                </div>
-                <div class="issues-card-container">
-                    <div class="issue">
-                        <img src="/Issues/1/img/stalin_5.png" alt="Stalin Issue">
-                        <div class="issue-button-container">
-                            <button onclick="window.open(
-                            '/Issues/1/last_days_of_soviet_dictator.html', '_blank')">
-                            Check Out
-                            </button>
-                        </div>
-                    </div>
-        
-                    <div class="issue">
-                        <img src="/Issues/2/img/mao.png" alt="Mao Issue">
-                        <div class="issue-button-container">
-                            <button onclick="window.open(
-                            '/Issues/2/house-of-mao.html', '_blank')">
-                            Check Out
-                            </button>
-                        </div>    
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Map Section -->
-        <section class="map--homepage" id="map_intro">
-            <h2 class="map-title">Our Universe</h2>
-                <div class="map-container">
-                    <div class="map" id="map"></div>
-                </div>
-        </section>
-
-    <!-- Bootstrap JS Bundle -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
-    <!-- Leaflet JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
-    <script>
-        // Initialize map
-        const map = L.map('map').setView([55.7558, 37.6173], 5);
-        
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '© OpenStreetMap contributors'
-        }).addTo(map);
-
-        // Add markers for locations mentioned in the article
-        const locations = [
-        { name: "Moscow", coords: [55.7558, 37.6173], slug: "moscow" },
-        { name: "USSR", coords: [55.747570216100165, 37.635310612724105], slug: "ussr" },
-        { name: "Siberia", coords: [62.54636796042364, 107.37017037357955], slug: "siberia" },
-        { name: "Vorkuta", coords: [67.49460389528203, 64.16462502889635], slug: "vorkuta" },
-        { name: "Kursk", coords: [51.74421538609571, 36.197914483480034], slug: "kursk" },
-        { name: "Germany", coords: [51.083709614354404, 10.27195322711689], slug: "germany" },
-        { name: "Berlin", coords: [52.52314066841012, 13.409625548661674], slug: "berlin" },
-        { name: "Kiev", coords: [50.439598651382056, 30.64641907309808], slug: "kiev" },
-        { name: "Perekop", coords: [46.31591817842109, 35.02529470438314], slug: "perekop" },
-        { name: "Kuntsevo", coords: [55.7262, 37.4062], slug: "kuntsevo" },
-        { name: "Abkhazia", coords: [43.0016, 41.0234], slug: "abkhazia" },
-        { name: "Red Square", coords: [55.7539, 37.6208], slug: "red-square" },
-        { name: "Kremlin", coords: [55.75109928706953, 37.61863765190776], slug: "kremlin" },
-        { name: "House_trade_unions", coords: [55.759009110216645, 37.61718344083452], slug: "house-trade-unions" },
-        { name: "Georgia", coords: [42.17672580678014, 43.211670588964004], slug: "georgia" },
-        { name: "Megrelia", coords: [42.52330104421747, 41.86820792100772], slug: "megrelia" },
-        { name: "Gori", coords: [41.98420201009441, 44.11571832111576], slug: "gori" },
-        { name: "Saint Petersburg", coords: [59.92802981267338, 30.505285577997853], slug: "saint-petersburg" },
-        { name: "Russia", coords: [62.524124153040454, 92.10156237991846], slug: "russia" }
-    ];
-    </script>
-</main>
-
-    <!-- Adding the footer -->
-    <div id="footer-placeholder"></div>
+                </article>
+            </section>
+            <section>
+                <h2>Read the Next Issue</h2>
+                <div class="home_issue"><img src="./issues/img/stalin_5.png" alt="Stalin Issue"><a class="custom_btn"
+                        href="./issues/last_days_of_soviet_dictator.html">Check Out</a></div>
+            </section>
+            <section>
+                <h2> Our Universe</h2>
+                <div class="map" id="map"></div>
+            </section>
+        </main><!--include ./_footer-->
+    </div>
+    <!--script(src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.7/js/bootstrap.min.js" integrity="sha512-zKeerWHHuP3ar7kX2WKBSENzb+GJytFSBL6HrR2nPSR1kOX1qjm+oHooQtbDpDBSITgyl7QXZApvDfDWvKjkUw==" crossorigin="anonymous" referrerpolicy="no-referrer")-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.7/js/bootstrap.bundle.min.js"
+        integrity="sha512-Tc0i+vRogmX4NN7tuLbQfBxa8JkfUSAxSFVzmU31nVdHyiHElPPy2cWfFacmCJKw0VqovrzKhdd2TSTMdAxp2g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./utilities/script.js"></script>
 </body>
+
 </html>
