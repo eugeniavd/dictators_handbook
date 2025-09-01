@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -14,18 +14,34 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css"
         integrity="sha512-t7Few9xlddEmgd3oKZQahkNI4dS6l80+eGEzFQiqtyVYdvcSG2D3Iub77R20BdotfRPA9caaRkg1tyaJiPmO0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer">
-    <link rel="stylesheet" href="../styles/style.css"><!--script(src="/scripts/functions.js")-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
+        <link rel="stylesheet" href="https://cdn.maptiler.com/maptiler-sdk-js/v3.6.1/maptiler-sdk.css">
+    <link rel="stylesheet" href="../styles/style.css">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdn.maptiler.com/maptiler-sdk-js/v3.6.1/maptiler-sdk.umd.min.js"></script>
+    <script src="https://cdn.maptiler.com/leaflet-maptilersdk/v4.1.0/leaflet-maptilersdk.umd.min.js"></script>
+    <script src="../utilities/content.js"></script><!--script(src="/scripts/functions.js")-->
 </head>
 
 <body>
     <div class="wrapper">
         <header>
-            <nav class="navbar navbar-expand-sm"><button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
-                    data-bs-target="#navbar"><span class="navbar-toggler-icon"></span></button>
+            <nav class="navbar navbar-expand-sm"><button class="custom_btn-nav navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#navbar"><svg class="bi bi list"
+                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5">
+                        </path>
+                    </svg></button>
                 <div class="offcanvas offcanvas-start" id="navbar" data-bs-scroll="true" data-bs-backdrop="false">
                     <div class="offcanvas-header">
-                        <h5 class="offcanvas-title">Navigation</h5><button class="btn-close" type="button"
-                            data-bs-dismiss="offcanvas"></button>
+                        <h5 class="offcanvas-title">Navigation</h5><button class="custom_btnnav" type="button"
+                            data-bs-dismiss="offcanvas"><svg class="bi bi-x" xmlns="http:/button>/www.w3.org/2000/svg"
+                                viewBox="0 0 16 16">
+                                <path
+                                    d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708">
+                                </path>
+                            </svg></button>
                     </div>
                     <ul class="navbar-nav offcanvas-body">
                         <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
@@ -51,220 +67,393 @@
                         <li class="nav-item dropdown"><button class="nav-link dropdown-toggle" type="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">Change Design</button>
                             <ul class="dropdown-menu">
-                                <li class="nav-link dropdown-item" data-action="theme" data-value="gzhel">Old Russian
+                                <li class="dropdown-item"><button class="nav-link" dropdown-itemtype="button" data-action="theme" data-value="gzhel">Old Russian
                                     Ghzel</li>
+                                        data-value="gzhel">Old Russian Ghzel</button></li>
                                 <li class="nav-link dropdown-item" data-action="theme" data-value="suprematism">
+                                <li class="dropdown-item"><button class="nav-link" dropdown-itemtype="button" data-action="theme" data-value="suprematism">
                                     Suprematism</li>
+                                        data-value="suprematism">Suprematism</button></li>
+                            </ul>
                             </ul>
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="">Documentation</a></li>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="../issues/documentation.html">Documentation</a></li>
                         <li class="nav-item"><a class="nav-link" href="">Disclaimer</a></li>
                     </ul>
                 </div>
             </nav>
         </header>
         <div class="content">
+            <section class="section_2_1">
+                <p class="caption no-letter">Joseph Stalin’s Paranoid Purge</p>
+                <h1>Joseph Stalin purged his officer corps of thousands of talented leaders before the start of World
+                    War II. It almost cost Russia the war.</h1>
+                <ul>
+                    <li><strong>Authors:</strong>&#32;John W. Osborn, Jr.</li>
+                    <li><strong>Published:</strong>&#32;<span data-type="date">June, 2009</span></li>
+                    <li><a href="https://warfarehistorynetwork.com/article/joseph-stalins-paranoid-purge/"
+                            target="_blank" rel="nofollow noopener external">Source</a></li>
+                </ul>
+                <p class="letter letter_o">Officer corps expect to suffer heavy losses in war. The entire<span
+                        data-type="date"></span>1914 class of France’s<span data-type="organization" data-id="MiAc">St.
+                        Cyr military academy</span>, for example, perished in<span data-type="event" data-id="WWI">World
+                        War I</span>. But no officer corps ever suffered the degree of loss that the<span
+                        data-type="organization" data-id="RdAr">Red Army</span>suffered in peacetime, at the hands of
+                    its own government, during dictator<span data-type="person" data-id="JoSt">Joseph
+                        Stalin’s</span>paranoid<span data-type="event" data-id="StGP">purge</span>of<span
+                        data-type="date">1937</span>-<span data-type="date">1938</span>.</p>
+                <figure class="p2_1 style2"><img src="../issues/img/art_2_1.webp">
+                    <figcaption><span><span data-type="person" data-id="JoSt">Joseph Stalin</span>, center, with<span
+                                data-type="person" data-id="NiYe">Nikolai Yezhov</span>, right, the head of the<span
+                                data-type="organization" data-id="NKVD">NKVD</span>,<span data-type="person"
+                                data-id="JoSt">Stalin’s</span>secret police.<span data-type="person"
+                                data-id="NiYe">Yezhov</span>was responsible for mass arrests, torture, and
+                            executions.</span></figcaption>
+                </figure>
+            </section>
+            <aside>
+                <article class="meta_block">
+                    <h2>Metadata Index</h2>
+                    <ul class="meta-names">
+                        <li>People</li>
+                        <li>Places</li>
+                        <li>Organizations</li>
+                        <li>Events</li>
+                    </ul>
+                    <div class="meta-content"></div>
+                </article>
+                <article class="map_block">
+                    <h2>Our universe</h2>
+                    <div class="map-container">
+                        <div class="map" id="map"></div>
+                    </div>
+                </article>
+            </aside>
             <main class="issue_2">
                 <div class="mark"><span>Issue 1</span><span>Article 2</span></div>
                 <section class="section_2_1">
-                    <p class="caption">Joseph Stalin’s Paranoid Purge</p>
+                    <p class="caption no-letter">Joseph Stalin’s Paranoid Purge</p>
                     <h1>Joseph Stalin purged his officer corps of thousands of talented leaders before the start of
                         World War II. It almost cost Russia the war.</h1>
                     <ul>
-                        <li>Authors: John W. Osborn, Jr.</li>
-                        <li>Published: June, 2009</li>
-                        <li>Source</li>
+                        <li><strong>Authors:</strong>&#32;John W. Osborn, Jr.</li>
+                        <li><strong>Published:</strong>&#32;<span data-type="date">June, 2009</span></li>
+                        <li><a href="https://warfarehistorynetwork.com/article/joseph-stalins-paranoid-purge/"
+                                target="_blank" rel="nofollow noopener external">Source</a></li>
                     </ul>
-                    <p>Officer corps expect to suffer heavy losses in war. The entire 1914 class of France’s St. Cyr
-                        military academy, for example, perished in World War I. But no officer corps ever suffered the
-                        degree of loss that the Red Army suffered in peacetime, at the hands of its own government,
-                        during dictator Joseph Stalin’s paranoid purge of 1937-1938.</p>
-                    <figure><img src="../issues/img/art_2_1.webp">
-                        <figcaption><span>Joseph Stalin, center, with Nikolai Yezhov, right, the head of the NKVD,
-                                Stalin’s secret police. Yezhov was responsible for mass arrests, torture, and
+                    <p class="letter letter_o">Officer corps expect to suffer heavy losses in war. The entire<span
+                            data-type="date"></span>1914 class of France’s<span data-type="organization"
+                            data-id="MiAc">St. Cyr military academy</span>, for example, perished in<span
+                            data-type="event" data-id="WWI">World War I</span>. But no officer corps ever suffered the
+                        degree of loss that the<span data-type="organization" data-id="RdAr">Red Army</span>suffered in
+                        peacetime, at the hands of its own government, during dictator<span data-type="person"
+                            data-id="JoSt">Joseph Stalin’s</span>paranoid<span data-type="event"
+                            data-id="StGP">purge</span>of<span data-type="date">1937</span>-<span
+                            data-type="date">1938</span>.</p>
+                    <figure class="p2_1 style2"><img src="../issues/img/art_2_1.webp">
+                        <figcaption><span><span data-type="person" data-id="JoSt">Joseph Stalin</span>, center,
+                                with<span data-type="person" data-id="NiYe">Nikolai Yezhov</span>, right, the head of
+                                the<span data-type="organization" data-id="NKVD">NKVD</span>,<span data-type="person"
+                                    data-id="JoSt">Stalin’s</span>secret police.<span data-type="person"
+                                    data-id="NiYe">Yezhov</span>was responsible for mass arrests, torture, and
                                 executions.</span></figcaption>
                     </figure>
                 </section>
                 <section class="section_2_2">
                     <h2>Paranoia in the Communist Party</h2>
-                    <p>The first hint of the slaughter to come emerged at a conference of the Communist Party in March
-                        1937, just as Stalin’s Great Purge was reaching its heights of terror. The craven, incompetent
-                        commissar for war, Marshal Kliment Voroshilov, told those assembled: “Happily, we have not as
-                        yet discovered many enemies in the army. I can say happily in the hope that there are not very
-                        many enemies in the Red Army.” But Stalin’s ranking lackey, Premier Vyacheslav Molotov,
-                        immediately contradicted Voroshilov. “If we have wreckers in every branch of the economy, can we
-                        imagine that in one place alone, the War Department, there are none?” said Molotov ominously.
-                        “It would be absurd to do so. The War Department is a very large affair, and its work will be
-                        checked not now but a little later. And it will be examined very rigorously.”</p>
+                    <p>The first hint of the slaughter to come emerged at a conference of the<span
+                            data-type="organization" data-id="CoPa">Communist Party</span>in<span data-type="date">March
+                            1937</span>, just as<span data-type="person" data-id="JoSt">Stalin’s</span><span
+                            data-type="event" data-id="StGP">Great Purge</span>was reaching its heights of terror. The
+                        craven, incompetent commissar for war, Marshal<span data-type="person" data-id="KlVo">Kliment
+                            Voroshilov</span>, told those assembled: “Happily, we have not as yet discovered many
+                        enemies in the army. I can say happily in the hope that there are not very many enemies in
+                        the<span data-type="organization" data-id="RdAr">Red Army</span>.” But<span data-type="person"
+                            data-id="JoSt">Stalin’s</span>ranking lackey, Premier<span data-type="person"
+                            data-id="VyMo">Vyacheslav Molotov</span>, immediately contradicted<span data-type="person"
+                            data-id="KlVo">Voroshilov</span>. “If we have wreckers in every branch of the economy, can
+                        we imagine that in one place alone, the<span data-type="organization" data-id="WaDe">War
+                            Department</span>, there are none?” said<span data-type="person"
+                            data-id="VyMo">Molotov</span>ominously. “It would be absurd to do so. The<span
+                            data-type="organization" data-id="WaDe">War Department</span>is a very large affair, and its
+                        work will be checked not now but a little later. And it will be examined very rigorously.”</p>
                     <p>In a climate where stamp collectors could be shot for valuing old foreign stamps over new Soviet
-                        ones featuring Stalin’s portrait and astronomers could be executed for taking an ideologically
-                        incorrect position on sunspots, not even the Red Army was above suspicion. To begin with, it had
-                        been founded, organized, and largely officered by Stalin’s despised, defeated rival Leon
-                        Trotsky, and it remained under tenuous party control. Most suspicious of all was its long
-                        association with the German Army, going back to secret training in the 1920s and ongoing visits
-                        by Red Army officers to Nazi Germany.</p>
+                        ones featuring<span data-type="person" data-id="JoSt">Stalin’s</span>portrait and astronomers
+                        could be executed for taking an ideologically incorrect position on sunspots, not even the<span
+                            data-type="organization" data-id="RdAr">Red Army</span>was above suspicion. To begin with,
+                        it had been founded, organized, and largely officered by<span data-type="person"
+                            data-id="JoSt">Stalin’s</span>despised, defeated rival<span data-type="person"
+                            data-id="LeTr">Leon Trotsky</span>, and it remained under tenuous party control. Most
+                        suspicious of all was its long association with the<span data-type="organization"
+                            data-id="GeAr">German Army</span>, going back to secret training in the<span
+                            data-type="date">1920s</span>and ongoing visits by<span data-type="organization"
+                            data-id="RdAr">Red Army</span>officers to<span data-type="place" data-id="plGr">Nazi
+                            Germany</span>.</p>
                 </section>
                 <section class="section_2_3">
                     <h2>A Blood-Splattered Confession</h2>
-                    <p>Much of Stalin’s paranoid fixation about the Red Army was focused on its head, Marshal Mikhail
-                        Tukhachevsky. As brutal as Stalin in quelling opposition, using poison gas on revolting
-                        peasants, and executing reform-seeking sailors, Tukhachevsky was a brilliant advocate of armored
-                        warfare. But it was his very emphasis on military professionalism that struck at the principle
-                        of party loyalty—which meant, essentially, loyalty to Stalin. Added to Tukhachevsky’s problems
-                        was the personal animosity of Marshal Semyon Budenny, one of Stalin’s closest military cronies.
-                    </p>
-                    <p>The rigorous examination of the army that Molotov had threatened actually had started seven
-                        months earlier with the arrest of a divisional commander in Kiev, Dmitri Shmidt. A supporter of
-                        Trotsky, Shmidt once had threatened to lop off Stalin’s ears with his sword. In what would
-                        become standard treatment at the hands of the NKVD, Shmidt confessed to plotting to assassinate
-                        Voroshilov, then received what became the standard consequence for such apostasy—a bullet to the
-                        back of the head. A corps commander close to Tukhachevky was arrested next, confessed in turn to
-                        plotting with Trotsky, and was shot as well.</p>
-                    <figure><img src="../issues/img/art_2_2.webp">
-                        <figcaption><span>Joseph Stalin with military officers</span></figcaption>
+                    <p>Much of<span data-type="person" data-id="JoSt">Stalin’s</span>paranoid fixation about the<span
+                            data-type="organization" data-id="RdAr">Red Army</span>was focused on its head, Marshal<span
+                            data-type="person" data-id="MiTu">Mikhail Tukhachevsky</span>. As brutal as<span
+                            data-type="person" data-id="JoSt">Stalin</span>in quelling opposition, using poison gas on
+                        revolting peasants, and executing reform-seeking sailors,<span data-type="person"
+                            data-id="MiTu">Tukhachevsky</span>was a brilliant advocate of armored warfare. But it was
+                        his very emphasis on military professionalism that struck at the principle of party
+                        loyalty—which meant, essentially, loyalty to<span data-type="person"
+                            data-id="JoSt">Stalin</span>. Added to<span data-type="person"
+                            data-id="MiTu">Tukhachevsky’s</span>problems was the personal animosity of Marshal<span
+                            data-type="person" data-id="SeBu">Semyon Budenny</span>, one of<span data-type="person"
+                            data-id="JoSt">Stalin’s</span>closest military cronies.</p>
+                    <p>The rigorous examination of the army that<span data-type="person"
+                            data-id="VyMo">Molotov</span>had threatened actually had started seven months earlier with
+                        the arrest of a divisional commander in<span data-type="place" data-id="plKi">Kiev</span>,<span
+                            data-type="person" data-id="DmSh">Dmitri Shmidt</span>. A supporter of<span
+                            data-type="person" data-id="LeTr">Trotsky</span>,<span data-type="person"
+                            data-id="DmSh">Shmidt</span>once had threatened to lop off<span data-type="person"
+                            data-id="JoSt">Stalin’s</span>ears with his sword. In what would become standard treatment
+                        at the hands of the<span data-type="organization" data-id="NKVD">NKVD</span>,<span
+                            data-type="person" data-id="DmSh">Shmidt</span>confessed to plotting to assassinate<span
+                            data-type="person" data-id="KlVo">Voroshilov</span>, then received what became the standard
+                        consequence for such apostasy—a bullet to the back of the head. A corps commander close to
+                        Tukhachevky was arrested next, confessed in turn to plotting with<span data-type="person"
+                            data-id="LeTr">Trotsky</span>, and was shot as well.</p>
+                    <figure class="p2_2 style1"><img src="../issues/img/art_2_2.webp">
+                        <figcaption><span><span data-type="person" data-id="JoSt">Joseph Stalin</span>with military
+                                officers</span></figcaption>
                     </figure>
-                    <p>In Nazi Germany, Heinrich Himmler and Reinhard Heydrich forged documents showing Tukhachevsky and
-                        other generals were plotting with them against Stalin, and had them passed to Stalin through the
-                        president of Czechoslovakia. (Although Himmler and Heydrich would take credit for the bloodbath
-                        that followed, Stalin had already determined his murderous course of action and apparently made
-                        no use of the forgeries.) Stalin struck without warning. On May Day, Tukhachevsky found his way
-                        to his usual parade spot atop Lenin’s Tomb blocked by security guards, and 10 days later,
-                        without explanation, he was demoted to the command of the Volga Military District. Stalin
-                        assured Tukhachevsky that he would soon be back in Moscow, and he was—arrested on arrival and
-                        thrown into the dreaded Lubyanka Prison with Marshal Ion Yakir and six other generals.</p>
-                    <p>It took just two days for Tukhachevsky to sign a confession to being a Nazi spy. When his
-                        interrogation record was uncovered decades later after the fall of communism, the pages were
-                        splattered with blood—chilling evidence of the kind of force used to break the physically
-                        imposing Tukhachevsky. One of the generals, resigned to his fate, simply signed anything put
-                        before him to enjoy a comfortable cell, tea, and cigarettes for his last few days.</p>
+                    <p>In<span data-type="place" data-id="plGr">Nazi Germany</span>,<span data-type="person"
+                            data-id="HeHi">Heinrich Himmler</span>and<span data-type="person" data-id="ReHe">Reinhard
+                            Heydrich</span>forged documents showing<span data-type="person"
+                            data-id="MiTu">Tukhachevsky</span>and other generals were plotting with them against<span
+                            data-type="person" data-id="JoSt">Stalin</span>, and had them passed to<span
+                            data-type="person" data-id="JoSt">Stalin</span>through the<span data-type="person"
+                            data-id="EdBe">president of Czechoslovakia</span>. (Although<span data-type="person"
+                            data-id="HeHi">Himmler</span>and<span data-type="person" data-id="ReHe">Heydrich</span>would
+                        take credit for the bloodbath that followed,<span data-type="person"
+                            data-id="JoSt">Stalin</span>had already determined his murderous course of action and
+                        apparently made no use of the forgeries.)<span data-type="person"
+                            data-id="JoSt">Stalin</span>struck without warning. On<span data-type="date">May
+                            Day</span>,<span data-type="person" data-id="MiTu">Tukhachevsky</span>found his way to his
+                        usual parade spot atop<span data-type="person" data-id="VlLe">Lenin’s</span>Tomb blocked by
+                        security guards, and 10 days later, without explanation, he was demoted to the command of
+                        the<span data-type="organization" data-id="MiDi">Volga Military District</span>.<span
+                            data-type="person" data-id="JoSt">Stalin</span>assured<span data-type="person"
+                            data-id="MiTu">Tukhachevsky</span>that he would soon be back in<span data-type="place"
+                            data-id="plMo">Moscow</span>, and he was—arrested on arrival and thrown into the
+                        dreaded<span data-type="organization" data-id="Lubk">Lubyanka Prison</span>with Marshal<span
+                            data-type="person" data-id="IoYa">Ion Yakir</span>and six other generals.</p>
+                    <p>It took just two days for<span data-type="person" data-id="MiTu">Tukhachevsky</span>to sign a
+                        confession to being a Nazi spy. When his interrogation record was uncovered decades later after
+                        the fall of communism, the pages were splattered with blood—chilling evidence of the kind of
+                        force used to break the physically imposing<span data-type="person"
+                            data-id="MiTu">Tukhachevsky</span>. One of the generals, resigned to his fate, simply signed
+                        anything put before him to enjoy a comfortable cell, tea, and cigarettes for his last few days.
+                    </p>
                 </section>
                 <section class="section_2_4">
                     <h2>“Puppets in the Hands of the German Army”</h2>
-                    <p>At an emergency meeting of Red Army generals to explain the arrests, Stalin charged: “These men
-                        are puppets in the hand of the German Army. The German Army wants the government here to be
-                        overthrown and they undertook to accomplish that but didn’t succeed. The German Army wanted the
-                        army to be disrupted so that it would not be ready to defend the country.”</p>
-                    <p>Voroshilov now changed his tune from three months before, saying: “I am greatly to blame. I did
-                        not detect these base traitors.” But he was quick to spread the blame. “I cannot point to a
-                        single warning signal from you,” he said, adding, “I never trusted Tukhachevsky.” He went on to
-                        warn the generals: “We have not purged everyone yet. I personally don’t doubt that there are
-                        people who thought they were only talking, that’s all. They chattered: ‘It would be a good thing
-                        to kill Stalin and Voroshilov.’ Our government will extinguish such people.”</p>
-                    <p>From his cell, Marshal Yakir wrote Stalin a pitiful plea for mercy. “My entire conscious life has
-                        been spent working selflessly and honestly in full view of the Party and its leaders,” he
-                        professed. “Every word I say is honest, and I shall die with words of love for you, the Party,
-                        and the country with boundless faith in the victory of Communism.” Stalin wrote on the appeal:
-                        “Swine and prostitute.” Vorsohilov chimed in: “A perfectly precise definition.” Stalin’s
-                        political toadies followed suit. “Entire agreement with Stalin,” penned Molotov; Lazar
-                        Kaganovich, Yakir’s erstwhile best friend, went furthest of all. “For a bastard, scum, and
-                        whore, there is only one punishment,” he said, “the death penalty.”</p>
-                    <p>That outcome was foreordained when Tukhachevsky, Yakir, and the others went into court for a
-                        secret trial on June 11, 1937. “When I saw those scoundrels in the courtroom, I was shivering. A
-                        beast was in me. I didn’t want to judge them, but beat and beat them in a wild frenzy,” said one
-                        of the judges, General Ivan Belov. “I feel I’m dreaming,” said Tukhachevsky. The 18-hour
-                        marathon proceeding consisted solely of reading the defendants’ “confessions” and listening to
-                        abuse from the judges. All the defendants were sentenced to death and shot, one by one, within
-                        an hour by the Lubyanka’s feared senior executioner, Vasili Blokhin. (A few years later, Blokhin
-                        would organize and help to carry out the infamous Katyn massacre of Polish officers.)</p>
-                    <p>“The snake said he was dedicated to the Motherland and Comrade Stalin,” NKVD chief Nikoli Yezhov
-                        reported about Tukhachevsky’s last words. He was fortunate not to live to see what such devotion
-                        was worth. Stalin had the general’s wife and two brothers shot, and his mother, daughter, and
-                        sisters shipped to a gulag. Yakir’s last words were also to no avail. Stalin had his wife,
+                    <p>At an emergency meeting of<span data-type="organization" data-id="RdAr">Red Army</span>generals
+                        to explain the arrests,<span data-type="person" data-id="JoSt">Stalin</span>charged: “These men
+                        are puppets in the hand of the<span data-type="organization" data-id="GeAr">German Army</span>.
+                        The<span data-type="organization" data-id="GeAr">German Army</span>wants the government here to
+                        be overthrown and they undertook to accomplish that but didn’t succeed. The<span
+                            data-type="organization" data-id="GeAr">German Army</span>wanted the army to be disrupted so
+                        that it would not be ready to defend the country.”</p>
+                    <p><span data-type="person" data-id="KlVo">Voroshilov</span>now changed his tune from three months
+                        before, saying: “I am greatly to blame. I did not detect these base traitors.” But he was quick
+                        to spread the blame. “I cannot point to a single warning signal from you,” he said, adding, “I
+                        never trusted<span data-type="person" data-id="MiTu">Tukhachevsky</span>.” He went on to warn
+                        the generals: “We have not purged everyone yet. I personally don’t doubt that there are people
+                        who thought they were only talking, that’s all. They chattered: ‘It would be a good thing to
+                        kill<span data-type="person" data-id="JoSt">Stalin</span>and<span data-type="person"
+                            data-id="KlVo">Voroshilov</span>.’ Our government will extinguish such people.”</p>
+                    <p>From his cell, Marshal<span data-type="person" data-id="IoYa">Yakir</span>wrote<span
+                            data-type="person" data-id="JoSt">Stalin</span>a pitiful plea for mercy. “My entire
+                        conscious life has been spent working selflessly and honestly in full view of the<span
+                            data-type="organization" data-id="CoPa">Party</span>and its leaders,” he professed. “Every
+                        word I say is honest, and I shall die with words of love for you, the<span
+                            data-type="organization" data-id="CoPa">Party</span>, and the country with boundless faith
+                        in the victory of Communism.”<span data-type="person" data-id="JoSt">Stalin</span>wrote on the
+                        appeal: “Swine and prostitute.” Vorsohilov chimed in: “A perfectly precise definition.”<span
+                            data-type="person" data-id="JoSt">Stalin’s</span>political toadies followed suit. “Entire
+                        agreement with<span data-type="person" data-id="JoSt">Stalin</span>,” penned<span
+                            data-type="person" data-id="VyMo">Molotov</span>;<span data-type="person"
+                            data-id="LaKa">Lazar Kaganovich</span>,<span data-type="person"
+                            data-id="IoYa">Yakir’s</span>erstwhile best friend, went furthest of all. “For a bastard,
+                        scum, and whore, there is only one punishment,” he said, “the death penalty.”</p>
+                    <p>That outcome was foreordained when<span data-type="person"
+                            data-id="MiTu">Tukhachevsky</span>,<span data-type="person" data-id="IoYa">Yakir</span>, and
+                        the others went into court for a secret trial on<span data-type="date">June 11,
+                            1937.</span>“When I saw those scoundrels in the courtroom, I was shivering. A beast was in
+                        me. I didn’t want to judge them, but beat and beat them in a wild frenzy,” said one of the
+                        judges, General<span data-type="person" data-id="IvBe">Ivan Belov</span>. “I feel I’m dreaming,”
+                        said<span data-type="person" data-id="MiTu">Tukhachevsky</span>. The 18-hour marathon proceeding
+                        consisted solely of reading the defendants’ “confessions” and listening to abuse from the
+                        judges. All the defendants were sentenced to death and shot, one by one, within an hour by
+                        the<span data-type="organization" data-id="Lubk">Lubyanka’s</span>feared senior
+                        executioner,<span data-type="person" data-id="VaBl">Vasili Blokhin</span>. (A few years
+                        later,<span data-type="person" data-id="VaBl">Blokhin</span>would organize and help to carry out
+                        the infamous<span data-type="event" data-id="KaMa">Katyn massacre</span>of Polish officers.)</p>
+                    <p>“The snake said he was dedicated to the Motherland and<span data-type="person"
+                            data-id="JoSt">Comrade Stalin</span>,”<span data-type="organization"
+                            data-id="NKVD">NKVD</span>chief<span data-type="person" data-id="NiYe">Nikoli
+                            Yezhov</span>reported about<span data-type="person" data-id="MiTu">Tukhachevsky’s</span>last
+                        words. He was fortunate not to live to see what such devotion was worth.<span data-type="person"
+                            data-id="JoSt">Stalin</span>had the general’s wife and two brothers shot, and his mother,
+                        daughter, and sisters shipped to a<span data-type="organization"
+                            data-id="Gulg">gulag</span>.<span data-type="person" data-id="IoYa">Yakir’s</span>last words
+                        were also to no avail.<span data-type="person" data-id="JoSt">Stalin</span>had his wife,
                         brother, sister-in-law, and nephew killed.</p>
-                    <p>One of the judges, General Belov, told writer Ilya Ehrenburg: “Tomorrow I shall be put in the
+                    <p>One of the judges, General<span data-type="person" data-id="IvBe">Belov</span>, told writer<span
+                            data-type="person" data-id="IlEh">Ilya Ehrenburg</span>: “Tomorrow I shall be put in the
                         same place.” He was right: within the next 18 months, he and five other of the eight judges were
-                        executed. There was almost another. The NKVD came for Budenny, but he held them off at pistol
-                        point while calling Stalin to get the order canceled. The police left with his wife, instead.
-                    </p>
+                        executed. There was almost another. The<span data-type="organization"
+                            data-id="NKVD">NKVD</span>came for<span data-type="person" data-id="SeBu">Budenny</span>,
+                        but he held them off at pistol point while calling<span data-type="person"
+                            data-id="JoSt">Stalin</span>to get the order canceled. The police left with his wife,
+                        instead.</p>
                 </section>
                 <section class="section_2_5">
                     <h2>The Scale of Stalin’s Slaughter</h2>
-                    <p>The Soviet Union’s remaining marshal, Vasilli Blyukher, was beaten to death after refusing to
-                        confess; his widow said he looked like a tank had run over him. In two years’ time, 36,671 Red
-                        Army officers were executed, shipped to the gulag, or dismissed from service. Those who were
-                        killed were probably luckier than those who were imprisoned. One general who survived internment
-                        recalled seeing other officers in his camp “on all fours, howling and rooting about, they had
-                        become semi-idiots whom no amount of beating could drive from the refuse heaps.”</p>
-                    <p>The scale of the purge was staggering: 13 of 15 army commanders, 50 of 57 corps commanders, 154
-                        of 186 divisional commanders, 220 of 406 brigade commanders, all 11 vice-commanders of defense,
-                        98 of 108 members of the Supreme Military Soviets, all army political commissars, 25 of 28 corps
-                        commissars, 58 of 64 divisional commissars. Even the lower ranks were not spared: almost half
-                        the colonels and 7,403 captains fell victim to the purge. “This is worse than when artillery
-                        fires on its own troops,” commented General Konstantin Rokossovsky. More Soviet generals and
-                        colonels were killed by Stalin than were to fall in World War II.</p>
-                    <figure><img src="../issues/img/art_2_3.webp">
-                        <figcaption><span>A man appearing before a popular tribunal in the Soviet Union during the
-                                Stalinist purges against alleged Trotskyists and political opponents, 1935.</span>
+                    <p>The<span data-type="place" data-id="USSR">Soviet Union’s</span>remaining marshal,<span
+                            data-type="person" data-id="VsBl">Vasilli Blyukher</span>, was beaten to death after
+                        refusing to confess; his widow said he looked like a tank had run over him. In two years’ time,
+                        36,671<span data-type="organization" data-id="RdAr">Red Army</span>officers were executed,
+                        shipped to the<span data-type="organization" data-id="Gulg">gulag</span>, or dismissed from
+                        service. Those who were killed were probably luckier than those who were imprisoned. One general
+                        who survived internment recalled seeing other officers in his camp “on all fours, howling and
+                        rooting about, they had become semi-idiots whom no amount of beating could drive from the refuse
+                        heaps.”</p>
+                    <p>The scale of the<span data-type="event" data-id="StGP">purge</span>was staggering: 13 of 15 army
+                        commanders, 50 of 57 corps commanders, 154 of 186 divisional commanders, 220 of 406 brigade
+                        commanders, all 11 vice-commanders of defense, 98 of 108 members of the Supreme Military
+                        Soviets, all army political commissars, 25 of 28 corps commissars, 58 of 64 divisional
+                        commissars. Even the lower ranks were not spared: almost half the colonels and 7,403 captains
+                        fell victim to the<span data-type="event" data-id="StGP">purge</span>. “This is worse than when
+                        artillery fires on its own troops,” commented General<span data-type="person"
+                            data-id="KoRo">Konstantin Rokossovsky</span>. More Soviet generals and colonels were killed
+                        by<span data-type="person" data-id="JoSt">Stalin</span>than were to fall in<span
+                            data-type="event" data-id="WWII">World War II</span>.</p>
+                    <figure class="p2_3 style3"><img src="../issues/img/art_2_3.webp">
+                        <figcaption><span>A man appearing before a popular tribunal in the<span data-type="place"
+                                    data-id="USSR">Soviet Union</span>during the Stalinist purges against alleged
+                                Trotskyists and political opponents,<span data-type="date">1935</span>.</span>
                         </figcaption>
                     </figure>
-                    <p>The purge produced appropriately macabre scenes. An officer back from secret service in Spain’s
-                        civil war phoned friend after friend at their homes, only to find strangers now answering their
-                        phones. A general dropped dead of a heart attack upon hearing the dreaded predawn knock on his
-                        door—it turned out to have been a harmless messenger.</p>
+                    <p>The<span data-type="event" data-id="StGP">purge</span>produced appropriately macabre scenes. An
+                        officer back from secret service in<span data-type="event" data-id="SpCW">Spain’s civil
+                            war</span>phoned friend after friend at their homes, only to find strangers now answering
+                        their phones. A general dropped dead of a heart attack upon hearing the dreaded predawn knock on
+                        his door—it turned out to have been a harmless messenger.</p>
                     <p>“With each arrest it became more difficult to believe in the disloyalty, the sabotage, the
-                        treachery of these men,” said General Alexander Gorbatov. When he protested the arrest of his
-                        superior, he was inevitably jailed himself. Other officers he met in jail advised him to confess
-                        to anything about anyone “because they believed it was better to stand on their false testimony
-                        in order to put an end as quickly as possible to the torment and to die as quickly as possible.”
-                        But Gorbatov was an exception and, surprisingly, was not shot for his defiance, but merely sent
-                        to a Siberian labor camp.</p>
-                    <p>Another defiant general was Konstantin Rokossovsky. After having eight teeth knocked out and
-                        three ribs broken, he was hauled before the Supreme Military Court and told that another
-                        officer, named Yushkevich, had confessed to spying with him for Germany. Instead of submissively
-                        agreeing with the accusation and taking a bullet, Rokossovsky shouted back, “Can the dead give
-                        evidence?” “What do you mean the dead?” the surprised judge asked. Rokossovsky replied, “Well,
-                        Adolf Kazimirovich Yushkevich was killed in 1920 at Perekop.” When records bore him out,
-                        Rokossovsky became perhaps the only defendant ever acquitted in the purge, although he was still
-                        sent to one of the most dreaded gulag camps in Siberia, Vorkuta.</p>
+                        treachery of these men,” said General<span data-type="person" data-id="AlGo">Alexander
+                            Gorbatov</span>. When he protested the arrest of his superior, he was inevitably jailed
+                        himself. Other officers he met in jail advised him to confess to anything about anyone “because
+                        they believed it was better to stand on their false testimony in order to put an end as quickly
+                        as possible to the torment and to die as quickly as possible.” But<span data-type="person"
+                            data-id="AlGo">Gorbatov</span>was an exception and, surprisingly, was not shot for his
+                        defiance, but merely sent to a Siberian labor camp.</p>
+                    <p>Another defiant general was<span data-type="person" data-id="KoRo">Konstantin Rokossovsky</span>.
+                        After having eight teeth knocked out and three ribs broken, he was hauled before the<span
+                            data-type="organization" data-id="SuCo">Supreme Military Court</span>and told that another
+                        officer, named<span data-type="person" data-id="AdYu">Yushkevich</span>, had confessed to spying
+                        with him for<span data-type="place" data-id="plGr">Germany</span>. Instead of submissively
+                        agreeing with the accusation and taking a bullet,<span data-type="person"
+                            data-id="KoRo">Rokossovsky</span>shouted back, “Can the dead give evidence?” “What do you
+                        mean the dead?” the surprised judge asked.<span data-type="person"
+                            data-id="KoRo">Rokossovsky</span>replied, “Well,<span data-type="person"
+                            data-id="AdYu">Adolf Kazimirovich Yushkevich</span>was killed in<span
+                            data-type="date">1920</span>at<span data-type="place" data-id="plPe">Perekop</span>.” When
+                        records bore him out,<span data-type="person" data-id="KoRo">Rokossovsky</span>became perhaps
+                        the only defendant ever acquitted in the<span data-type="event" data-id="StGP">purge</span>,
+                        although he was still sent to one of the most dreaded<span data-type="organization"
+                            data-id="Gulg">gulag</span>camps in<span data-type="place"
+                            data-id="plSi">Siberia</span>,<span data-type="place" data-id="plVo">Vorkuta</span>.</p>
                 </section>
                 <section class="section_2_6">
                     <h2>The Outcome of the Purge</h2>
-                    <p>The effects of the purge could be seen in the disastrous winter war with Finland in 1939-1940. As
-                        described by future Soviet premier Nikita Khrushchev: “Stalin was furious with the military and
-                        with Voroshilov—justifiably in my opinion. Stalin jumped up in a rage and started to berate
-                        Voroshilov. Voroshilov was also boiling mad. He leaped up, turned red, and hurled Stalin’s
-                        accusations back in his face: ‘You have yourself to blame for all this! You’re the one who had
-                        our best generals killed!’ Voroshilov then picked up a platter of roast suckling pig and hurled
-                        it against the table.” Although dismissed as commissar for defense, Voroshilov amazingly was not
-                        shot for his actions. He survived Stalin to serve as the Soviet Union’s ceremonial president,
-                        living until 1970.</p>
-                    <p>Because of the Finnish fiasco, Stalin rehabilitated and restored 13,000 officers. Rokossovsky was
-                        sent to a seaside resort to recuperate and equipped with twin rows of metal teeth. Always one to
-                        enjoy toying with his victims, Stalin faked surprise upon seeing Rokossovsky. “I don’t seem to
-                        have seen you around for some time,” said the dictator. “Where did you go?” “I was arrested,
-                        Comrade Stalin,” Rokossovsky responded. “I was sitting in prison.” Stalin laughed. “A fine time
-                        you chose to go to prison!”</p>
-                    <p>Rokossovsky went on to be the greatest Soviet commander of World War II after Grigori Zhukov,
-                        helping to win the battles of Stalingrad and Kursk and conquering Berlin. Another hero of the
-                        war to come, Marshal Ivan Konev, would argue: “Of the commanders destroyed—Tukhachevsky,
-                        Yeogorov, Yakir, Kork, Uborevich, Blyuker, Dybenko—only Tukhachevsky and Uborevich can be
-                        regarded as modern military leaders. Most of them were on the level with Voroshilov and Budenny.
-                        Those heroes of the Civil War were living on their past. If they had remained at the top the war
-                        would have turned out quite differently.” Konev might have thought differently had he known that
-                        when he was defeated early in the war, Stalin wanted him shot but was talked out of it by
-                        Zhukov.</p>
-                    <p>Until his death in 1968, Rokossovsky never spoke of his ordeal in the purge. Once, however, while
-                        a marshal of the Soviet Union, he was crossing Siberian airspace and had his plane fly over the
-                        site of his old camp. As he looked down, the former prisoner muttered a brief epitaph for his
-                        fellow victims: “No traces left.”</p>
+                    <p>The effects of the<span data-type="event" data-id="StGP">purge</span>could be seen in the
+                        disastrous<span data-type="event" data-id="WiWa">winter war with Finland</span>in<span
+                            data-type="date">1939</span>-<span data-type="date">1940</span>. As described by future
+                        Soviet premier<span data-type="person" data-id="NiKh">Nikita Khrushchev</span>: “<span
+                            data-type="person" data-id="JoSt">Stalin</span>was furious with the military and with<span
+                            data-type="person" data-id="KlVo">Voroshilov</span>—justifiably in my opinion.<span
+                            data-type="person" data-id="JoSt">Stalin</span>jumped up in a rage and started to
+                        berate<span data-type="person" data-id="KlVo">Voroshilov</span>.<span data-type="person"
+                            data-id="KlVo">Voroshilov</span>was also boiling mad. He leaped up, turned red, and
+                        hurled<span data-type="person" data-id="JoSt">Stalin’s</span>accusations back in his face: ‘You
+                        have yourself to blame for all this! You’re the one who had our best generals killed!’<span
+                            data-type="person" data-id="KlVo">Voroshilov</span>then picked up a platter of roast
+                        suckling pig and hurled it against the table.” Although dismissed as commissar for defense,<span
+                            data-type="person" data-id="KlVo">Voroshilov</span>amazingly was not shot for his actions.
+                        He survived<span data-type="person" data-id="JoSt">Stalin</span>to serve as the<span
+                            data-type="place" data-id="USSR">Soviet Union’s</span>ceremonial president, living
+                        until<span data-type="date">1970</span>.</p>
+                    <p>Because of the Finnish fiasco,<span data-type="person" data-id="JoSt">Stalin</span>rehabilitated
+                        and restored 13,000 officers.<span data-type="person" data-id="KoRo">Rokossovsky</span>was sent
+                        to a seaside resort to recuperate and equipped with twin rows of metal teeth. Always one to
+                        enjoy toying with his victims,<span data-type="person" data-id="JoSt">Stalin</span>faked
+                        surprise upon seeing<span data-type="person" data-id="KoRo">Rokossovsky</span>. “I don’t seem to
+                        have seen you around for some time,” said the dictator. “Where did you go?” “I was
+                        arrested,<span data-type="person" data-id="JoSt">Comrade Stalin</span>,”<span data-type="person"
+                            data-id="KoRo">Rokossovsky</span>responded. “I was sitting in prison.”<span
+                            data-type="person" data-id="JoSt">Stalin</span>laughed. “A fine time you chose to go to
+                        prison!”</p>
+                    <p><span data-type="person" data-id="KoRo">Rokossovsky</span>went on to be the greatest Soviet
+                        commander of<span data-type="event" data-id="WWII">World War II</span>after<span
+                            data-type="person" data-id="GrZh">Grigori Zhukov</span>, helping to win the<span
+                            data-type="event" data-id="BtSt">battles of Stalingrad</span>and<span data-type="place"
+                            data-id="plKs">Kursk</span>and conquering<span data-type="place"
+                            data-id="plBe">Berlin</span>. Another hero of the war to come, Marshal<span
+                            data-type="person" data-id="IvKo">Ivan Konev</span>, would argue: “Of the commanders
+                        destroyed—<span data-type="person" data-id="MiTu">Tukhachevsky</span>,<span data-type="person"
+                            data-id="AlYe">Yeogorov</span>,<span data-type="person" data-id="IoYa">Yakir</span>,<span
+                            data-type="person" data-id="AuKo">Kork</span>,<span data-type="person"
+                            data-id="IeUb">Uborevich</span>,<span data-type="person" data-id="VsBl">Blyuker</span>,<span
+                            data-type="person" data-id="PaDy">Dybenko</span>—only<span data-type="person"
+                            data-id="MiTu">Tukhachevsky</span>and<span data-type="person"
+                            data-id="IeUb">Uborevich</span>can be regarded as modern military leaders. Most of them were
+                        on the level with<span data-type="person" data-id="KlVo">Voroshilov</span>and<span
+                            data-type="person" data-id="SeBu">Budenny</span>. Those heroes of the<span data-type="event"
+                            data-id="RuCW">Civil War</span>were living on their past. If they had remained at the top
+                        the war would have turned out quite differently.”<span data-type="person"
+                            data-id="IvKo">Konev</span>might have thought differently had he known that when he was
+                        defeated early in the war,<span data-type="person" data-id="JoSt">Stalin</span>wanted him shot
+                        but was talked out of it by<span data-type="person" data-id="GrZh">Zhukov</span>.</p>
+                    <p class="finish no-letter">
+                    <div class="finish_left"></div>
+                    <div class="finish_right"></div>Until his death in<span data-type="date">1968</span>,<span
+                        data-type="person" data-id="KoRo">Rokossovsky</span>never spoke of his ordeal in the<span
+                        data-type="event" data-id="StGP">purge</span>. Once, however, while a marshal of the Soviet
+                    Union, he was crossing Siberian airspace and had his plane fly over the site of his old camp. As he
+                    looked down, the former prisoner muttered a brief epitaph for his fellow victims: “No traces left.”
+                    </p>
                 </section>
             </main>
-            <aside>
-                <h2>Metadata Index</h2>
-                <ul>
-                    <li>People</li>
-                    <li>Places</li>
-                    <li>Organizations</li>
-                    <li>Events</li>
-                </ul>
-            </aside>
-        </div><!--include ./_footer-->
+            </div>
+        <footer>
+            <div class="footer_caption">
+                <h5><span>Dictators’</span> <span>Handbook</span></h5>
+            </div>
+            <div class="footer_links">
+                <p>This website is a pro&shy;ject deve&shy;lo&shy;ped by Ev&shy;ge&shy;niia Vdo&shy;vi&shy;chen&shy;ko
+                    for the cour&shy;se&#032;<a
+                        href="https://www.unibo.it/en/study/phd-professional-masters-specialisation-schools-and-other-programmes/course-unit-catalogue/course-unit/2024/454464"
+                        target="_blank">In&shy;for&shy;ma&shy;tion Mo&shy;de&shy;ling and Web
+                        Tech&shy;no&shy;lo&shy;gi&shy;es</a><span class="hidden_char">&#023;</span>held by
+                    &#032;<a href="https://www.unibo.it/sitoweb/fabio.vitali/" target="_blank">Pro&shy;fes&shy;sor
+                        Fa&shy;bio Vi&shy;ta&shy;li</a><span class="hidden_char">.</span></p>
+            </div>
+            <div class="footer_copy">©2025 Copyright: Evgeniia Vdovichenko</div>
+        </footer>
     </div>
-    <!--script(src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.7/js/bootstrap.min.js" integrity="sha512-zKeerWHHuP3ar7kX2WKBSENzb+GJytFSBL6HrR2nPSR1kOX1qjm+oHooQtbDpDBSITgyl7QXZApvDfDWvKjkUw==" crossorigin="anonymous" referrerpolicy="no-referrer")-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.7/js/bootstrap.bundle.min.js"
         integrity="sha512-Tc0i+vRogmX4NN7tuLbQfBxa8JkfUSAxSFVzmU31nVdHyiHElPPy2cWfFacmCJKw0VqovrzKhdd2TSTMdAxp2g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="../utilities/script.js"></script>
+    <script src="../utilities/map.js"></script>
+    <script src="../utilities/meta.js"></script>
 </body>
 
 </html>
