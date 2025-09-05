@@ -5,7 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Dictators’ Handbook</title><!--link(rel="favicon icon" href="/favicon.svg" type="image/svg+xml")-->
+    <title>Joseph Stalin’s Paranoid Purge</title>
+    <!--link(rel="favicon icon" href="/favicon.svg" type="image/svg+xml")-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.7/css/bootstrap.min.css"
         integrity="sha512-fw7f+TcMjTb7bpbLJZlP8g2Y4XcCyFZW8uy8HsRZsH/SwbMw0plKHFHr99DN3l04VsYNwvzicUX/6qurvIxbxw=="
         crossorigin="anonymous" referrerpolicy="no-referrer">
@@ -15,11 +16,11 @@
         crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
     <link rel="stylesheet" href="https://cdn.maptiler.com/maptiler-sdk-js/v3.6.1/maptiler-sdk.css">
-    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="../styles/style.css">
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="https://cdn.maptiler.com/maptiler-sdk-js/v3.6.1/maptiler-sdk.umd.min.js"></script>
     <script src="https://cdn.maptiler.com/leaflet-maptilersdk/v4.1.0/leaflet-maptilersdk.umd.min.js"></script>
-    <script src="./utilities/content.js"></script><!--script(src="/scripts/functions.js")-->
+    <script src="../utilities/content.js"></script><!--script(src="/scripts/functions.js")-->
 </head>
 
 <body>
@@ -43,7 +44,7 @@
                             </svg></button>
                     </div>
                     <ul class="navbar-nav offcanvas-body">
-                        <li class="nav-item"><a class="nav-link" href="./index.html#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
                         <li class="nav-item dropdown"><button class="nav-link dropdown-toggle" type="button"
                                 data-bs-toggle="dropdown" aria-expanded="true">Issues</button>
                             <ul class="dropdown-menu">
@@ -51,13 +52,13 @@
                                         data-bs-toggle="dropdown" aria-expanded="false">Stalin</button>
                                     <ul class="dropdown-menu">
                                         <li class="dropdown-item"><a class="nav-link"
-                                                href="./issues/last_days_of_soviet_dictator.html">The Last Days of the
+                                                href="../issues/last_days_of_soviet_dictator.html">The Last Days of the
                                                 Soviet Dictator</a></li>
                                         <li class="dropdown-item"><a class="nav-link"
-                                                href="./issues/joseph_stalin_paranoid_purge.html">Joseph Stalin's
+                                                href="../issues/joseph_stalin_paranoid_purge.html">Joseph Stalin's
                                                 Paranoid Purge</a></li>
                                         <li class="dropdown-item"><a class="nav-link"
-                                                href="./issues/world_that_made_stalin.html">The World That Made
+                                                href="../issues/world_that_made_stalin.html">The World That Made
                                                 Stalin</a></li>
                                     </ul>
                                 </li>
@@ -72,70 +73,16 @@
                                         data-value="suprematism">Suprematism</button></li>
                             </ul>
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="./issues/documentation.html">Documentation</a>
+                        <li class="nav-item"><a class="nav-link" href="../issues/documentation.html">Documentation</a>
                         </li>
                         <li class="nav-item"><a class="nav-link" href="">Disclaimer</a></li>
                     </ul>
                 </div>
             </nav>
         </header>
-        <main class="home">
+        <main class="docs">
             <section class="home_title">
-                <h1><span>Dictators’ Handbook</span></h1>
-                <h2>From political chess moves to untold secrets, we cover it all.</h2>
-            </section>
-            <section id="about">
-                <h2>About the Project</h2>
-                <p> Dictators’ Handbook is an innovative framework that combines the traditional appeal of magazines
-                    with modern interactive mapping and rich metadata. Our platform allows readers to explore content
-                    through geographic locations, discovering how stories connect across space and time. This project is
-                    realized for the Web Technology and Information Modeling course at the University of Bologna.</p>
-                <p>Each issue is dedicated to one of the world’s dictators, offering a deep dive into their rise to
-                    power, scandals, and lasting impact. All articles are enhanced with geographic references and
-                    interconnected through the metadata layer about people, organizations, events and dates. Also, you
-                    can switch between different design themes to adjust the page layout to your taste.</p><button
-                    class="custom_btn">Read the Documentation</button>
-            </section>
-            <section class="home_design">
-                <div class="home_design_top">
-                    <h2>Customize Your Magazine</h2>
-                    <p>We have developed several unique designs for our magazine, each inspired by a specific historical
-                        period and filled with references to particular years and cultures. Immerse yourself in the
-                        atmosphere of the past and choose the style that suits you best! You can read more about each
-                        design in the project documentation.</p>
-                </div>
-                <article><img src="./images/ghzel/gzhel_card.png">
-                    <div>
-                        <h3>Russian Craft Gzhel</h3>
-                        <p>This style blends the traditional blue-and-white aesthetics of Russian Gzhel ceramics with
-                            the ornate typography of ancient Slavic manuscripts. Gzhel is known for its intricate floral
-                            and folk-inspired patterns, while the layout echoes medieval scriptoria with decorative
-                            initials and structured compositions. The result is a harmonious fusion of folk artistry and
-                            historical elegance.</p><button class="custom_btn" data-action="theme"
-                            data-value="gzhel">Apply</button>
-                    </div>
-                </article>
-                <article><img src="./images/suprematism/supr-card.png">
-                    <div>
-                        <h3>Suprematism</h3>
-                        <p>Suprematism was a Russian avant-garde art movement founded in the early 20th century,
-                            emphasizing geometric forms and pure abstraction.</p><button class="custom_btn"
-                            data-action="theme" data-value="suprematism">Apply</button>
-                    </div>
-                </article>
-            </section>
-            <section>
-                <h2>Read the Next Issue</h2>
-                <div class="home_issue"><img src="./issues/img/stalin_5.png" alt="Stalin Issue"><a class="custom_btn"
-                        href="./issues/last_days_of_soviet_dictator.html">Check Out</a></div>
-                div class="home_issue"><img src="./issues/img/mao.png" alt="Stalin Issue"><button class="custom_btn"
-                        disabled>Check Out</button></div>
-            </section>
-            <section class="section_0_5">
-                <h2 title="Our Universe">Our Universe</h2>
-                <div class="map-container">
-                    <div class="map" id="map"></div>
-                </div>
+                <h1><span>Documentation</span></h1>
             </section>
         </main>
         <footer>
@@ -157,9 +104,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.7/js/bootstrap.bundle.min.js"
         integrity="sha512-Tc0i+vRogmX4NN7tuLbQfBxa8JkfUSAxSFVzmU31nVdHyiHElPPy2cWfFacmCJKw0VqovrzKhdd2TSTMdAxp2g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="./utilities/script.js"></script>
-    <script src="./utilities/map.js"></script>
-    <script src="./utilities/home.js"></script>
+    <script src="../utilities/script.js"></script>
+    <script src="../utilities/map.js"></script>
+    <script src="../utilities/meta.js"></script>
 </body>
 
 </html>
