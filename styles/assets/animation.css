@@ -1,0 +1,128 @@
+@-moz-keyframes move-circle {
+  20% {
+    top: calc(100% - 3.5rem);
+    left: 60%;
+    opacity: 0.3;
+    transform: rotate(72deg);
+  }
+  40% {
+    left: 0;
+    top: calc(50% - 1rem);
+    opacity: 0.9;
+    transform: rotate(144deg);
+  }
+  60% {
+    top: 0;
+    left: 35%;
+    opacity: 0.7;
+    transform: rotate(216deg);
+  }
+  80% {
+    top: calc(100% - 3.5rem);
+    left: 60%;
+    opacity: 0.2;
+    transform: rotate(288deg);
+  }
+  100% {
+    left: calc(100% - 3rem);
+    top: 1rem;
+    opacity: 1;
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes move-circle {
+  20% {
+    top: calc(100% - 3.5rem);
+    left: 60%;
+    opacity: 0.3;
+    transform: rotate(72deg);
+  }
+  40% {
+    left: 0;
+    top: calc(50% - 1rem);
+    opacity: 0.9;
+    transform: rotate(144deg);
+  }
+  60% {
+    top: 0;
+    left: 35%;
+    opacity: 0.7;
+    transform: rotate(216deg);
+  }
+  80% {
+    top: calc(100% - 3.5rem);
+    left: 60%;
+    opacity: 0.2;
+    transform: rotate(288deg);
+  }
+  100% {
+    left: calc(100% - 3rem);
+    top: 1rem;
+    opacity: 1;
+    transform: rotate(360deg);
+  }
+}
+@-o-keyframes move-circle {
+  20% {
+    top: calc(100% - 3.5rem);
+    left: 60%;
+    opacity: 0.3;
+    transform: rotate(72deg);
+  }
+  40% {
+    left: 0;
+    top: calc(50% - 1rem);
+    opacity: 0.9;
+    transform: rotate(144deg);
+  }
+  60% {
+    top: 0;
+    left: 35%;
+    opacity: 0.7;
+    transform: rotate(216deg);
+  }
+  80% {
+    top: calc(100% - 3.5rem);
+    left: 60%;
+    opacity: 0.2;
+    transform: rotate(288deg);
+  }
+  100% {
+    left: calc(100% - 3rem);
+    top: 1rem;
+    opacity: 1;
+    transform: rotate(360deg);
+  }
+}
+@keyframes move-circle {
+  20% {
+    top: calc(100% - 3.5rem);
+    left: 60%;
+    opacity: 0.3;
+    transform: rotate(72deg);
+  }
+  40% {
+    left: 0;
+    top: calc(50% - 1rem);
+    opacity: 0.9;
+    transform: rotate(144deg);
+  }
+  60% {
+    top: 0;
+    left: 35%;
+    opacity: 0.7;
+    transform: rotate(216deg);
+  }
+  80% {
+    top: calc(100% - 3.5rem);
+    left: 60%;
+    opacity: 0.2;
+    transform: rotate(288deg);
+  }
+  100% {
+    left: calc(100% - 3rem);
+    top: 1rem;
+    opacity: 1;
+    transform: rotate(360deg);
+  }
+}
