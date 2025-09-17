@@ -75,16 +75,526 @@
                         </li>
                         <li class="nav-item"><a class="nav-link" href="../issues/documentation.html">Documentation</a>
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="">Disclaimer</a></li>
+                        <li class="nav-item"><button class="nav-link" type="button"
+                                onclick="openDisc()">Disclaimer</button></li>
                     </ul>
                 </div>
             </nav>
         </header>
         <main class="docs">
-            <section class="home_title">
-                <h1><span>Documentation</span></h1>
+            <section>
+                <h1 class="caption"><span>Documentation</span></h1>
+            </section>
+            <section>
+                <h2 title="Old Russian Ghzel">Old Russian Ghzel</h2>
+                <h4>Inspired by the 16th–19th Centuries</h4>
+                <article>
+                    <h3>1.1 Historical and Cultural Rationale</h3>
+                    <p>Gzhel is a traditional Russian folk art that emerged in the 18th century in the eponymous village near 
+                        Moscow (Russia). Its core visual codes include a vivid blue-and-white palette characteristic of ceramics, along 
+                        with stylized depictions of plants, animals, and geometric patterns. Gzhel ceramics were originally 
+                        created as utilitarian tableware but gradually acquired the status of decorative art.</p>
+                    <img class="p_docs_1"
+                        src="https://lanta.biz/upload/resize_cache/iblock/1e4/700_700_1/1e4f8c777e5d02021591aa38de479bb4.png">
+                    <p>Gzhel’s visual references appear across media—from ceramics and porcelain painting to fine art and print graphics.
+                         In the late 19th to early 20th centuries, illustrated periodicals and ornament albums frequently featured 
+                         folk-art motifs aligned with the Gzhel tradition. Architecture and interior design likewise absorbed these codes:
+                          ceramic panels, stove tiles, border ornaments, and “cobalt” accents in interior finishes.</p>
+                    <!--img(src="https://www.tenti.ru/f/userfiles/chto-takoe-gzhel%20(1).jpg")-->
+                </article>
+                <article>
+                    <h3>1.2 Theme Concept & Key Metaphors</h3>
+                    <ul>
+                        <li>
+                            <strong>Semantic foundation</strong>
+                            Gzhel is treated as a system of visual codes representing tradition, craftsmanship, and 
+                            nature-inspired imagery.
+                        </li>
+                        <li>
+                            <strong>Tone of communication</strong>
+                            Low-arousal, friendly, and free of visual noise; clarity takes priority.
+                        </li><li>
+                            <strong>Color system</strong>
+                            A white base background; blue (cobalt) tones for accents, frames, and dividers; avoid 
+                            saturated backgrounds under running text.
+                        </li>
+                        <li>
+                            <strong>Ornament and textures</strong>
+                            Patterns inspired by Gzhel ceramics are used sparingly: as borders, corner vignettes, and fine
+                             dividers, not as solid backdrops.
+                        </li>
+                        <li>
+                            <strong>Readability of long texts</strong>
+                            Gentle hierarchy, predictable structure, and even line spacing and paragraph gaps to reduce
+                             cognitive load.
+                        </li>
+                        <li>
+                            <strong>User comfort</strong>
+                            Components and interactions must be intuitive; visual decisions should support a sense of calm 
+                            and homely warmth.
+                        </li>
+                        <li>
+                            <strong>Usage constraints</strong>
+                            Ornament is not used as a background for paragraphs and forms; accent colors are applied 
+                            moderately to avoid overload.
+                        </li>
+                    </ul>
+                    <img class="p_docs_2"
+                    src="https://www.mosigra.ru/image/cache/data/tovari/hobby-world/gzhel/gzhel-10-1024x1024-wm.webp">
+                </article>
+                <article>
+                    <h3>1.3 Visual System</h3>
+                    <h4>1.3.1 Color Palette</h4>
+                    <table role="table" aria-describedby="palette-notes" style="width:100%; border-collapse:collapse;">
+                        <thead>
+                            <tr>
+                                <th style="text-align:left; border-bottom:1px solid #e5e7eb; padding:8px;">Role</th>
+                                <th style="text-align:left; border-bottom:1px solid #e5e7eb; padding:8px;">HEX</th>
+                                <th style="text-align:left; border-bottom:1px solid #e5e7eb; padding:8px;">Swatch</th>
+                                <th style="text-align:left; border-bottom:1px solid #e5e7eb; padding:8px;">Contrast on white</th>
+                                <th style="text-align:left; border-bottom:1px solid #e5e7eb; padding:8px;">Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding:8px;">Headings & primary accents</td>
+                                <td style="padding:8px;"><code>#003399</code></td>
+                                <td style="padding:8px;"><span style="display:inline-block; width:20px; height:20px; background:#003399; border:1px solid #e5e7eb;"></span></td>
+                                <td style="padding:8px;">10.86:1 — AAA</td>
+                                <td style="padding:8px;">Deep “cobalt ink” for hierarchy and brand anchors.</td>
+                            </tr>
+                            <tr>
+                                <td style="padding:8px;">Body text</td>
+                                <td style="padding:8px;"><code>#636060</code></td>
+                                <td style="padding:8px;"><span style="display:inline-block; width:20px; height:20px; background:#636060; border:1px solid #e5e7eb;"></span></td>
+                                <td style="padding:8px;">6.23:1 — AA</td>
+                                <td style="padding:8px;">Neutral warm gray reduces glare vs. pure black.</td>
+                            </tr>
+                            <tr>
+                                <td style="padding:8px;">Secondary accents & links</td>
+                                <td style="padding:8px;"><code>#0055cc</code></td>
+                                <td style="padding:8px;"><span style="display:inline-block; width:20px; height:20px; background:#0055cc; border:1px solid #e5e7eb;"></span></td>
+                                <td style="padding:8px;">6.62:1 — AA</td>
+                                <td style="padding:8px;">Vivid link color; use for large text/controls.</td>
+                            </tr>
+                            <tr>
+                                <td style="padding:8px;">Secondary accents & links (alt)</td>
+                                <td style="padding:8px;"><code>#3439c0</code></td>
+                                <td style="padding:8px;"><span style="display:inline-block; width:20px; height:20px; background:#3439c0; border:1px solid #e5e7eb;"></span></td>
+                                <td style="padding:8px;">8.43:1 — AAA</td>
+                                <td style="padding:8px;">Use when AAA is required for small link text.</td>
+                            </tr>
+                            <tr>
+                                <td style="padding:8px;">Buttons (fill)</td>
+                                <td style="padding:8px;"><code>#3b40d9</code></td>
+                                <td style="padding:8px;"><span style="display:inline-block; width:20px; height:20px; background:#3b40d9; border:1px solid #e5e7eb;"></span></td>
+                                <td style="padding:8px;">White text on <code>#3b40d9</code>: 7.19:1 — AAA</td>
+                                <td style="padding:8px;">Solid “ultramarine” button; pairs with white text.</td>
+                            </tr>
+                            <tr>
+                                <td style="padding:8px;">Background</td>
+                                <td style="padding:8px;"><code>#ffffff</code></td>
+                                <td style="padding:8px;"><span style="display:inline-block; width:20px; height:20px; background:#ffffff; border:1px solid #e5e7eb;"></span></td>
+                                <td style="padding:8px;">—</td>
+                                <td style="padding:8px;">“Porcelain white” base, echoing ceramic glaze.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <strong>Usage guardrails: </strong>
+                    <p>No more than two shades of blue on screen at once; solid blue backgrounds 
+                    under long-form text are prohibited. This preserves readability and the historical 
+                    “accent” status of blue.</p>
+
+                    <h4>1.3.2 Typefaces</h4>
+                    <ul>
+                        <li><strong>Headings:</strong> A&nbsp;la&nbsp;russ — used as a display face to convey folk-art authenticity and 
+                            ceremonial tone.
+                        </li>
+                        <li><strong>Body text:</strong> Balkara — used for continuous reading, prioritizing clarity and 
+                            balanced texture.
+                        </li>
+                    </ul>
+                    <p>Typeface selection acknowledges folk traditions to achieve authenticity: an expressive display face 
+                        for headings and a neutral, readable face for UI copy.</p>
+
+                    <h5>Initial (Drop Cap)</h5>
+                    <p>The initial letter—adopted from the Russian manuscript tradition and cognate with Gzhel’s ornamental 
+                        culture—is integrated to heighten textual expressiveness. It may be used at the start of editorial 
+                        articles and essays; it is not applied in forms, tables, or compact UI layouts.</p>
+                    <figure style="margin:1rem 0;">
+                        <img src="https://kp.rusneb.ru/attachments/attachment/preview/5dec0952ff75eb53d5b98840-preview.jpg" 
+                        alt="Historic ornamental initial letter from the Russian tradition (reference image)."
+                        style="max-width:100%; height:auto; display:block;"/>
+                        <figcaption style="font-size:0.875rem; color:#6b7280;">Reference: ornamental initial from Russian 
+                            decorative tradition (for mood and proportion only).
+                        </figcaption>
+                    </figure>
+
+                    <h3 id="layout">1.4 Layout</h3>
+
+                    <h4>Page Composition and Reading Flow</h4>
+                    <p>The page layout follows a traditional book logic. Text is set as a continuous flow to facilitate effortless reading,
+                       with each new paragraph or section clearly separated from the previous one. Vertical balancing of page elements
+                       maintains a sense of calm and order. The absence of superfluous graphics and motion results in a clean, concise
+                       presentation that keeps attention on the content.</p>
+                       
+                    <h4>Ornamental Source: Slavic Manuscript Initials (AI-Assisted)</h4>
+                    <p>To reinforce historical authenticity, page-opening ornaments are sourced from Old Slavic 
+                        manuscripts and transformed via an AI-assisted pipeline. They were extracted, cleaned, and 
+                        recolored to align with the theme’s colour vocabulary.
+                    </p>
+  
+                    <h4>Edge Treatments and Visual Lightness</h4>
+                    <p>To introduce visual lightness, rounded geometry is employed consistently: buttons use a fixed corner radius of
+                    <strong>50&nbsp;px</strong>, while images adopt an elliptical radius of <code>100px 20px 90px 25px / 20px 80px 30px 100px</code>. The latter creates a gentle, asymmetrical silhouette that
+                    echoes hand-finished ceramics rather than industrial uniformity.</p>
+                    
+                    <h4>Iconographic Motif: Gzhel Plate and Book Spread</h4>
+                    <p>To reinforce authenticity, the map is rendered as a <em>Gzhel-painted plate</em>—a familiar domestic object in Russian
+                    material culture—while the main text is arranged as a <em>book spread</em>. Additional decorative devices include
+                    article labels and the site footer, each delineated with a border that references Gzhel-style ornament.</p>
+                    
+                    <h4>Triangular Closing Paragraph</h4>
+                    <p>The final paragraph of each article employs a <em>triangular composition</em>: the text emphasizes key aspects of
+                       Russian culture and gradually narrows toward the center, producing a focused visual effect. This is achieved by two
+                       floating elements that shape the text using <code>shape-outside</code>:</p>
+
+                       <pre><code>/* Illustrative snippet */
+                    .triangle-left{
+                    float: left;
+                    shape-outside: polygon(0% 20%, 100% 100%, 0 100%);
+                    width: 28%; height: 1px; /* height triggers layout; adjust as needed */
+                    }
+                    .triangle-right{
+                    float: right;
+                    shape-outside: polygon(100% 20%, 0% 100%, 100% 100%);
+                    width: 28%; height: 1px;
+                    }
+                       </code></pre>
+                       
+                    <h4>Placement of Metadata</h4>
+                    <p>Meta-information is positioned to the right of the main content. This arrangement strengthens the book-spread metaphor
+                       and improves the efficiency of information retrieval within the text.</p>
+                </article>
+            </section>
+            <section>
+                <h2 title="Suprematism">Suprematism</h2>
+                <h4>Inspired by the First half of 20th Century</h4>
+                <article>
+                    <h3>2.1 Historical and Cultural Rationale</h3>
+                    <p>Suprematism and the Russian avant-garde emerged in the early 20th century amid profound social 
+                        and political change, including World War I and the Russian Revolution. These movements pursued 
+                        a new way of seeing, rejecting traditional forms and materials. Their core visual codes include 
+                        pure abstraction, geometric shapes, radical reduction, and a limited palette—black, white, and 
+                        primary colors (yellow, red, blue).</p>
+                        <img class="p_docs_3"
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Malevich.jpg/1200px-Malevich.jpg"
+                        alt="Kazimir Malevich, key figure of Suprematism">
+                        <p>The period’s visual references span painting, experimental typography, architecture, poster 
+                            design, and editorial illustration. Works by Kazimir Malevich, Wassily Kandinsky, and El 
+                            Lissitzky are foundational. Fashion and illustrated magazines of the era often featured 
+                            geometry-driven layouts and abstract motifs influenced by Suprematism and the broader 
+                            avant-garde.</p>
+                        <img class="p_docs_4"
+                        src="https://files.mediiia.ru/projectimages/1039/f52f482ca9434adba5f3bfbd01dc9d9f/0ec234a4d8bd45a1b1d93c79aa4d64ad1152x1617.jpg"
+                        alt="Avant-garde illustration from the Russian early-modern period">
+                        <p>Key metaphors include “breaking the old,” “seeking a new language,” and “liberating form.” 
+                            In interface terms, this translates into an emphasis on simplicity, clarity of line, and 
+                            geometric order—principles consistent with Suprematist and avant-garde philosophy.</p>
+                </article>
+
+                <article>
+                <h3>2.2 Theme Concept & Key Metaphors</h3>
+                <ul>
+                    <li>
+                        <strong>Semantic foundation</strong>
+                        Suprematism and the Russian avant-garde are interpreted as systems of non-objective geometry, 
+                        radical reduction, and functional clarity.
+                    </li>
+                    <li>
+                        <strong>Tone of communication</strong>
+                        Direct, precise, and free of ornament; the interface favors economy of means, legible structure, 
+                        and unambiguous affordances.
+                    </li>
+                    <li>
+                        <strong>Color system</strong>
+                        A limited palette—primarily black, white, and red (optionally extended with primaries)—supports 
+                        high contrast and visual discipline; avoid gradients and textured fills, and do not use saturated 
+                        backgrounds under running text.
+                    </li>
+                    <li>
+                        <strong>Geometry and layout</strong>
+                        UI components are reduced to basic shapes (squares, circles, lines) and clear alignments; 
+                        asymmetry and diagonal tensions may be used sparingly to create dynamism without impairing 
+                        legibility.
+                    </li>
+                    <li>
+                        <strong>Form reduction & UI minimalism</strong>
+                        Elements are simplified to essential form and function to produce an intuitive interface: minimal 
+                        labels, clean iconography, and states indicated by contrast rather than decorative effects.
+                    </li>
+                    <li>
+                        <strong>Contemporary relevance</strong>
+                        Suprematism and the avant-garde profoundly shaped early-20th-century art, design, and fashion; 
+                        translating their principles into today’s interfaces yields distinctive, expressive solutions while 
+                        honoring the period’s cultural legacy.
+                    </li>
+                    <li>
+                        <strong>Usage constraints</strong>
+                        Limit accent colors on a single screen; avoid skeuomorphic textures and heavy shadows; maintain 
+                        accessibility (AA/AAA) for text on colored grounds.
+                    </li>
+                </ul>
+                <img class="p_docs_5"
+                     src="https://cinemafirst.ru/wp-content/uploads/2023/08/8fc73c6s-960.jpg"
+                     alt="Suprematist and Russian avant-garde reference image">
+                </article>
+                <article>
+                    <h3>2.3 Visual System</h3>
+
+                    <h4>2.3.1 Color Palette</h4>
+                    <table role="table" aria-describedby="palette-notes" style="width:100%; border-collapse:collapse;">
+                        <thead>
+                            <tr>
+                                <th style="text-align:left; border-bottom:1px solid #e5e7eb; padding:8px;">Role</th>
+                                <th style="text-align:left; border-bottom:1px solid #e5e7eb; padding:8px;">HEX</th>
+                                <th style="text-align:left; border-bottom:1px solid #e5e7eb; padding:8px;">Swatch</th>
+                                <th style="text-align:left; border-bottom:1px solid #e5e7eb; padding:8px;">Contrast on black</th>
+                                <th style="text-align:left; border-bottom:1px solid #e5e7eb; padding:8px;">Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding:8px;">Headings & primary accents</td>
+                                <td style="padding:8px;"><code>#d4af37</code></td>
+                                <td style="padding:8px;"><span style="display:inline-block; width:20px; height:20px; background:#d4af37; border:1px solid #e5e7eb;"></span></td>
+                                <td style="padding:8px;">9.99:1 — AAA</td>
+                                <td style="padding:8px;">Gold for hierarchy; works for normal text and small UI elements on black.</td>
+                            </tr>
+                            <tr>
+                                <td style="padding:8px;">Headings & primary accents (alt)</td>
+                                <td style="padding:8px;"><code>#ff0000</code></td>
+                                <td style="padding:8px;"><span style="display:inline-block; width:20px; height:20px; background:#ff0000; border:1px solid #e5e7eb;"></span></td>
+                                <td style="padding:8px;">5.25:1 — AA</td>
+                                <td style="padding:8px;">Constructivist red; use for headings and large controls; not AAA for small body text.</td>
+                            </tr>
+                            <tr>
+                                <td style="padding:8px;">Body text</td>
+                                <td style="padding:8px;"><code>#dedede</code></td>
+                                <td style="padding:8px;"><span style="display:inline-block; width:20px; height:20px; background:#dedede; border:1px solid #e5e7eb;"></span></td>
+                                <td style="padding:8px;">15.61:1 — AAA</td>
+                                <td style="padding:8px;">Soft light gray improves readability vs pure white glare.</td>
+                            </tr>
+                            <tr>
+                                <td style="padding:8px;">Secondary accents & links</td>
+                                <td style="padding:8px;"><code>#191970</code></td>
+                                <td style="padding:8px;"><span style="display:inline-block; width:20px; height:20px; background:#191970; border:1px solid #e5e7eb;"></span></td>
+                                <td style="padding:8px;">1.41:1 — Fail (on black)</td>
+                                <td style="padding:8px;">Use only on light surfaces (on white it’s 14.85:1 — AAA) or pair with a light chip/pill background.</td>
+                            </tr>
+                            <tr>
+                                <td style="padding:8px;">Background</td>
+                                <td style="padding:8px;"><code>#000000</code></td>
+                                <td style="padding:8px;"><span style="display:inline-block; width:20px; height:20px; background:#000000; border:1px solid #e5e7eb;"></span></td>
+                                <td style="padding:8px;">—</td>
+                                <td style="padding:8px;">“Black Square” backdrop — reference to Kazimir Malevich’s 1915 painting — keeps the palette minimal and high-contrast.</td> 
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p id="palette-notes" style="margin-top:12px; color:#6b7280;">
+                        Contrast ratings follow WCAG&nbsp;2.1 for normal text (AA&nbsp;&ge;&nbsp;4.5:1, AAA&nbsp;&ge;&nbsp;7:1).
+                    </p>
+                    <img class="p_docs_6"
+                    src="https://artchive.ru/res/media/img/oy800/work/bd2/351919@2x.jpeg"
+                    alt="Suprematist palette reference on black background">
+
+                     <h4>2.3.2 Typefaces</h4>
+                     <ul>
+                        <li>
+                            <strong>Headings:</strong>
+                            "Rodchenko Constructed", "Rodchenko Grotesk" — used as display faces to convey Constructivist 
+                            rigor and geometric clarity.
+                        </li>
+                        <li>
+                            <strong>Navigation:</strong>
+                            "Next Art" — used for menus, tabs, and system labels; compact metrics and clear forms support 
+                            fast scanning at small sizes.
+                        </li>
+                        <li>
+                            <strong>Body text:</strong>
+                            "News Cycle" (semibold) — used for continuous reading on a black background; the weight delivers 
+                            stable contrast and a balanced texture.
+                        </li>
+                    </ul>
+                    <p>
+                        Typeface selection acknowledges the avant-garde heritage to achieve authenticity: assertive display 
+                        faces for headings, a utilitarian, legible sans for navigation, and a steady, high-contrast text face
+                         for UI copy.
+                    </p>
+
+                     <h3>2.4 Layout</h3>
+                     <h4>Geometric Header Composition</h4>
+                     <p>To convey period authenticity while signaling a deliberate break from ornament, the site header is 
+                        constructed as a geometric composition. It relies on simple primitives (squares, circles, lines), 
+                        clear axes (orthogonal and occasional diagonals), and measured negative space—keeping vertical 
+                        real estate free for the reading areas.
+                    </p>
+                    <h4>Columnar Typesetting (Newspaper Logic)</h4>
+                    <p>The body copy is set in a newspaper-style multi-column layout. An even column count is prioritized— 
+                       <strong>two</strong> columns on mobile and <strong>four</strong> on desktop. Even columns aid line-tracking for left-to-right reading 
+                       and split long texts into manageable blocks, improving comprehension and scanability.
+                    </p>
+                    <h4>Column Gaps and White Space</h4>
+                    <p>Inter-column spacing follows a functional range of <strong>0.2–0.5&nbsp;in</strong> (≈<strong>5–12&nbsp;mm</strong>). In this system the gap is fixed at 
+                       <strong>2&nbsp;rem</strong>, providing enough separation to prevent visual merging of adjacent columns without wasting page area. 
+                       Generous white space around text and between columns reduces cognitive load and improves legibility.
+                    </p>
+                    <pre><code>/* Minimal implementation */
+                        .article {
+                        column-count: 2;            /* mobile */
+                        column-gap: 2rem;           /* ≈32 px; within the 5–12 mm guidance on common DPIs */
+                        hyphens: auto;              /* smoother rags for multi-column text */
+                        }
+                        
+                        @media (min-width: 1024px) {
+                           .article { column-count: 4; }   /* desktop */
+                        }
+                        .article p { break-inside: avoid; }  /* avoid paragraph splits across columns */
+                    </code></pre>
+
+                    <h3>3.4 Motion System</h3>
+                    <p>The motion language follows three principles: <em>geometry first</em> (shapes move as squares, 
+                        circles, and lines), <em>linear time</em> (constant velocity, no elastic overshoot), and 
+                        <em>non-interpenetration</em> (objects do not pass through one another). Depth cues—parallax, 
+                        drop shadows, faux perspective—are deliberately avoided to honor the period’s flat, 
+                        non-illusionistic space.
+                    </p>
+                    <h4>Artwork Overlays</h4>
+                    <p>To evoke the era, selected images receive geometric overlays that quote well-known avant-garde 
+                        compositions. Overlays sit <em>on top of</em> the base image and reveal in simple wipes or 
+                        slices; they never morph or blend as “material,” preserving the autonomy of forms. Use 
+                        hard-edge masks, limited opacity, and linear timings.
+                    </p>
+                    <h4>Footer Loop: Non-Intersection Sphere</h4>
+                    <p>The site footer features a looping background animation of a sphere that traverses the horizontal
+                         axis. The motion illustrates the principle of bodies that do not intersect: the sphere 
+                         “bounces” at boundaries rather than passing through content. The path is planar and 
+                         perspective-free, reinforcing linear placement without depth.
+                    </p>
+                    <pre>20% {
+    top: calc(100% - 3.5rem);
+    left: 60%;
+    opacity: .3;
+    transform: rotate(72deg);
+}
+40% {
+    left: 0;
+    top: calc(50% - 1rem);
+    opacity: .9;
+    transform: rotate(144deg);
+}
+60% {
+    top: 0;
+    left: 35%;
+    opacity: .7;
+    transform: rotate(216deg);
+}
+80% {
+    top: calc(100% - 3.5rem);
+    left: 60%;
+    opacity: .2;
+    transform: rotate(288deg);
+}
+100% {
+    left: calc(100% - 3rem);
+    top: 1rem;
+    opacity: 1;
+    transform: rotate(360deg);
+}</pre>
+                    <p>In the animation above, the object changes position, varies its opacity—periodically entering and exiting the scene—
+                       and rotates about its axis. This sequence nods to the cubo-futurist opera <em>Victory over the Sun</em> (1913),
+                       often cited as a precursor to Suprematism through Kazimir Malevich’s scenography. The motion remains planar and
+                       non-illusionistic: constant velocity, crisp edges, no depth cues.
+                    </p>
+                    <figure style="margin:1rem 0;">
+                        <img src="https://ka2.ru/hadisy/kruch/el_1923.jpg"
+                             alt="Avant-garde reference image (1923), used as a visual cue for the motion system"
+                             style="max-width:100%; height:auto; display:block;"
+                        />
+                        <figcaption style="font-size:0.875rem; color:#6b7280;">
+                             Referential Motif: “Victory over the Sun” (1913)
+                        </figcaption>
+                    </figure>  
+                </article>
+            </section>
+            <section>
+                <h2>Summary</h2>
+                <article>
+                    <p>Although Gzhel and Suprematism are distinct artistic practices with different aims and contexts, 
+                        they can be compared across several criteria, including aesthetics, cultural significance, and
+                         reception. Both articulate unique facets of Russian culture, yet they do so through markedly 
+                         different lenses.
+                    </p>
+                    <p>
+                        <strong>Gzhel</strong> functions as a symbol of Russian folk culture and tradition, maintaining 
+                        a historical link to everyday craft and domestic art. Its reception is closely tied to feelings 
+                        of warmth, homeliness, and continuity, often evoking a nostalgic affinity with Russian cultural memory. 
+                        <strong>Suprematism</strong>, by contrast, pursues
+                        purity of form and the liberation from representational content. The reception of Suprematist works tends to be
+                        more intellectual and conceptual, inviting the viewer to consider relationships of form and color and the meanings
+                        they may suggest.
+                    </p>
+                    <ul>
+                        <li><strong>Aesthetic code:</strong> Gzhel—ornament, pattern, blue-on-white; Suprematism—abstraction, geometry, reduction.</li>
+                        <li><strong>Cultural register:</strong> Gzhel—folk craft and domestic tradition; Suprematism—avant-garde experiment and rupture.</li>
+                        <li><strong>Sensory tone:</strong> Gzhel—warmth and familiarity; Suprematism—clarity, austerity, and conceptual focus.</li>
+                    </ul>
+                    <p>
+                        <em>Implementation note.</em>
+                        In both themes, the site header employs the Bootstrap library to streamline the 
+                        markup and behavior of dropdowns and popovers, ensuring consistent interaction patterns across 
+                        breakpoints.
+                    </p>
+
+                    <p>A production-ready desktop layout is included, and responsive variants for devices of varying 
+                        screen sizes (mobile and tablet) adapt typography, spacing, and hit targets accordingly.
+                    </p>
+                </article>
             </section>
         </main>
+        <div class="popup_container">
+            <div class="popup"><button class="popup_close" type="button"><svg class="bi bi-x"
+                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                        <path
+                            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708">
+                        </path>
+                    </svg></button>
+                <p>The purpose of this web site is to explore various types of typographic and layout style for text
+                    documents, as an end-of-course project for the "Information Modeling and Web technologies" course of
+                    the Master Degree in Digital Humanities and Digital Knowledge of the University of Bologna, under
+                    prof. Fabio Vitali. The documents contained in this web site have been selected for their length and
+                    complexity from their respective source publications. Their publication here is not intended to be
+                    an alternative or replace their original locations:</p>
+                <h2 title="Issue 1">Issue 1</h2>
+                <ul>
+                    <li><span>Article 1:</span>&#32;<a
+                            href="https://babel.ua/en/texts/104698-71-years-after-stalin-s-death-russian-communists-suspected-that-he-was-killed-by-western-special-services-in-fact-they-should-look-for-the-culprits-right-under-their-noses-the-last-days-of-the-soviet-"
+                            target="_blank">https://babel.ua/en/texts/104698-71-years-after-stalin-s-death-russian-communists-suspected-that-he-was-killed-by-western-special-services-in-fact-they-should-look-for-the-culprits-right-under-their-noses-the-last-days-of-the-soviet-</a>
+                    </li>
+                    <li><span>Article 2:</span>&#32;<a
+                            href="https://warfarehistorynetwork.com/article/joseph-stalins-paranoid-purge/"
+                            target="_blank">https://warfarehistorynetwork.com/article/joseph-stalins-paranoid-purge/</a>
+                    </li>
+                    <li><span>Article 3:</span>&#32;<a
+                            href="https://jacobin.com/2020/09/stalin-early-years-georgia-soviet-union-ronald-suny"
+                            target="_blank">https://jacobin.com/2020/09/stalin-early-years-georgia-soviet-union-ronald-suny</a>
+                    </li>
+                </ul>
+                <p>All copyrights and related rights on the content remain with their original owners. All copyright on
+                    the typographic and layout choices are owned by their respective creator or the entity that
+                    commissioned the work.</p>
+            </div>
+        </div>
         <footer>
             <div class="footer_caption">
                 <h5><span>Dictators’</span> <span>Handbook</span></h5>
