@@ -32,7 +32,10 @@ const createMetaLine = (data) => {
     const text = document.createElement("div");
     text.className = "meta-text"
     if (data.wiki) {
-        text.innerHTML = `<a class="link" href="${data.wiki}" target="_blanl">${data.name}</a>`;
+        text.innerHTML = `<span class="link">${data.name}</span>`;
+        data.links?.forEach((link) => {
+            link.innerHTML = `<a class="link" href="${data.wiki}" target="_blank">${link.textContent}</a>`;
+        })
     } else if (data.coords) {
         text.innerHTML = `<span class="link">${ data.name }</span>`;
     } else {
@@ -41,35 +44,34 @@ const createMetaLine = (data) => {
     if (data.date) {
         text.innerHTML += `<span>(${data.date})</span>`
     }
+    line.addEventListener("click", () => {
+        for (let i = 0; i < data?.links.length; i++) {
+            const el = data.links[i]
+            if (el.checkVisibility()) {
+                el.scrollIntoView({block: "center"})
+                el.classList.add("active");
+                setTimeout(() => {
+                    el.classList.remove("active");
+                }, 3000)
+                break;
+            }
+        }
+        
+        
+    })
     const supTag = document.createElement("div");
     supTag.className = "sup-content"
     
-    data.links?.forEach((link, i) => {
-        link.addEventListener("click", (e) => {
-            line.scrollIntoView({block: 'center'})
-        })
-        console.log(link)
-        //const sup = document.createElement("div")
-        //sup.className = "sup"
-        //sup.innerText = i + 1;
-        //sup.addEventListener("click", () => {
-        //    link.scrollIntoView({block: 'center'})
-        //    link.classList.add("active")
-        //    setTimeout(() => {
-        //        link.classList.remove("active")
-        //    }, 3000)
-        //})
-        //supTag.append(sup)
-    })
+    
     
     line.append(text, supTag);
     
     if (data.coords) {
-        const marker = L.marker(data.coords, {icon: Icon}).addTo(map).bindPopup(data.name)
+        const marker = L.marker(data.coords, {icon: Icon}).addTo(map).bindPopup(createPopup(data))
         const latLngs = [marker.getLatLng()];
         text.addEventListener("click", () => {
             //location.hash = "map";
-            mapTag.scrollIntoView()
+            //mapTag.scrollIntoView()
             map.fitBounds(L.latLngBounds(latLngs))
             map.setZoom(data.zoom || 6)
             marker.openPopup()
@@ -85,11 +87,17 @@ const metaData = Array.from(content).reduce((acc, el) => {
     acc[el[1].type].push(el[1])
     return acc;
 }, {})
-//const metaData = Array.from(content)
-console.log(metaData)
+
 metaNames.forEach(name => {
     const tag = document.createElement("div")
-    metaData[name].forEach(el => {
+    metaData[name]?.sort((a,b) => {
+        if (a.order) {
+            return a.order > b.order ? 1 : -1
+        } else {
+            return a.name > b.name ? 1 : -1
+        }
+    })
+    metaData[name]?.forEach(el => {
         tag.append(createMetaLine(el))
     })
     tag.dataset.value = name;
@@ -98,7 +106,6 @@ metaNames.forEach(name => {
 
 metaTabs.forEach((el, i) => {
     el.addEventListener("click", (e) => {
-        console.log(metaTag.children[i])
         el.classList.toggle("active")
         metaTag.children[i].classList.toggle("active")
         dataTags.forEach(tg => {

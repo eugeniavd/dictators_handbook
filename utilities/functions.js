@@ -64,6 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
       return res.text();
     })
     .then(html => {
+      console.log(html)
       document.getElementById('header-placeholder').innerHTML = html;
 
       // After header is injected:

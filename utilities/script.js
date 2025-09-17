@@ -1,7 +1,20 @@
 const navbar = document.querySelector('#navbar');
 const bsOffcanvas = new bootstrap.Offcanvas(navbar)
 const main = document.querySelector('main');
+const popupBlock = document.querySelector('.popup_container');
+const popupClose = document.querySelector('.popup_close');
 
+function openDisc() {
+    popupBlock.classList.add("active")
+}
+popupBlock.addEventListener("click", (e) => {
+    if (e.target === e.currentTarget) {
+        popupBlock.classList.remove("active")
+    }
+})
+popupClose.addEventListener("click", (e) => {
+    popupBlock.classList.remove("active")
+})
 
 /* Change theme start */
 let theme = localStorage.getItem("theme");
@@ -13,7 +26,47 @@ document.body.className = theme;
 
 const switchTheme = function(name) {
     document.body.className = name;
+    window.scrollTo(0, 0)
 }
+
+const createPopup = (data, home = false) => {
+    const popup = document.createElement("div")
+    popup.className = "popup"
+    const mainBlock = document.createElement("div")
+    mainBlock.className = "popup_main"
+    const caption = document.createElement("h2")
+    caption.innerText = data.name;
+    if (data.name.split(" ").length > 2) {
+        caption.style.fontSize = "16px"
+    }
+    
+    const link = document.createElement("a")
+    link.className = "custom_btn"
+    link.innerText = "Read more";
+    link.href = data.wiki;
+    link.target = "_blank";
+    mainBlock.append(caption, link)
+    popup.append(mainBlock)
+    if (data.articles.length) {
+        const artBlock = document.createElement("div")
+        artBlock.className = "popup_art"
+        const listCaption = document.createElement("h3")
+        listCaption.innerText = "Appears in:";
+        const list = document.createElement("ul")
+        data.articles.forEach((el) => {
+            const line = document.createElement("li")
+            const text = document.createElement("a")
+            text.innerText = articles[el].title
+            text.href = (home ? "." : "..") + articles[el].link
+            line.append(text)
+            list.appendChild(line)
+        })
+        artBlock.append(listCaption, list)
+        popup.append(artBlock)
+    }
+    return popup.outerHTML
+}
+
 
 const themeBtns = document.querySelectorAll('[data-action=\"theme\"]');
 for (let i = 0; i < themeBtns.length; i++) {
@@ -51,7 +104,6 @@ document.querySelectorAll('.dropend').forEach(el => {
 })
 
 navbar.addEventListener('show.bs.offcanvas', function () {
-    console.log("click")
     main.classList.add("show")
 });
 
