@@ -74,37 +74,39 @@
                         </li>
                         <li class="nav-item"><a class="nav-link" href="./issues/documentation.html">Documentation</a>
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="">Disclaimer</a></li>
+                        <li class="nav-item"><button class="nav-link" type="button"
+                                onclick="openDisc()">Disclaimer</button></li>
                     </ul>
                 </div>
             </nav>
         </header>
         <main class="home">
-            <section class="home_title">
+            <section class="section_0_1">
                 <h1><span>Dictators’ Handbook</span></h1>
                 <h2>From political chess moves to untold secrets, we cover it all.</h2>
             </section>
-            <section id="about">
-                <h2>About the Project</h2>
+            <section class="section_0_2" id="about">
+                <h2 title="About the Project">About the Project</h2>
                 <p> Dictators’ Handbook is an innovative framework that combines the traditional appeal of magazines
                     with modern interactive mapping and rich metadata. Our platform allows readers to explore content
                     through geographic locations, discovering how stories connect across space and time. This project is
                     realized for the Web Technology and Information Modeling course at the University of Bologna.</p>
+                <div class="custom_pic"></div>
                 <p>Each issue is dedicated to one of the world’s dictators, offering a deep dive into their rise to
                     power, scandals, and lasting impact. All articles are enhanced with geographic references and
                     interconnected through the metadata layer about people, organizations, events and dates. Also, you
-                    can switch between different design themes to adjust the page layout to your taste.</p><button
-                    class="custom_btn">Read the Documentation</button>
+                    can switch between different design themes to adjust the page layout to your taste.</p><a
+                    class="custom_btn docs_btn" href="./issues/documentation.html">Read the Documentation</a>
             </section>
-            <section class="home_design">
+            <section class="section_0_3">
                 <div class="home_design_top">
-                    <h2>Customize Your Magazine</h2>
+                    <h2 title="Customize Your Magazine">Customize Your Magazine</h2>
                     <p>We have developed several unique designs for our magazine, each inspired by a specific historical
                         period and filled with references to particular years and cultures. Immerse yourself in the
                         atmosphere of the past and choose the style that suits you best! You can read more about each
                         design in the project documentation.</p>
                 </div>
-                <article><img src="./images/ghzel/gzhel_card.png">
+                <article><img src="./issues/img/gzhel_card.png">
                     <div>
                         <h3>Russian Craft Gzhel</h3>
                         <p>This style blends the traditional blue-and-white aesthetics of Russian Gzhel ceramics with
@@ -115,7 +117,7 @@
                             data-value="gzhel">Apply</button>
                     </div>
                 </article>
-                <article><img src="./images/suprematism/supr-card.png">
+                <article><img src="./issues/img/supr-card.png">
                     <div>
                         <h3>Suprematism</h3>
                         <p>Suprematism was a Russian avant-garde art movement founded in the early 20th century,
@@ -124,20 +126,53 @@
                     </div>
                 </article>
             </section>
-            <section>
-                <h2>Read the Next Issue</h2>
+            <section class="section_0_4">
+                <h2 title="Read the Next Issue">Read the Next Issue</h2>
                 <div class="home_issue"><img src="./issues/img/stalin_5.png" alt="Stalin Issue"><a class="custom_btn"
                         href="./issues/last_days_of_soviet_dictator.html">Check Out</a></div>
-                div class="home_issue"><img src="./issues/img/mao.png" alt="Stalin Issue"><button class="custom_btn"
-                        disabled>Check Out</button></div>
+                <div class="home_issue"><img src="./issues/img/mao.png" alt="Stalin Issue"><button class="custom_btn"
+                        disabled>Coming soon</button></div>
             </section>
             <section class="section_0_5">
                 <h2 title="Our Universe">Our Universe</h2>
-                <div class="map-container">
+                <div class="map_container">
                     <div class="map" id="map"></div>
                 </div>
             </section>
         </main>
+        <div class="popup_container">
+            <div class="popup"><button class="popup_close" type="button"><svg class="bi bi-x"
+                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                        <path
+                            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708">
+                        </path>
+                    </svg></button>
+                <p>The purpose of this web site is to explore various types of typographic and layout style for text
+                    documents, as an end-of-course project for the "Information Modeling and Web technologies" course of
+                    the Master Degree in Digital Humanities and Digital Knowledge of the University of Bologna, under
+                    prof. Fabio Vitali. The documents contained in this web site have been selected for their length and
+                    complexity from their respective source publications. Their publication here is not intended to be
+                    an alternative or replace their original locations:</p>
+                <h2 title="Issue 1">Issue 1</h2>
+                <ul>
+                    <li><span>Article 1:</span>&#32;<a
+                            href="https://babel.ua/en/texts/104698-71-years-after-stalin-s-death-russian-communists-suspected-that-he-was-killed-by-western-special-services-in-fact-they-should-look-for-the-culprits-right-under-their-noses-the-last-days-of-the-soviet-"
+                            target="_blank">https://babel.ua/en/texts/104698-71-years-after-stalin-s-death-russian-communists-suspected-that-he-was-killed-by-western-special-services-in-fact-they-should-look-for-the-culprits-right-under-their-noses-the-last-days-of-the-soviet-</a>
+                    </li>
+                    <li><span>Article 2:</span>&#32;<a
+                            href="https://warfarehistorynetwork.com/article/joseph-stalins-paranoid-purge/"
+                            target="_blank">https://warfarehistorynetwork.com/article/joseph-stalins-paranoid-purge/</a>
+                    </li>
+                    <li><span>Article 3:</span>&#32;<a
+                            href="https://jacobin.com/2020/09/stalin-early-years-georgia-soviet-union-ronald-suny"
+                            target="_blank">https://jacobin.com/2020/09/stalin-early-years-georgia-soviet-union-ronald-suny</a>
+                    </li>
+                </ul>
+                <p>All copyrights and related rights on the content remain with their original owners. All copyright on
+                    the typographic and layout choices are owned by their respective creator or the entity that
+                    commissioned the work.</p>
+            </div>
+        </div>
         <footer>
             <div class="footer_caption">
                 <h5><span>Dictators’</span> <span>Handbook</span></h5>
