@@ -922,6 +922,12 @@
 .gzhel .docs h2 {
   color: #05c;
 }
+
+.gzhel .docs h6 {
+  color: #636060;
+  text-align: center;
+}
+
 .gzhel .docs img {
   width: 100%;
   margin-bottom: 1rem;
