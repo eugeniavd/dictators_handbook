@@ -199,8 +199,8 @@
                                 <td style="padding:8px;">“Porcelain white” base, echoing ceramic glaze.</td>
                             </tr>
                         </tbody>
-                    </table>
-                    <strong>Usage guardrails: </strong>
+                    </table>Í›
+                    <p class="no-letter"><strong>Usage guardrails: </strong></p>
                     <p>No more than two shades of blue on screen at once; solid blue backgrounds 
                     under long-form text are prohibited. This preserves readability and the historical 
                     “accent” status of blue.</p>
@@ -260,17 +260,16 @@
                        floating elements that shape the text using <code>shape-outside</code>:</p>
 
                        <pre><code>/* Illustrative snippet */
-                    .triangle-left{
-                    float: left;
-                    shape-outside: polygon(0% 20%, 100% 100%, 0 100%);
-                    width: 28%; height: 1px; /* height triggers layout; adjust as needed */
-                    }
-                    .triangle-right{
-                    float: right;
-                    shape-outside: polygon(100% 20%, 0% 100%, 100% 100%);
-                    width: 28%; height: 1px;
-                    }
-                       </code></pre>
+.triangle-left {
+    float: left;
+    shape-outside: polygon(0% 20%, 100% 100%, 0 100%);
+    width: 28%; height: 1px; /* height triggers layout; adjust as needed */
+}
+.triangle-right {
+    float: right;
+    shape-outside: polygon(100% 20%, 0% 100%, 100% 100%);
+    width: 28%; height: 1px;
+}</code></pre>
                        
                     <h4>Placement of Metadata</h4>
                     <p>Meta-information is positioned to the right of the main content. This arrangement strengthens the book-spread metaphor
@@ -450,17 +449,19 @@
                        Generous white space around text and between columns reduces cognitive load and improves legibility.
                     </p>
                     <pre><code>/* Minimal implementation */
-                        .article {
-                        column-count: 2;            /* mobile */
-                        column-gap: 2rem;           /* ≈32 px; within the 5–12 mm guidance on common DPIs */
-                        hyphens: auto;              /* smoother rags for multi-column text */
-                        }
-                        
-                        @media (min-width: 1024px) {
-                           .article { column-count: 4; }   /* desktop */
-                        }
-                        .article p { break-inside: avoid; }  /* avoid paragraph splits across columns */
-                    </code></pre>
+.article {
+    column-count: 2;    /* mobile */
+    column-gap: 2rem;   /* ≈32 px; within the 5–12 mm guidance on common DPIs */
+    hyphens: auto;      /* smoother rags for multi-column text */
+}
+@media (min-width: 1024px) {
+    .article {          /* desktop */
+        column-count: 4;
+    }
+}
+.article p {            /* avoid paragraph splits across columns */
+    break-inside: avoid;
+}</code></pre>
 
                     <h3>3.4 Motion System</h3>
                     <p>The motion language follows three principles: <em>geometry first</em> (shapes move as squares, 

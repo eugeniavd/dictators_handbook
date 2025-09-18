@@ -863,6 +863,12 @@
 .gzhel .popup_container .popup ul a:hover {
   color: #05c;
 }
+.gzhel .docs h3{
+  color: #003399;
+}
+.gzhel .docs h4 {
+  color: #05c;
+}
 @media screen and (min-width: 768px) {
   .gzhel .popup_container .popup p,
   .gzhel .popup_container .popup ul li {

@@ -2,6 +2,10 @@
   width: 200px;
   padding: 0;
 }
+.suprematism table {
+  column-span: all;
+  margin-bottom: 1rem;
+}
 .suprematism .offcanvas-header {
   position: absolute;
   right: 0;
@@ -292,7 +296,8 @@
   height: 100vh;
   box-sizing: border-box;
 }
-.suprematism .section_0_1 h1 {
+.suprematism .section_0_1 h1,
+.suprematism .docs h1 {
   font-family: "Rodchenko Constructed", serif;
   font-size: 10vw;
   color: #f00;
@@ -325,6 +330,9 @@
   .suprematism .section_0_1 h1 {
     font-size: 8rem;
     margin-bottom: 6rem;
+  }
+  .suprematism .docs h1 {
+    font-size: 8rem;
   }
   .suprematism .section_0_1 h2 {
     font-size: 3rem;
