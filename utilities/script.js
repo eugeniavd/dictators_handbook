@@ -111,3 +111,4 @@ navbar.addEventListener('hide.bs.offcanvas', function () {
     main.classList.remove("show")
 });
 /* Offcanvas scripts end*/
+
