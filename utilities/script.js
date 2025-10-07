@@ -74,12 +74,13 @@ for (let i = 0; i < themeBtns.length; i++) {
         theme = this.dataset.value;
         switchTheme(theme);
         localStorage.setItem("theme", theme);
-        if (theme === "gzhel") {
-            mtSu.removeFrom(map)
-            mtGz.addTo(map)
-        } else {
-            mtGz.removeFrom(map)
-            mtSu.addTo(map)
+        try {
+            if (theme === "gzhel") {
+                mt.setStyle(stGz)
+            } else {
+                mt.setStyle(stSu)
+            }
+        } catch(err) {
             
         }
     })
@@ -111,4 +112,3 @@ navbar.addEventListener('hide.bs.offcanvas', function () {
     main.classList.remove("show")
 });
 /* Offcanvas scripts end*/
-

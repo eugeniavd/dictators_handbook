@@ -12,22 +12,12 @@ const Icon = L.divIcon({
     className: "marker",
     html: "<div></div>"
 })
-
-var mtGz = L.maptiler.maptilerLayer({
+var stGz = '019900ab-eb56-7f85-b100-33c889e75051'
+var stSu = '0199007a-b1b4-7d33-956b-c7bf80c57a5c'
+var mt = L.maptiler.maptilerLayer({
     apiKey: key,
-    style: '019900ab-eb56-7f85-b100-33c889e75051'
-})
-
-var mtSu = L.maptiler.maptilerLayer({
-    apiKey: key,
-    style: '0199007a-b1b4-7d33-956b-c7bf80c57a5c'
-})
-
-if (theme === "gzhel") {
-    mtGz.addTo(map)
-} else {
-    mtSu.addTo(map)
-}
+    style: theme === "gzhel" ? stGz : stSu
+}).addTo(map);
 
 
 
