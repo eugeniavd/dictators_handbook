@@ -24,21 +24,22 @@ if (!theme) {
 }
 document.body.className = theme;
 
-
 function applyThemeToBody(name) {
   document.body.className = name;
   window.scrollTo(0, 0);
 }
 
-const themeBtns = document.querySelectorAll('[data-action="theme"]');
+const themeBtns = document.querySelectorAll('[data-action="theme"][data-value]');
 for (let i = 0; i < themeBtns.length; i++) {
   themeBtns[i].addEventListener("click", function () {
-    theme = this.dataset.value; 
+    const next = this.dataset.value; // 'gzhel' | 'suprematism'
+    theme = next;
     applyThemeToBody(theme);
     localStorage.setItem("theme", theme);
 
-   
-    if (window.switchTheme) window.switchTheme(theme);
+    if (typeof window.switchTheme === 'function') {
+      window.switchTheme(theme);
+    }
   });
 }
 /* Change theme end */
